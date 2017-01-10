@@ -1,0 +1,17 @@
+{
+    "name": "harmen/garp-functional",
+    "description": "Utility library embracing functional programming paradigms.",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "squizlabs/php_codesniffer": "^2.7"
+    },
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Harmen Janssen",
+            "email": "harmen@grrr.nl"
+        }
+    ],
+    "require": {}
+}

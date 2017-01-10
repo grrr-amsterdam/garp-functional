@@ -1,0 +1,8 @@
+
+
+- Alle functional utilities uit Garp pakken en in nieuwe library stoppen
+- Bedenken hoe we nieuwe library backward-compatible in Garp kunnen gaan gebruiken. Het liefste
+  verdwijnen ze uit Garp, maar weet niet of dat realistisch is, omdat projecten vol staan met
+  `array_get` enzovoorts. (Anderzijds geeft het ook ruimte om eindelijk eens `array_get` te
+  hernoemen naar iets zonder underscore en data-last te maken)
+- Documentatie + unit tests per functie
