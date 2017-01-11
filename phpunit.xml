@@ -1,0 +1,25 @@
+<phpunit
+    backupGlobals="false"
+    backupStaticAttributes="false"
+    bootstrap="vendor/autoload.php"
+    convertWarningsToExceptions="true"
+    convertNoticesToExceptions="true"
+    beStrictAboutTestsThatDoNotTestAnything="true"
+    beStrictAboutOutputDuringTests="true"
+    beStrictAboutTestSize="true"
+    verbose="true"
+    colors="true">
+
+    <testsuites>
+        <testsuite name="unit-tests">
+            <directory>tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <php>
+        <ini name="error_reporting" value="-1"/>
+        <ini name="date.timezone" value="UTC"/>
+        <ini name="display_errors" value="on"/>
+    </php>
+
+</phpunit>

@@ -1,0 +1,27 @@
+<?php
+/**
+ * @package  Garp\Functional
+ * @author   Harmen Janssen <harmen@grrr.nl>
+ * @license  https://github.com/grrr-amsterdam/garp-functional/blob/master/LICENSE.md BSD-3-Clause
+ */
+namespace Garp\Functional;
+
+/**
+ * Pure sort function. Returns a sorted copy.
+ *
+ * @param callable $fn
+ * @param array $collection
+ * @return array
+ */
+function usort($fn, array $collection = null) {
+    if ($fn && !is_callable($fn)) {
+        throw new InvalidArgumentException('usort expects parameter 1 to be a valid callback');
+    }
+    $sorter = function ($collection) use ($fn) {
+        // make a copy of the array as to not disturb the original
+        $copy = $collection;
+        \usort($copy, $fn);
+        return $copy;
+    };
+    return is_null($collection) ? $sorter : $sorter($collection);
+}
