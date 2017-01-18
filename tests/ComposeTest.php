@@ -13,7 +13,7 @@ class ComposeTest extends TestCase {
         $revAndUpper = f\compose('strrev', 'strtoupper');
         $this->assertEquals('GEMTUN', $revAndUpper('nutmeg'));
 
-        $initials = f\compose(f\map(f\prop(0)), f\call_left('explode', ' '));
+        $initials = f\compose(f\map(f\prop(0)), f\partial('explode', ' '));
         $this->assertEquals(
             ['M', 'D'],
             $initials('Miles Davis')

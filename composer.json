@@ -25,8 +25,8 @@
       "Garp\\": "library/"
     },
     "files": [
-      "library/Garp/Functional/CallLeft.php",
-      "library/Garp/Functional/CallRight.php",
+      "library/Garp/Functional/Partial.php",
+      "library/Garp/Functional/PartialRight.php",
       "library/Garp/Functional/Compose.php",
       "library/Garp/Functional/Equals.php",
       "library/Garp/Functional/Filter.php",

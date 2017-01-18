@@ -13,8 +13,8 @@ Utility library embracing functional programming paradigms.
 - Function parameters are ordered to promote currying. Data is usually the last thing to go in,
     making every function a fine candidate to pass to native `array_map`, `array_filter` and the
     like, without having to create a closure around the call.
-- Higher-order functions are provided to fill the gaps. Functions like `compose`, `call_left`,
-    `call_right` or `not` are legos for you to use in your own implementation.
+- Higher-order functions are provided to fill the gaps. Functions like `compose`, `partial`,
+    `partial_right` or `not` are legos for you to use in your own implementation.
 - Nothing is type-hinted too strictly (not that we can in PHP 5.3). I don't care if you pass a
     string or an array to `prop`, as long as it allows accessing members thru bracket syntax `[]`,
     I'll allow it. Nothing irks me more about PHP than not being able to toss an `ArrayObject` into

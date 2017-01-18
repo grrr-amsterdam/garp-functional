@@ -15,20 +15,20 @@ namespace Garp\Functional;
  *   return "Hello {$to}, {$from} says '{$message}'";
  * }
  *
- * $sayHelloToJohn = call_left('sayHello', 'John');
+ * $sayHelloToJohn = partial('sayHello', 'John');
  * $sayHelloToJohn('Hank', "How's it going?"); // Hello John, Hank says 'How's it going?'
  *
  * Note: the function signature doesn't show the rest parameters. This is confusing, but
  * unfortunately we have to support PHP5.3. In PHP5.6 the signature would have been
  *
  * ```
- * function call_left($fn, ...$args)
+ * function partial($fn, ...$args)
  * ```
  *
  * @param callable $fn The partially applied function
  * @return callable
  */
-function call_left($fn) {
+function partial($fn) {
     $args = array_slice(func_get_args(), 1);
     return function () use ($fn, $args) {
         $remainingArgs = func_get_args();
