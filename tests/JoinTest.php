@@ -62,7 +62,7 @@ class JoinTest extends TestCase {
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException InvalidArgumentException
      */
     public function test_should_throw_on_invalid_arguments() {
         f\join(1, 2);
