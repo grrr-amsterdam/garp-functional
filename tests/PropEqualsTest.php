@@ -54,7 +54,7 @@ class PropEqualsTest extends TestCase {
         $this->assertTrue(is_callable($playsTrumpet));
         $this->assertEquals(
             array('Miles', 'Louis'),
-            f\map(f\prop('first_name'), f\filter($playsTrumpet, $musicians))
+            f\reindex(f\map(f\prop('first_name'), f\filter($playsTrumpet, $musicians)))
         );
     }
 

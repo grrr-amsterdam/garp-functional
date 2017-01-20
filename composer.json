@@ -27,8 +27,10 @@
     "files": [
       "library/Garp/Functional/Call.php",
       "library/Garp/Functional/Compose.php",
+      "library/Garp/Functional/Either.php",
       "library/Garp/Functional/Equals.php",
       "library/Garp/Functional/Filter.php",
+      "library/Garp/Functional/Find.php",
       "library/Garp/Functional/Flatten.php",
       "library/Garp/Functional/Flip.php",
       "library/Garp/Functional/Id.php",
@@ -42,6 +44,7 @@
       "library/Garp/Functional/Pick.php",
       "library/Garp/Functional/Prop.php",
       "library/Garp/Functional/PropEquals.php",
+      "library/Garp/Functional/Reindex.php",
       "library/Garp/Functional/Some.php",
       "library/Garp/Functional/Sort.php",
       "library/Garp/Functional/Unary.php",

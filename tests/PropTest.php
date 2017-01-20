@@ -26,6 +26,7 @@ class PropTest extends TestCase {
 
     public function test_should_read_from_string() {
         $this->assertEquals('n', f\prop(2, 'cinnamon'));
+        $this->assertNull(f\prop(20, 'nutmeg'));
     }
 
     public function test_should_read_from_object() {

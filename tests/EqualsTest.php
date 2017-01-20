@@ -26,7 +26,7 @@ class EqualsTest extends TestCase {
         $spices = array('clove', 'nutmeg', 'allspice', 'cumin');
         $this->assertEquals(
             array('cumin'),
-            f\filter($isCumin, $spices)
+            f\reindex(f\filter($isCumin, $spices))
         );
     }
 

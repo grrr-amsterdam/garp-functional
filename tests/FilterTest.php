@@ -15,25 +15,27 @@ class FilterTest extends TestCase {
         // Native PHP function.
         $this->assertEquals(
             array(123, 456),
-            f\filter('is_int', $data)
+            array_values(f\filter('is_int', $data))
         );
 
         // Closure
         $spices = array('nutmeg', 'cinnamon', 'clove');
+        $filtered = f\filter(
+            function ($spice) {
+                return strlen($spice) > 6;
+            },
+            $spices
+        );
+
         $this->assertEquals(
             array('cinnamon'),
-            f\filter(
-                function ($spice) {
-                    return strlen($spice) > 6;
-                },
-                $spices
-            )
+            array_values($filtered)
         );
 
         // Class method
         $this->assertEquals(
             array('clove'),
-            f\filter(array($this, 'isSmallString'), $spices)
+            array_values(f\filter(array($this, 'isSmallString'), $spices))
         );
     }
 
@@ -42,7 +44,7 @@ class FilterTest extends TestCase {
         $data = array(123, 'abc', 456, true, array());
         $this->assertTrue(is_callable($getAllStrings));
         $this->assertEquals(
-            array('abc'),
+            array(1 => 'abc'),
             $getAllStrings($data)
         );
     }
@@ -50,19 +52,8 @@ class FilterTest extends TestCase {
     public function test_should_work_with_iterable_objects() {
         $traversable = new MockSpiceTraverser();
         $this->assertEquals(
-            // FIXME would be great if we could also normalise iterable objects
             array(2 => 'clove'),
             f\filter(array($this, 'isSmallString'), $traversable)
-        );
-    }
-
-    public function test_should_reindex_numeric_array() {
-        $spices = array('clove', 'nutmeg', 'allspice', 'cumin');
-        $startsWithA = f\compose(f\equals('a'), f\prop(0));
-        $spicesWithA = f\filter($startsWithA, $spices);
-        $this->assertEquals(
-            array(0),
-            array_keys($spicesWithA)
         );
     }
 
