@@ -34,4 +34,16 @@ class PartialTest extends TestCase {
         $this->assertEquals($expected, $helloCopy('John', 'Hank', 'Hi there!'));
     }
 
+    public function test_should_be_able_to_curry_native_functions() {
+        $musicians = array('Miles Davis', 'John Coltrane', 'Herbie Hancock');
+        $fixture = array(
+            array('Miles', 'Davis'), array('John', 'Coltrane'), array('Herbie', 'Hancock')
+        );
+        $splitOnSpace = f\partial('explode', ' ');
+        $this->assertEquals(
+            $fixture,
+            f\map($splitOnSpace, $musicians)
+        );
+    }
+
 }
