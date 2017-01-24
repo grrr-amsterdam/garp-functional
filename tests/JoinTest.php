@@ -61,6 +61,15 @@ class JoinTest extends TestCase {
         );
     }
 
+    public function test_should_be_curried_down_to_no_arguments() {
+        $joinAnything = f\join();
+        $this->assertTrue(is_callable($joinAnything));
+        $this->assertEquals(
+            'foobar',
+            $joinAnything('foo', 'bar')
+        );
+    }
+
     /**
      * @expectedException InvalidArgumentException
      */

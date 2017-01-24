@@ -14,7 +14,7 @@ namespace Garp\Functional;
  * @param mixed $right
  * @return mixed
  */
-function join($left, $right = null) {
+function join($left = null, $right = null) {
     $joiner = function ($right) use ($left) {
         if (is_array($left) || is_array($right)) {
             return array_merge((array)$left, (array)$right);
@@ -26,5 +26,8 @@ function join($left, $right = null) {
             __FUNCTION__ . ' can only join arrays or strings'
         );
     };
+    if (is_null($left)) {
+        return partial('Garp\Functional\join');
+    }
     return is_null($right) ? $joiner : $joiner($right);
 }
