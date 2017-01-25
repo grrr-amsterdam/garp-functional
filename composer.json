@@ -39,6 +39,7 @@
       "library/Garp/Functional/Flip.php",
       "library/Garp/Functional/Id.php",
       "library/Garp/Functional/Instance.php",
+      "library/Garp/Functional/Join.php",
       "library/Garp/Functional/Map.php",
       "library/Garp/Functional/Not.php",
       "library/Garp/Functional/Partial.php",
