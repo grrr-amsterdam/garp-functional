@@ -20,22 +20,32 @@ This helps keep the function abstract, not needing a specifically named paramete
 Probably more important, a data-last, curried library enables you to write like this:
 
 ```php
+$toName = f\map(f\prop('name'));
+$users = [
+  ['name' => 'Bob', 'age' => 30, 'occupation' => 'Taxi driver'],
+  ['name' => 'Alice', /* etc... */ ]
+];
+$names = $toName($users);
+```
+
+Or go totally crazy:
+
+```php
 $getInitials = f\compose(f\join(' '), f\map(f\compose(f\concat_right('.'), f\prop(0))), f\split(' '));
 $getInitials('Miles Davis'); // M. D.
 ```
 
 Sure, that line is cuckoo, but the idea of composing functions without having to stop at every step to consider the control flow structures, what the parameters are going to be named, and how to return it is pretty powerful.  
 
-
 ## Function index
 
-[Mathematical](#mathematical)
+[Math](#math)
 - [Add](#add)
 - [Subtract](#subtract)
 
 _Note: code examples assume the library is loaded with `use Garp\Functional as f;`_
 
-### Mathematical
+### Math
 
 #### Add
 
