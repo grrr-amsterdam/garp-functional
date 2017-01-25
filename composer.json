@@ -48,6 +48,7 @@
       "library/Garp/Functional/PropEquals.php",
       "library/Garp/Functional/Reduce.php",
       "library/Garp/Functional/Reindex.php",
+      "library/Garp/Functional/Split.php",
       "library/Garp/Functional/Some.php",
       "library/Garp/Functional/Sort.php",
       "library/Garp/Functional/Subtract.php",
