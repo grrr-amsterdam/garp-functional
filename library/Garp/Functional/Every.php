@@ -9,14 +9,14 @@ namespace Garp\Functional;
 /**
  * Returns TRUE if $callback returns true for every item in the collection.
  *
- * @param callable $callback
+ * @param callable $fn
  * @param array    $collection
  * @return bool
  */
-function every($callback, $collection = null) {
+function every($fn, $collection = null) {
     return reduce(
-        function ($acc, $cur) {
-            return $acc && !!call_user_func($cur);
+        function ($acc, $cur) use ($fn) {
+            return $acc && !!call_user_func($fn, $cur);
         },
         true,
         $collection

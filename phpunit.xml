@@ -16,6 +16,12 @@
         </testsuite>
     </testsuites>
 
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">library/Garp/Functional</directory>
+        </whitelist>
+    </filter>
+
     <php>
         <ini name="error_reporting" value="-1"/>
         <ini name="date.timezone" value="UTC"/>

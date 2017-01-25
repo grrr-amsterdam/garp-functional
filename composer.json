@@ -25,6 +25,7 @@
       "Garp\\": "library/"
     },
     "files": [
+      "library/Garp/Functional/Add.php",
       "library/Garp/Functional/Call.php",
       "library/Garp/Functional/Compose.php",
       "library/Garp/Functional/Either.php",
@@ -49,6 +50,7 @@
       "library/Garp/Functional/Reindex.php",
       "library/Garp/Functional/Some.php",
       "library/Garp/Functional/Sort.php",
+      "library/Garp/Functional/Subtract.php",
       "library/Garp/Functional/Unary.php",
       "library/Garp/Functional/Usort.php",
       "library/Garp/Functional/When.php"

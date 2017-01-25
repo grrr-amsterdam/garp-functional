@@ -14,7 +14,7 @@ namespace Garp\Functional;
  * Imagine an array of User objects, all supporting a `getName()` method.
  * Mapping the array of User objects to an array of names could be done as follows:
  *
- * $names = array_map(callMethod('getName', array()), $objects);
+ * $names = array_map(call('getName', array()), $objects);
  *
  * @param string $method
  * @param array  $args
