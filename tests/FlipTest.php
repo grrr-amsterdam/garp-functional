@@ -22,10 +22,10 @@ class FlipTest extends TestCase {
             call_user_func(f\flip('explode'), 'Miles Davis', ' ')
         );
 
-        $reverseJoin = f\flip('Garp\Functional\join');
+        $reverseConcat = f\flip('Garp\Functional\concat');
         $this->assertEquals(
             'nanaba',
-            $reverseJoin('ba', 'nana')
+            $reverseConcat('ba', 'nana')
         );
 
         $subtract = function ($a, $b) {

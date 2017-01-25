@@ -7,15 +7,15 @@
 namespace Garp\Functional;
 
 /**
- * Join two things.
+ * Concat two things.
  * Works with arrays and strings.
  *
  * @param mixed $left
  * @param mixed $right
  * @return mixed
  */
-function join($left = null, $right = null) {
-    $joiner = function ($right) use ($left) {
+function concat($left = null, $right = null) {
+    $concatter = function ($right) use ($left) {
         if (is_array($left) || is_array($right)) {
             return array_merge((array)$left, (array)$right);
         }
@@ -23,11 +23,11 @@ function join($left = null, $right = null) {
             return $left . $right;
         }
         throw new \InvalidArgumentException(
-            __FUNCTION__ . ' can only join arrays or strings'
+            __FUNCTION__ . ' can only concat arrays or strings'
         );
     };
     if (is_null($left)) {
-        return partial('Garp\Functional\join');
+        return partial('Garp\Functional\concat');
     }
-    return is_null($right) ? $joiner : $joiner($right);
+    return is_null($right) ? $concatter : $concatter($right);
 }

@@ -7,15 +7,15 @@
 namespace Garp\Functional;
 
 /**
- * Join two things, but in reverse order.
+ * Concat two things, but in reverse order.
  *
  * @param mixed $right
  * @param mixed $left
  * @return mixed
  */
-function join_right($right, $left = null) {
+function concat_right($right, $left = null) {
     if (is_null($left)) {
-        return partial_right('Garp\Functional\join', $right);
+        return partial_right('Garp\Functional\concat', $right);
     }
-    return join($left, $right);
+    return concat($left, $right);
 }

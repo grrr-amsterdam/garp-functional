@@ -32,8 +32,8 @@ class WhenTest extends TestCase {
         $mapped = array_map(
             f\when(
                 f\prop_equals('type', 'admin'),
-                f\join_right(array('name' => 'Superadmin')),
-                f\join_right(array('name' => 'Regular Joe'))
+                f\concat_right(array('name' => 'Superadmin')),
+                f\concat_right(array('name' => 'Regular Joe'))
             ),
             $users
         );

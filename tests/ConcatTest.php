@@ -7,18 +7,18 @@ use Garp\Functional as f;
  * @author   Harmen Janssen <harmen@grrr.nl>
  * @license  https://github.com/grrr-amsterdam/garp-functional/blob/master/LICENSE.md BSD-3-Clause
  */
-class JoinTest extends TestCase {
+class ConcatTest extends TestCase {
 
-    public function test_should_join_arrays() {
+    public function test_should_concat_arrays() {
         $a = array(1, 2, 3);
         $b = array(4, 5, 6);
         $this->assertEquals(
             array(1, 2, 3, 4, 5, 6),
-            f\join($a, $b)
+            f\concat($a, $b)
         );
     }
 
-    public function test_should_join_assoc_arrays() {
+    public function test_should_concat_assoc_arrays() {
         $a = array(
             'first_name' => 'Miles',
             'last_name' => 'Davis'
@@ -28,45 +28,45 @@ class JoinTest extends TestCase {
         );
         $this->assertEquals(
             array('first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'),
-            f\join($a, $b)
+            f\concat($a, $b)
         );
     }
 
-    public function test_should_join_strings() {
+    public function test_should_concat_strings() {
         $this->assertEquals(
             'MilesDavis',
-            f\join('Miles', 'Davis')
+            f\concat('Miles', 'Davis')
         );
     }
 
-    public function test_should_join_strings_to_arrays_if_either_argument_is_array() {
+    public function test_should_concat_strings_to_arrays_if_either_argument_is_array() {
         $this->assertEquals(
             array('Miles', 'Davis'),
-            f\join('Miles', array('Davis'))
+            f\concat('Miles', array('Davis'))
         );
         $this->assertEquals(
             array('Miles', 'Davis'),
-            f\join(array('Miles'), 'Davis')
+            f\concat(array('Miles'), 'Davis')
         );
     }
 
     public function test_should_be_curried() {
-        $joinMiles = f\join('Miles');
-        $this->assertTrue(is_callable($joinMiles));
+        $concatMiles = f\concat('Miles');
+        $this->assertTrue(is_callable($concatMiles));
 
-        $this->assertEquals('MilesDavis', $joinMiles('Davis'));
+        $this->assertEquals('MilesDavis', $concatMiles('Davis'));
         $this->assertEquals(
             'Miles Davis',
-            $joinMiles(f\join(' ', 'Davis'))
+            $concatMiles(f\concat(' ', 'Davis'))
         );
     }
 
     public function test_should_be_curried_down_to_no_arguments() {
-        $joinAnything = f\join();
-        $this->assertTrue(is_callable($joinAnything));
+        $concatAnything = f\concat();
+        $this->assertTrue(is_callable($concatAnything));
         $this->assertEquals(
             'foobar',
-            $joinAnything('foo', 'bar')
+            $concatAnything('foo', 'bar')
         );
     }
 
@@ -74,7 +74,7 @@ class JoinTest extends TestCase {
      * @expectedException InvalidArgumentException
      */
     public function test_should_throw_on_invalid_arguments() {
-        f\join(1, 2);
+        f\concat(1, 2);
     }
 
 }

@@ -28,7 +28,7 @@ class ReduceTest extends TestCase {
     public function test_should_reduce_iterable_object() {
         $mockSpiceTraver = new MockSpiceTraverser();
         $reduced = f\reduce(
-            f\join(),
+            f\concat(),
             '',
             $mockSpiceTraver
         );
@@ -39,7 +39,7 @@ class ReduceTest extends TestCase {
     }
 
     public function test_should_be_curried() {
-        $reducer = f\reduce(f\join(), '');
+        $reducer = f\reduce(f\concat(), '');
         $this->assertTrue(is_callable($reducer));
         $this->assertEquals(
             'foobar',

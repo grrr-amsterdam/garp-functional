@@ -12,11 +12,11 @@ namespace Garp\Functional;
  * Note that a curried function will behave a little different than you might expect.
  * For instance:
  *
- * f\flip('Garp\Functional\Join')('ba')('nana');
+ * f\flip('Garp\Functional\Concat')('ba')('nana');
  *
- * Won't get you 'nanaba', but still 'banana', because the join call receives just the one argument,
- * causing it to return a new function awaiting the second parameter, but that one's not influenced
- * by flip.
+ * Won't get you 'nanaba', but still 'banana', because the concat call receives just the one
+ * argument, causing it to return a new function awaiting the second parameter,
+ * but that one's not influenced by flip.
  *
  * @param callable $fn
  * @return callable
@@ -32,7 +32,7 @@ function flip($fn) {
         $arg1 = prop(1, $args);
         return call_user_func_array(
             $fn,
-            join($arg1, join($arg0, $rest))
+            concat($arg1, concat($arg0, $rest))
         );
     };
 }
