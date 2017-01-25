@@ -25,7 +25,7 @@ $users = [
   ['name' => 'Bob', 'age' => 30, 'occupation' => 'Taxi driver'],
   ['name' => 'Alice', /* etc... */ ]
 ];
-$names = $toName($users);
+$names = $toName($users); // ['Bob', 'Alice', ...]
 ```
 
 Or go totally crazy:
