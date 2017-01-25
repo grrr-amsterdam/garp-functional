@@ -14,16 +14,19 @@ namespace Garp\Functional;
  * Usage:
  * $reverseAndToUpper = compose('ucfirst', 'strrev');
  *
- * @param callable $f
- * @param callable $g
+ * Takes n function arguments.
+ *
  * @return callable
  */
-function compose($f, $g) {
-    return function () use ($f, $g) {
-        $args = func_get_args();
-        return call_user_func_array(
-            $f,
-            array(call_user_func_array($g, $args))
+function compose() {
+    $functions = array_reverse(func_get_args());
+    return function ($arg) use ($functions) {
+        return reduce(
+            function ($acc, $cur) {
+                return call_user_func($cur, $acc);
+            },
+            $arg,
+            $functions
         );
     };
 }

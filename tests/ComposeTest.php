@@ -20,4 +20,29 @@ class ComposeTest extends TestCase {
         );
     }
 
+    public function test_should_allow_n_arguments() {
+        $splitMapAndJoin = f\compose(f\join('_'), f\map('strrev'), f\split(' '));
+        $miles = 'Miles Davis';
+        $this->assertEquals(
+            'seliM_sivaD',
+            $splitMapAndJoin($miles)
+        );
+
+        $getInitials = f\compose(
+            f\join(' '), f\map(f\compose(f\concat_right('.'), f\prop(0))), f\split(' ')
+        );
+        $this->assertEquals(
+            'M. D.',
+            $getInitials('Miles Davis')
+        );
+    }
+
+    public function test_what_happens_without_arguments() {
+        $emptyCompose = f\compose();
+        $this->assertEquals(
+            'whaddayaknow',
+            $emptyCompose('whaddayaknow')
+        );
+    }
+
 }
