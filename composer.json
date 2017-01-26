@@ -43,6 +43,7 @@
       "library/Garp/Functional/Join.php",
       "library/Garp/Functional/Lt.php",
       "library/Garp/Functional/Map.php",
+      "library/Garp/Functional/None.php",
       "library/Garp/Functional/Not.php",
       "library/Garp/Functional/Partial.php",
       "library/Garp/Functional/PartialRight.php",

@@ -7,16 +7,16 @@
 namespace Garp\Functional;
 
 /**
- * Returns true if $callback returns true for every item in the collection.
+ * Returns true if $callback returns false for every item in the collection.
  *
  * @param callable $fn
  * @param array    $collection
  * @return bool
  */
-function every($fn, $collection = null) {
+function none($fn, $collection = null) {
     return reduce(
         function ($acc, $cur) use ($fn) {
-            return $acc && !!call_user_func($fn, $cur);
+            return $acc && !call_user_func($fn, $cur);
         },
         true,
         $collection
