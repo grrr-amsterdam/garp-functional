@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class PickTest extends TestCase {
 
-    public function test_should_pick_from_array() {
+    public function test_should_pick_from_assoc_array() {
         $data = array(
             'first_name' => 'Miles',
             'last_name' => 'Davis',
@@ -24,6 +24,14 @@ class PickTest extends TestCase {
         $this->assertEquals(
             $fixture,
             f\pick(array('last_name', 'country'), $data)
+        );
+    }
+
+    public function test_should_pick_from_numeric_array() {
+        $spices = array('nutmeg', 'clove', 'cinnamon');
+        $this->assertEquals(
+            array(1 => 'clove', 2 => 'cinnamon'),
+            f\pick(array(1, 2), $spices)
         );
     }
 
@@ -43,10 +51,14 @@ class PickTest extends TestCase {
     }
 
     public function test_should_work_with_iterable_objects() {
-        $spiceTraverser = new MockSpiceTraverser;
+        $musician = new stdClass;
+        $musician->first_name = 'Miles';
+        $musician->last_name = 'Davis';
+        $musician->instrument = 'trumpet';
+        $musician->country = 'USA';
         $this->assertEquals(
-            array(1 => 'cinnamon', 2 => 'clove'),
-            f\pick(array(1, 2), $spiceTraverser)
+            array('first_name' => 'Miles', 'instrument' => 'trumpet'),
+            f\pick(array('first_name', 'instrument'), $musician)
         );
     }
 

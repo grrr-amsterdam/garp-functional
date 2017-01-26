@@ -32,6 +32,20 @@ class ConcatTest extends TestCase {
         );
     }
 
+    public function test_right_overrides_left() {
+        $a = array(
+            'first_name' => 'Miles',
+            'last_name' => 'Davis'
+        );
+        $b = array(
+            'first_name' => 'John'
+        );
+        $this->assertEquals(
+            array('first_name' => 'John', 'last_name' => 'Davis'),
+            f\concat($a, $b)
+        );
+    }
+
     public function test_should_concat_strings() {
         $this->assertEquals(
             'MilesDavis',

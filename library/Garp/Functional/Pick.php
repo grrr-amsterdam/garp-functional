@@ -15,16 +15,10 @@ namespace Garp\Functional;
  */
 function pick(array $allowed, $collection = null) {
     $picker = function ($collection) use ($allowed) {
-        if (is_array($collection)) {
-            return array_intersect_key($collection, array_flip($allowed));
-        }
-        $out = array();
-        foreach ($collection as $key => $value) {
-            if (in_array($key, $allowed)) {
-                $out[$key] = $value;
-            }
-        }
-        return $out;
+        return array_combine(
+            $allowed,
+            map(partial_right('Garp\Functional\Prop', $collection), $allowed)
+        );
     };
     return is_null($collection) ? $picker : $picker($collection);
 }

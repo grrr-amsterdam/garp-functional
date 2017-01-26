@@ -53,7 +53,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Join](#join) 
 - [Split](#split)
 - [Concat](#concat)
-- [ConcatRight](#concat-right)
+- [ConcatRight](#concatright)
 - [Flatten](#flatten) 
 - [Sort](#sort) 
 - [Usort](#usort)
@@ -63,7 +63,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 
 - [Compose](#compose) 
 - [Partial](#partial)
-- [PartialRight](#partial-right)
+- [PartialRight](#partialright)
 - [Not](#not) 
 - [Unary](#unary)
 - [Call](#call)
@@ -75,7 +75,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 
 - [When](#when)
 - [Equals](#equals)
-- [PropEquals](#prop-equals)
+- [PropEquals](#propequals)
 - [Either](#either)
 - [Gt](#gt)
 - [Lt](#lt)
@@ -151,6 +151,365 @@ f\none(f\gt(50), $numbers); // false
 ```
 
 #### Find
+
+Basically combines `filter` with a `prop(0)` call: it filters a collection and returns the first
+match.
+
+```php
+$numbers = [40, 15, 23, 90, 29];
+f\find(f\gt(20), $numbers); // 23
+f\find(f\gt(200), $numbers); // null
+```
+
+#### Prop
+
+Take a property from a collection.  
+Accepts objects, arrays, even stings.
+
+```php
+$miles = ['first_name' => 'Miles', 'last_name' => 'Davis'];
+f\prop('first_name', $miles); // 'Miles'
+f\prop('last_name', $miles); // 'Davis'
+f\prop('date_of_birth', $miles); // null
+
+$foo = new Foo();
+$foo->bar = 'baz';
+f\prop('bar', $foo); // 'baz'
+f\prop('bin', $foo); // null
+
+$name = 'Miles';
+f\prop(0, $name); // 'M'
+f\prop(3, $name); // 'e'
+```
+
+#### Pick
+
+Create an array from a subset of properties from the given object.
+
+```php
+$spices = ['nutmeg', 'clove', 'cinnamon'];
+f\pick([1, 2], $spices); // [1 => 'clove', 2 => 'cinnamon']
+
+$musician = ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'];
+f\pick(['first_name', 'instrument'], $musician); // ['first_name' => 'Miles', 'instrument' => 'trumpet']
+```
+
+#### Join
+
+Join a collection, and add a separator between the items.
+
+```php
+$spices = ['nutmeg', 'clove', 'cinnamon'];
+f\join('_', $spices); // 'nutmeg_clove_cinnamon'
+```
+
+#### Split
+
+Split a string into an array.
+
+```php
+$musician = 'Miles Davis';
+f\split(' ', $musician); // ['Miles', 'Davis']
+```
+
+#### Concat
+
+Concatenate two lists. (strings are also lists)
+
+```php
+f\concat('foo', 'bar'); // 'foobar'
+
+$a = [1, 2, 3];
+$b = [4, 5, 6];
+f\concat($a, $b); // [1, 2, 3, 4, 5, 6] 
+```
+
+Note, the right side overrides the left side:
+
+```php
+$a = [
+    'first_name' => 'Miles',
+    'last_name' => 'Davis'
+];
+$b = [ 'first_name' => 'John' ];
+f\concat($a, $b); // ['first_name' => 'John', 'last_name' => 'Davis']
+```
+
+#### ConcatRight
+
+Same as `concat`, but flips the order in which the arguments are concatenated.  
+Especially interesting when dealing with associative arrays: this function lets the left side
+override the right side:
+
+```php
+$a = [
+    'first_name' => 'Miles',
+    'last_name' => 'Davis'
+];
+$b = [ 'first_name' => 'John' ];
+f\concat_right($a, $b); // ['first_name' => 'Miles', 'last_name' => 'Davis'] 
+```
+
+#### Flatten
+
+Flatten an array of arrays into a single array.
+
+```php
+$data = [1, 2, [3, 4, 5, [6, 7], 8], 9, [], 10];
+f\flatten($data); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+#### Sort
+
+Sort an array. A pure version of the native `sort`.  
+Does not mutate the original array.
+
+```php
+$spices = ['Nutmeg', 'Clove', 'Cinnamon'];
+$sortedSpices = f\sort($spices); // ['Cinnamon', 'Clove', 'Nutmeg']
+$spices; // ['Nutmeg', 'Clove', 'Cinnamon']
+```
+
+#### Usort
+
+Same as `sort`, but is a version of the native `usort`.
+
+```php
+$spices = ['clove', 'nutmeg', 'allspice', 'cumin'];
+f\usort(
+    function ($a, $b) {
+        return strlen($a) - strlen($b);
+    },
+    $spices
+); // ['clove', 'cumin', 'nutmeg', 'allspice']
+```
+
+#### Reindex
+
+Alias for the native `array_values`.  
+I tend to use `array_values` a lot after `array_filter`, but the name `array_values` does not really
+convey my intent to my fellow developers. Hopefully `reindex` does.
+
+```php
+$data = [123, 'abc', true, [], 'def'];
+$strings = f\filter('is_string', $data); // [1 => 'abc', 4 => 'def']
+f\reindex($strings); // [0 => 'abc', 1 => 'def'] 
+``` 
+
+### Functional
+
+#### Compose
+
+Compose functions together. Execution order is right to left, as is traditional.
+It mimics a manual approach. e.g. `compose(foo, bar, baz)($args)` equals `foo(bar(baz($args)))`.
+
+Let's look at the crazy example from the intro of this page:
+
+```php
+$getInitials = f\compose(f\join(' '), f\map(f\compose(f\concat_right('.'), f\prop(0))), f\split(' '));
+$getInitials('Miles Davis'); // M. D.
+```
+
+If you start at the right side you can follow along with the path your arguments will travel through 
+the functional pipeline.
+
+#### Partial
+
+Partially apply a function from the left side.
+
+```php
+$splitOnSpace = f\partial('explode', ' ');
+$splitOnSpace('Hello World'); // ['Hello', 'World']
+```
+
+#### PartialRight
+
+Partially apply a function from the right side.
+
+```php
+$splitHelloWorld = f\partial('explode', 'Hello World');
+$splitHelloWorld(' '); // ['Hello', 'World']
+```
+
+#### Not
+
+Create a new function that negates the outcome of the given function.
+
+```php
+$noString = f\not('is_string');
+$noString('Hello world'); // false
+$noString(123); // true
+```
+
+#### Unary
+
+Creates a new function that passes only the first argument thru to the given function.
+
+```php
+$countArgs = function () {
+    return count(func_get_args());
+};
+$countArgs(1, 2, 3); // 3
+f\unary($countArgs)(1, 2, 3); // 1 
+```
+
+This is helpful in situations where giving a function too many arguments explicitly triggers an
+error, but you have no control over the amount of arguments passed to the function.  
+An example is the native `is_array`, which accepts one
+argument and one argument only. Our `some` function however, gives the predicate function both the
+item in the collection and its index.
+
+This would cause an error:
+
+```php
+$hasArray = f\some('is_array');
+$stuff = array('abc', array(), 123, true);
+$hasArray($stuff); // Warning: is_array() expects exactly 1 parameter, 2 given
+```
+
+`unary` can fix this for you:
+
+```php
+$hasArray = f\some(f\unary('is_array'));
+$stuff = array('abc', array(), 123, true);
+$hasArray($stuff); // true
+``` 
+
+#### Call
+
+Call a method on an object.
+
+```php
+// Image an array of active records, containing a `getName` method.
+$users = $database->fetchUsers();
+$names = f\map(f\call('getName'), $users); // array of names
+```
+
+#### Flip
+
+Flip the order of the first two arguments of a function.
+
+```php
+$concat = function ($a, $b) {
+    return $a . $b;
+};
+$concat('Hello', 'world'); // 'Helloworld'
+f\flip($concat)('Hello', 'world'); // 'worldHello'
+```
+
+#### Id
+
+Identity function, returns what it's given.   
+Useful in places that expect a callback function but you don't want to mutate anything. For instance
+in a [`when`](#when) application.
+
+```php
+123 === f\id(123); // true
+$spices = ['clove', 'nutmeg', 'allspice', 'cumin'];
+$spices === f\id($spices); // true
+``` 
+
+#### Instance
+
+Makes the PHP language a little more expressive.
+PHP 5.4 allows chaining of new instances like so;
+
+```php
+(new Instance())->doSomething();
+```
+
+This function sort of brings this to earlier versions of PHP:
+
+```php
+instance(new Instance())->doSomething();
+``` 
+
+Also accepts strings:
+
+```php
+instance('Foo_Bar_Baz'); // new Foo_Bar_Baz()
+```
+
+### Logical
+
+#### When
+
+It's a ternary operator in function form.
+
+Given three scalar values, it's truly a ternary operation:
+
+```php
+f\when(true, 'yep', 'nope'); // 'yep'
+f\when(false, 'yep', 'nope'); // 'nope'
+```
+
+But given functions, it gets a little more interesting:
+
+```php
+$givePoints = f\when(
+    f\prop_equals('type', 'superuser'),
+    f\concat(['points' => 100]),
+    f\concat(['points' => 50])
+);
+$customer = ['name' => 'Joe', 'type' => 'regular'];
+$givePoints($customer); // ['name' => 'Joe', 'type' => 'regular', 'points' => 50];
+$superCustomer = ['name' => 'Hank', 'type' => 'superuser'];
+$givePoints($superCustomer); // ['name' => 'Hank', 'type' => 'superuser', 'points' => 100]; 
+``` 
+
+The fourth argument is passed into all the given functions.
+
+#### Equals
+
+Equality check in function form.
+
+```php
+f\equals(1, 2); // false
+f\equals('Hello', 'Hello'); // true
+f\equals('1', 1); // false
+```
+
+#### PropEquals
+
+Check equality with an object property.
+
+```php
+$musician = ['first_name' => 'Miles', 'last_name' => 'Davis'];
+f\prop_equals('first_name', 'Miles', $musician); // true
+```
+
+It's curried as usual, making this an excellent predicate function for `filter`.
+
+```php
+$trumpetPlayers = f\filter(f\prop_equals('instrument', 'trumpet'), $musicians);
+```
+
+#### Either
+
+Returns the left argument if truthy, otherwise the right argument.  
+Can be used for default values:
+
+```php
+$name = f\either(f\prop('name', $user), 'Anonymous');
+```
+
+#### Gt
+
+Returns true if the given value is greater than the predicate.
+
+```php
+f\gt(10, 100); // true
+f\gt(10, 5); // false
+```
+
+#### Lt
+
+Returns true if the given value is less than the predicate.
+
+```php
+f\lt(10, 5); // true
+f\lt(10, 100); // false
+```
 
 ### Math
 
