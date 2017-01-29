@@ -41,6 +41,7 @@
       "library/Garp/Functional/Id.php",
       "library/Garp/Functional/Instance.php",
       "library/Garp/Functional/Join.php",
+      "library/Garp/Functional/LensOver.php",
       "library/Garp/Functional/Lt.php",
       "library/Garp/Functional/Map.php",
       "library/Garp/Functional/None.php",
