@@ -49,6 +49,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [None](#none)
 - [Find](#find)
 - [Prop](#prop)
+- [PropSet](#propset)
 - [Pick](#pick) 
 - [Join](#join) 
 - [Split](#split)
@@ -180,6 +181,16 @@ f\prop('bin', $foo); // null
 $name = 'Miles';
 f\prop(0, $name); // 'M'
 f\prop(3, $name); // 'e'
+```
+
+#### PropSet
+
+Create a copy of the given list or object with the given property mutated.
+
+```php
+$miles = ['first_name' => 'Miles', 'Davis'];
+$john = f\prop_set('first_name', 'John', $miles); // ['first_name' => 'John', 'last_name' => 'Davis']
+$miles; // Unchanged: ['first_name' => 'Miles', 'last_name' => 'Davis']
 ```
 
 #### Pick
