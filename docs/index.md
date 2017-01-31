@@ -41,49 +41,49 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 
 [Lists](#lists)
 
-- [Map](#map)
-- [Filter](#filter)
-- [Reduce](#reduce) 
-- [Every](#every) 
-- [Some](#some)
-- [None](#none)
-- [Find](#find)
-- [Prop](#prop)
-- [PropSet](#propset)
-- [Pick](#pick) 
-- [Join](#join) 
-- [Split](#split)
-- [Concat](#concat)
-- [ConcatRight](#concatright)
-- [Flatten](#flatten) 
-- [Sort](#sort) 
-- [Usort](#usort)
-- [Reindex](#reindex)
+- [map](#map)
+- [filter](#filter)
+- [reduce](#reduce) 
+- [every](#every) 
+- [some](#some)
+- [none](#none)
+- [find](#find)
+- [prop](#prop)
+- [prop_set](#propset)
+- [pick](#pick) 
+- [join](#join) 
+- [split](#split)
+- [concat](#concat)
+- [concat_right](#concatright)
+- [flatten](#flatten) 
+- [sort](#sort) 
+- [usort](#usort)
+- [reindex](#reindex)
 
 [Functional](#functional)
 
-- [Compose](#compose) 
-- [Partial](#partial)
-- [PartialRight](#partialright)
-- [Not](#not) 
-- [Unary](#unary)
-- [Call](#call)
-- [Flip](#flip)
-- [Id](#id)
-- [Instance](#instance)
+- [compose](#compose) 
+- [partial](#partial)
+- [partial_right](#partialright)
+- [not](#not) 
+- [unary](#unary)
+- [call](#call)
+- [flip](#flip)
+- [id](#id)
+- [instance](#instance)
 
 [Logical](#logical)
 
-- [When](#when)
-- [Equals](#equals)
-- [PropEquals](#propequals)
-- [Either](#either)
-- [Gt](#gt)
-- [Lt](#lt)
+- [when](#when)
+- [equals](#equals)
+- [prop_equals](#propequals)
+- [either](#either)
+- [gt](#gt)
+- [lt](#lt)
 
 [Math](#math)
-- [Add](#add)
-- [Subtract](#subtract)
+- [add](#add)
+- [subtract](#subtract)
 
 _Note: code examples assume the library is loaded with `use Garp\Functional as f;`_
 
@@ -91,7 +91,7 @@ _Note: code examples assume the library is loaded with `use Garp\Functional as f
 
 _Note: list functions are generally designed to work with both numerically indexed and associative arrays, iterable objects and strings._
 
-#### Map
+#### map
 
 Curried version of `array_map`. 
 
@@ -100,7 +100,7 @@ $names = ['Miles Davis', 'John Coltrane'];
 f\map(f\split(' '), $names); // [['Miles', 'Davis'], ['John', 'Coltrane']]
 ```
 
-#### Filter
+#### filter
 
 Curried version of `array_filter`.
 
@@ -111,7 +111,7 @@ f\filter(f\equals('Miles Davis'), $names); // ['Miles Davis']
 
 (see also: [find](#find))
 
-#### Reduce
+#### reduce
 
 Curried version of `array_reduce`:
 
@@ -120,7 +120,7 @@ $numbers = [20, 43, 15, 12];
 $sum = f\reduce('f\add', 0, $numbers); // 90
 ```
 
-#### Every
+#### every
 
 Returns true if all items in the list match the predicate function.
 
@@ -130,7 +130,7 @@ f\every('is_int', $numbers); // true
 f\every(f\gt(50), $numbers); // false
 ```
 
-#### Some
+#### some
 
 Returns true if some of the items in the list match the predicate function.
 
@@ -141,7 +141,7 @@ f\some(f\gt(50), $numbers); // true
 f\some('is_string', $numbers); // false
 ```
 
-#### None
+#### none
 
 Returns true when none of the items in the list match the predicate function.
 
@@ -151,7 +151,7 @@ f\none('is_string', $numbers); // true
 f\none(f\gt(50), $numbers); // false
 ```
 
-#### Find
+#### find
 
 Basically combines `filter` with a `prop(0)` call: it filters a collection and returns the first
 match.
@@ -162,7 +162,7 @@ f\find(f\gt(20), $numbers); // 23
 f\find(f\gt(200), $numbers); // null
 ```
 
-#### Prop
+#### prop
 
 Take a property from a collection.  
 Accepts objects, arrays, even stings.
@@ -183,7 +183,7 @@ f\prop(0, $name); // 'M'
 f\prop(3, $name); // 'e'
 ```
 
-#### PropSet
+#### prop_set
 
 Create a copy of the given list or object with the given property mutated.
 
@@ -193,7 +193,7 @@ $john = f\prop_set('first_name', 'John', $miles); // ['first_name' => 'John', 'l
 $miles; // Unchanged: ['first_name' => 'Miles', 'last_name' => 'Davis']
 ```
 
-#### Pick
+#### pick
 
 Create an array from a subset of properties from the given object.
 
@@ -205,7 +205,7 @@ $musician = ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 't
 f\pick(['first_name', 'instrument'], $musician); // ['first_name' => 'Miles', 'instrument' => 'trumpet']
 ```
 
-#### Join
+#### join
 
 Join a collection, and add a separator between the items.
 
@@ -214,7 +214,7 @@ $spices = ['nutmeg', 'clove', 'cinnamon'];
 f\join('_', $spices); // 'nutmeg_clove_cinnamon'
 ```
 
-#### Split
+#### split
 
 Split a string into an array.
 
@@ -223,7 +223,7 @@ $musician = 'Miles Davis';
 f\split(' ', $musician); // ['Miles', 'Davis']
 ```
 
-#### Concat
+#### concat
 
 Concatenate two lists. (strings are also lists)
 
@@ -246,7 +246,7 @@ $b = [ 'first_name' => 'John' ];
 f\concat($a, $b); // ['first_name' => 'John', 'last_name' => 'Davis']
 ```
 
-#### ConcatRight
+#### concat_right
 
 Same as `concat`, but flips the order in which the arguments are concatenated.  
 Especially interesting when dealing with associative arrays: this function lets the left side
@@ -261,7 +261,7 @@ $b = [ 'first_name' => 'John' ];
 f\concat_right($a, $b); // ['first_name' => 'Miles', 'last_name' => 'Davis'] 
 ```
 
-#### Flatten
+#### flatten
 
 Flatten an array of arrays into a single array.
 
@@ -270,7 +270,7 @@ $data = [1, 2, [3, 4, 5, [6, 7], 8], 9, [], 10];
 f\flatten($data); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
-#### Sort
+#### sort
 
 Sort an array. A pure version of the native `sort`.  
 Does not mutate the original array.
@@ -281,7 +281,7 @@ $sortedSpices = f\sort($spices); // ['Cinnamon', 'Clove', 'Nutmeg']
 $spices; // ['Nutmeg', 'Clove', 'Cinnamon']
 ```
 
-#### Usort
+#### usort
 
 Same as `sort`, but is a version of the native `usort`.
 
@@ -295,7 +295,7 @@ f\usort(
 ); // ['clove', 'cumin', 'nutmeg', 'allspice']
 ```
 
-#### Reindex
+#### reindex
 
 Alias for the native `array_values`.  
 I tend to use `array_values` a lot after `array_filter`, but the name `array_values` does not really
@@ -309,7 +309,7 @@ f\reindex($strings); // [0 => 'abc', 1 => 'def']
 
 ### Functional
 
-#### Compose
+#### compose
 
 Compose functions together. Execution order is right to left, as is traditional.
 It mimics a manual approach. e.g. `compose(foo, bar, baz)($args)` equals `foo(bar(baz($args)))`.
@@ -324,7 +324,7 @@ $getInitials('Miles Davis'); // M. D.
 If you start at the right side you can follow along with the path your arguments will travel through 
 the functional pipeline.
 
-#### Partial
+#### partial
 
 Partially apply a function from the left side.
 
@@ -333,7 +333,7 @@ $splitOnSpace = f\partial('explode', ' ');
 $splitOnSpace('Hello World'); // ['Hello', 'World']
 ```
 
-#### PartialRight
+#### partial_right
 
 Partially apply a function from the right side.
 
@@ -342,7 +342,7 @@ $splitHelloWorld = f\partial('explode', 'Hello World');
 $splitHelloWorld(' '); // ['Hello', 'World']
 ```
 
-#### Not
+#### not
 
 Create a new function that negates the outcome of the given function.
 
@@ -352,7 +352,7 @@ $noString('Hello world'); // false
 $noString(123); // true
 ```
 
-#### Unary
+#### unary
 
 Creates a new function that passes only the first argument thru to the given function.
 
@@ -386,7 +386,7 @@ $stuff = array('abc', array(), 123, true);
 $hasArray($stuff); // true
 ``` 
 
-#### Call
+#### call
 
 Call a method on an object.
 
@@ -396,7 +396,7 @@ $users = $database->fetchUsers();
 $names = f\map(f\call('getName'), $users); // array of names
 ```
 
-#### Flip
+#### flip
 
 Flip the order of the first two arguments of a function.
 
@@ -408,7 +408,7 @@ $concat('Hello', 'world'); // 'Helloworld'
 f\flip($concat)('Hello', 'world'); // 'worldHello'
 ```
 
-#### Id
+#### id
 
 Identity function, returns what it's given.   
 Useful in places that expect a callback function but you don't want to mutate anything. For instance
@@ -420,7 +420,7 @@ $spices = ['clove', 'nutmeg', 'allspice', 'cumin'];
 $spices === f\id($spices); // true
 ``` 
 
-#### Instance
+#### instance
 
 Makes the PHP language a little more expressive.
 PHP 5.4 allows chaining of new instances like so;
@@ -443,7 +443,7 @@ instance('Foo_Bar_Baz'); // new Foo_Bar_Baz()
 
 ### Logical
 
-#### When
+#### when
 
 It's a ternary operator in function form.
 
@@ -470,7 +470,7 @@ $givePoints($superCustomer); // ['name' => 'Hank', 'type' => 'superuser', 'point
 
 The fourth argument is passed into all the given functions.
 
-#### Equals
+#### equals
 
 Equality check in function form.
 
@@ -480,7 +480,7 @@ f\equals('Hello', 'Hello'); // true
 f\equals('1', 1); // false
 ```
 
-#### PropEquals
+#### prop_equals
 
 Check equality with an object property.
 
@@ -495,7 +495,7 @@ It's curried as usual, making this an excellent predicate function for `filter`.
 $trumpetPlayers = f\filter(f\prop_equals('instrument', 'trumpet'), $musicians);
 ```
 
-#### Either
+#### either
 
 Returns the left argument if truthy, otherwise the right argument.  
 Can be used for default values:
@@ -504,7 +504,7 @@ Can be used for default values:
 $name = f\either(f\prop('name', $user), 'Anonymous');
 ```
 
-#### Gt
+#### gt
 
 Returns true if the given value is greater than the predicate.
 
@@ -513,7 +513,7 @@ f\gt(10, 100); // true
 f\gt(10, 5); // false
 ```
 
-#### Lt
+#### lt
 
 Returns true if the given value is less than the predicate.
 
@@ -524,7 +524,7 @@ f\lt(10, 100); // false
 
 ### Math
 
-#### Add
+#### add
 
 Adds two numbers.
 
@@ -533,7 +533,7 @@ f\add(10, 20); // 30
 f\add(10)(20); // 30
 ```
 
-#### Subtract
+#### subtract
 
 Subtracts the left argument from the right argument.
 
