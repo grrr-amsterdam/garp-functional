@@ -7,7 +7,7 @@
 namespace Garp\Functional;
 
 /**
- * Ternary operator in function-form.
+ * Ternary operator in function form.
  * Allows functions for the first 3 arguments in which case $subject will be passed into them to get
  * to the result, as well as determine which branch to take.
  *
