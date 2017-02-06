@@ -80,6 +80,10 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Gt](#gt)
 - [Lt](#lt)
 
+[Strings](#strings)
+- [Match](#match)
+- [Replace](#replace)
+
 [Math](#math)
 - [Add](#add)
 - [Subtract](#subtract)
@@ -509,6 +513,26 @@ Returns true if the given value is less than the predicate.
 ```php
 f\lt(10, 5); // true
 f\lt(10, 100); // false
+```
+
+### Strings
+
+#### Match
+
+Returns true if the given value matches the regular expression:
+
+```php
+f\match('/^\d+$/', '12345'); // true
+f\filter(f\match('/^\d+$/'), ['123', 'abc', '456']); // ['123', '456']
+```
+
+#### Replace
+
+Curried `preg_replace`, basically:
+
+```php
+f\replace('/(hello)/', 'goodbye', 'hello world'); // 'goodbye world'
+f\map(f\replace('/(\d)/', 'x'), ['123', 'abc', '456', ['90']]); // ['xxx', 'abc', 'xxx', ['90']] 
 ```
 
 ### Math
