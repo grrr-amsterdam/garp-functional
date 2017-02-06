@@ -23,4 +23,8 @@ class MockMusician {
         $this->_first = $first;
         $this->_last = $last;
     }
+
+    public function __toString() {
+        return $this->_first . ' ' . $this->_last;
+    }
 }
