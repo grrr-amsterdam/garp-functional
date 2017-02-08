@@ -50,6 +50,8 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Find](#find)
 - [Prop](#prop)
 - [Pick](#pick) 
+- [Head](#head)
+- [Tail](#tail)
 - [Join](#join) 
 - [Split](#split)
 - [Concat](#concat)
@@ -196,6 +198,26 @@ f\pick([1, 2], $spices); // [1 => 'clove', 2 => 'cinnamon']
 
 $musician = ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'];
 f\pick(['first_name', 'instrument'], $musician); // ['first_name' => 'Miles', 'instrument' => 'trumpet']
+```
+
+#### Head
+
+Get the head of a list.
+
+```php
+$spices = ['nutmeg', 'clove', 'cinnamon'];
+f\head($spices); // 'nutmeg'
+f\head('Miles'); // 'M'
+```
+
+#### Tail
+
+Get the tail of a list.
+
+```php
+$spices = ['nutmeg', 'clove', 'cinnamon'];
+f\tail($spices); // ['clove', 'cinnamon']
+f\tail('Miles'); // 'iles'
 ```
 
 #### Join

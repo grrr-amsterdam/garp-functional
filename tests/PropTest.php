@@ -37,6 +37,14 @@ class PropTest extends TestCase {
         $this->assertNull(f\prop('question', $obj));
     }
 
+    public function test_should_read_from_traversable() {
+        $spiceIterator = new MockSpiceTraverser();
+        $this->assertEquals(
+            'nutmeg',
+            f\prop(0, $spiceIterator)
+        );
+    }
+
     public function test_should_be_curried() {
         $this->assertTrue(is_callable(f\prop('foo')));
         $getRed = f\prop('red');

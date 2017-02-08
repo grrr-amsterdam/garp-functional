@@ -17,7 +17,8 @@ namespace Garp\Functional;
 function prop($key, $collection = null) {
     $getter = function ($collection) use ($key) {
         if (is_object($collection)) {
-            return property_exists($collection, $key) ? $collection->{$key} : null;
+            return property_exists($collection, $key) ? $collection->{$key} :
+                ($collection instanceof \ArrayAccess ? $collection[$key] : null);
         }
         return isset($collection[$key]) ? $collection[$key] : null;
     };

@@ -38,6 +38,7 @@
       "library/Garp/Functional/Flatten.php",
       "library/Garp/Functional/Flip.php",
       "library/Garp/Functional/Gt.php",
+      "library/Garp/Functional/Head.php",
       "library/Garp/Functional/Id.php",
       "library/Garp/Functional/Instance.php",
       "library/Garp/Functional/Join.php",
@@ -59,6 +60,7 @@
       "library/Garp/Functional/Sort.php",
       "library/Garp/Functional/Split.php",
       "library/Garp/Functional/Subtract.php",
+      "library/Garp/Functional/Tail.php",
       "library/Garp/Functional/Unary.php",
       "library/Garp/Functional/Usort.php",
       "library/Garp/Functional/When.php"

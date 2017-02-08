@@ -6,7 +6,7 @@
  * @author   Harmen Janssen <harmen@grrr.nl>
  * @license  https://github.com/grrr-amsterdam/garp-functional/blob/master/LICENSE.md BSD-3-Clause
  */
-class MockSpiceTraverser implements Iterator {
+class MockSpiceTraverser implements Iterator, ArrayAccess {
     private $_position = 0;
     private $_spices = array(
         'nutmeg', 'cinnamon', 'clove'
@@ -34,5 +34,25 @@ class MockSpiceTraverser implements Iterator {
 
     function valid() {
         return isset($this->_spices[$this->_position]);
+    }
+
+    function offsetExists($offset) {
+        return isset($this->_spices[$offset]);
+    }
+
+    function offsetGet($offset) {
+        return isset($this->_spices[$offset]) ? $this->_spices[$offset] : null;
+    }
+
+    function offsetUnset($offset) {
+        unset($this->_spices[$offset]);
+    }
+
+    function offsetSet($offset, $value) {
+        if (is_null($offset)) {
+            $this->_spices[] = $value;
+        } else {
+            $this->_spices[$offset] = $value;
+        }
     }
 }
