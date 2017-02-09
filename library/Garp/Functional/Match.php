@@ -11,7 +11,7 @@ namespace Garp\Functional;
  *
  * @param mixed $regex
  * @param mixed $subject
- * @return bool
+ * @return bool|array FALSE if no match is made, but an array of matches otherwise
  */
 function match($regex, $subject = null) {
     $matcher = function ($subject) use ($regex) {
@@ -20,7 +20,8 @@ function match($regex, $subject = null) {
         ) {
             return false;
         }
-        return 1 === preg_match($regex, strval($subject));
+        $success = preg_match($regex, strval($subject), $matches);
+        return $success ? $matches : false;
     };
     return is_null($subject) ? $matcher : $matcher($subject);
 }

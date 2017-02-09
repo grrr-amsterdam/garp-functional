@@ -10,11 +10,23 @@ use Garp\Functional as f;
 class MatchTest extends TestCase {
 
     public function test_should_match_strings() {
-        $this->assertTrue(
+        $this->assertEquals(
+            array('12345'),
             f\match('/^\d+$/', '12345')
         );
         $this->assertFalse(
             f\match('/^hello$/', 'goodbye')
+        );
+    }
+
+    public function test_should_return_matches() {
+        $this->assertEquals(
+            array('Hello world', 'Hello'),
+            f\match('/([a-zA-Z]+) world/', 'Hello world')
+        );
+        $this->assertEquals(
+            array('Goodbye world', 'Goodbye'),
+            f\match('/([a-zA-Z]+) world/', 'Goodbye world')
         );
     }
 
@@ -33,7 +45,7 @@ class MatchTest extends TestCase {
     public function test_should_match_objects_that_support_tostring() {
         $musician = new MockMusician('Miles', 'Davis');
         $this->assertTrue(
-            f\match('/Miles Davis/', $musician)
+            !!f\match('/Miles Davis/', $musician)
         );
         $this->assertFalse(
             f\match('/John Coltrane/', $musician)
