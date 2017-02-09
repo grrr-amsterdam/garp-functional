@@ -541,10 +541,11 @@ f\lt(10, 100); // false
 
 #### Match
 
-Returns true if the given value matches the regular expression:
+Returns the matches if the given value matches the regular expression:
 
 ```php
-f\match('/^\d+$/', '12345'); // true
+f\match('/^\d+$/', '12345'); // ['12345']
+f\match('/([a-zA-Z]+) world/', 'Hello world'); // ['Hello world', 'Hello']
 f\filter(f\match('/^\d+$/'), ['123', 'abc', '456']); // ['123', '456']
 ```
 

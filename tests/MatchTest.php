@@ -62,4 +62,11 @@ class MatchTest extends TestCase {
         );
     }
 
+    public function test_usage_with_filter() {
+        $this->assertEquals(
+            array('123', '456'),
+            f\reindex(f\filter(f\match('/^\d+$/'), ['123', 'abc', '456']))
+        );
+    }
+
 }
