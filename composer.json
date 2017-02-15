@@ -1,5 +1,5 @@
 {
-  "name": "harmen/garp-functional",
+  "name": "grrr-amsterdam/garp-functional",
   "description": "Utility library embracing functional programming paradigms.",
   "type": "library",
   "require-dev": {
