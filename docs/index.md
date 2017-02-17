@@ -66,6 +66,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Compose](#compose) 
 - [Partial](#partial)
 - [PartialRight](#partialright)
+- [Always](#always)
 - [Not](#not) 
 - [Unary](#unary)
 - [Call](#call)
@@ -367,6 +368,15 @@ Partially apply a function from the right side.
 $splitHelloWorld = f\partial('explode', 'Hello World');
 $splitHelloWorld(' '); // ['Hello', 'World']
 ```
+
+#### Always
+
+Returns a function that always returns the given argument.  
+
+```php
+$alwaysMiles = f\always('Miles Davis');
+$alwaysMiles(1, 2, 3); // 'Miles Davis'
+``` 
 
 #### Not
 

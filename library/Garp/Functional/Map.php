@@ -25,5 +25,5 @@ function map($fn, $collection = null) {
         }
         return $out;
     };
-    return is_null($collection) ? $mapper : $mapper($collection);
+    return func_num_args() < 2 ? $mapper : $mapper($collection);
 }

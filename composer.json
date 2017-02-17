@@ -26,6 +26,7 @@
     },
     "files": [
       "library/Garp/Functional/Add.php",
+      "library/Garp/Functional/Always.php",
       "library/Garp/Functional/Both.php",
       "library/Garp/Functional/Call.php",
       "library/Garp/Functional/Compose.php",

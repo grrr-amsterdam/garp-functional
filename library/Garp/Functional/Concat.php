@@ -26,8 +26,8 @@ function concat($left = null, $right = null) {
             __FUNCTION__ . ' can only concat arrays or strings'
         );
     };
-    if (is_null($left)) {
+    if (!func_num_args()) {
         return partial('Garp\Functional\concat');
     }
-    return is_null($right) ? $concatter : $concatter($right);
+    return func_num_args() === 1 ? $concatter : $concatter($right);
 }

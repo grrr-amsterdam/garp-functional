@@ -21,5 +21,5 @@ function join($separator, $list = null) {
         }
         return implode($separator, $list);
     };
-    return is_null($list) ? $joiner : $joiner($list);
+    return func_num_args() < 2 ? $joiner : $joiner($list);
 }

@@ -23,5 +23,5 @@ function match($regex, $subject = null) {
         $success = preg_match($regex, strval($subject), $matches);
         return $success ? $matches : false;
     };
-    return is_null($subject) ? $matcher : $matcher($subject);
+    return func_num_args() < 2 ? $matcher : $matcher($subject);
 }

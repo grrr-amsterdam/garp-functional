@@ -12,7 +12,7 @@ namespace Garp\Functional;
  * @param array $collection
  * @return array
  */
-function sort(array $collection = null) {
+function sort(array $collection) {
     // make a copy of the array as to not disturb the original
     $copy = $collection;
     \sort($copy);

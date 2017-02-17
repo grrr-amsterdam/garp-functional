@@ -21,4 +21,12 @@ class IdTest extends TestCase {
         $this->assertEquals($miles, f\id($miles));
     }
 
+    public function test_it_should_be_curried() {
+        $this->assertTrue(is_callable(f\id()));
+        $this->assertEquals(
+            'Banana!',
+            call_user_func(f\id(), 'Banana!')
+        );
+    }
+
 }

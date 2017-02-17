@@ -7,14 +7,14 @@
 namespace Garp\Functional;
 
 /**
- * Returns the given argument.
+ * Returns a function that will always return the given argument.
+ * Also known as `const`, or the `K` combinator.
  *
  * @param mixed $it
  * @return mixed
  */
-function id($it = null) {
-    if (!func_num_args()) {
-        return partial('Garp\Functional\Id');
-    }
-    return $it;
+function always($it = null) {
+    return function () use ($it) {
+        return $it;
+    };
 }

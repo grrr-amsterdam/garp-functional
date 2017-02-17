@@ -18,5 +18,5 @@ Function find($fn, $collection = null) {
         $filtered = filter($fn, $collection);
         return current($filtered) ?: null;
     };
-    return is_null($collection) ? $finder : $finder($collection);
+    return func_num_args() < 2 ? $finder : $finder($collection);
 }

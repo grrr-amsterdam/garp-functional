@@ -18,5 +18,5 @@ function prop_equals($prop, $value, $obj = null) {
     $checker = function ($obj) use ($prop, $value) {
         return prop($prop, $obj) === $value;
     };
-    return is_null($obj) ? $checker : $checker($obj);
+    return func_num_args() < 3 ? $checker : $checker($obj);
 }

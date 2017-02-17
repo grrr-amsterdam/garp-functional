@@ -58,14 +58,16 @@ class MatchTest extends TestCase {
         $data = array(123, 'abc', array('90'), 456);
         $this->assertEquals(
             array(123, 456),
-            f\reindex(f\filter($isNumeric, $data))
+            f\filter($isNumeric, $data)
         );
     }
 
     public function test_usage_with_filter() {
+        $isNumeric = f\match('/^\d+$/');
+        $this->assertTrue(is_callable($isNumeric));
         $this->assertEquals(
             array('123', '456'),
-            f\reindex(f\filter(f\match('/^\d+$/'), ['123', 'abc', '456']))
+            f\filter($isNumeric, ['123', 'abc', '456'])
         );
     }
 

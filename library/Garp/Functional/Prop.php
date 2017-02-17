@@ -22,5 +22,5 @@ function prop($key, $collection = null) {
         }
         return isset($collection[$key]) ? $collection[$key] : null;
     };
-    return is_null($collection) ? $getter : $getter($collection);
+    return func_num_args() < 2 ? $getter : $getter($collection);
 }

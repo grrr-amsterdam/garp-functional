@@ -17,5 +17,5 @@ function split($separator, $subject = null) {
     $splitter = function ($subject) use ($separator) {
         return explode($separator, $subject);
     };
-    return is_null($subject) ? $splitter : $splitter($subject);
+    return func_num_args() < 2 ? $splitter : $splitter($subject);
 }

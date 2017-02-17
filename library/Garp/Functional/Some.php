@@ -22,5 +22,5 @@ function some($callback, $collection = null) {
         }
         return false;
     };
-    return is_null($collection) ? $checker : $checker($collection);
+    return func_num_args() < 2 ? $checker : $checker($collection);
 }

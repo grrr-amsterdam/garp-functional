@@ -14,7 +14,7 @@ namespace Garp\Functional;
  * @return mixed
  */
 function concat_right($right, $left = null) {
-    if (is_null($left)) {
+    if (func_num_args() < 2) {
         return partial_right('Garp\Functional\concat', $right);
     }
     return concat($left, $right);

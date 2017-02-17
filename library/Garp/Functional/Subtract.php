@@ -18,5 +18,5 @@ function substract($left, $right = null) {
     $subtractor = function ($right) use ($left) {
         return $right - $left;
     };
-    return is_null($right) ? $subtractor : $subtractor($right);
+    return func_num_args() < 2 ? $subtractor : $subtractor($right);
 }
