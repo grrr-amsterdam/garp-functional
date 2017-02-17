@@ -35,4 +35,26 @@ class EitherTest extends TestCase {
         );
     }
 
+    public function test_returns_new_function_when_given_at_least_one_function() {
+        $users = array(
+            array('name' => 'Hank', 'role' => 'admin'),
+            array('name' => 'Julia', 'role' => 'basic'),
+            array('name' => 'Lisa', 'role' => 'admin'),
+            array('name' => 'Gerald')
+        );
+        $getBasicUsers = f\filter(
+            f\either(
+                f\not(f\prop('role')),
+                f\prop_equals('role', 'basic')
+            )
+        );
+        $this->assertEquals(
+            array(
+                array('name' => 'Julia', 'role' => 'basic'),
+                array('name' => 'Gerald')
+            ),
+            $getBasicUsers($users)
+        );
+    }
+
 }

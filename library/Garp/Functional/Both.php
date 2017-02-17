@@ -7,19 +7,20 @@
 namespace Garp\Functional;
 
 /**
- * Get either the left argument if true, otherwise the right argument.
+ * Return true if both arguments are truthy.
  *
  * @param mixed $left
  * @param mixed $right
  * @return mixed
  */
-function either($left, $right) {
+function both($left, $right) {
     if (is_callable($left) || is_callable($right)) {
         return function () use ($left, $right) {
             $leftVal = is_callable($left) ? call_user_func_array($left, func_get_args()) : $left;
-            return $leftVal ?:
-                (is_callable($right) ? call_user_func_array($right, func_get_args()) : $right);
+            $rightVal = is_callable($right) ?
+                call_user_func_array($right, func_get_args()) : $right;
+            return $leftVal && $rightVal;
         };
     }
-    return $left ?: $right;
+    return $left && $right;
 }
