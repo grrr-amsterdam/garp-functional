@@ -78,7 +78,9 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [When](#when)
 - [Equals](#equals)
 - [PropEquals](#propequals)
+- [Truthy](#truthy)
 - [Either](#either)
+- [Both](#both)
 - [Gt](#gt)
 - [Lt](#lt)
 
@@ -108,11 +110,20 @@ f\map(f\split(' '), $names); // [['Miles', 'Davis'], ['John', 'Coltrane']]
 #### Filter
 
 Curried version of `array_filter`.
+Note that this version of filter reindexes numeric arrays. It's closer to array filtering found in
+other languages, where this often is the case.  
+And frankly, it drives me up the walls to filter an array in PHP and getting back a mutant array 
+with keys starting at 5 with large gaps in between.  
+So this an opinionated version of `array_filter`, I guess.
 
 ```php
 $names = ['Miles Davis', 'John Coltrane'];
 f\filter(f\equals('Miles Davis'), $names); // ['Miles Davis']
-```
+
+// I will preserve string indexes:
+$numbers = ['hundred' => 100, 'three' => 3, 'fiftytwo' => 52];
+f\filter(f\gt(50), $numbers); // ['hundred' => 100, 'fiftytwo' => 52]
+``` 
 
 (see also: [find](#find))
 
@@ -510,6 +521,26 @@ It's curried as usual, making this an excellent predicate function for `filter`.
 $trumpetPlayers = f\filter(f\prop_equals('instrument', 'trumpet'), $musicians);
 ```
 
+#### Truthy
+
+Returns wether the given argument is truthy.
+
+```php
+f\truthy(12345); // true
+f\truthy(false); // false
+f\truthy(''); // false
+f\truthy([1, 2, 3]); // true
+```
+
+If given a function, it'll return a new function waiting for input. The funciton's return value will
+be checked for truthiness.
+
+```php
+$isArray = f\truthy('is_array');
+$isArray(array()); // true
+$isArray(123); // false
+```
+
 #### Either
 
 Returns the left argument if truthy, otherwise the right argument.  
@@ -518,6 +549,50 @@ Can be used for default values:
 ```php
 $name = f\either(f\prop('name', $user), 'Anonymous');
 ```
+
+If either the left or the right argument is a function, a new function will be returned. Arguments
+passed to this function will first be pushed thru the given function(s) and its return
+value(s) will be compared.
+
+```php
+$users = [
+    ['name' => 'Hank', 'role' => 'admin'],
+    ['name' => 'Julia', 'role' => 'basic'],
+    ['name' => 'Lisa', 'role' => 'admin'],
+    ['name' => 'Gerald']
+);
+$getBasicUsers = f\filter(
+    f\either(
+        f\not(f\prop('role')),
+        f\prop_equals('role', 'basic')
+    )
+); // [['name' => 'Julia', 'role' => 'basic'], ['name' => 'Gerald']]
+```
+
+(see also: [both](#both) and [when](#when))
+
+#### Both
+
+Returns true if both arguments are truthy.
+
+```php
+f\both(123, 456); // true
+f\both(true, false); // false
+f\both(array(), 123); // false
+f\both('cheese', 'ham'); // true
+```
+
+When either of the arguments is a function, `both` returns a new function waiting for arguments to
+pass to the given function.
+
+```php
+$isMediumNumber = f\both(f\gt(50), f\lt(200));
+$isMediumNumber(67); // true
+$isMediumNumber(199); // true
+$isMediumNumber(10); // false
+$isMediumNumber(600); // false
+```
+
 
 #### Gt
 

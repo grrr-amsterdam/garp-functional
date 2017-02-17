@@ -15,7 +15,7 @@ class FilterTest extends TestCase {
         // Native PHP function.
         $this->assertEquals(
             array(123, 456),
-            array_values(f\filter('is_int', $data))
+            f\filter('is_int', $data)
         );
 
         // Closure
@@ -29,13 +29,13 @@ class FilterTest extends TestCase {
 
         $this->assertEquals(
             array('cinnamon'),
-            array_values($filtered)
+            $filtered
         );
 
         // Class method
         $this->assertEquals(
             array('clove'),
-            array_values(f\filter(array($this, 'isSmallString'), $spices))
+            f\filter(array($this, 'isSmallString'), $spices)
         );
     }
 
@@ -44,7 +44,7 @@ class FilterTest extends TestCase {
         $data = array(123, 'abc', 456, true, array());
         $this->assertTrue(is_callable($getAllStrings));
         $this->assertEquals(
-            array(1 => 'abc'),
+            array('abc'),
             $getAllStrings($data)
         );
     }
@@ -52,7 +52,7 @@ class FilterTest extends TestCase {
     public function test_should_work_with_iterable_objects() {
         $traversable = new MockSpiceTraverser();
         $this->assertEquals(
-            array(2 => 'clove'),
+            array(0 => 'clove'),
             f\filter(array($this, 'isSmallString'), $traversable)
         );
     }
@@ -71,6 +71,15 @@ class FilterTest extends TestCase {
         $this->assertEquals(
             array('Kermit'),
             array_keys($greenMuppets)
+        );
+    }
+
+    public function test_should_reindex_numeric_indexes() {
+        $numbers = array(1000, 30.50, 490, 555);
+        $bigNumbers = f\filter(f\gt(500), $numbers);
+        $this->assertEquals(
+            array(1000, 555),
+            $bigNumbers
         );
     }
 

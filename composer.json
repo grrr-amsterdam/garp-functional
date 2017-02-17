@@ -26,6 +26,7 @@
     },
     "files": [
       "library/Garp/Functional/Add.php",
+      "library/Garp/Functional/Both.php",
       "library/Garp/Functional/Call.php",
       "library/Garp/Functional/Compose.php",
       "library/Garp/Functional/Concat.php",
@@ -61,6 +62,7 @@
       "library/Garp/Functional/Split.php",
       "library/Garp/Functional/Subtract.php",
       "library/Garp/Functional/Tail.php",
+      "library/Garp/Functional/Truthy.php",
       "library/Garp/Functional/Unary.php",
       "library/Garp/Functional/Usort.php",
       "library/Garp/Functional/When.php"

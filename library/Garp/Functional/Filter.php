@@ -17,15 +17,20 @@ namespace Garp\Functional;
 function filter($fn, $collection = null) {
     $filterer = function ($collection) use ($fn) {
         if (is_array($collection)) {
-            return array_filter($collection, $fn);
+            $numericKeys = array_filter(array_keys($collection), 'is_numeric');
+            $isNumericArray = count($numericKeys) === count($collection);
+            $filtered = array_filter($collection, $fn);
+            return $isNumericArray ? array_values($filtered) : $filtered;
         }
         $out = array();
+        $isNumericArray = true;
         foreach ($collection as $index => $item) {
             if (call_user_func($fn, $item)) {
                 $out[$index] = $item;
+                $isNumericArray = is_numeric($index) && $isNumericArray;
             }
         }
-        return $out;
+        return $isNumericArray ? array_values($out) : $out;
     };
     return is_null($collection) ? $filterer : $filterer($collection);
 }
