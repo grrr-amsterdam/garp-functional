@@ -41,4 +41,3 @@ function when($condition, $ifTrue, $ifFalse, $subject = null) {
     }
     return is_callable($ifFalse) ? call_user_func($ifFalse, $subject) : $ifFalse;
 }
-

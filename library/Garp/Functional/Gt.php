@@ -17,5 +17,5 @@ function gt($left, $right = null) {
     $checker = function ($right) use ($left) {
         return $right > $left;
     };
-    return is_null($right) ? $checker : $checker($right);
+    return func_num_args() < 2 ? $checker : $checker($right);
 }

@@ -17,5 +17,5 @@ function add($left, $right = null) {
     $adder = function ($right) use ($left) {
         return $right + $left;
     };
-    return is_null($right) ? $adder : $adder($right);
+    return func_num_args() < 2 ? $adder : $adder($right);
 }

@@ -19,4 +19,10 @@ class EveryTest extends TestCase {
         $this->assertFalse(f\every('is_string', $data));
     }
 
+    public function test_should_be_curried() {
+        $data = array('clove', 123, 'abc', true, array(), false);
+        $naughtButStrings = f\every('is_string');
+        $this->assertTrue(is_callable($naughtButStrings));
+    }
+
 }

@@ -20,5 +20,5 @@ function pick(array $allowed, $collection = null) {
             map(partial_right('Garp\Functional\Prop', $collection), $allowed)
         );
     };
-    return is_null($collection) ? $picker : $picker($collection);
+    return func_num_args() < 2 ? $picker : $picker($collection);
 }

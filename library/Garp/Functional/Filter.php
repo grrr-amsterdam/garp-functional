@@ -32,5 +32,5 @@ function filter($fn, $collection = null) {
         }
         return $isNumericArray ? array_values($out) : $out;
     };
-    return is_null($collection) ? $filterer : $filterer($collection);
+    return func_num_args() < 2 ? $filterer : $filterer($collection);
 }

@@ -13,5 +13,8 @@ namespace Garp\Functional;
  * @return mixed
  */
 function id($it = null) {
+    if (!func_num_args()) {
+        return partial('Garp\Functional\Id');
+    }
     return $it;
 }

@@ -23,5 +23,5 @@ function usort($fn, array $collection = null) {
         \usort($copy, $fn);
         return $copy;
     };
-    return is_null($collection) ? $sorter : $sorter($collection);
+    return func_num_args() < 2 ? $sorter : $sorter($collection);
 }

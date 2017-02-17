@@ -17,5 +17,5 @@ function equals($comparison, $subject = null) {
     $checker = function ($subject) use ($comparison) {
         return $comparison === $subject;
     };
-    return is_null($subject) ? $checker : $checker($subject);
+    return func_num_args() < 2 ? $checker : $checker($subject);
 }

@@ -28,7 +28,7 @@ function prop_set($key, $value = null, $object = null) {
             $copy[$key] = $value;
             return $copy;
         };
-        return is_null($object) ? $realSetter : $realSetter($object);
+        return func_num_args() < 2 ? $realSetter : $realSetter($object);
     };
-    return is_null($object) ? $setter($value) : $setter($value, $object);
+    return func_num_args() < 3 ? $setter($value) : $setter($value, $object);
 }

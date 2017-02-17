@@ -23,5 +23,5 @@ function replace($regex, $replacement, $subject = null) {
         }
         return preg_replace($regex, $replacement, strval($subject));
     };
-    return is_null($subject) ? $replacer : $replacer($subject);
+    return func_num_args() < 3 ? $replacer : $replacer($subject);
 }

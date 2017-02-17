@@ -29,6 +29,7 @@ class BothTest extends TestCase {
 
     public function test_both_should_accept_functions() {
         $isMediumNumber = f\both(f\gt(50), f\lt(200));
+        $this->assertTrue(is_callable($isMediumNumber));
         $this->assertTrue(
             $isMediumNumber(67)
         );
