@@ -56,6 +56,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Split](#split)
 - [Concat](#concat)
 - [ConcatRight](#concatright)
+- [Zip](#zip)
 - [Flatten](#flatten) 
 - [Sort](#sort) 
 - [Usort](#usort)
@@ -289,6 +290,28 @@ $a = [
 $b = [ 'first_name' => 'John' ];
 f\concat_right($a, $b); // ['first_name' => 'Miles', 'last_name' => 'Davis'] 
 ```
+
+#### Zip
+
+Creates a new array by pairing up indexes from the supplied arrays.
+
+```php
+f\zip([1, 2, 3], ['a', 'b', 'c']); // [[1, 'a'], [2, 'b'], [3, 'c']]
+```
+
+`null` will be provided for missing indexes:
+
+```php
+$miles = array('first' => 'Miles', 'last' => 'Davis', 'instrument' => 'Trumpet');
+$john = array('first' => 'John', 'last' => 'Coltrane');
+f\zip($miles, $john); // [
+                      //   'first' => ['Miles', 'John'],
+                      //   'last' => ['Davis', 'Coltrane'],
+                      //   'instrument' => ['Trumpet', null]
+                      // ]
+```
+
+Takes two or more arguments.
 
 #### Flatten
 
