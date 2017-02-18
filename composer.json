@@ -45,6 +45,7 @@
       "library/Garp/Functional/Id.php",
       "library/Garp/Functional/Instance.php",
       "library/Garp/Functional/Join.php",
+      "library/Garp/Functional/Keys.php",
       "library/Garp/Functional/Lt.php",
       "library/Garp/Functional/Lte.php",
       "library/Garp/Functional/Map.php",
@@ -68,7 +69,8 @@
       "library/Garp/Functional/Truthy.php",
       "library/Garp/Functional/Unary.php",
       "library/Garp/Functional/Usort.php",
-      "library/Garp/Functional/When.php"
+      "library/Garp/Functional/When.php",
+      "library/Garp/Functional/Zip.php"
     ]
   },
   "autoload-dev": {

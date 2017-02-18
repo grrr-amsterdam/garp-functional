@@ -14,7 +14,7 @@ namespace Garp\Functional;
  */
 function id($it = null) {
     if (!func_num_args()) {
-        return partial('Garp\Functional\Id');
+        return partial('Garp\Functional\id');
     }
     return $it;
 }
