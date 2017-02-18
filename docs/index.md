@@ -83,7 +83,9 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Either](#either)
 - [Both](#both)
 - [Gt](#gt)
+- [Gte](#gte)
 - [Lt](#lt)
+- [Lte](#lte)
 
 [Strings](#strings)
 - [Match](#match)
@@ -613,6 +615,16 @@ f\gt(10, 100); // true
 f\gt(10, 5); // false
 ```
 
+#### Gt
+
+Returns true if the given value is greater than or equal to the predicate.
+
+```php
+f\gte(10, 100); // true
+f\gte(10, 10); // true
+f\gte(10, 9); // false
+```
+
 #### Lt
 
 Returns true if the given value is less than the predicate.
@@ -620,6 +632,16 @@ Returns true if the given value is less than the predicate.
 ```php
 f\lt(10, 5); // true
 f\lt(10, 100); // false
+```
+
+#### Lte
+
+Returns true if the given value is less than or equal to the predicate.
+
+```php
+f\lte(10, 5); // true
+f\lte(10, 10); // true
+f\lte(10, 100); // false
 ```
 
 ### Strings

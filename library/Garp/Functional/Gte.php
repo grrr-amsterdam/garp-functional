@@ -7,15 +7,15 @@
 namespace Garp\Functional;
 
 /**
- * Checks if $right is less than $left.
+ * Checks if $right is greater than or equal to $left.
  *
  * @param int $left
  * @param int $right
  * @return true
  */
-function lt($left, $right = null) {
+function gte($left, $right = null) {
     $checker = function ($right) use ($left) {
-        return $right < $left;
+        return $right >= $left;
     };
-    return is_null($right) ? $checker : $checker($right);
+    return func_num_args() < 2 ? $checker : $checker($right);
 }
