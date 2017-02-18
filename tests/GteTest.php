@@ -7,24 +7,25 @@ use Garp\Functional as f;
  * @author   Harmen Janssen <harmen@grrr.nl>
  * @license  https://github.com/grrr-amsterdam/garp-functional/blob/master/LICENSE.md BSD-3-Clause
  */
-class LtTest extends TestCase {
+class GteTest extends TestCase {
 
-    public function test_should_check_if_n_is_less() {
+    public function test_should_check_if_n_is_greater() {
         $this->assertTrue(
-            f\lt(20, 10)
+            f\gte(10, 20)
         );
         $this->assertTrue(
-            f\lt(0.52, 0.51)
+            f\gte(0.5, 0.51)
         );
-        $this->assertFalse(f\lt(50, 100));
+        $this->assertTrue(
+            f\gte(100, 100)
+        );
+        $this->assertFalse(f\gte(100, 50));
     }
 
     public function test_should_be_curried() {
-        $lessThan5 = f\lt(5);
-        $this->assertTrue(is_callable($lessThan5));
-        $this->assertTrue($lessThan5(3));
-        $this->assertFalse($lessThan5(5.5));
+        $moreThan5 = f\gte(5);
+        $this->assertTrue(is_callable($moreThan5));
+        $this->assertTrue($moreThan5(10));
     }
 
 }
-
