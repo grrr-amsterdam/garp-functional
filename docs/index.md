@@ -66,6 +66,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Match](#match)
 - [None](#none)
 - [Not](#not) 
+- [Omit](#omit)
 - [Partial](#partial)
 - [PartialRight](#partialright)
 - [Pick](#pick) 
@@ -89,7 +90,7 @@ _Note: code examples assume the library is loaded with `use Garp\Functional as f
 
 _Also note: list functions are generally designed to work with both numerically indexed and associative arrays, iterable objects and strings._
 
-#### Add
+### Add
 
 Adds two numbers.
 
@@ -98,7 +99,7 @@ f\add(10, 20); // 30
 f\add(10)(20); // 30
 ```
 
-#### Always
+### Always
 
 Returns a function that always returns the given argument.  
 
@@ -107,7 +108,7 @@ $alwaysMiles = f\always('Miles Davis');
 $alwaysMiles(1, 2, 3); // 'Miles Davis'
 ``` 
 
-#### Both
+### Both
 
 Returns true if both arguments are truthy.
 
@@ -129,7 +130,7 @@ $isMediumNumber(10); // false
 $isMediumNumber(600); // false
 ```
 
-#### Call
+### Call
 
 Call a method on an object.
 
@@ -139,7 +140,7 @@ $users = $database->fetchUsers();
 $names = f\map(f\call('getName'), $users); // array of names
 ```
 
-#### Compose
+### Compose
 
 Compose functions together. Execution order is right to left, as is traditional.
 It mimics a manual approach. e.g. `compose(foo, bar, baz)($args)` equals `foo(bar(baz($args)))`.
@@ -154,7 +155,7 @@ $getInitials('Miles Davis'); // M. D.
 If you start at the right side you can follow along with the path your arguments will travel through 
 the functional pipeline.
 
-#### Concat
+### Concat
 
 Concatenate two lists. (strings are also lists)
 
@@ -177,7 +178,7 @@ $b = [ 'first_name' => 'John' ];
 f\concat($a, $b); // ['first_name' => 'John', 'last_name' => 'Davis']
 ```
 
-#### ConcatRight
+### ConcatRight
 
 Same as `concat`, but flips the order in which the arguments are concatenated.  
 Especially interesting when dealing with associative arrays: this function lets the left side
@@ -192,7 +193,7 @@ $b = [ 'first_name' => 'John' ];
 f\concat_right($a, $b); // ['first_name' => 'Miles', 'last_name' => 'Davis'] 
 ```
 
-#### Either
+### Either
 
 Returns the left argument if truthy, otherwise the right argument.  
 Can be used for default values:
@@ -222,7 +223,7 @@ $getBasicUsers = f\filter(
 
 (see also: [both](#both) and [when](#when))
 
-#### Equals
+### Equals
 
 Equality check in function form.
 
@@ -232,7 +233,7 @@ f\equals('Hello', 'Hello'); // true
 f\equals('1', 1); // false
 ```
 
-#### Every
+### Every
 
 Returns true if all items in the list match the predicate function.
 
@@ -242,7 +243,7 @@ f\every('is_int', $numbers); // true
 f\every(f\gt(50), $numbers); // false
 ```
 
-#### Filter
+### Filter
 
 Curried version of `array_filter`.
 Note that this version of filter reindexes numeric arrays. It's closer to array filtering found in
@@ -260,7 +261,7 @@ $numbers = ['hundred' => 100, 'three' => 3, 'fiftytwo' => 52];
 f\filter(f\gt(50), $numbers); // ['hundred' => 100, 'fiftytwo' => 52]
 ``` 
 
-#### Find
+### Find
 
 Basically combines `filter` with a `prop(0)` call: it filters a collection and returns the first
 match.
@@ -271,7 +272,7 @@ f\find(f\gt(20), $numbers); // 23
 f\find(f\gt(200), $numbers); // null
 ``` 
 
-#### Flatten
+### Flatten
 
 Flatten an array of arrays into a single array.
 
@@ -280,7 +281,7 @@ $data = [1, 2, [3, 4, 5, [6, 7], 8], 9, [], 10];
 f\flatten($data); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
-#### Flip
+### Flip
 
 Flip the order of the first two arguments of a function.
 
@@ -292,7 +293,7 @@ $concat('Hello', 'world'); // 'Helloworld'
 f\flip($concat)('Hello', 'world'); // 'worldHello'
 ```
 
-#### Gt
+### Gt
 
 Returns true if the given value is greater than the predicate.
 
@@ -301,7 +302,7 @@ f\gt(10, 100); // true
 f\gt(10, 5); // false
 ```
 
-#### Gte
+### Gte
 
 Returns true if the given value is greater than or equal to the predicate.
 
@@ -311,7 +312,7 @@ f\gte(10, 10); // true
 f\gte(10, 9); // false
 ```
 
-#### Head
+### Head
 
 Get the head of a list.
 
@@ -321,7 +322,7 @@ f\head($spices); // 'nutmeg'
 f\head('Miles'); // 'M'
 ```
 
-#### Id
+### Id
 
 Identity function, returns what it's given.   
 Useful in places that expect a callback function but you don't want to mutate anything. For instance
@@ -333,7 +334,7 @@ $spices = ['clove', 'nutmeg', 'allspice', 'cumin'];
 $spices === f\id($spices); // true
 ``` 
 
-#### Instance
+### Instance
 
 Makes the PHP language a little more expressive.
 PHP 5.4 allows chaining of new instances like so;
@@ -354,7 +355,7 @@ Also accepts strings:
 instance('Foo_Bar_Baz'); // new Foo_Bar_Baz()
 ```
 
-#### Join
+### Join
 
 Join a collection, and add a separator between the items.
 
@@ -363,7 +364,7 @@ $spices = ['nutmeg', 'clove', 'cinnamon'];
 f\join('_', $spices); // 'nutmeg_clove_cinnamon'
 ```
 
-#### Keys
+### Keys
 
 Returns the keys of a collection. Works with iterable object as well, contrary to the native
 `array_keys`.
@@ -373,7 +374,7 @@ f\keys(['a', 'b', 'c']); // [0, 1, 2]
 f\keys(['foo' => 123, 'bar' => 456]); // ['foo', 'bar]
 ```
 
-#### Lt
+### Lt
 
 Returns true if the given value is less than the predicate.
 
@@ -382,7 +383,7 @@ f\lt(10, 5); // true
 f\lt(10, 100); // false
 ```
 
-#### Lte
+### Lte
 
 Returns true if the given value is less than or equal to the predicate.
 
@@ -392,7 +393,7 @@ f\lte(10, 10); // true
 f\lte(10, 100); // false
 ```
 
-#### Map
+### Map
 
 Curried version of `array_map`. 
 
@@ -401,7 +402,7 @@ $names = ['Miles Davis', 'John Coltrane'];
 f\map(f\split(' '), $names); // [['Miles', 'Davis'], ['John', 'Coltrane']]
 ```
 
-#### Match
+### Match
 
 Returns the matches if the given value matches the regular expression:
 
@@ -411,7 +412,7 @@ f\match('/([a-zA-Z]+) world/', 'Hello world'); // ['Hello world', 'Hello']
 f\filter(f\match('/^\d+$/'), ['123', 'abc', '456']); // ['123', '456']
 ```
 
-#### None
+### None
 
 Returns true when none of the items in the list match the predicate function.
 
@@ -421,7 +422,7 @@ f\none('is_string', $numbers); // true
 f\none(f\gt(50), $numbers); // false
 ```
 
-#### Not
+### Not
 
 Create a new function that negates the outcome of the given function.
 
@@ -431,7 +432,17 @@ $noString('Hello world'); // false
 $noString(123); // true
 ```
 
-#### Partial
+### Omit
+
+Create a copy of the given array omitting the specified keys.  
+This is the opposite of [pick](#pick).
+
+```php
+$miles = ['first' => 'Miles', 'last' => 'Davis', 'instrument' => 'Trumpet'];
+f\omit(['instrument'], $miles); // ['first' => 'Miles', 'last' => 'Davis']
+```
+
+### Partial
 
 Partially apply a function from the left side.
 
@@ -440,7 +451,7 @@ $splitOnSpace = f\partial('explode', ' ');
 $splitOnSpace('Hello World'); // ['Hello', 'World']
 ```
 
-#### PartialRight
+### PartialRight
 
 Partially apply a function from the right side.
 
@@ -449,7 +460,7 @@ $isTraversableObject = f\partial_right('is_a', 'Traversable');
 $splitHelloWorld([1, 2, 3]); // false
 ```
 
-#### Pick
+### Pick
 
 Create an array from a subset of properties from the given object.
 
@@ -461,7 +472,7 @@ $musician = ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 't
 f\pick(['first_name', 'instrument'], $musician); // ['first_name' => 'Miles', 'instrument' => 'trumpet']
 ```
 
-#### PropEquals
+### PropEquals
 
 Check equality with an object property.
 
@@ -476,7 +487,7 @@ It's curried as usual, making this an excellent predicate function for `filter`.
 $trumpetPlayers = f\filter(f\prop_equals('instrument', 'trumpet'), $musicians);
 ```
 
-#### Prop
+### Prop
 
 Take a property from a collection.  
 Accepts objects, arrays, even stings.
@@ -497,7 +508,7 @@ f\prop(0, $name); // 'M'
 f\prop(3, $name); // 'e'
 ```
 
-#### Reduce
+### Reduce
 
 Curried version of `array_reduce`:
 
@@ -506,7 +517,7 @@ $numbers = [20, 43, 15, 12];
 $sum = f\reduce('f\add', 0, $numbers); // 90
 ```
 
-#### Reindex
+### Reindex
 
 Alias for the native `array_values`.  
 I tend to use `array_values` a lot after `array_filter`, but the name `array_values` does not really
@@ -520,7 +531,7 @@ $strings = array_filter('is_string', $data); // [1 => 'abc', 4 => 'def']
 f\reindex($strings); // [0 => 'abc', 1 => 'def'] 
 ``` 
 
-#### Replace
+### Replace
 
 Curried `preg_replace`, basically:
 
@@ -529,7 +540,7 @@ f\replace('/(hello)/', 'goodbye', 'hello world'); // 'goodbye world'
 f\map(f\replace('/(\d)/', 'x'), ['123', 'abc', '456', ['90']]); // ['xxx', 'abc', 'xxx', ['90']] 
 ```
 
-#### Some
+### Some
 
 Returns true if some of the items in the list match the predicate function.
 
@@ -540,7 +551,7 @@ f\some(f\gt(50), $numbers); // true
 f\some('is_string', $numbers); // false
 ```
 
-#### Sort
+### Sort
 
 Sort an array. A pure version of the native `sort`.  
 Does not mutate the original array.
@@ -551,7 +562,7 @@ $sortedSpices = f\sort($spices); // ['Cinnamon', 'Clove', 'Nutmeg']
 $spices; // ['Nutmeg', 'Clove', 'Cinnamon']
 ```
 
-#### Split
+### Split
 
 Split a string into an array.
 
@@ -560,7 +571,7 @@ $musician = 'Miles Davis';
 f\split(' ', $musician); // ['Miles', 'Davis']
 ```
 
-#### Subtract
+### Subtract
 
 Subtracts the left argument from the right argument.
 
@@ -569,7 +580,7 @@ f\subtract(10, 30); // 20
 f\subtract(10)(30); // 20
 ```
 
-#### Tail
+### Tail
 
 Get the tail of a list.
 
@@ -579,7 +590,7 @@ f\tail($spices); // ['clove', 'cinnamon']
 f\tail('Miles'); // 'iles'
 ```
 
-#### Truthy
+### Truthy
 
 Returns wether the given argument is truthy.
 
@@ -599,7 +610,7 @@ $isArray(array()); // true
 $isArray(123); // false
 ```
 
-#### Unary
+### Unary
 
 Creates a new function that passes only the first argument thru to the given function.
 
@@ -633,7 +644,7 @@ $stuff = array('abc', array(), 123, true);
 $hasArray($stuff); // true
 ``` 
 
-#### Usort
+### Usort
 
 Same as `sort`, but is a version of the native `usort`.
 
@@ -647,7 +658,7 @@ f\usort(
 ); // ['clove', 'cumin', 'nutmeg', 'allspice']
 ```
 
-#### When
+### When
 
 It's a ternary operator in function form.
 
@@ -674,7 +685,7 @@ $givePoints($superCustomer); // ['name' => 'Hank', 'type' => 'superuser', 'point
 
 The fourth argument is passed into all the given functions.
 
-#### Zip
+### Zip
 
 Creates a new array by pairing up indexes from the supplied arrays.  
 Takes two or more arguments.

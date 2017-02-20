@@ -31,6 +31,14 @@ class KeysTest extends TestCase {
             array('first_name', 'last_name'),
             f\keys(new ArrayIterator(array('first_name' => 'Miles', 'last_name' => 'Davis')))
         );
+
+        $obj = new stdClass();
+        $obj->first_name = 'Miles';
+        $obj->last_name = 'Davis';
+        $this->assertEquals(
+            array('first_name', 'last_name'),
+            f\keys($obj)
+        );
     }
 
     public function test_should_work_with_strings() {

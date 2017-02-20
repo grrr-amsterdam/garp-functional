@@ -19,14 +19,17 @@ function keys($collection) {
     if (is_string($collection)) {
         return range(0, strlen($collection)-1);
     }
-    if (!$collection instanceof \Traversable) {
-        throw new \InvalidArgumentException(
-            __FUNCTION__ . ' expects argument 1 to be a collection'
-        );
+    if ($collection instanceof \Traversable) {
+        $out = array();
+        foreach ($collection as $key => $value) {
+            $out[] = $key;
+        }
+        return $out;
     }
-    $out = array();
-    foreach ($collection as $key => $value) {
-        $out[] = $key;
+    if (is_object($collection)) {
+        return array_keys(get_object_vars($collection));
     }
-    return $out;
+    throw new \InvalidArgumentException(
+        __FUNCTION__ . ' expects argument 1 to be a collection'
+    );
 }
