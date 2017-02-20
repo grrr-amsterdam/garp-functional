@@ -62,4 +62,17 @@ class PickTest extends TestCase {
         );
     }
 
+    public function test_superfluous_keys_should_not_be_added_to_the_object() {
+        $data = array(
+            'first_name' => 'Miles',
+            'last_name' => 'Davis',
+            'instrument' => 'trumpet',
+            'country' => 'USA'
+        );
+        $picked = f\pick(array('first_name', 'last_name', 'date_of_birth', 'gender'), $data);
+        $this->assertEquals(
+            array('first_name' => 'Miles', 'last_name' => 'Davis'),
+            $picked
+        );
+    }
 }

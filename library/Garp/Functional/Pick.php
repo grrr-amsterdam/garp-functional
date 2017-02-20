@@ -15,9 +15,13 @@ namespace Garp\Functional;
  */
 function pick(array $allowed, $collection = null) {
     $picker = function ($collection) use ($allowed) {
+        $keys = filter(
+            partial_right('in_array', $allowed),
+            keys($collection)
+        );
         return array_combine(
-            $allowed,
-            map(partial_right('Garp\Functional\Prop', $collection), $allowed)
+            $keys,
+            map(partial_right('Garp\Functional\Prop', $collection), $keys)
         );
     };
     return func_num_args() < 2 ? $picker : $picker($collection);
