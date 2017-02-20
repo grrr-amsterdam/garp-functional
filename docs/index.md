@@ -66,6 +66,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Match](#match)
 - [None](#none)
 - [Not](#not) 
+- [Omit](#omit)
 - [Partial](#partial)
 - [PartialRight](#partialright)
 - [Pick](#pick) 
@@ -429,6 +430,16 @@ Create a new function that negates the outcome of the given function.
 $noString = f\not('is_string');
 $noString('Hello world'); // false
 $noString(123); // true
+```
+
+### Omit
+
+Create a copy of the given array omitting the specified keys.  
+This is the opposite of [pick](#pick).
+
+```php
+$miles = ['first' => 'Miles', 'last' => 'Davis', 'instrument' => 'Trumpet'];
+f\omit(['instrument'], $miles); // ['first' => 'Miles', 'last' => 'Davis']
 ```
 
 ### Partial
