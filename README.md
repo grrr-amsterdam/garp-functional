@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/grrr-amsterdam/garp-functional.svg?branch=develop)](https://travis-ci.org/grrr-amsterdam/garp-functional)
+
 # Garp Functional
 
 Utility library embracing functional programming paradigms.

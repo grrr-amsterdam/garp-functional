@@ -39,6 +39,7 @@
       "library/Garp/Functional/Find.php",
       "library/Garp/Functional/Flatten.php",
       "library/Garp/Functional/Flip.php",
+      "library/Garp/Functional/GroupBy.php",
       "library/Garp/Functional/Gt.php",
       "library/Garp/Functional/Gte.php",
       "library/Garp/Functional/Head.php",
