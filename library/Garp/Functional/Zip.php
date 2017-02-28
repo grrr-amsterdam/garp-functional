@@ -25,7 +25,7 @@ function zip() {
             }
             return $zipped;
         },
-        [],
+        array(),
         func_get_args()
     );
 }
