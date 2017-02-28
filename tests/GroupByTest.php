@@ -79,13 +79,6 @@ class GroupByTest extends TestCase {
     /**
      * @expectedException InvalidArgumentException
      */
-    public function test_should_throw_on_invalid_index() {
-        f\group_by(1, array());
-    }
-
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function test_should_throw_when_index_is_unusable() {
         $users = array(
             array('name' => 'Alice', 'is_admin' => false),
