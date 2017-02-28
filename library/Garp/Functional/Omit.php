@@ -20,13 +20,9 @@ function omit(array $omitted, $collection = null) {
                 $obj[$key] = prop($key, $collection);
                 return $obj;
             },
-            [],
+            array(),
             filter(not(partial_right('in_array', $omitted)), keys($collection))
         );
-        //return array_combine(
-            //$,
-            //map(partial_right('Garp\Functional\Prop', $collection), $allowed)
-        //);
     };
     return func_num_args() < 2 ? $omitter : $omitter($collection);
 }
