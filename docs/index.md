@@ -53,6 +53,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Find](#find)
 - [Flatten](#flatten) 
 - [Flip](#flip)
+- [GroupBy](#groupby)
 - [Gt](#gt)
 - [Gte](#gte)
 - [Head](#head)
@@ -291,6 +292,58 @@ $concat = function ($a, $b) {
 };
 $concat('Hello', 'world'); // 'Helloworld'
 f\flip($concat)('Hello', 'world'); // 'worldHello'
+```
+
+### GroupBy
+
+Returns an array from the given collection, keyed by the given index.
+If index is callable, the collection is keyed by the result of
+calling the function with the given item in the collection.
+
+```php
+$musicians = array(
+    array('name' => 'Miles Davis', 'instrument' => 'trumpet'),
+    array('name' => 'John Coltrane', 'instrument' => 'saxophone'),
+    array('name' => 'Freddy Hubbard', 'instrument' => 'trumpet'),
+    array('name' => 'Herbie Hancock', 'instrument' => 'piano'),
+    array('name' => 'Thelonious Monk', 'instrument' => 'piano')
+);
+f\group_by('instrument', $musicians); 
+
+/**
+ * Result: 
+ *
+ * array(
+ *     'trumpet' => array(
+ *         array('name' => 'Miles Davis', 'instrument' => 'trumpet'),
+ *         array('name' => 'Freddy Hubbard', 'instrument' => 'trumpet'),
+ *     ),
+ *     'saxophone' => array(
+ *         array('name' => 'John Coltrane', 'instrument' => 'saxophone'),
+ *     ),
+ *     'piano' => array(
+ *         array('name' => 'Herbie Hancock', 'instrument' => 'piano'),
+ *         array('name' => 'Thelonious Monk', 'instrument' => 'piano')
+ *     )
+ * )
+ */
+```
+
+Using a function:
+
+```php
+$strings = array('a', 'as', 'asd', 'aa', 'asdf', 'qwer');
+f\group_by('strlen', $strings);
+
+/**
+ * Result:
+ * array(
+ *     1 => array('a'),
+ *     2 => array('as', 'aa'),
+ *     3 => array('asd'),
+ *     4 => array('asdf', 'qwer')
+ * )
+ */
 ```
 
 ### Gt
