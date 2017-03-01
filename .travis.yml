@@ -2,8 +2,8 @@ language: php
 php:
 - '7'
 script:
-- phpunit
-- phpcs .
+- ./vendor/bin/phpunit
+- ./vendor/bin/phpcs .
 before_install:
 - composer install
 notifications:
