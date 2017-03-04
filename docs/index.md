@@ -46,6 +46,8 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Compose](#compose) 
 - [Concat](#concat)
 - [ConcatRight](#concatright)
+- [Drop](#drop)
+- [DropWhile](#dropwhile)
 - [Either](#either)
 - [Equals](#equals)
 - [Every](#every) 
@@ -81,6 +83,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Split](#split)
 - [Subtract](#subtract)
 - [Tail](#tail)
+- [Take](#take)
 - [Truthy](#truthy)
 - [Unary](#unary)
 - [Usort](#usort)
@@ -193,6 +196,35 @@ $a = [
 $b = [ 'first_name' => 'John' ];
 f\concat_right($a, $b); // ['first_name' => 'Miles', 'last_name' => 'Davis'] 
 ```
+
+### Drop
+
+Drop the first `$n` items of a collection.
+
+```php
+f\drop(2, ['foo', 'bar', 'baz']); // ['baz']
+f\drop(6, 'Miles Davis'); // ['D', 'a', 'v', 'i', 's']
+```
+
+### DropWhile
+
+Drop items from the front of a collection until the predicate function returns false.  
+Note that the function stops dropping when it finds a falsey result, so you may end up with items in
+the array that do not match your predicate function:
+
+```php
+$numbers = array(-1, -30, 5, 932, -2, 13);
+$positiveNumbers = f\drop_while(f\lte(0), $numbers);
+
+/**
+ * Result:
+ * array(5, 932, -2, 13);
+ */
+```
+
+See also [take](#take) and [take_while](#take_while).
+
+### DropWhile
 
 ### Either
 
@@ -642,6 +674,46 @@ $spices = ['nutmeg', 'clove', 'cinnamon'];
 f\tail($spices); // ['clove', 'cinnamon']
 f\tail('Miles'); // 'iles'
 ```
+
+### Take
+
+Take `$n` items of a collection:
+
+```php
+f\take(2, ['foo', 'bar', 'baz']); // ['foo', 'bar']
+f\take(5, 'Miles Davis'); // ['M', 'i', 'l', 'e', 's']
+```
+
+### TakeWhile
+
+Perhaps more interesting than `take` is `take_while`. It keeps taking items from the front of a
+collection until the predicate function returns `false` for the given item.  
+It's like `filter` but could be faster if your collection is ordered, since `take_while` will stop
+after the first falsey result.
+
+```php
+$diary = array(
+    array('month' => 1, 'day' => 1, 'entry' => '...'),
+    array('month' => 1, 'day' => 14, 'entry' => '...'),
+    array('month' => 2, 'day' => 27, 'entry' => '...'),
+    array('month' => 3, 'day' => 1, 'entry' => '...'),
+    array('month' => 3, 'day' => 5, 'entry' => '...'),
+    array('month' => 4, 'day' => 2, 'entry' => '...')
+);
+$janFebEntries = f\take_while(f\compose(f\lte(2), f\prop('month')), $diary);
+
+/**
+ * Result:
+ *  array(
+ *      array('month' => 1, 'day' => 1, 'entry' => '...'),
+ *      array('month' => 1, 'day' => 14, 'entry' => '...'),
+ *      array('month' => 2, 'day' => 27, 'entry' => '...'),
+ *  )
+ */
+```
+
+See also [drop](#drop) and [drop_while](#drop_while).
+
 
 ### Truthy
 
