@@ -80,6 +80,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Replace](#replace)
 - [Some](#some)
 - [Sort](#sort) 
+- [SortBy](#sortby) 
 - [Split](#split)
 - [Subtract](#subtract)
 - [Tail](#tail)
@@ -645,6 +646,29 @@ Does not mutate the original array.
 $spices = ['Nutmeg', 'Clove', 'Cinnamon'];
 $sortedSpices = f\sort($spices); // ['Cinnamon', 'Clove', 'Nutmeg']
 $spices; // ['Nutmeg', 'Clove', 'Cinnamon']
+```
+
+### SortBy
+
+Use the given property to sort a collection of objects.
+
+```php
+$musicians = [
+    ['first_name' => 'Louis', 'last_name' => 'Armstrong', 'instrument' => 'trumpet'],
+    ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'],
+    ['first_name' => 'John', 'last_name' => 'Coltrane', 'instrument' => 'saxophone'],
+);
+f\sort_by('first_name', $musicians);
+
+/**
+ * Result:
+ *
+ * [
+ *  ['first_name' => 'John', 'last_name' => 'Coltrane', 'instrument' => 'saxophone'],
+ *  ['first_name' => 'Louis', 'last_name' => 'Armstrong', 'instrument' => 'trumpet'],
+ *  ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'],
+ * ]
+ */
 ```
 
 ### Split

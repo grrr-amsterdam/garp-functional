@@ -67,6 +67,7 @@
       "library/Garp/Functional/Replace.php",
       "library/Garp/Functional/Some.php",
       "library/Garp/Functional/Sort.php",
+      "library/Garp/Functional/SortBy.php",
       "library/Garp/Functional/Split.php",
       "library/Garp/Functional/Subtract.php",
       "library/Garp/Functional/Tail.php",
