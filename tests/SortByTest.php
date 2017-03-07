@@ -27,12 +27,18 @@ class SortByTest extends TestCase {
                     'first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'
                 ),
             ),
-            f\sort_by('first_name', $musicians)
+            f\sort_by(f\prop('first_name'), $musicians)
+        );
+
+        $words = array('tree', 'axe', 'dwarf', 'fruit');
+        $this->assertSame(
+            array('axe', 'tree', 'dwarf', 'fruit'),
+            f\sort_by('strlen', $words)
         );
     }
 
     public function test_should_be_curried() {
-        $sortByName = f\sort_by('first_name');
+        $sortByName = f\sort_by(f\prop('first_name'));
         $this->assertTrue(is_callable($sortByName));
         $musicians = array(
             array('first_name' => 'Louis', 'last_name' => 'Armstrong', 'instrument' => 'trumpet'),

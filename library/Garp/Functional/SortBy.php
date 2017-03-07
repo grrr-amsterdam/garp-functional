@@ -7,19 +7,28 @@
 namespace Garp\Functional;
 
 /**
- * Sort a collection by the given prop.
+ * Sort a collection by comparing the results of the given function applied to the arguments in the
+ * collection.
  *
- * @param string $prop
+ * Inspired by Clojure's `sort-by`
+ *
+ * @param callable $fn
  * @param array $collection
  * @return int
  */
-function sort_by($prop, $collection = null) {
-    $sorter = function ($collection) use ($prop) {
+function sort_by($fn, array $collection = null) {
+    if (!is_callable($fn)) {
+        throw new \InvalidArgumentException('sort_by expects parameter 1 to be callable');
+    }
+    $sorter = function (array $collection) use ($fn) {
         return usort(
-            function ($a, $b) use ($prop) {
-                $propA = prop($prop, $a);
-                $propB = prop($prop, $b);
-                return ($propA < $propB) ? -1 : 1;
+            function ($a, $b) use ($fn) {
+                $resultA = $fn($a);
+                $resultB = $fn($b);
+                if ($resultA === $resultB) {
+                    return 0;
+                }
+                return ($resultA < $resultB) ? -1 : 1;
             },
             $collection
         );

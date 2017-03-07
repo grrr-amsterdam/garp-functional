@@ -14,10 +14,10 @@ namespace Garp\Functional;
  * @return array
  */
 function usort($fn, array $collection = null) {
-    if ($fn && !is_callable($fn)) {
+    if (!is_callable($fn)) {
         throw new InvalidArgumentException('usort expects parameter 1 to be a valid callback');
     }
-    $sorter = function ($collection) use ($fn) {
+    $sorter = function (array $collection) use ($fn) {
         // make a copy of the array as to not disturb the original
         $copy = $collection;
         \usort($copy, $fn);
