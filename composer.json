@@ -75,6 +75,7 @@
       "library/Garp/Functional/TakeWhile.php",
       "library/Garp/Functional/Truthy.php",
       "library/Garp/Functional/Unary.php",
+      "library/Garp/Functional/Unique.php",
       "library/Garp/Functional/Usort.php",
       "library/Garp/Functional/When.php",
       "library/Garp/Functional/Zip.php"

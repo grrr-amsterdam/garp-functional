@@ -87,6 +87,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Take](#take)
 - [Truthy](#truthy)
 - [Unary](#unary)
+- [Unique](#unique)
 - [Usort](#usort)
 - [When](#when)
 - [Zip](#zip)
@@ -792,6 +793,33 @@ $hasArray = f\some(f\unary('is_array'));
 $stuff = array('abc', array(), 123, true);
 $hasArray($stuff); // true
 ``` 
+
+### Unique
+
+A version of the native `array_unique` which works with multi-dimensional arrays.
+
+```php
+$musicians = [
+    ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'],
+    ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'],
+    ['first_name' => 'Louis', 'last_name' => 'Armstrong', 'instrument' => 'trumpet'],
+    ['first_name' => 'John', 'last_name' => 'Coltrane', 'instrument' => 'saxophone'],
+    ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'],
+    ['first_name' => 'John', 'last_name' => 'Coltrane', 'instrument' => 'saxophone'],
+    ['first_name' => 'Louis', 'last_name' => 'Armstrong', 'instrument' => 'trumpet'],
+];
+f\unique($musicians);
+
+/**
+ * Result:
+ * 
+ * [
+ *   ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'],
+ *   ['first_name' => 'Louis', 'last_name' => 'Armstrong', 'instrument' => 'trumpet'],
+ *   ['first_name' => 'John', 'last_name' => 'Coltrane', 'instrument' => 'saxophone']
+ * ]
+ */ 
+```
 
 ### Usort
 
