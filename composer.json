@@ -61,6 +61,8 @@
       "library/Garp/Functional/Pick.php",
       "library/Garp/Functional/Prop.php",
       "library/Garp/Functional/PropEquals.php",
+      "library/Garp/Functional/PropIn.php",
+      "library/Garp/Functional/PropOf.php",
       "library/Garp/Functional/PropSet.php",
       "library/Garp/Functional/Reduce.php",
       "library/Garp/Functional/Reindex.php",
