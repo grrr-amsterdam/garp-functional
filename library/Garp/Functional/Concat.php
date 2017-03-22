@@ -19,11 +19,14 @@ function concat($left = null, $right = null) {
         if (is_array($left) || is_array($right)) {
             return array_merge((array)$left, (array)$right);
         }
-        if (is_string($left) && is_string($right)) {
+        $isStringbleObject = both(partial_right('method_exists', '__toString'), 'is_object');
+        if ((is_string($left) && is_string($right))
+            || ($isStringbleObject($left) && $isStringbleObject($right))
+        ) {
             return $left . $right;
         }
         throw new \InvalidArgumentException(
-            __FUNCTION__ . ' can only concat arrays or strings'
+            'concat can only concat arrays or strings'
         );
     };
     if (!func_num_args()) {

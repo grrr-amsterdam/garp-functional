@@ -64,6 +64,15 @@ class ConcatTest extends TestCase {
         );
     }
 
+    public function test_should_work_with_stringable_objects() {
+        $miles = new MockMusician('Miles', 'Davis');
+        $john = new MockMusician('John', 'Coltrane');
+        $this->assertEquals(
+            'Miles DavisJohn Coltrane',
+            f\concat($miles, $john)
+        );
+    }
+
     public function test_should_be_curried() {
         $concatMiles = f\concat('Miles');
         $this->assertTrue(is_callable($concatMiles));

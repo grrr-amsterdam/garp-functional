@@ -75,6 +75,8 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Pick](#pick) 
 - [PropEquals](#propequals)
 - [Prop](#prop)
+- [PropIn](#propin)
+- [PropOf](#propof)
 - [Reduce](#reduce) 
 - [Reindex](#reindex)
 - [Replace](#replace)
@@ -593,6 +595,39 @@ f\prop('bin', $foo); // null
 $name = 'Miles';
 f\prop(0, $name); // 'M'
 f\prop(3, $name); // 'e'
+```
+
+### PropIn
+
+Inspired by Clojure's [get-in](https://clojuredocs.org/clojure.core/get-in), this function takes a
+bunch of props and returns a value from a nested associative structure matching the given keys.
+
+Doing `prop_in(["author", "comments", 0, "body"], $post)` would be the same as writing the
+following, but safe since it won't blow up on missing properties:
+
+```php
+$post->author->comments[0]->body;
+```
+
+### PropOf
+
+Take a property from a collection. This is the same function as [prop](#prop) but with its arguments
+flipped. The use-case is common enough to warrant its own function.
+
+```php
+$miles = ['first_name' => 'Miles', 'last_name' => 'Davis'];
+f\prop_of($miles, 'first_name'); // 'Miles'
+f\prop_of($miles, 'last_name'); // 'Davis'
+f\prop_of($miles, 'date_of_birth'); // null
+
+$foo = new Foo();
+$foo->bar = 'baz';
+f\prop_of($foo, 'bar'); // 'baz'
+f\prop_of($foo, 'bin'); // null
+
+$name = 'Miles';
+f\prop_of($name, 0); // 'M'
+f\prop_of($name, 3); // 'e'
 ```
 
 ### Reduce
