@@ -15,6 +15,7 @@ class TruthyTest extends TestCase {
         $this->assertFalse(f\truthy('0'));
         $this->assertFalse(f\truthy(''));
         $this->assertTrue(f\truthy(array(1, 2, 3)));
+        $this->assertFalse(f\truthy(array()));
     }
 
     public function test_truthy_should_accept_functions() {
