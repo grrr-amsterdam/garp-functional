@@ -75,6 +75,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Pick](#pick) 
 - [PropEquals](#propequals)
 - [Prop](#prop)
+- [PropIn](#propin)
 - [PropOf](#propof)
 - [Reduce](#reduce) 
 - [Reindex](#reindex)
