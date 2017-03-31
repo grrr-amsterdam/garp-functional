@@ -13,8 +13,8 @@ namespace Garp\Functional;
  * @param mixed $collection
  * @return mixed
  */
-Function find($fn, $collection = null) {
-    $finder = Function ($collection) use ($fn) {
+function find($fn, $collection = null) {
+    $finder = function ($collection) use ($fn) {
         $filtered = filter($fn, $collection);
         return current($filtered) ?: null;
     };

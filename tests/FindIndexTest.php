@@ -7,19 +7,19 @@ use Garp\Functional as f;
  * @author   Harmen Janssen <harmen@grrr.nl>
  * @license  https://github.com/grrr-amsterdam/garp-functional/blob/master/LICENSE.md BSD-3-Clause
  */
-class FindTest extends TestCase {
+class FindIndexTest extends TestCase {
 
     public function test_should_find_from_numeric_array() {
         $spices = array('nutmeg', 'clove', 'cinnamon');
         $this->assertEquals(
-            'clove',
-            f\find(
+            1,
+            f\find_index(
                 f\equals('clove'),
                 $spices
             )
         );
         $this->assertNull(
-            f\find(f\equals('cumin'), $spices)
+            f\find_index(f\equals('cumin'), $spices)
         );
     }
 
@@ -30,21 +30,28 @@ class FindTest extends TestCase {
             'blue' => '#0000FF'
         );
         $this->assertEquals(
-            '#FF0000',
-            f\find('Garp\Functional\id', $colors)
+            'red',
+            f\find_index('Garp\Functional\id', $colors)
+        );
+        $this->assertEquals(
+            'blue',
+            f\find_index(f\equals('#0000FF'), $colors)
         );
     }
 
     public function test_should_find_from_iterable_object() {
         $spiceTraverser = new MockSpiceTraverser();
         $this->assertEquals(
-            'clove',
-            f\find(f\equals('clove'), $spiceTraverser)
+            2,
+            f\find_index(f\equals('clove'), $spiceTraverser)
+        );
+        $this->assertNull(
+            f\find_index(f\equals('cumin'), $spiceTraverser)
         );
     }
 
     public function test_should_be_curried() {
-        $findSaxPlayer = f\find(f\prop_equals('instrument', 'saxophone'));
+        $findSaxPlayer = f\find_index(f\prop_equals('instrument', 'saxophone'));
         $this->assertTrue(is_callable($findSaxPlayer));
         $musicians = array(
             array('first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'),
@@ -52,9 +59,23 @@ class FindTest extends TestCase {
             array('first_name' => 'Louis', 'last_name' => 'Armstrong', 'instrument' => 'trumpet')
         );
         $this->assertEquals(
-            array('first_name' => 'John', 'last_name' => 'Coltrane', 'instrument' => 'saxophone'),
+            1,
             $findSaxPlayer($musicians)
         );
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function test_should_throw_on_invalid_collection() {
+        f\find_index(f\equals('foo'), 42);
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function test_should_throw_on_invalid_function() {
+        f\find_index(42, []);
     }
 
 }
