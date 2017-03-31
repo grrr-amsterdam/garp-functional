@@ -53,6 +53,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Every](#every) 
 - [Filter](#filter)
 - [Find](#find)
+- [FindIndex](#findindex)
 - [Flatten](#flatten) 
 - [Flip](#flip)
 - [GroupBy](#groupby)
@@ -308,6 +309,16 @@ $numbers = [40, 15, 23, 90, 29];
 f\find(f\gt(20), $numbers); // 23
 f\find(f\gt(200), $numbers); // null
 ``` 
+
+### FindIndex
+
+Finds the index of the first item that matches the predicate function.
+
+```php
+$numbers = [20, 10, 50, 21, 90];
+f\find_index(f\lt(20), $numbers); // 1
+f\find_index(f\gt(50), $numbers); // 5
+```
 
 ### Flatten
 
