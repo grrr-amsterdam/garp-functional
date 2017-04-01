@@ -11,15 +11,18 @@ namespace Garp\Functional;
  *
  * @param mixed $left
  * @param mixed $right
- * @return mixed
+ * @return bool
  */
 function both($left, $right) {
     if (is_callable($left) || is_callable($right)) {
         return function () use ($left, $right) {
             $leftVal = is_callable($left) ? call_user_func_array($left, func_get_args()) : $left;
+            if (!$leftVal) {
+                return false;
+            }
             $rightVal = is_callable($right) ?
                 call_user_func_array($right, func_get_args()) : $right;
-            return $leftVal && $rightVal;
+            return !!$rightVal;
         };
     }
     return $left && $right;
