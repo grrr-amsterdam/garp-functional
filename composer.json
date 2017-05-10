@@ -60,6 +60,7 @@
       "library/Garp/Functional/Partial.php",
       "library/Garp/Functional/PartialRight.php",
       "library/Garp/Functional/Pick.php",
+      "library/Garp/Functional/Pipe.php",
       "library/Garp/Functional/Prop.php",
       "library/Garp/Functional/PropEquals.php",
       "library/Garp/Functional/PropIn.php",
