@@ -57,4 +57,14 @@ class EitherTest extends TestCase {
         );
     }
 
+    public function test_should_not_call_right_function_when_left_is_truthy() {
+        $called = false;
+        $changer = function () use (&$called) {
+            $called = true;
+        };
+        $either = f\either(f\always(true), $changer);
+        $either();
+        $this->assertFalse($called);
+    }
+
 }

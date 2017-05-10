@@ -44,4 +44,17 @@ class BothTest extends TestCase {
         );
     }
 
+    public function test_both_should_evaluate_right_function_lazily() {
+        $called = false;
+        $changer = function () use (&$called) {
+            $called = true;
+        };
+        $both = f\both(f\always(false), $changer);
+        $both();
+        $this->assertFalse(
+            $called,
+            'Right function is never called, like you would expect from &&'
+        );
+    }
+
 }
