@@ -77,6 +77,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Partial](#partial)
 - [PartialRight](#partialright)
 - [Pick](#pick) 
+- [Pipe](#pipe) 
 - [PropEquals](#propequals)
 - [Prop](#prop)
 - [PropIn](#propin)
@@ -599,6 +600,24 @@ f\pick([1, 2], $spices); // [1 => 'clove', 2 => 'cinnamon']
 $musician = ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'];
 f\pick(['first_name', 'instrument'], $musician); // ['first_name' => 'Miles', 'instrument' => 'trumpet']
 ```
+
+### Pipe
+
+Compose functions together. Execution order is left to right.
+It's the inverse of [compose](#compose). e.g. `pipe(foo, bar, baz)($args)` equals `baz(bar(foo($args)))`.
+
+```php
+$getInitials = f\pipe(
+  f\split(' '),
+  f\map(f\pipe(f\prop(0), f\concat_right('.'))),
+  f\join(' ')
+);
+$getInitials('Miles Davis'); // M. D.
+
+```
+
+If you start at the right side you can follow along with the path your arguments will travel through 
+the functional pipeline.
 
 ### PropEquals
 
