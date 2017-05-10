@@ -46,6 +46,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Compose](#compose) 
 - [Concat](#concat)
 - [ConcatRight](#concatright)
+- [Divide](#divide)
 - [Drop](#drop)
 - [DropWhile](#dropwhile)
 - [Either](#either)
@@ -68,6 +69,8 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Lte](#lte)
 - [Map](#map)
 - [Match](#match)
+- [Modulo](#modulo)
+- [Multiply](#multiply)
 - [None](#none)
 - [Not](#not) 
 - [Omit](#omit)
@@ -202,6 +205,15 @@ $b = [ 'first_name' => 'John' ];
 f\concat_right($a, $b); // ['first_name' => 'Miles', 'last_name' => 'Davis'] 
 ```
 
+### Divide
+
+Divides two numbers.
+
+```php
+f\divide(2, 10); // 5
+f\divide(5)(20); // 4
+```
+
 ### Drop
 
 Drop the first `$n` items of a collection.
@@ -228,8 +240,6 @@ $positiveNumbers = f\drop_while(f\lte(0), $numbers);
 ```
 
 See also [take](#take) and [take_while](#take_while).
-
-### DropWhile
 
 ### Either
 
@@ -510,6 +520,24 @@ Returns the matches if the given value matches the regular expression:
 f\match('/^\d+$/', '12345'); // ['12345']
 f\match('/([a-zA-Z]+) world/', 'Hello world'); // ['Hello world', 'Hello']
 f\filter(f\match('/^\d+$/'), ['123', 'abc', '456']); // ['123', '456']
+```
+
+### Multiply
+
+Multiplies two numbers.
+
+```php
+f\multiply(2, 10); // 20
+f\multiply(5)(20); // 100
+```
+
+### Modulo
+
+Modulo of two numbers.
+
+```php
+f\modulo(3, 10); // 1
+f\modulo(4)(6); // 2
 ```
 
 ### None
@@ -928,3 +956,4 @@ f\zip($miles, $john); // [
                       //   'instrument' => ['Trumpet', null]
                       // ]
 ```
+
