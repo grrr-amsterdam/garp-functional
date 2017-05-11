@@ -675,7 +675,7 @@ Curried version of `array_reduce`:
 
 ```php
 $numbers = [20, 43, 15, 12];
-$sum = f\reduce('f\add', 0, $numbers); // 90
+$sum = f\reduce('Garp\Functional\add', 0, $numbers); // 90
 ```
 
 ### Reindex
