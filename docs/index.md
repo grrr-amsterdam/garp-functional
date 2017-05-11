@@ -62,6 +62,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Gte](#gte)
 - [Head](#head)
 - [Id](#id)
+- [IfElse](#ifelse)
 - [Instance](#instance)
 - [Join](#join) 
 - [Keys](#keys)
@@ -444,6 +445,24 @@ in a [`when`](#when) application.
 $spices = ['clove', 'nutmeg', 'allspice', 'cumin'];
 $spices === f\id($spices); // true
 ``` 
+
+### IfElse
+
+Functional if/else. Creates a function that given a predicate as 1st 
+parameter receives a subject and pipe it to the 2nd or 3rd parameter 
+depending if the predicate result is truthy or falsy.
+
+```php
+$doubleOrTriple = f\if_else(
+  f\gt(10),
+  f\multiply(2),
+  f\multiply(3)
+);
+
+$doubleOrTriple(20); // 40
+$doubleOrTriple(5); // 15
+
+```
 
 ### Instance
 

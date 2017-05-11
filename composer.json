@@ -48,6 +48,7 @@
       "library/Garp/Functional/Gte.php",
       "library/Garp/Functional/Head.php",
       "library/Garp/Functional/Id.php",
+      "library/Garp/Functional/IfElse.php",
       "library/Garp/Functional/Instance.php",
       "library/Garp/Functional/Join.php",
       "library/Garp/Functional/Keys.php",
