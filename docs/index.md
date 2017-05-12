@@ -688,6 +688,29 @@ f\prop_of($name, 0); // 'M'
 f\prop_of($name, 3); // 'e'
 ```
 
+An interesting symmetry exists between PHP's native array access (using square brackets) and this
+function. For example:
+
+```php
+$data = [
+  'name' => 'spaghetti',
+  'type' => 'pasta',
+];
+
+$food = f\prop_of($data);
+
+$food('type'); // 'pasta'
+$data['type']; // 'pasta'
+```
+
+So using a curried version of `prop_of` allows to stay close to the familiar way of accessing array
+indices. The moment you access an undefined index however, our version turns out to be superior:
+
+```php
+$data['origin']; // Notice: Undefined index: origin
+$food('origin'); // null
+```
+
 ### Reduce
 
 Curried version of `array_reduce`:
