@@ -58,5 +58,35 @@ class PropEqualsTest extends TestCase {
         );
     }
 
+    public function test_should_be_thrice_curried() {
+        $musicians = array(
+            array('first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'),
+            array('first_name' => 'John', 'last_name' => 'Coltrane', 'instrument' => 'saxophone'),
+            array('first_name' => 'Louis', 'last_name' => 'Armstrong', 'instrument' => 'trumpet'),
+            array('first_name' => 'Thelonious', 'last_name' => 'Monk', 'instrument' => 'piano'),
+            array('first_name' => 'Charlie', 'last_name' => 'Parker', 'instrument' => 'saxophone')
+        );
+        $plays = f\prop_equals('instrument');
+        $this->assertTrue(is_callable($plays));
+        $this->assertTrue(is_callable($plays('saxophone')));
+
+        $saxOrPianoPlayers = f\filter(
+            f\either($plays('saxophone'), $plays('piano')),
+            $musicians
+        );
+        $this->assertEquals(
+            array(
+                array(
+                    'first_name' => 'John', 'last_name' => 'Coltrane', 'instrument' => 'saxophone'
+                ),
+                array('first_name' => 'Thelonious', 'last_name' => 'Monk', 'instrument' => 'piano'),
+                array(
+                    'first_name' => 'Charlie', 'last_name' => 'Parker', 'instrument' => 'saxophone'
+                )
+            ),
+            $saxOrPianoPlayers
+        );
+    }
+
 }
 

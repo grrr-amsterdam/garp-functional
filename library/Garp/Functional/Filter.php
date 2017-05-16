@@ -15,6 +15,9 @@ namespace Garp\Functional;
  * @return mixed
  */
 function filter($fn, $collection = null) {
+    if (!is_callable($fn)) {
+        throw new \InvalidArgumentException('filter expects the first argument to be callable');
+    }
     $filterer = function ($collection) use ($fn) {
         if (is_array($collection)) {
             $numericKeys = array_filter(array_keys($collection), 'is_numeric');
