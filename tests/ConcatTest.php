@@ -51,6 +51,10 @@ class ConcatTest extends TestCase {
             'MilesDavis',
             f\concat('Miles', 'Davis')
         );
+        $this->assertEquals(
+            '🔥💦',
+            f\concat('🔥', '💦')
+        );
     }
 
     public function test_should_concat_strings_to_arrays_if_either_argument_is_array() {

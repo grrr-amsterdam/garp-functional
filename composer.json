@@ -32,6 +32,7 @@
       "library/Garp/Functional/Compose.php",
       "library/Garp/Functional/Concat.php",
       "library/Garp/Functional/ConcatRight.php",
+      "library/Garp/Functional/Count.php",
       "library/Garp/Functional/Divide.php",
       "library/Garp/Functional/Drop.php",
       "library/Garp/Functional/DropWhile.php",
