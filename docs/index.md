@@ -46,6 +46,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Compose](#compose) 
 - [Concat](#concat)
 - [ConcatRight](#concatright)
+- [Count](#count)
 - [Divide](#divide)
 - [Drop](#drop)
 - [DropWhile](#dropwhile)
@@ -204,6 +205,16 @@ $a = [
 ];
 $b = [ 'first_name' => 'John' ];
 f\concat_right($a, $b); // ['first_name' => 'Miles', 'last_name' => 'Davis'] 
+```
+
+### Count
+
+Counts strings (chars) and arrays:
+
+```php
+f\count(['a', 'b', 'c']); // 3
+f\count('foobar'); // 6
+f\count(new ClassWithToStringMethod('foo')); // 3
 ```
 
 ### Divide
