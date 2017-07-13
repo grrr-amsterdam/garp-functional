@@ -10,27 +10,47 @@ namespace Garp\Functional;
  * Concat two things.
  * Works with arrays and strings.
  *
- * @param mixed $left
- * @param mixed $right
+ * Accepts 0 or more arguments. When 1 or less is given, a curried function will be
+ * returned.
+ *
  * @return mixed
  */
-function concat($left = null, $right = null) {
-    $concatter = function ($right) use ($left) {
-        if (is_array($left) || is_array($right)) {
-            return array_merge((array)$left, (array)$right);
+function concat() {
+    $concatter = function () {
+        $args = func_get_args();
+        $toArray = function ($var) {
+            return (array) $var;
+        };
+        if (some(unary('is_array'), $args)) {
+            return call_user_func_array(
+                'array_merge',
+                map($toArray, $args)
+            );
         }
-        $isStringbleObject = both(partial_right('method_exists', '__toString'), 'is_object');
-        if ((is_string($left) && is_string($right))
-            || ($isStringbleObject($left) && $isStringbleObject($right))
-        ) {
-            return $left . $right;
+        $isStringble = unary(
+            either(
+                'is_string',
+                either(
+                    both('is_object', partial_right('method_exists', '__toString')),
+                    either('is_float', 'is_int')
+                )
+            )
+        );
+        if (every($isStringble, $args)) {
+            return join(
+                '',
+                map('strval', $args)
+            );
         }
         throw new \InvalidArgumentException(
             'concat can only concat arrays or strings'
         );
     };
-    if (!func_num_args()) {
-        return partial('Garp\Functional\concat');
+    if (func_num_args() <= 1) {
+        return call_user_func_array(
+            'Garp\Functional\partial',
+            array_merge(array('Garp\Functional\concat'), func_get_args())
+        );
     }
-    return func_num_args() === 1 ? $concatter : $concatter($right);
+    return call_user_func_array($concatter, func_get_args());
 }

@@ -64,6 +64,30 @@ class ConcatRightTest extends TestCase {
         );
     }
 
+    public function test_should_cast_numbers_to_strings() {
+        $this->assertEquals(
+            '95042',
+            f\concat_right(
+                42, 50, 9
+            )
+        );
+        $this->assertEquals(
+            '4.095',
+            f\concat_right(5, 4.09)
+        );
+    }
+
+    public function test_should_be_variadic() {
+        $this->assertEquals(
+            [7, 8, 9, 4, 5, 6, 1, 2, 3],
+            f\concat_right(
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            )
+        );
+    }
+
     public function test_should_be_curried() {
         $concatMiles = f\concat_right('Miles');
         $this->assertTrue(is_callable($concatMiles));
@@ -84,8 +108,15 @@ class ConcatRightTest extends TestCase {
     /**
      * @expectedException \InvalidArgumentException
      */
-    public function test_should_throw_on_invalid_arguments() {
-        f\concat_right(1, 2);
+    public function test_should_throw_on_boolean_arguments() {
+        f\concat_right(true, false);
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function test_should_throw_on_invalid_object() {
+        f\concat_right('This', 'will', 'go', new stdClass(), 'wrong');
     }
 
 }

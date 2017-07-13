@@ -9,13 +9,20 @@ namespace Garp\Functional;
 /**
  * Concat two things, but in reverse order.
  *
- * @param mixed $right
- * @param mixed $left
+ * Accepts 0 or more arguments. When 1 or less is given, a curried function will be
+ * returned.
+ *
  * @return mixed
  */
-function concat_right($right, $left = null) {
-    if (func_num_args() < 2) {
-        return partial_right('Garp\Functional\concat', $right);
+function concat_right() {
+    if (func_num_args() <= 1) {
+        return call_user_func_array(
+            'Garp\Functional\partial_right',
+            array_merge(array('Garp\Functional\concat'), func_get_args())
+        );
     }
-    return concat($left, $right);
+    return call_user_func_array(
+        'Garp\Functional\concat',
+        array_reverse(func_get_args())
+    );
 }
