@@ -41,6 +41,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 
 - [Add](#add)
 - [Always](#always)
+- [Binary](#binary)
 - [Both](#both)
 - [Call](#call)
 - [Compose](#compose) 
@@ -121,6 +122,20 @@ Returns a function that always returns the given argument.
 $alwaysMiles = f\always('Miles Davis');
 $alwaysMiles(1, 2, 3); // 'Miles Davis'
 ``` 
+
+### Binary
+
+Returns a function that accepts just two arguments.
+
+```php
+$countArgs = function () {
+    return count(func_get_args());
+};
+$countArgs(1, 2, 3); // 3
+f\binary($countArgs)(1, 2, 3); // 2
+```
+
+See also [Unary](#unary).
 
 ### Both
 
