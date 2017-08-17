@@ -94,6 +94,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Subtract](#subtract)
 - [Tail](#tail)
 - [Take](#take)
+- [TakeWhile](#takewhile)
 - [Truthy](#truthy)
 - [Unary](#unary)
 - [Unique](#unique)
