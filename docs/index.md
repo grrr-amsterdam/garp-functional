@@ -85,6 +85,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [PropIn](#propin)
 - [PropOf](#propof)
 - [Reduce](#reduce) 
+- [ReduceAssoc](#reduceassoc) 
 - [Reindex](#reindex)
 - [Replace](#replace)
 - [Some](#some)
@@ -744,6 +745,27 @@ Curried version of `array_reduce`:
 ```php
 $numbers = [20, 43, 15, 12];
 $sum = f\reduce('Garp\Functional\add', 0, $numbers); // 90
+```
+
+### ReduceAssoc
+
+Version of `reduce` tailored to associative datastructures. The key will be the third argument to the callback function.
+
+```php
+$assoc = [
+    'foo' => [1, 2, 3],
+    'bar' => [4],
+    'baz' => []
+];
+$counts = f\reduce_assoc(
+    function ($acc, $cur, $key) {
+        return f\prop_set(
+            $key, count($cur), $acc
+        );
+    },
+    [],
+    $assoc
+); // Returns ["foo" => 3, "bar" => 1, "baz" => 0]
 ```
 
 ### Reindex
