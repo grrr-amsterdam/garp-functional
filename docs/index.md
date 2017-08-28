@@ -64,6 +64,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Gte](#gte)
 - [Head](#head)
 - [Id](#id)
+- [IndexBy](#indexby)
 - [Instance](#instance)
 - [Join](#join) 
 - [Keys](#keys)
@@ -472,6 +473,29 @@ in a [`when`](#when) application.
 $spices = ['clove', 'nutmeg', 'allspice', 'cumin'];
 $spices === f\id($spices); // true
 ``` 
+
+### IndexBy
+
+Creates an array where items of the given collection are indexed by passing them through the given index function.
+Note that the _last_ item is preserved, duplicates are purged. If you want to keep all items resulting in the same index, use [GroupBy](#groupby).
+
+```php
+$strings = array('a', 'as', 'asd', 'aa', 'asdf', 'qwer');
+f\index_by('strlen', $strings);
+
+/**
+ * Result:
+ * array(
+ *     1 => 'a',
+ *     2 => 'aa',
+ *     3 => 'asd',
+ *     4 => 'qwer'
+ * )
+ */
+```
+
+See also: [GroupBy](#groupby).
+
 
 ### Instance
 
