@@ -54,6 +54,7 @@
       "library/Garp/Functional/Instance.php",
       "library/Garp/Functional/Join.php",
       "library/Garp/Functional/Keys.php",
+      "library/Garp/Functional/KeysWhere.php",
       "library/Garp/Functional/Lt.php",
       "library/Garp/Functional/Lte.php",
       "library/Garp/Functional/Map.php",

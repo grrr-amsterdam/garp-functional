@@ -68,6 +68,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Instance](#instance)
 - [Join](#join) 
 - [Keys](#keys)
+- [KeysWhere](#keyswhere)
 - [Lt](#lt)
 - [Lte](#lte)
 - [Map](#map)
@@ -535,6 +536,22 @@ Returns the keys of a collection. Works with iterable object as well, contrary t
 ```php
 f\keys(['a', 'b', 'c']); // [0, 1, 2]
 f\keys(['foo' => 123, 'bar' => 456]); // ['foo', 'bar]
+```
+
+### KeysWhere
+
+Returns the keys of a collection where its values match a given predicate function.
+
+```php
+$fruits = [
+    ['name' => 'apple', 'color' => 'red'],
+    ['name' => 'banana', 'color' => 'yellow'],
+    ['name' => 'kiwi', 'color' => 'green'],
+    ['name' => 'lime', 'color' => 'green'],
+    ['name' => 'lemon', 'color' => 'yellow']
+];
+
+f\keys_where(f\prop_equals('color', 'green'), $fruits) // [2, 3]
 ```
 
 ### Lt
