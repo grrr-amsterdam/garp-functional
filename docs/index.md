@@ -78,6 +78,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [None](#none)
 - [Not](#not) 
 - [Omit](#omit)
+- [Once](#once)
 - [Partial](#partial)
 - [PartialRight](#partialright)
 - [Pick](#pick) 
@@ -639,6 +640,20 @@ This is the opposite of [pick](#pick).
 $miles = ['first' => 'Miles', 'last' => 'Davis', 'instrument' => 'Trumpet'];
 f\omit(['instrument'], $miles); // ['first' => 'Miles', 'last' => 'Davis']
 ```
+
+### Once
+
+Impure but very powerful: returns a function that guards the given function from being executed more than once.
+
+
+```php
+$addOne = function ($x) { return $x + 1; };
+$addOneOnce = f\once($addOne); 
+$addOneOnce(10); // 11
+$addOneOnce(50); // 11
+```
+
+Subsequent calls will return the result of the first invocation.
 
 ### Partial
 

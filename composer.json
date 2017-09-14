@@ -64,6 +64,7 @@
       "library/Garp/Functional/None.php",
       "library/Garp/Functional/Not.php",
       "library/Garp/Functional/Omit.php",
+      "library/Garp/Functional/Once.php",
       "library/Garp/Functional/Partial.php",
       "library/Garp/Functional/PartialRight.php",
       "library/Garp/Functional/Pick.php",
