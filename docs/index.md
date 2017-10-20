@@ -872,7 +872,8 @@ $spices; // ['Nutmeg', 'Clove', 'Cinnamon']
 
 ### SortBy
 
-Use the given property to sort a collection of objects.
+Use the given function to sort a collection of objects.  
+To sort by a certain key, use `f\prop()`:
 
 ```php
 $musicians = [
@@ -880,7 +881,7 @@ $musicians = [
     ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'],
     ['first_name' => 'John', 'last_name' => 'Coltrane', 'instrument' => 'saxophone'],
 );
-f\sort_by('first_name', $musicians);
+f\sort_by(f\prop('first_name'), $musicians);
 
 /**
  * Result:
@@ -892,6 +893,27 @@ f\sort_by('first_name', $musicians);
  * ]
  */
 ```
+
+But another application could be to sort by length:
+
+```php
+$groups = [
+    [1, 2, 3, 4, 5],
+    [1, 2],
+    [1, 2, 3]
+];
+f\sort_by('count', $groups);
+
+/**
+ * Result:
+ *
+ * [
+ *  [1, 2],
+ *  [1, 2, 3]
+ *  [1, 2, 3, 4, 5],
+ * ]
+ */
+ ```
 
 ### Split
 
