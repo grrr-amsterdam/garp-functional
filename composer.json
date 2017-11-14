@@ -86,6 +86,7 @@
       "library/Garp/Functional/Tail.php",
       "library/Garp/Functional/Take.php",
       "library/Garp/Functional/TakeWhile.php",
+      "library/Garp/Functional/Tap.php",
       "library/Garp/Functional/Truthy.php",
       "library/Garp/Functional/Unary.php",
       "library/Garp/Functional/Unique.php",

@@ -99,6 +99,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Tail](#tail)
 - [Take](#take)
 - [TakeWhile](#takewhile)
+- [Tap](#tap)
 - [Truthy](#truthy)
 - [Unary](#unary)
 - [Unique](#unique)
@@ -982,6 +983,39 @@ $janFebEntries = f\take_while(f\compose(f\lte(2), f\prop('month')), $diary);
 
 See also [drop](#drop) and [drop_while](#drop_while).
 
+### Tap
+
+`tap` is a higher-order function that's helpful to include side-effects in a chain.  
+It returns a function which calls the given callback but discards its return value and returns the original value.
+
+You can use it to debug a function composition. Consider the following:
+
+```php
+$composition = f\compose($functionA, $functionB, $functionC); 
+```
+
+If something goes wrong in `$functionB`, you might want to log the intermediate value, which can be difficult in a composition like this.  
+One solution would be:
+
+```php
+$composition = f\compose($functionA, function($x) { myLoggingFunction($x); return X; }, $functionB, $functionC); 
+```
+
+But that's a bit cumbersome. This is exactly where `tap()` comes in:
+
+```php
+$composition = f\compose($functionA, f\tap('myLoggingFunction'), $functionB, $functionC); 
+```
+
+An explicit example:
+
+```php
+function log($var) {
+  var_dump($var);
+}
+
+$thing = f\tap('log')('my thing'); // dumps "my thing", and stores its value in $thing
+``` 
 
 ### Truthy
 
