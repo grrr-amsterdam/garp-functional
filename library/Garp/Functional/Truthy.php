@@ -13,7 +13,7 @@ namespace Garp\Functional;
  * @return bool
  */
 function truthy($value) {
-    if (is_callable($value)) {
+    if (is_callable_function($value)) {
         return function () use ($value) {
             return !!call_user_func_array($value, func_get_args());
         };

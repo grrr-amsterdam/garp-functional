@@ -12,6 +12,10 @@ class MockSpiceTraverser implements Iterator, ArrayAccess {
         'nutmeg', 'cinnamon', 'clove'
     );
 
+    public static function instance() {
+        return new static;
+    }
+
     public function __construct() {
         $this->_position = 0;
     }

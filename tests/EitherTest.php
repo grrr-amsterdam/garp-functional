@@ -67,4 +67,13 @@ class EitherTest extends TestCase {
         $this->assertFalse($called);
     }
 
+    public function test_should_work_with_callable_objects() {
+        $obj = new CallableObject(24);
+
+        $either = f\either($obj, null);
+        $this->assertEquals(
+            $obj, $either
+        );
+    }
+
 }

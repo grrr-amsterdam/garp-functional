@@ -25,7 +25,7 @@ function prop_set($key, $value = null, $object = null) {
          */
         $realSetter = function ($object) use ($key, $value) {
             $copy = $object;
-            $newVal = is_callable($value) ? $value($object) : $value;
+            $newVal = is_callable_function($value) ? $value($object) : $value;
             $copy[$key] = $newVal;
             return $copy;
         };

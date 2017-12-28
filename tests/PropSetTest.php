@@ -86,4 +86,13 @@ class PropSetTest extends TestCase {
         );
 
     }
+
+    public function test_should_work_with_callable_objects() {
+        $obj = new CallableObject(24);
+        $this->assertEquals(
+            array('object' => $obj),
+            f\prop_set('object', $obj, array())
+        );
+    }
+
 }

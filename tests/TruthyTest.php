@@ -24,4 +24,10 @@ class TruthyTest extends TestCase {
         $this->assertTrue($isArray(array()));
         $this->assertFalse($isArray(123));
     }
+
+    public function test_should_work_with_callable_objects() {
+        $obj = new CallableObject(24);
+        $this->assertTrue(f\truthy($obj));
+    }
+
 }

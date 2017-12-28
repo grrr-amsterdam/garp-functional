@@ -30,14 +30,14 @@ namespace Garp\Functional;
  * @return mixed
  */
 function when($condition, $ifTrue, $ifFalse, $subject = null) {
-    if (func_num_args() === 3
-        && (is_callable($condition) || is_callable($ifTrue) || is_callable($ifFalse))
-    ) {
+    $someCallable = is_callable_function($condition)
+        || is_callable_function($ifTrue) || is_callable_function($ifFalse);
+    if (func_num_args() === 3 && $someCallable) {
         return partial('Garp\Functional\when', $condition, $ifTrue, $ifFalse);
     }
-    $passed = is_callable($condition) ? call_user_func($condition, $subject) : $condition;
+    $passed = is_callable_function($condition) ? call_user_func($condition, $subject) : $condition;
     if ($passed) {
-        return is_callable($ifTrue) ? call_user_func($ifTrue, $subject) : $ifTrue;
+        return is_callable_function($ifTrue) ? call_user_func($ifTrue, $subject) : $ifTrue;
     }
-    return is_callable($ifFalse) ? call_user_func($ifFalse, $subject) : $ifFalse;
+    return is_callable_function($ifFalse) ? call_user_func($ifFalse, $subject) : $ifFalse;
 }

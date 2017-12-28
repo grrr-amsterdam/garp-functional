@@ -45,4 +45,18 @@ class WhenTest extends TestCase {
         $this->assertEquals($expected, $mapped);
     }
 
+    public function test_should_work_with_callable_objects() {
+        $obj1 = new CallableObject(12);
+        $obj2 = new CallableObject(24);
+
+        $this->assertEquals(
+            $obj1,
+            f\when(true, $obj1, $obj2)
+        );
+        $this->assertEquals(
+            42,
+            f\when($obj1, 42, 12)
+        );
+    }
+
 }

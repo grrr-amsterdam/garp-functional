@@ -53,6 +53,7 @@
       "library/Garp/Functional/Id.php",
       "library/Garp/Functional/IndexBy.php",
       "library/Garp/Functional/Instance.php",
+      "library/Garp/Functional/IsCallableFunction.php",
       "library/Garp/Functional/Join.php",
       "library/Garp/Functional/Keys.php",
       "library/Garp/Functional/KeysWhere.php",
@@ -99,7 +100,8 @@
   "autoload-dev": {
     "files": [
       "tests/helpers/MockSpiceTraverser.php",
-      "tests/helpers/MockMusician.php"
+      "tests/helpers/MockMusician.php",
+      "tests/helpers/CallableObject.php"
     ]
   }
 }
