@@ -41,6 +41,7 @@
 
 <rule ref="Generic.Files.LineLength">
     <exclude name="Generic.Files.LineLength.MaxExceeded"/>
+    <exclude name="Generic.Files.LineLength.TooLong"/>
 </rule>
 
 <rule ref="Generic.PHP.ForbiddenFunctions">
