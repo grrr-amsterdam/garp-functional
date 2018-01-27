@@ -61,6 +61,7 @@
       "library/Garp/Functional/Lte.php",
       "library/Garp/Functional/Map.php",
       "library/Garp/Functional/Match.php",
+      "library/Garp/Functional/MergeAt.php",
       "library/Garp/Functional/Modulo.php",
       "library/Garp/Functional/Multiply.php",
       "library/Garp/Functional/None.php",

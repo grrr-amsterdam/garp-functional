@@ -73,6 +73,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Lte](#lte)
 - [Map](#map)
 - [Match](#match)
+- [MergeAt](#mergeat)
 - [Modulo](#modulo)
 - [Multiply](#multiply)
 - [None](#none)
@@ -593,6 +594,104 @@ f\match('/^\d+$/', '12345'); // ['12345']
 f\match('/([a-zA-Z]+) world/', 'Hello world'); // ['Hello world', 'Hello']
 f\filter(f\match('/^\d+$/'), ['123', 'abc', '456']); // ['123', '456']
 ```
+
+### MergeAt
+
+This is `array_splice` on steroids. For starters it won't mutate the given array, but returns a new results.  
+
+Furthermore, it's designed to accept a plethora of input and deal especially with PHP's awkward sorted associative arrays.  
+
+Examples will make this a thousand times more clear:
+
+#### Splice a value into a numeric array
+
+```php 
+$numericArray = ['foo', 'bar', 'baz'];
+f\merge_at('cux', 2, $numericArray); // ['foo', 'bar', 'cux', 'baz']
+```
+
+#### Splice a value into an associative array
+
+```php
+$assoc = [
+    'foo' => 123,
+    'baz' => 789
+];
+f\merge_at(['bar' => 456], 'baz', $assoc);
+
+// Will return:
+// [
+//     'foo' => 123,
+//     'bar' => 456,
+//     'baz' => 789
+// ]
+```
+
+Note the way we splice an associative construct into the array – by passing an array with a single `[key => value]` construction.
+**This will work only when the target is an associative array already!**
+
+#### Combine numeric keys with associative targets
+You can use numeric indexes with associative arrays, for instance to move an item to the top.
+
+```php
+$assoc = [
+    'foo' => 123,
+    'baz' => 789
+];
+f\merge_at(['bar' => 456], 0, $assoc);
+
+// Will return:
+// [
+//     'bar' => 456,
+//     'foo' => 123,
+//     'baz' => 789
+// ]
+```
+
+#### Use predicate functions to determine the target
+
+```php
+$jazz = [
+    'Miles' => [
+        'name' => 'Miles Davis',
+        'instrument' => 'trumpet'
+    ],
+    'John' => [
+        'name' => 'John Coltrane',
+        'instrument' => 'saxophone'
+    ],
+    'Herbie' => [
+        'name' => 'Herbie Hancock',
+        'instrument' => 'piano'
+    ]
+];
+$withThelonious = f\merge_at(
+    ['Thelonious' => ['name' => 'Thelonious Monk', 'instrument' => 'piano']],
+    f\prop_equals('instrument', 'piano'),
+    $jazz
+);
+
+// Will return:
+// [
+//   'Miles' => [
+//       'name' => 'Miles Davis',
+//       'instrument' => 'trumpet'
+//   ],
+//   'John' => [
+//       'name' => 'John Coltrane',
+//       'instrument' => 'saxophone'
+//   ],
+//   'Thelonious' => [
+//       'name' => 'Thelonious Monk',
+//       'instrument' => 'piano'
+//   ],
+//   'Herbie' => [
+//       'name' => 'Herbie Hancock',
+//       'instrument' => 'piano'
+//   ]
+// ];
+```
+
 
 ### Multiply
 
