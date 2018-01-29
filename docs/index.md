@@ -921,7 +921,6 @@ The above will generate an error because `isInt` is a private method.
 
 ```php
 public function filterNumbers(array $collection) {
-    // This is going to throw an exception:
     return f\map(f\publish('isInt', $this), $collection);
 } 
 ```
