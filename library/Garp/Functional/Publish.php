@@ -17,7 +17,7 @@ namespace Garp\Functional;
  */
 function publish($method, $context) {
     $caller = function () use ($method) {
-        return call_user_func_array([$this, $method], func_get_args());
+        return call_user_func_array(array($this, $method), func_get_args());
     };
     return $caller->bindTo($context, $context);
 }
