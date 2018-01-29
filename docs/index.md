@@ -88,6 +88,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Prop](#prop)
 - [PropIn](#propin)
 - [PropOf](#propof)
+- [Publish](#publish)
 - [Reduce](#reduce) 
 - [ReduceAssoc](#reduceassoc) 
 - [Reindex](#reindex)
@@ -894,6 +895,38 @@ indices. The moment you access an undefined index however, our version turns out
 $data['origin']; // Notice: Undefined index: origin
 $food('origin'); // null
 ```
+
+### Publish
+
+This sounds bananas but this function basically publishes any private method.  
+This wraps [Closure::bindTo](http://php.net/manual/en/closure.bindto.php), and exists mostly to be able to pass private methods to `map` and `filter`.
+
+```php
+class Foo {
+
+    public function filterNumbers(array $collection) {
+        // This is going to throw an exception:
+        return f\map([$this, 'isInt'], $collection);
+    }
+
+    private function isInt($n) {
+        return is_int($n);
+    }
+
+}
+```
+
+The above will generate an error because `isInt` is a private method.
+`publish` can be used here to publish the create a closure scoped to the object and therefore able to reach the private method:
+
+```php
+public function filterNumbers(array $collection) {
+    // This is going to throw an exception:
+    return f\map(f\publish('isInt', $this), $collection);
+} 
+```
+
+Note: an alternative in PHP 7.1 would be `Closure::fromCallable()`, which is scoped to the current object automatically.
 
 ### Reduce
 

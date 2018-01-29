@@ -77,6 +77,7 @@
       "library/Garp/Functional/PropIn.php",
       "library/Garp/Functional/PropOf.php",
       "library/Garp/Functional/PropSet.php",
+      "library/Garp/Functional/Publish.php",
       "library/Garp/Functional/Reduce.php",
       "library/Garp/Functional/ReduceAssoc.php",
       "library/Garp/Functional/Reindex.php",
