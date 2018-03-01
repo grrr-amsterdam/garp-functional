@@ -74,6 +74,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Lte](#lte)
 - [Map](#map)
 - [Match](#match)
+- [MergeAfter](#mergeafter)
 - [MergeAt](#mergeat)
 - [Modulo](#modulo)
 - [Multiply](#multiply)
@@ -606,6 +607,10 @@ f\match('/^\d+$/', '12345'); // ['12345']
 f\match('/([a-zA-Z]+) world/', 'Hello world'); // ['Hello world', 'Hello']
 f\filter(f\match('/^\d+$/'), ['123', 'abc', '456']); // ['123', '456']
 ```
+
+### MergeAfter
+
+Like [merge_at](#mergeat), but will add the given item _after_ the specified index.
 
 ### MergeAt
 
