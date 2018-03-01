@@ -30,6 +30,12 @@ class CountTest extends TestCase {
         );
     }
 
+    public function test_should_count_traversables() {
+        $this->assertEquals(
+            3, f\count(new MockSpiceTraverser())
+        );
+    }
+
     public function test_should_count_strings() {
         $this->assertEquals(
             3,

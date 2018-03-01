@@ -13,10 +13,14 @@ namespace Garp\Functional;
  * @return int
  */
 function count($subject) {
+    if ($subject instanceof \Traversable) {
+        return iterator_count($subject);
+    }
+
     if (is_object($subject) && !method_exists($subject, '__toString')) {
         throw new \InvalidArgumentException('count requires argument to be string or array');
     }
-    return is_array($subject) ?
-        \count($subject) :
-        mb_strlen(strval($subject));
+    return is_array($subject)
+        ? \count($subject)
+        : mb_strlen(strval($subject));
 }
