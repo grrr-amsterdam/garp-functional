@@ -20,15 +20,7 @@ function tail($collection) {
         return array_slice($collection, 1);
     }
     if ($collection instanceof \Traversable) {
-        $out = array();
-        // It really hurts having to loop here. I hate PHP.
-        foreach ($collection as $i => $item) {
-            if (!$i) {
-                continue;
-            }
-            $out[] = $item;
-        }
-        return $out;
+        return tail(iterator_to_array($collection));
     }
     throw new \InvalidArgumentException(
         'tail expects argument 1 to be a collection'

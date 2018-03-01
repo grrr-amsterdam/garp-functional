@@ -20,11 +20,10 @@ function reduce($fn, $default, $collection = null) {
         if (is_array($collection)) {
             return array_reduce($collection, $fn, $default);
         }
-        $acc = $default;
-        foreach ($collection as $item) {
-            $acc = call_user_func($fn, $acc, $item);
+        if ($collection instanceof \Traversable) {
+            return reduce($fn, $default, iterator_to_array($collection));
         }
-        return $acc;
+        throw new \InvalidArgumentException('reduce expects argument 3 to be a collection');
     };
     return is_null($collection) ? $reducer : $reducer($collection);
 }

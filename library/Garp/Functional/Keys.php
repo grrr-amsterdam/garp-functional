@@ -20,11 +20,7 @@ function keys($collection) {
         return range(0, strlen($collection)-1);
     }
     if ($collection instanceof \Traversable) {
-        $out = array();
-        foreach ($collection as $key => $value) {
-            $out[] = $key;
-        }
-        return $out;
+        return keys(iterator_to_array($collection));
     }
     if (is_object($collection)) {
         return array_keys(get_object_vars($collection));

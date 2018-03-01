@@ -25,16 +25,7 @@ function drop($n, $collection = null) {
             return substr($collection, $n);
         }
         if ($collection instanceof \Traversable) {
-            $out = array();
-            $count = 0;
-            foreach ($collection as $key => $value) {
-                $count++;
-                if ($count <= $n) {
-                    continue;
-                }
-                $out[] = $value;
-            }
-            return $out;
+            return drop($n, iterator_to_array($collection));
         }
         throw new \InvalidArgumentException('drop expects argument 2 to be a collection');
     };
