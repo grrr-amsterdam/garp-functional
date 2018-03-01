@@ -47,6 +47,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Compose](#compose) 
 - [Concat](#concat)
 - [ConcatRight](#concatright)
+- [Contains](#contains)
 - [Count](#count)
 - [Divide](#divide)
 - [Drop](#drop)
@@ -228,6 +229,16 @@ $a = [
 ];
 $b = [ 'first_name' => 'John' ];
 f\concat_right($a, $b); // ['first_name' => 'Miles', 'last_name' => 'Davis'] 
+```
+
+### Contains
+
+Checks for existence of a needle in a haystack. When given an array, it performs `in_array`. 
+On strings, it will use `strpos`. Any object implementing `Traversable` will be checked as if it were an array.
+
+```php
+f\contains('hello', ['hello', 'world']); // true
+f\contains(42, [12, 24, 42]); // true
 ```
 
 ### Count
