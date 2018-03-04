@@ -70,6 +70,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Join](#join) 
 - [Keys](#keys)
 - [KeysWhere](#keyswhere)
+- [Last](#last)
 - [Lt](#lt)
 - [Lte](#lte)
 - [Map](#map)
@@ -479,6 +480,8 @@ f\head($spices); // 'nutmeg'
 f\head('Miles'); // 'M'
 ```
 
+See also [last](#last) and [tail](#tail).
+
 ### Id
 
 Identity function, returns what it's given.   
@@ -568,6 +571,15 @@ $fruits = [
 ];
 
 f\keys_where(f\prop_equals('color', 'green'), $fruits) // [2, 3]
+```
+
+### Last
+
+Returns the last item in a collection.
+
+```php
+f\last(['foo', 'bar', 'baz']); // 'baz'
+f\last('Miles Davis'); // 's'
 ```
 
 ### Lt
