@@ -11,6 +11,3 @@ notifications:
   slack:
     rooms:
       - secure: sACZWyHT50rJ1Ih6xyYTUN1spUaWSQI6eyR8/vepEIFXbHA6sVULAVsRiigIWKKOjJ6KPHyhxD4dtQsTD4/PKO8kwjhlHWKyQld5iwJT9S/pptL48a7z9cTeM0PyIESGCyzowQ+6e2J3+W5aTF/iDW4bqoBJcY2rcIsBwVzayXm68Dx20epffEiLcvDNt31jWl12vF4xpNi3jzYmw0AaGXnsQXf81hmHPBVoTt50IFMfS9cefasHxfxW6anYrtyYgn5LZCDqXtoXC/l2QqjCr0USr3kQa+skEdiGBRHgULEjD4xA/w3nLayyRBMXzJv+Gr2zgNYRtOb0r1BrzOoCcxupa6H3J/7rZLchko2WG68hzgdq2d+o5Lsf01PoHwoi1/SVwqql+gKPuuN4tYNYBuhnDhUezFFuQaBu75y6au5crQxBQDBMXCBXykeq7aDeOsiN3R34ErzABuP/bQg6qpHa7xyTUJpP1Z/RG5TnFa97CfpuK1MFEep+JNcE712p+kxvDb2VjFPQfeUWGx8bBziktT3MDqUB+SA6SxH3n4cDepnxdrqqEPBgORJGV756VtYHwzy8XJRxYS5w6C85BYI7locGrFUoX+IPHHxIokAgR6SHxCIn0Jj2ywFRve+uLitjeJoaO9/zx2mqoksZADk3QGQhuxqIDLd24UQ8AZs=
-    on_success: change
-    on_failure: always
-    template: "<%{build_url}|%{repository_name} [%{branch}] #%{build_number}>:\n%{message} (in %{duration})\nBy: %{author}\n<%{compare_url}|%{commit_message}>"
