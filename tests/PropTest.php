@@ -1,6 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 use Garp\Functional as f;
+use Carbon\Carbon;
 
 /**
  * @package  Garp\Functional
@@ -56,6 +57,42 @@ class PropTest extends TestCase {
         $this->assertEquals(
             '#FF0000',
             $getRed($colors)
+        );
+    }
+
+    /**
+     * @param  mixed  $result
+     * @param  string $prop
+     * @param  object $obj
+     * @return void
+     * @dataProvider magicDataProvider
+     */
+    public function test_should_read_magic_prop($result, $prop, $obj) {
+        $this->assertEquals(
+            $result,
+            f\prop($prop, $obj)
+        );
+    }
+
+    public function magicDataProvider() {
+        $obj = new class {
+            protected $_data = [
+                'bar' => '12345'
+            ];
+            public function __get($prop) {
+                return f\prop($prop, $this->_data);
+            }
+            public function __isset($prop) {
+                return isset($this->_data[$prop]);
+            }
+        };
+
+        $carbonInstance = Carbon::parse('2012-9-5 23:26:11.123789');
+        return array(
+            array(null, 'foo', $obj),
+            array('12345', 'bar', $obj),
+            array(2012, 'year', $carbonInstance),
+            array(248, 'dayOfYear', $carbonInstance)
         );
     }
 
