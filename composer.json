@@ -85,6 +85,7 @@
       "library/Garp/Functional/Reduce.php",
       "library/Garp/Functional/ReduceAssoc.php",
       "library/Garp/Functional/Reindex.php",
+      "library/Garp/Functional/RenameKeys.php",
       "library/Garp/Functional/Replace.php",
       "library/Garp/Functional/Some.php",
       "library/Garp/Functional/Sort.php",

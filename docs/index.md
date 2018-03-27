@@ -95,6 +95,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Reduce](#reduce) 
 - [ReduceAssoc](#reduceassoc) 
 - [Reindex](#reindex)
+- [RenameKeys](#renamekeys)
 - [Replace](#replace)
 - [Some](#some)
 - [Sort](#sort) 
@@ -998,6 +999,33 @@ $data = [123, 'abc', true, [], 'def'];
 $strings = array_filter('is_string', $data); // [1 => 'abc', 4 => 'def']
 f\reindex($strings); // [0 => 'abc', 1 => 'def'] 
 ``` 
+
+### RenameKeys
+
+Rename keys in an array:
+
+```php
+$a = [
+  'foo' => 123,
+  'bar' => 456
+];
+
+f\rename_keys(
+  ['foo' => 'baz', 'bar' => 'qud'],
+  $a
+); // ['baz' => 123, 'qud' => 456]
+```
+
+Of course it also accepts a transformer function:
+
+```php
+$a = [
+  'foo' => 123,
+  'bar' => 456
+];
+
+f\rename_keys('strrev', $a); // ['oof' => 123, 'rab' => 456]
+```
 
 ### Replace
 
