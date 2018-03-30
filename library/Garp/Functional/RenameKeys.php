@@ -31,7 +31,7 @@ function rename_keys($transformMap, array $collection = null) {
                     $acc
                 );
             },
-            [],
+            array(),
             keys($collection)
         );
     };
