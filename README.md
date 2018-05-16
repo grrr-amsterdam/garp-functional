@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/grrr-amsterdam/garp-functional.svg?branch=master)](https://travis-ci.org/grrr-amsterdam/garp-functional)
+[![Build Status](https://travis-ci.com/grrr-amsterdam/garp-functional.svg?branch=master)](https://travis-ci.com/grrr-amsterdam/garp-functional)
 
 # Garp Functional
 
