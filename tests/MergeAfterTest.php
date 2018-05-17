@@ -226,6 +226,27 @@ class MergeAfterTest extends TestCase {
         );
     }
 
+    /** @test */
+    public function if_object_is_already_in_target_then_just_move_the_object_in_the_target() {
+        $target = array(
+            'jazz' => 'Miles',
+            'pop' => 'Michael',
+            'soul' => 'Otis',
+            'rock' => 'Jimi'
+        );
+        $object = array('pop' => 'Michael');
+
+        $this->assertSame(
+            array(
+                'jazz' => 'Miles',
+                'soul' => 'Otis',
+                'pop' => 'Michael',
+                'rock' => 'Jimi'
+            ),
+            f\merge_after($object, 'soul', $target)
+        );
+    }
+
     public function test_should_be_curried() {
         $merger = f\merge_after('Miles', 1);
         $this->assertTrue(is_callable($merger));

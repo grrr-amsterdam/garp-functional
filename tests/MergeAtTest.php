@@ -260,5 +260,26 @@ class MergeAtTest extends TestCase {
         f\merge_at('foo', new \Exception(), array());
     }
 
+    /** @test */
+    public function if_object_is_already_in_target_then_just_move_the_object_in_the_target() {
+        $target = array(
+            'jazz' => 'Miles',
+            'pop' => 'Michael',
+            'soul' => 'Otis',
+            'rock' => 'Jimi'
+        );
+        $object = array('jazz' => 'Miles');
+
+        $this->assertSame(
+            array(
+                'pop' => 'Michael',
+                'jazz' => 'Miles',
+                'soul' => 'Otis',
+                'rock' => 'Jimi'
+            ),
+            f\merge_at($object, 'soul', $target)
+        );
+    }
+
 }
 

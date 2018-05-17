@@ -23,6 +23,12 @@ function merge_after($object, $index, array $target = null) {
         $wrappedObject = $objectIsAssoc && $targetIsAssoc ? $object : array($object);
 
         if (is_string($index)) {
+            if ($objectIsAssoc
+                && $targetIsAssoc
+                && array_key_exists(key($wrappedObject), $target)
+            ) {
+                $target = omit(array(key($wrappedObject)), $target);
+            }
             $keys = array_keys($target);
             $targetKey = array_search($index, $keys, true);
             // If no match is found, add object to the end.
