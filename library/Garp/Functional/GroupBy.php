@@ -25,7 +25,7 @@ function group_by($indexFn, $collection = null) {
                 $key = $indexFn($cur);
                 if (!is_int($key) && !is_string($key)) {
                     throw new \InvalidArgumentException(
-                        'Key is not usable as index. Must be of type integer or string'
+                        'group_by expects result of first argument to be of type integer or string'
                     );
                 }
                 $acc[$key][] = $cur;
