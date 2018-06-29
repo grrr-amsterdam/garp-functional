@@ -87,12 +87,27 @@ class PropTest extends TestCase {
             }
         };
 
+        $arrayAccessObj = new class implements ArrayAccess {
+            protected $_data = [];
+            public function offsetExists($offset) {
+                return isset($this->_data[$offset]);
+            }
+            public function offsetGet($offset) {
+                throw new Exception('Don\'t call get when offset is not set');
+            }
+            public function offsetSet($offset, $value) {
+            }
+            public function offsetUnset($offset) {
+            }
+        };
+
         $carbonInstance = Carbon::parse('2012-9-5 23:26:11.123789');
         return array(
             array(null, 'foo', $obj),
             array('12345', 'bar', $obj),
             array(2012, 'year', $carbonInstance),
-            array(248, 'dayOfYear', $carbonInstance)
+            array(248, 'dayOfYear', $carbonInstance),
+            array(null, 'bla', $arrayAccessObj)
         );
     }
 
