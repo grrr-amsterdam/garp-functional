@@ -67,6 +67,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Id](#id)
 - [IndexBy](#indexby)
 - [Instance](#instance)
+- [IsAssoc](#isassoc)
 - [Join](#join) 
 - [Keys](#keys)
 - [KeysWhere](#keyswhere)
@@ -388,6 +389,9 @@ $data = [1, 2, [3, 4, 5, [6, 7], 8], 9, [], 10];
 f\flatten($data); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
+Note: associative arrays are considered their own little unit and not unpacked further.  
+You can use `array_values` for that.
+
 ### Flip
 
 Flip the order of the first two arguments of a function.
@@ -538,6 +542,19 @@ Also accepts strings:
 ```php
 instance('Foo_Bar_Baz'); // new Foo_Bar_Baz()
 ```
+
+### IsAssoc
+
+Checks wether an iterable is associative.
+
+```php
+is_assoc([]); // false
+is_assoc([1, 2, 3]); // false
+is_assoc(['foo' => 'bar']); // true
+is_assoc(['foo' => 'bar', 1, 2, 3]); // true
+```
+
+Note that mixed numeric indexes with associative indexes will be considered an associative array.
 
 ### Join
 
