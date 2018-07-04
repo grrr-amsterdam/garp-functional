@@ -15,7 +15,7 @@ class IsAssocTest extends TestCase {
      * @param  bool     $result
      * @return void
      */
-    public function test_should_recognize_associative_arrays(iterable $input, bool $result) {
+    public function test_should_recognize_associative_arrays($input, bool $result) {
         $this->assertSame($result, f\is_assoc($input));
     }
 
