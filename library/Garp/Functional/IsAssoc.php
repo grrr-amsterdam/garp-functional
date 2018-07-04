@@ -13,7 +13,9 @@ namespace Garp\Functional;
  * @param  iterable $iterable
  * @return bool
  */
-function is_assoc(iterable $iterable): bool {
-    return !empty($iterable)
+function is_assoc($iterable): bool {
+    $isIterable = is_array($iterable) || (is_object($iterable) && $iterable instanceof \Traversable);
+    return $isIterable
+        && !empty($iterable)
         && keys($iterable) !== range(0, count($iterable) - 1);
 }

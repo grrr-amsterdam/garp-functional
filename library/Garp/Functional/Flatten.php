@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,14 +11,15 @@ namespace Garp\Functional;
 /**
  * Flatten an array of arrays.
  *
- * @param array $collection
+ * @param  iterable $collection
  * @return array
  */
-function flatten(iterable $collection): array {
+function flatten($collection): array {
     $results = [];
     foreach ($collection as $item) {
+        $isIterable = is_array($item) || (is_object($item) && $item instanceof \Traversable);
         // Merge arrays...
-        if (is_iterable($item) && !is_assoc($item)) {
+        if ($isIterable && !is_assoc($item)) {
             $results = array_merge($results, flatten($item));
             continue;
         }
