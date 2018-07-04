@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -14,27 +16,29 @@ namespace Garp\Functional;
  * @return array
  */
 function rename_keys($transformMap, array $collection = null) {
-    if (!is_callable($transformMap) && !is_array($transformMap)) {
-        throw new \InvalidArgumentException(
-            'rename_keys expects argument 1 to be an array or a function'
-        );
-    }
-    $transformer = function ($collection) use ($transformMap) {
-        return reduce(
-            function ($acc, $cur) use ($transformMap, $collection) {
-                $prop = is_callable($transformMap)
-                    ? $transformMap($cur)
-                    : prop($cur, $transformMap);
-
-                return prop_set(
-                    $prop ?: $cur,
-                    always($collection[$cur]), // Why? Because: https://github.com/grrr-amsterdam/garp-functional/pull/20
-                    $acc
+    return autocurry(
+        function ($transformMap, $collection) {
+            if (!is_callable($transformMap) && !is_array($transformMap)) {
+                throw new \InvalidArgumentException(
+                    'rename_keys expects argument 1 to be an array or a function'
                 );
-            },
-            array(),
-            keys($collection)
-        );
-    };
-    return func_num_args() < 2 ? $transformer : $transformer($collection);
+            }
+            return reduce(
+                function ($acc, $cur) use ($transformMap, $collection) {
+                    $prop = is_callable($transformMap)
+                        ? $transformMap($cur)
+                        : prop($cur, $transformMap);
+
+                    return prop_set(
+                        $prop ?: $cur,
+                        always($collection[$cur]), // Why? Because: https://github.com/grrr-amsterdam/garp-functional/pull/20
+                        $acc
+                    );
+                },
+                [],
+                keys($collection)
+            );
+        },
+        2
+    )(...func_get_args());
 }

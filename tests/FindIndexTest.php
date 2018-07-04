@@ -64,18 +64,4 @@ class FindIndexTest extends TestCase {
         );
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function test_should_throw_on_invalid_collection() {
-        f\find_index(f\equals('foo'), 42);
-    }
-
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function test_should_throw_on_invalid_function() {
-        f\find_index(42, []);
-    }
-
 }

@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,13 +11,15 @@ namespace Garp\Functional;
 /**
  * Functional equality check.
  *
- * @param mixed $comparison
- * @param mixed $subject
+ * @param  mixed $comparison
+ * @param  mixed $subject
  * @return bool
  */
 function equals($comparison, $subject = null) {
-    $checker = function ($subject) use ($comparison) {
-        return $comparison === $subject;
-    };
-    return func_num_args() < 2 ? $checker : $checker($subject);
+    return autocurry(
+        function ($comparison, $subject): bool {
+            return $comparison === $subject;
+        },
+        2
+    )(...func_get_args());
 }

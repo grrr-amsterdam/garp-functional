@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,13 +11,15 @@ namespace Garp\Functional;
 /**
  * Split a string.
  *
- * @param string $separator
- * @param string $subject
+ * @param  string $separator
+ * @param  string $subject
  * @return array
  */
-function split($separator, $subject = null) {
-    $splitter = function ($subject) use ($separator) {
-        return explode($separator, $subject);
-    };
-    return func_num_args() < 2 ? $splitter : $splitter($subject);
+function split(string $separator, string $subject = null) {
+    return autocurry(
+        function ($separator, $subject): array {
+            return explode($separator, $subject);
+        },
+        2
+    )(...func_get_args());
 }

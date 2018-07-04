@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -16,12 +18,11 @@ namespace Garp\Functional;
  * not('in_array')('a'); // false
  * not('in_array')('d'); // true
  *
- * @param callable $fn Anything that call_user_func_array accepts
+ * @param  callable $fn Anything that call_user_func_array accepts
  * @return callable
  */
-function not($fn) {
-    return function () use ($fn) {
-        $args = func_get_args();
-        return !call_user_func_array($fn, $args);
+function not(callable $fn): callable {
+    return function (...$args) use ($fn) {
+        return !$fn(...$args);
     };
 }

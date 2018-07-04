@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,15 +11,14 @@ namespace Garp\Functional;
 /**
  * Returns an array containing elements from the given arrays.
  *
- * @param array $array1,... At least two arrays are required, but more is allowed
+ * @param  array ...$arrays At least two arrays are required, but more is allowed
  * @return mixed
  */
-function zip() {
-    $arrayOrTraversable = either('is_array', partial_right('is_a', 'Traversable'));
-    if (!every($arrayOrTraversable, func_get_args())) {
+function zip(...$arrays) {
+    if (!every('is_iterable', $arrays)) {
         throw new \InvalidArgumentException(__FUNCTION__ . ' requires all arguments to be arrays');
     }
-    $keys = array_unique(flatten(map('Garp\Functional\keys', func_get_args())));
+    $keys = array_unique(flatten(map('Garp\Functional\keys', $arrays)));
     return reduce(
         function ($zipped, $cur) use ($keys) {
             foreach ($keys as $key) {
@@ -25,7 +26,7 @@ function zip() {
             }
             return $zipped;
         },
-        array(),
-        func_get_args()
+        [],
+        $arrays
     );
 }

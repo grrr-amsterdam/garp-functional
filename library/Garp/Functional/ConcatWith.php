@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -16,8 +18,7 @@ namespace Garp\Functional;
  */
 function concat_with(callable $mergeFunction, ...$collections) {
     $concatter = function (...$collections) use ($mergeFunction) {
-        $isTraversable = either('is_array', partial_right('is_a', 'Traversable'));
-        if (!every($isTraversable, $collections)) {
+        if (!every('is_iterable', $collections)) {
             throw new \InvalidArgumentException('concat_with expects arguments 2 and up to be arrays.');
         }
         return reduce(

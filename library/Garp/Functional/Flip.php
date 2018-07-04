@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -18,13 +20,10 @@ namespace Garp\Functional;
  * argument, causing it to return a new function awaiting the second parameter,
  * but that one's not influenced by flip.
  *
- * @param callable $fn
+ * @param  callable $fn
  * @return callable
  */
-function flip($fn) {
-    if (!is_callable($fn)) {
-        throw new \InvalidArgumentException('flip expects parameter 1 to be callable');
-    }
+function flip(callable $fn): callable {
     return function () use ($fn) {
         $args = func_get_args();
         $rest = array_slice($args, 2);

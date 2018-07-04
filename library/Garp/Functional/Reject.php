@@ -12,13 +12,15 @@ namespace Garp\Functional;
  * Curried filter function, but returns results that WON'T match the predicate function.
  * Accepts more than arrays.
  *
- * @param callable $predicate
- * @param mixed    $collection
+ * @param  callable $predicate
+ * @param  mixed    $collection
  * @return mixed
  */
-function reject(callable $predicate, $collection = null) {
-    $filterer = function ($collection) use ($predicate) {
-        return filter(not($predicate), $collection);
-    };
-    return func_num_args() < 2 ? $filterer : $filterer($collection);
+function reject(callable $predicate, iterable $collection = null) {
+    return autocurry(
+        function ($predicate, $collection) {
+            return filter(not($predicate), $collection);
+        },
+        2
+    )(...func_get_args());
 }

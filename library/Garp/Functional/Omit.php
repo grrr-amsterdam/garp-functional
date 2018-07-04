@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,20 +11,22 @@ namespace Garp\Functional;
 /**
  * Create a copy of the array that does not contain the specified keys.
  *
- * @param array $omitted
- * @param array $collection
+ * @param  array           $omitted
+ * @param  iterable|object $collection
  * @return array
  */
 function omit(array $omitted, $collection = null) {
-    $omitter = function ($collection) use ($omitted) {
-        return reduce(
-            function ($obj, $key) use ($collection) {
-                $obj[$key] = prop($key, $collection);
-                return $obj;
-            },
-            array(),
-            filter(not(partial_right('in_array', $omitted)), keys($collection))
-        );
-    };
-    return func_num_args() < 2 ? $omitter : $omitter($collection);
+    return autocurry(
+        function ($omitted, $collection): array {
+            return reduce(
+                function ($obj, $key) use ($collection) {
+                    $obj[$key] = prop($key, $collection);
+                    return $obj;
+                },
+                [],
+                filter(not(partial_right('in_array', $omitted)), keys($collection))
+            );
+        },
+        2
+    )(...func_get_args());
 }

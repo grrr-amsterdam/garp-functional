@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,16 +11,16 @@ namespace Garp\Functional;
 /**
  * Returns a function which executes but once.
  *
- * @param callable $fn
+ * @param  callable $fn
  * @return callable
  */
-function once($fn) {
-    return function () use ($fn) {
+function once(callable $fn): callable {
+    return function (...$args) use ($fn) {
         static $done = false;
         static $result = null;
         if (!$done) {
             $done = true;
-            $result = call_user_func_array($fn, func_get_args());
+            $result = $fn(...$args);
             return $result;
         }
         return $result;

@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,20 +11,22 @@ namespace Garp\Functional;
 /**
  * Create a new array containing only the keys from the original that you want.
  *
- * @param array $allowed
- * @param array $collection
+ * @param  array $allowed
+ * @param  array $collection
  * @return array
  */
 function pick(array $allowed, $collection = null) {
-    $picker = function ($collection) use ($allowed) {
-        $keys = filter(
-            partial_right('in_array', $allowed),
-            keys($collection)
-        );
-        return array_combine(
-            $keys,
-            map(partial_right('Garp\Functional\Prop', $collection), $keys)
-        );
-    };
-    return func_num_args() < 2 ? $picker : $picker($collection);
+    return autocurry(
+        function ($allowed, $collection): array {
+            $keys = filter(
+                partial_right('in_array', $allowed),
+                keys($collection)
+            );
+            return array_combine(
+                $keys,
+                map(partial_right('Garp\Functional\Prop', $collection), $keys)
+            );
+        },
+        2
+    )(...func_get_args());
 }

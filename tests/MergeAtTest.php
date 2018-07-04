@@ -236,30 +236,6 @@ class MergeAtTest extends TestCase {
         );
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage merge_at expects index to be numeric, string or callable. Instead got boolean
-     */
-    public function test_wont_accept_boolean_as_index() {
-        f\merge_at('foo', true, array());
-    }
-
-    /**
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage merge_at expects index to be numeric, string or callable. Instead got array
-     */
-    public function test_wont_accept_array_as_index() {
-        f\merge_at('foo', array(), array());
-    }
-
-    /**
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage merge_at expects index to be numeric, string or callable. Instead got object
-     */
-    public function test_wont_accept_object_as_index() {
-        f\merge_at('foo', new \Exception(), array());
-    }
-
     /** @test */
     public function if_object_is_already_in_target_then_just_move_the_object_in_the_target() {
         $target = array(

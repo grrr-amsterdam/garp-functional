@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -12,17 +14,18 @@ namespace Garp\Functional;
  * Accepts 0 or more arguments. When 1 or less is given, a curried function will be
  * returned.
  *
+ * @param  mixed ...$args
  * @return mixed
  */
-function concat_right() {
+function concat_right(...$args) {
     if (func_num_args() <= 1) {
         return call_user_func_array(
             'Garp\Functional\partial_right',
-            array_merge(array('Garp\Functional\concat'), func_get_args())
+            array_merge(['Garp\Functional\concat'], $args)
         );
     }
     return call_user_func_array(
         'Garp\Functional\concat',
-        array_reverse(func_get_args())
+        array_reverse($args)
     );
 }
