@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Marco Worms <marcogworms@gmail.com>
@@ -9,8 +11,8 @@ namespace Garp\Functional;
 /**
  * Divide two numbers.
  *
- * @param int $left
- * @param int $right
+ * @param  int $left
+ * @param  int $right
  * @return int
  */
 function divide($left, $right = null) {

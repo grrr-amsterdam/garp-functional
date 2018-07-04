@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,11 +11,11 @@ namespace Garp\Functional;
 /**
  * Drop the first $n items of a collection.
  *
- * @param int $n
- * @param array|string $collection
+ * @param  int $n
+ * @param  array|string $collection
  * @return array|string
  */
-function drop($n, $collection = null) {
+function drop(int $n, $collection = null) {
     if (!is_numeric($n)) {
         throw new \InvalidArgumentException('drop expects the first argument to be numeric');
     }

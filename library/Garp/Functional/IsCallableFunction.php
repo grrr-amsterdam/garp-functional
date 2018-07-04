@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -15,10 +17,10 @@ namespace Garp\Functional;
  * not detectable with either() because is_callable() will be true for that instance, and therefore
  * either() will return a closure, instead of the instance (or the fallback).
  *
- * @param mixed $callable
+ * @param  mixed $callable
  * @return bool
  */
-function is_callable_function($callable) {
+function is_callable_function($callable): bool {
     if (!is_callable($callable)) {
         return false;
     }

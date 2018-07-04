@@ -16,11 +16,11 @@ namespace Garp\Functional;
  * @param mixed    $collection
  * @return mixed
  */
-function filter(callable $predicate, $collection = null) {
-    $filterer = function ($collection) use ($predicate) {
+function filter(callable $predicate, iterable $collection = null) {
+    $filterer = function ($collection) use ($predicate): iterable {
         if (is_array($collection)) {
             $filtered = array_filter($collection, $predicate);
-            return !is_assoc($collection) ? array_values($filtered) : $filtered;
+            return is_assoc($collection) ? $filtered : array_values($filtered);
         }
         $out = [];
         foreach ($collection as $index => $item) {

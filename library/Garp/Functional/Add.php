@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,9 +11,9 @@ namespace Garp\Functional;
 /**
  * Add two numbers.
  *
- * @param int $left
- * @param int $right
- * @return int
+ * @param  int|float $left
+ * @param  int|float $right
+ * @return int|float
  */
 function add($left, $right = null) {
     return autocurry(

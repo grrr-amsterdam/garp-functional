@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -14,7 +16,7 @@ namespace Garp\Functional;
  * @return bool
  */
 function contains($item, $collection = null) {
-    $checker = function ($collection) use ($item) {
+    $checker = function ($collection) use ($item): bool {
         if (is_string($collection)) {
             return strpos($collection, strval($item)) !== false;
         }

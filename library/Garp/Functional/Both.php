@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,13 +11,13 @@ namespace Garp\Functional;
 /**
  * Return true if both arguments are truthy.
  *
- * @param mixed $left
- * @param mixed $right
- * @return bool
+ * @param  mixed $left
+ * @param  mixed $right
+ * @return bool|callable
  */
 function both($left, $right) {
     if (is_callable_function($left) || is_callable_function($right)) {
-        return function () use ($left, $right) {
+        return function () use ($left, $right): bool {
             $leftVal = is_callable_function($left)
                 ? call_user_func_array($left, func_get_args())
                 : $left;

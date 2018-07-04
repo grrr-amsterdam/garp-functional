@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -16,10 +18,11 @@ namespace Garp\Functional;
  *
  * Takes n function arguments.
  *
+ * @param  callable[] ...$args
  * @return callable
  */
-function compose() {
-    $functions = array_reverse(func_get_args());
+function compose(...$args): callable {
+    $functions = array_reverse($args);
     return function ($arg) use ($functions) {
         return reduce(
             function ($acc, $cur) {

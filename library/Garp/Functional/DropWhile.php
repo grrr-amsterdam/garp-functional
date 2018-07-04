@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -10,11 +12,11 @@ namespace Garp\Functional;
  * Drop items from a collection while the predicate function returns true.
  * Stop dropping at the first falsey value.
  *
- * @param callable $predicate
- * @param array $collection
+ * @param  callable $predicate
+ * @param  array|string $collection
  * @return array
  */
-function drop_while($predicate, $collection = null) {
+function drop_while(callable $predicate, $collection = null) {
     if (!is_callable($predicate)) {
         throw new \InvalidArgumentException('drop_while expects the first argument to be callable');
     }

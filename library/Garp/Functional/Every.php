@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -13,9 +15,9 @@ namespace Garp\Functional;
  * @param array    $collection
  * @return bool
  */
-function every($fn, $collection = null) {
+function every(callable $fn, iterable $collection = null) {
     return reduce(
-        function ($acc, $cur) use ($fn) {
+        function ($acc, $cur) use ($fn): bool {
             return $acc && !!call_user_func($fn, $cur);
         },
         true,

@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -14,7 +16,7 @@ namespace Garp\Functional;
  * @return bool
  */
 function equals($comparison, $subject = null) {
-    $checker = function ($subject) use ($comparison) {
+    $checker = function ($subject) use ($comparison): bool {
         return $comparison === $subject;
     };
     return func_num_args() < 2 ? $checker : $checker($subject);

@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -10,10 +12,10 @@ namespace Garp\Functional;
  * Returns a function that will always return the given argument.
  * Also known as `const`, or the `K` combinator.
  *
- * @param mixed $it
+ * @param  mixed $it
  * @return mixed
  */
-function always($it = null) {
+function always($it = null): callable {
     return function () use ($it) {
         return $it;
     };
