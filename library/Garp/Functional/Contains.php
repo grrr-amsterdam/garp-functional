@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -14,17 +16,19 @@ namespace Garp\Functional;
  * @return bool
  */
 function contains($item, $collection = null) {
-    $checker = function ($collection) use ($item) {
-        if (is_string($collection)) {
-            return strpos($collection, strval($item)) !== false;
-        }
-        if (is_array($collection)) {
-            return in_array($item, $collection);
-        }
-        if ($collection instanceof \Traversable) {
-            return contains($item, iterator_to_array($collection));
-        }
-        throw new \InvalidArgumentException('contains expects argument 2 to be a collection');
-    };
-    return func_num_args() < 2 ? $checker : $checker($collection);
+    return autocurry(
+        function ($item, $collection):bool {
+            if (is_string($collection)) {
+                return strpos($collection, strval($item)) !== false;
+            }
+            if (is_array($collection)) {
+                return in_array($item, $collection);
+            }
+            if ($collection instanceof \Traversable) {
+                return contains($item, iterator_to_array($collection));
+            }
+            throw new \InvalidArgumentException('contains expects argument 2 to be a collection');
+        },
+        2
+    )(...func_get_args());
 }

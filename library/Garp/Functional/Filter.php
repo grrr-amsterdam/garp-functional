@@ -12,23 +12,17 @@ namespace Garp\Functional;
  * Curried filter function.
  * Accepts more than arrays.
  *
- * @param callable $predicate
- * @param mixed    $collection
+ * @param  callable $predicate
+ * @param  mixed    $collection
  * @return mixed
  */
-function filter(callable $predicate, $collection = null) {
-    $filterer = function ($collection) use ($predicate) {
-        if (is_array($collection)) {
+function filter(callable $predicate, iterable $collection = null) {
+    return autocurry(
+        function ($predicate, $collection): iterable {
+            $collection = is_array($collection) ? $collection : iterator_to_array($collection);
             $filtered = array_filter($collection, $predicate);
-            return !is_assoc($collection) ? array_values($filtered) : $filtered;
-        }
-        $out = [];
-        foreach ($collection as $index => $item) {
-            if (call_user_func($predicate, $item)) {
-                $out[$index] = $item;
-            }
-        }
-        return !is_assoc($collection) ? array_values($out) : $out;
-    };
-    return func_num_args() < 2 ? $filterer : $filterer($collection);
+            return is_assoc($collection) ? $filtered : array_values($filtered);
+        },
+        2
+    )(...func_get_args());
 }

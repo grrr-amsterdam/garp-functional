@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,20 +11,16 @@ namespace Garp\Functional;
 /**
  * Functional equality check.
  *
- * @param string $prop
- * @param mixed $value
- * @param mixed $obj
+ * @param  string $prop
+ * @param  mixed $value
+ * @param  mixed $obj
  * @return bool
  */
 function prop_equals($prop, $value = null, $obj = null) {
-    if (func_num_args() === 1) {
-        return partial('Garp\Functional\prop_equals', $prop);
-    }
-    $checker = function ($value, $obj = null) use ($prop) {
-        $checker2 = function ($obj) use ($prop, $value) {
-            return prop($prop, $obj) === $value;
-        };
-        return func_num_args() < 2 ? $checker2 : $checker2($obj);
-    };
-    return func_num_args() < 3 ? $checker($value) : $checker($value, $obj);
+    return autocurry(
+        function ($prop, $value, $obj) {
+            return equals(prop($prop, $obj), $value);
+        },
+        3
+    )(...func_get_args());
 }

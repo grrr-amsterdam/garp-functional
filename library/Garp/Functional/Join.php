@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -10,16 +12,18 @@ namespace Garp\Functional;
  * Join a list where every item is separated by a given separator.
  * Works with arrays and strings.
  *
- * @param string $separator
- * @param mixed $list
+ * @param  string $separator
+ * @param  mixed $list
  * @return string
  */
-function join($separator, $list = null) {
-    $joiner = function ($list) use ($separator) {
-        if (is_string($list)) {
-            $list = str_split($list);
-        }
-        return implode($separator, $list);
-    };
-    return func_num_args() < 2 ? $joiner : $joiner($list);
+function join(string $separator, $list = null) {
+    return autocurry(
+        function ($separator, $list) {
+            if (is_string($list)) {
+                $list = str_split($list);
+            }
+            return implode($separator, $list);
+        },
+        2
+    )(...func_get_args());
 }

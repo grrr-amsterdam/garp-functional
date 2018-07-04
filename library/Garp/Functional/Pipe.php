@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Marco Worms <marcogworms@gmail.com>
@@ -16,10 +18,10 @@ namespace Garp\Functional;
  *
  * Takes n function arguments.
  *
+ * @param  callable[] ...$functions
  * @return callable
  */
-function pipe() {
-    $functions = func_get_args();
+function pipe(...$functions): callable {
     return function ($arg) use ($functions) {
         return reduce(
             function ($acc, $cur) {

@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,12 +11,14 @@ namespace Garp\Functional;
 /**
  * Returns the given argument.
  *
- * @param mixed $it
+ * @param  mixed $it
  * @return mixed
  */
 function id($it = null) {
-    if (!func_num_args()) {
-        return partial('Garp\Functional\id');
-    }
-    return $it;
+    return autocurry(
+        function ($it) {
+            return $it;
+        },
+        1
+    )(...func_get_args());
 }

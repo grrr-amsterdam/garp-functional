@@ -9,7 +9,7 @@ namespace Garp\Functional;
 /**
  * Grab the rest of a list
  *
- * @param mixed $collection The collection to search in
+ * @param  mixed $collection The collection to search in
  * @return mixed
  */
 function tail($collection) {

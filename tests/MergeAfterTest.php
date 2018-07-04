@@ -257,29 +257,4 @@ class MergeAfterTest extends TestCase {
         );
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage merge_after expects index to be numeric, string or callable. Instead got boolean
-     */
-    public function test_wont_accept_boolean_as_index() {
-        f\merge_after('foo', true, array());
-    }
-
-    /**
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage merge_after expects index to be numeric, string or callable. Instead got array
-     */
-    public function test_wont_accept_array_as_index() {
-        f\merge_after('foo', array(), array());
-    }
-
-    /**
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage merge_after expects index to be numeric, string or callable. Instead got object
-     */
-    public function test_wont_accept_object_as_index() {
-        f\merge_after('foo', new \Exception(), array());
-    }
-
 }
-

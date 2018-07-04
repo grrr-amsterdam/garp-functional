@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,19 +11,21 @@ namespace Garp\Functional;
 /**
  * Replace a regex.
  *
- * @param mixed $regex
- * @param string $replacement
- * @param mixed $subject
+ * @param  string $regex
+ * @param  string $replacement
+ * @param  mixed  $subject
  * @return mixed The replaced string, or the subject if unusable
  */
-function replace($regex, $replacement, $subject = null) {
-    $replacer = function ($subject) use ($regex, $replacement) {
-        if (is_array($subject)
-            || (is_object($subject) && !method_exists($subject, '__toString'))
-        ) {
-            return $subject;
-        }
-        return preg_replace($regex, $replacement, strval($subject));
-    };
-    return func_num_args() < 3 ? $replacer : $replacer($subject);
+function replace(string $regex, $replacement, $subject = null) {
+    return autocurry(
+        function ($regex, $replacement, $subject) {
+            if (is_array($subject)
+                || (is_object($subject) && !method_exists($subject, '__toString'))
+            ) {
+                return $subject;
+            }
+            return preg_replace($regex, $replacement, strval($subject));
+        },
+        3
+    )(...func_get_args());
 }

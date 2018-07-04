@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -7,10 +9,10 @@
 namespace Garp\Functional;
 
 /**
- * Get either the left argument if true, otherwise the right argument.
+ * Get either the left argument if truthy, otherwise the right argument.
  *
- * @param mixed $left
- * @param mixed $right
+ * @param  mixed $left
+ * @param  mixed $right
  * @return mixed
  */
 function either($left, $right) {

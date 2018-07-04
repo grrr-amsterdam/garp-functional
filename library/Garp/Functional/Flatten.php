@@ -14,12 +14,11 @@ namespace Garp\Functional;
  * @param  iterable $collection
  * @return array
  */
-function flatten($collection): array {
+function flatten(iterable $collection): array {
     $results = [];
     foreach ($collection as $item) {
-        $isIterable = is_array($item) || (is_object($item) && $item instanceof \Traversable);
         // Merge arrays...
-        if ($isIterable && !is_assoc($item)) {
+        if (is_iterable($item) && !is_assoc($item)) {
             $results = array_merge($results, flatten($item));
             continue;
         }

@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,16 +11,21 @@ namespace Garp\Functional;
 /**
  * Returns true if $callback returns true for every item in the collection.
  *
- * @param callable $fn
- * @param array    $collection
+ * @param  callable $fn
+ * @param  array    $collection
  * @return bool
  */
-function every($fn, $collection = null) {
-    return reduce(
-        function ($acc, $cur) use ($fn) {
-            return $acc && !!call_user_func($fn, $cur);
+function every(callable $fn, iterable $collection = null) {
+    return autocurry(
+        function ($fn, $collection): bool {
+            return reduce(
+                function (bool $acc, $cur) use ($fn): bool {
+                    return $acc && !!call_user_func($fn, $cur);
+                },
+                true,
+                $collection
+            );
         },
-        true,
-        $collection
-    );
+        2
+    )(...func_get_args());
 }

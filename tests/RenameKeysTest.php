@@ -103,7 +103,7 @@ class RenameKeysTest extends TestCase {
      * @return void
      */
     public function test_should_throw_on_invalid_arguments($arg) {
-        f\rename_keys($arg);
+        f\rename_keys($arg, []);
     }
 
     public function invalidArgumentProvider() {

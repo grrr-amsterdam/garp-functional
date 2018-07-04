@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -10,10 +12,10 @@ namespace Garp\Functional;
  * Return a function that calls the original function with the given argument, and returns the
  * argument.
  *
- * @param callable $fn
+ * @param  callable $fn
  * @return callable
  */
-function tap($fn) {
+function tap(callable $fn): callable {
     return function ($x) use ($fn) {
         $fn($x);
         return $x;

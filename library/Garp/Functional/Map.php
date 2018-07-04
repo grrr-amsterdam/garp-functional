@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -10,20 +12,16 @@ namespace Garp\Functional;
  * Curried map function.
  * Accepts more than arrays.
  *
- * @param callable $fn
- * @param mixed    $collection
+ * @param  callable $fn
+ * @param  iterable $collection
  * @return mixed
  */
-function map($fn, $collection = null) {
-    $mapper = function ($collection) use ($fn) {
-        if (is_array($collection)) {
+function map(callable $fn, iterable $collection = null) {
+    return autocurry(
+        function ($fn, $collection): iterable {
+            $collection = is_array($collection) ? $collection : iterator_to_array($collection);
             return array_map($fn, $collection);
-        }
-        $out = array();
-        foreach ($collection as $index => $item) {
-            $out[$index] = $fn($item);
-        }
-        return $out;
-    };
-    return func_num_args() < 2 ? $mapper : $mapper($collection);
+        },
+        2
+    )(...func_get_args());
 }

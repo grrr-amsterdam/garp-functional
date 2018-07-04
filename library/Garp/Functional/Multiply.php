@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Marco Worms <marcogworms@gmail.com>
@@ -9,13 +11,15 @@ namespace Garp\Functional;
 /**
  * Multiply two numbers.
  *
- * @param int $left
- * @param int $right
- * @return int
+ * @param  int|float $left
+ * @param  int|float $right
+ * @return int|float
  */
 function multiply($left, $right = null) {
-    $multiplier = function ($right) use ($left) {
-        return $right * $left;
-    };
-    return func_num_args() < 2 ? $multiplier : $multiplier($right);
+    return autocurry(
+        function ($left, $right) {
+            return $right * $left;
+        },
+        2
+    )(...func_get_args());
 }

@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -13,9 +15,10 @@ namespace Garp\Functional;
  * Accepts 0 or more arguments. When 1 or less is given, a curried function will be
  * returned.
  *
+ * @param  mixed ...$args
  * @return mixed
  */
-function concat() {
+function concat(...$args) {
     $concatter = function () {
         $args = func_get_args();
         $toArray = function ($var) {
@@ -27,7 +30,7 @@ function concat() {
                 map($toArray, $args)
             );
         }
-        $isStringble = unary(
+        $isStringable = unary(
             either(
                 'is_string',
                 either(
@@ -36,7 +39,7 @@ function concat() {
                 )
             )
         );
-        if (every($isStringble, $args)) {
+        if (every($isStringable, $args)) {
             return join(
                 '',
                 map('strval', $args)
@@ -49,8 +52,8 @@ function concat() {
     if (func_num_args() <= 1) {
         return call_user_func_array(
             'Garp\Functional\partial',
-            array_merge(array('Garp\Functional\concat'), func_get_args())
+            array_merge(['Garp\Functional\concat'], $args)
         );
     }
-    return call_user_func_array($concatter, func_get_args());
+    return call_user_func_array($concatter, $args);
 }
