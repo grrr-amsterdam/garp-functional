@@ -10,16 +10,16 @@ use Garp\Functional as f;
 class FlattenTest extends TestCase {
 
     public function test_should_flatten_arrays() {
-        $test = array(
+        $test = [
             1, 2, 3,
-            array(4, 5, 6),
-            array(7, 8, 9),
-            array(10, 11, array(12, 13)),
-            14, 15, array(16),
-            array()
-        );
+            [4, 5, 6],
+            [7, 8, 9],
+            [10, 11, [12, 13]],
+            14, 15, [16],
+            []
+        ];
 
-        $fixture = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+        $fixture = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
         $this->assertEquals(
             $fixture,
             f\flatten($test)
@@ -27,20 +27,36 @@ class FlattenTest extends TestCase {
     }
 
     public function test_should_flatten_iterable_objects() {
-        $test = array(
+        $test = [
             new MockSpiceTraverser,
             1, 2, 3,
             new MockSpiceTraverser,
             4, 5, 6
-        );
+        ];
 
-        $fixture = array(
+        $fixture = [
             'nutmeg', 'cinnamon', 'clove', 1, 2, 3, 'nutmeg', 'cinnamon', 'clove', 4, 5, 6
-        );
+        ];
         $this->assertEquals(
             $fixture,
             f\flatten($test)
         );
     }
 
+    public function test_should_leave_associative_arrays_intact() {
+        $test = [
+            [['id' => 1, 'name' => 'Hank'], ['id' => 2, 'name' => 'Linda']],
+            [['id' => 3, 'name' => 'Jones']]
+        ];
+        $fixture = [
+            ['id' => 1, 'name' => 'Hank'],
+            ['id' => 2, 'name' => 'Linda'],
+            ['id' => 3, 'name' => 'Jones']
+        ];
+
+        $this->assertEquals(
+            $fixture,
+            f\flatten($test)
+        );
+    }
 }

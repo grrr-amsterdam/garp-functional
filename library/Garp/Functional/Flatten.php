@@ -12,11 +12,11 @@ namespace Garp\Functional;
  * @param array $collection
  * @return array
  */
-function flatten($collection) {
-    $results = array();
+function flatten(iterable $collection): array {
+    $results = [];
     foreach ($collection as $item) {
         // Merge arrays...
-        if (is_array($item) || $item instanceof \Traversable) {
+        if (is_iterable($item) && !is_assoc($item)) {
             $results = array_merge($results, flatten($item));
             continue;
         }
