@@ -121,6 +121,12 @@ class ConcatTest extends TestCase {
         );
     }
 
+    public function test_should_concat_null() {
+        $actual = f\concat(['test'], null);
+
+        $this->assertEquals(['test', null], $actual);
+    }
+
     /**
      * @expectedException InvalidArgumentException
      */

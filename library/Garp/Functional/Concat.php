@@ -19,7 +19,7 @@ function concat() {
     $concatter = function () {
         $args = func_get_args();
         $toArray = function ($var) {
-            return (array) $var;
+            return is_array($var) ? $var : [$var];
         };
         if (some(unary('is_array'), $args)) {
             return call_user_func_array(
