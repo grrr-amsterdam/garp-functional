@@ -817,7 +817,7 @@ Partially apply a function from the right side.
 
 ```php
 $isTraversableObject = f\partial_right('is_a', 'Traversable');
-$splitHelloWorld([1, 2, 3]); // false
+$isTraversableObject([1, 2, 3]); // false
 ```
 
 ### Pick
