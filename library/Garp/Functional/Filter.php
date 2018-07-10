@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -10,30 +12,23 @@ namespace Garp\Functional;
  * Curried filter function.
  * Accepts more than arrays.
  *
- * @param callable $fn
+ * @param callable $predicate
  * @param mixed    $collection
  * @return mixed
  */
-function filter($fn, $collection = null) {
-    if (!is_callable($fn)) {
-        throw new \InvalidArgumentException('filter expects the first argument to be callable');
-    }
-    $filterer = function ($collection) use ($fn) {
+function filter(callable $predicate, $collection = null) {
+    $filterer = function ($collection) use ($predicate) {
         if (is_array($collection)) {
-            $numericKeys = array_filter(array_keys($collection), 'is_numeric');
-            $isNumericArray = count($numericKeys) === count($collection);
-            $filtered = array_filter($collection, $fn);
-            return $isNumericArray ? array_values($filtered) : $filtered;
+            $filtered = array_filter($collection, $predicate);
+            return !is_assoc($collection) ? array_values($filtered) : $filtered;
         }
-        $out = array();
-        $isNumericArray = true;
+        $out = [];
         foreach ($collection as $index => $item) {
-            if (call_user_func($fn, $item)) {
+            if (call_user_func($predicate, $item)) {
                 $out[$index] = $item;
-                $isNumericArray = is_numeric($index) && $isNumericArray;
             }
         }
-        return $isNumericArray ? array_values($out) : $out;
+        return !is_assoc($collection) ? array_values($out) : $out;
     };
     return func_num_args() < 2 ? $filterer : $filterer($collection);
 }

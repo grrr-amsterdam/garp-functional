@@ -96,6 +96,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Reduce](#reduce) 
 - [ReduceAssoc](#reduceassoc) 
 - [Reindex](#reindex)
+- [Reject](#reject)
 - [RenameKeys](#renamekeys)
 - [Replace](#replace)
 - [Some](#some)
@@ -1016,6 +1017,16 @@ $data = [123, 'abc', true, [], 'def'];
 $strings = array_filter('is_string', $data); // [1 => 'abc', 4 => 'def']
 f\reindex($strings); // [0 => 'abc', 1 => 'def'] 
 ``` 
+
+### Reject
+
+Opposite of `filter`:
+
+```php
+$stuff = ['abc', 123, false, 'def', 456, true];
+f\reject('is_int', $stuff); // ['abc', false, 'def', true]
+f\reject('is_bool', $stuff); // ['abc', 123, 'def', 456]
+```
 
 ### RenameKeys
 

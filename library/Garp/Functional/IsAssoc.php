@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -14,6 +16,7 @@ namespace Garp\Functional;
  * @return bool
  */
 function is_assoc($iterable): bool {
+    // TODO should use is_iterable when switching to PHP 7.1
     $isIterable = is_array($iterable) || (is_object($iterable) && $iterable instanceof \Traversable);
     return $isIterable
         && !empty($iterable)
