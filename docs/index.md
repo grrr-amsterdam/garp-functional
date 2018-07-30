@@ -98,6 +98,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Reindex](#reindex)
 - [Reject](#reject)
 - [RenameKeys](#renamekeys)
+- [Repeat](#repeat)
 - [Replace](#replace)
 - [Some](#some)
 - [Sort](#sort) 
@@ -1053,6 +1054,14 @@ $a = [
 ];
 
 f\rename_keys('strrev', $a); // ['oof' => 123, 'rab' => 456]
+```
+
+### Repeat
+
+Repeats the given function a fixed number of times, returning an array of the accumulated results.
+
+```php
+$fiveRandomIds = f\repeat(5, 'uniqid')();
 ```
 
 ### Replace

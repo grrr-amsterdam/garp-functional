@@ -29,6 +29,7 @@
     <exclude name="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"/>
     <exclude name="PEAR.NamingConventions.ValidFunctionName.FunctionNoCapital"/>
     <exclude name="PEAR.NamingConventions.ValidFunctionName.PublicUnderscore"/>
+    <exclude name="PEAR.NamingConventions.ValidFunctionName.FunctionNameInvalid" />
     <exclude name="PEAR.NamingConventions.ValidVariableName.PublicUnderscore"/>
 </rule>
 
