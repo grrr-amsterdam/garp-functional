@@ -25,9 +25,10 @@ function rename_keys($transformMap, array $collection = null) {
                 $prop = is_callable($transformMap)
                     ? $transformMap($cur)
                     : prop($cur, $transformMap);
+
                 return prop_set(
                     $prop ?: $cur,
-                    $collection[$cur],
+                    always($collection[$cur]), // Why? Because: https://github.com/grrr-amsterdam/garp-functional/pull/20
                     $acc
                 );
             },
