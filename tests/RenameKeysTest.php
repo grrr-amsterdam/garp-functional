@@ -78,6 +78,15 @@ class RenameKeysTest extends TestCase {
         );
     }
 
+    public function test_callable_should_not_be_executed_in_collection() {
+        $actual = f\rename_keys(
+            array(0 => 'new_key'),
+            array('Garp\Functional\rename_keys')
+        );
+
+        $this->assertEquals(array('new_key' => 'Garp\Functional\rename_keys'), $actual);
+    }
+
     public function test_should_be_curried() {
         $renamer = f\rename_keys(array('foo' => 'bar'));
         $this->assertTrue(is_callable($renamer));
