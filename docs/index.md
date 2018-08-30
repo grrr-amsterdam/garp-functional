@@ -47,6 +47,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Compose](#compose) 
 - [Concat](#concat)
 - [ConcatRight](#concatright)
+- [ConcatWith](#concatwith)
 - [Contains](#contains)
 - [Count](#count)
 - [Divide](#divide)
@@ -235,6 +236,22 @@ $a = [
 ];
 $b = [ 'first_name' => 'John' ];
 f\concat_right($a, $b); // ['first_name' => 'Miles', 'last_name' => 'Davis'] 
+```
+
+### ConcatWith
+
+This merges two or more arrays, using the given functions to determine how to merge values together.
+
+Examples:
+
+```php
+$a = ['total' => 100, 'amount' => 4];
+$b = ['total' => 50, 'amount' => 5];
+f\concat_with('Garp\Functional\add', $a, $b); // ['total' => 150, 'amount' => 9]
+
+$c = ['name' => 'Foo'];
+$d = ['name' => 'Bar'];
+f\concat_with('Garp\Functional\concat', $c, $d); // ['name' => 'FooBar']
 ```
 
 ### Contains
