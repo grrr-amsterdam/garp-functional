@@ -4,6 +4,8 @@
 
 Utility library embracing functional programming paradigms.
 
+[Documentation](https://grrr-amsterdam.github.io/garp-functional/)
+
 ## Philosophy
 
 `Garp\Functional` is a practical functional library that strives to embrace functional paradigms.
@@ -33,4 +35,4 @@ composer require grrr-amsterdam/garp-functional
 That'll do, all functions are available to you.
 
 [Read the docs for a complete
-reference](https://github.com/grrr-amsterdam/garp-functional/blob/master/docs/index.md)
+reference](https://grrr-amsterdam.github.io/garp-functional/)
