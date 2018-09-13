@@ -42,6 +42,7 @@
       "library/Garp/Functional/Drop.php",
       "library/Garp/Functional/DropWhile.php",
       "library/Garp/Functional/Either.php",
+      "library/Garp/Functional/Entries.php",
       "library/Garp/Functional/Equals.php",
       "library/Garp/Functional/Every.php",
       "library/Garp/Functional/Filter.php",

@@ -54,6 +54,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Drop](#drop)
 - [DropWhile](#dropwhile)
 - [Either](#either)
+- [Entries](#entries)
 - [Equals](#equals)
 - [Every](#every) 
 - [Filter](#filter)
@@ -339,6 +340,18 @@ $getBasicUsers = f\filter(
 ```
 
 (see also: [both](#both) and [when](#when))
+
+### Entries
+
+Inspired by Javascript's `Array.entries` function, this will return a collection of tuples containing key/value pairs from your iterable:
+
+```php
+f\entries(['foo', 'bar', 'baz']); // [[0, 'foo'], [1, 'bar'], [2, 'baz']]
+
+f\entries(['foo' => 123, 'bar' => 456]); // [['foo', 123], ['bar', 456]]
+```
+
+Helpful when you need the keys when, for instance, mapping over a collection.
 
 ### Equals
 
