@@ -14,8 +14,10 @@ namespace Garp\Functional;
  * @return int
  */
 function add($left, $right = null) {
-    $adder = function ($right) use ($left) {
-        return $right + $left;
-    };
-    return func_num_args() < 2 ? $adder : $adder($right);
+    return autocurry(
+        function ($left, $right) {
+            return $right + $left;
+        },
+        2
+    )(...func_get_args());
 }

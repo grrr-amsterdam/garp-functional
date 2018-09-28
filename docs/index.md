@@ -41,6 +41,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 
 - [Add](#add)
 - [Always](#always)
+- [Autocurry](#autocurry)
 - [Binary](#binary)
 - [Both](#both)
 - [Call](#call)
@@ -139,6 +140,24 @@ Returns a function that always returns the given argument.
 $alwaysMiles = f\always('Miles Davis');
 $alwaysMiles(1, 2, 3); // 'Miles Davis'
 ``` 
+
+### Autocurry
+
+`autocurry` keeps partially applying a function until you give it enough arguments, after which it will resolve.  
+This is used heavily by `Garp\Functional` internally, but it might be useful to you too.
+
+Note: you have to provide the function's arity manually, to avoid Reflection API lookups.
+
+```php
+$foo = function ($a, $b, $c, $d) {
+    return $a . $b . $c . $d;
+};
+$curried = autocurry($foo, 4);
+$first = $curried('a');
+$second = $first('b');
+$third = $second('c');
+$fourth = $third('d'); // "abcd"
+```
 
 ### Binary
 
