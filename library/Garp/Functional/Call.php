@@ -23,9 +23,11 @@ namespace Garp\Functional;
  * @param  object $obj
  * @return mixed
  */
-function call(string $method, array $args = [], $obj = null) {
-    $caller = function ($obj) use ($method, $args) {
-        return call_user_func_array([$obj, $method], $args);
-    };
-    return is_null($obj) ? $caller : $caller($obj);
+function call(string $method, array $args, $obj = null) {
+    return autocurry(
+        function ($method, $args, $obj) {
+            return call_user_func_array([$obj, $method], $args);
+        },
+        3
+    )(...func_get_args());
 }

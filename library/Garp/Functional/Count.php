@@ -11,7 +11,7 @@ namespace Garp\Functional;
 /**
  * Counts arrays and strings.
  *
- * @param mixed $subject
+ * @param  mixed $subject
  * @return int
  */
 function count($subject): int {

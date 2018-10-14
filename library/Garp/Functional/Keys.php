@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,10 +11,10 @@ namespace Garp\Functional;
 /**
  * Returns the keys of a list. Accepts arrays as well as iterable objects and strings.
  *
- * @param mixed $collection
- * @return mixed
+ * @param  mixed $collection
+ * @return array
  */
-function keys($collection) {
+function keys($collection): array {
     if (is_array($collection)) {
         return array_keys($collection);
     }

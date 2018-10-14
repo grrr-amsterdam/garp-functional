@@ -2,6 +2,10 @@
 
 Note: I'm not mentioning the plethora of functions that I'm adding with every minor version bump. [Take a look at the full function list](https://github.com/grrr-amsterdam/garp-functional/tree/master/library/Garp/Functional). This changelog will only list breaking changes.
 
+## 3.0.0
+
+- Bumped PHP dependency to 7.1. The library now declares strict types and uses the iterable type to validate arguments.
+
 ## 2.0.0
 
 - I've changed `flatten` in a backward-incompatible way: it won't unpack associative arrays any further

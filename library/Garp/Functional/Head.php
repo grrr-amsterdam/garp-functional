@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,7 +11,7 @@ namespace Garp\Functional;
 /**
  * Grab the first item of a list
  *
- * @param mixed $collection The collection to search in
+ * @param  iterable|string $collection The collection to search in
  * @return mixed
  */
 function head($collection) {

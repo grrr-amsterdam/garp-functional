@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -15,9 +17,9 @@ namespace Garp\Functional;
  * @return Closure
  * @see http://php.net/manual/en/closure.bindto.php
  */
-function publish($method, $context) {
-    $caller = function () use ($method) {
-        return call_user_func_array(array($this, $method), func_get_args());
+function publish(string $method, $context) {
+    $caller = function (...$args) use ($method) {
+        return call_user_func_array([$this, $method], $args);
     };
     return $caller->bindTo($context, $context);
 }

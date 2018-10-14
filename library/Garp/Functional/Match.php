@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,19 +11,21 @@ namespace Garp\Functional;
 /**
  * Match a regex.
  *
- * @param mixed $regex
- * @param mixed $subject
+ * @param  string $regex
+ * @param  mixed  $subject
  * @return bool|array FALSE if no match is made, but an array of matches otherwise
  */
-function match($regex, $subject = null) {
-    $matcher = function ($subject) use ($regex) {
-        if (is_array($subject)
-            || (is_object($subject) && !method_exists($subject, '__toString'))
-        ) {
-            return false;
-        }
-        $success = preg_match($regex, strval($subject), $matches);
-        return $success ? $matches : false;
-    };
-    return func_num_args() < 2 ? $matcher : $matcher($subject);
+function match(string $regex, $subject = null) {
+    return autocurry(
+        function ($regex, $subject) {
+            if (is_array($subject)
+                || (is_object($subject) && !method_exists($subject, '__toString'))
+            ) {
+                return false;
+            }
+            $success = preg_match($regex, strval($subject), $matches);
+            return $success ? $matches : false;
+        },
+        2
+    )(...func_get_args());
 }

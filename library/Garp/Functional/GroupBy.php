@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -13,27 +15,29 @@ namespace Garp\Functional;
  *
  * Inspired by Clojure's group-by function.
  *
- * @param callable|string $indexFn
- * @param array $collection
+ * @param  callable|string $indexFn
+ * @param  iterable array $collection
  * @return int
  */
-function group_by($indexFn, $collection = null) {
-    $indexFn = !is_callable($indexFn) ? prop($indexFn) : $indexFn;
-    $grouper = function ($collection) use ($indexFn) {
-        return reduce(
-            function ($acc, $cur) use ($indexFn) {
-                $key = $indexFn($cur);
-                if (!is_int($key) && !is_string($key)) {
-                    throw new \InvalidArgumentException(
-                        'group_by expects result of first argument to be of type integer or string'
-                    );
-                }
-                $acc[$key][] = $cur;
-                return $acc;
-            },
-            array(),
-            $collection
-        );
-    };
-    return func_num_args() < 2 ? $grouper : $grouper($collection);
+function group_by($indexFn, iterable $collection = null) {
+    return autocurry(
+        function ($indexFn, $collection): array {
+            $indexFn = !is_callable($indexFn) ? prop($indexFn) : $indexFn;
+            return reduce(
+                function (array $acc, $cur) use ($indexFn) {
+                    $key = $indexFn($cur);
+                    if (!is_int($key) && !is_string($key)) {
+                        throw new \InvalidArgumentException(
+                            'group_by expects result of first argument to be of type integer or string'
+                        );
+                    }
+                    $acc[$key][] = $cur;
+                    return $acc;
+                },
+                [],
+                $collection
+            );
+        },
+        2
+    )(...func_get_args());
 }

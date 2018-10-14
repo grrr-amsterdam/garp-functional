@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,10 +11,10 @@ namespace Garp\Functional;
 /**
  * Pure sort function. Returns a sorted copy.
  *
- * @param array $collection
+ * @param  array $collection
  * @return array
  */
-function sort(array $collection) {
+function sort(array $collection): array {
     // make a copy of the array as to not disturb the original
     $copy = $collection;
     \sort($copy);

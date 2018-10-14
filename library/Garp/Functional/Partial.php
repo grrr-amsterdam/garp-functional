@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -18,20 +20,12 @@ namespace Garp\Functional;
  * $sayHelloToJohn = partial('sayHello', 'John');
  * $sayHelloToJohn('Hank', "How's it going?"); // Hello John, Hank says 'How's it going?'
  *
- * Note: the function signature doesn't show the rest parameters. This is confusing, but
- * unfortunately we have to support PHP5.3. In PHP5.6 the signature would have been
- *
- * ```
- * function partial($fn, ...$args)
- * ```
- *
- * @param callable $fn The partially applied function
+ * @param  callable $fn      The partially applied function
+ * @param  mixed[]  ...$args Initial arguments
  * @return callable
  */
-function partial($fn) {
-    $args = array_slice(func_get_args(), 1);
-    return function () use ($fn, $args) {
-        $remainingArgs = func_get_args();
-        return call_user_func_array($fn, array_merge($args, $remainingArgs));
+function partial(callable $fn, ...$args): callable {
+    return function (...$remainingArgs) use ($fn, $args) {
+        return $fn(...array_merge($args, $remainingArgs));
     };
 }

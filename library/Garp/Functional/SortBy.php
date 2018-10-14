@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -12,26 +14,22 @@ namespace Garp\Functional;
  *
  * Inspired by Clojure's `sort-by`
  *
- * @param callable $fn
- * @param array $collection
+ * @param  callable $fn
+ * @param  array $collection
  * @return int
  */
-function sort_by($fn, array $collection = null) {
-    if (!is_callable($fn)) {
-        throw new \InvalidArgumentException('sort_by expects parameter 1 to be callable');
-    }
-    $sorter = function (array $collection) use ($fn) {
-        return usort(
-            function ($a, $b) use ($fn) {
-                $resultA = $fn($a);
-                $resultB = $fn($b);
-                if ($resultA === $resultB) {
-                    return 0;
-                }
-                return ($resultA < $resultB) ? -1 : 1;
-            },
-            $collection
-        );
-    };
-    return func_num_args() < 2 ? $sorter : $sorter($collection);
+function sort_by(callable $fn, array $collection = null) {
+    return autocurry(
+        function (callable $fn, array $collection): array {
+            return usort(
+                function ($a, $b) use ($fn) {
+                    $resultA = $fn($a);
+                    $resultB = $fn($b);
+                    return $resultA <=> $resultB;
+                },
+                $collection
+            );
+        },
+        2
+    )(...func_get_args());
 }

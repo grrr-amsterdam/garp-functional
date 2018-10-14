@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -10,13 +12,15 @@ namespace Garp\Functional;
  * Substract two numbers.
  * Note that the first argument is subtracted from the last argument.
  *
- * @param int $left
- * @param int $right
- * @return int
+ * @param  int|float $left
+ * @param  int|float $right
+ * @return int|float
  */
 function substract($left, $right = null) {
-    $subtractor = function ($right) use ($left) {
-        return $right - $left;
-    };
-    return func_num_args() < 2 ? $subtractor : $subtractor($right);
+    return autocurry(
+        function ($left, $right) {
+            return $right - $left;
+        },
+        2
+    )(...func_get_args());
 }

@@ -11,10 +11,10 @@ namespace Garp\Functional;
 /**
  * Return a set of tuples for every key/value in the collection.
  *
- * @param  mixed $collection
+ * @param  traversable $collection
  * @return array
  */
-function entries($collection): array {
+function entries(iterable $collection): array {
     return map(
         function ($key) use ($collection) {
             return [$key, $collection[$key]];

@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -9,13 +11,15 @@ namespace Garp\Functional;
 /**
  * Checks if $right is greater than or equal to $left.
  *
- * @param int $left
- * @param int $right
+ * @param  int|float $left
+ * @param  int|float $right
  * @return true
  */
 function gte($left, $right = null) {
-    $checker = function ($right) use ($left) {
-        return $right >= $left;
-    };
-    return func_num_args() < 2 ? $checker : $checker($right);
+    return autocurry(
+        function ($left, $right): bool {
+            return $right >= $left;
+        },
+        2
+    )(...func_get_args());
 }

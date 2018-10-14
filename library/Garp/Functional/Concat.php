@@ -30,7 +30,7 @@ function concat(...$args) {
                 map($toArray, $args)
             );
         }
-        $isStringble = unary(
+        $isStringable = unary(
             either(
                 'is_string',
                 either(
@@ -39,7 +39,7 @@ function concat(...$args) {
                 )
             )
         );
-        if (every($isStringble, $args)) {
+        if (every($isStringable, $args)) {
             return join(
                 '',
                 map('strval', $args)

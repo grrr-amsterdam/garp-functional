@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -12,21 +14,21 @@ namespace Garp\Functional;
  * to the result, as well as determine which branch to take.
  *
  * Usage:
- * $isAllowedEditing = when(propertyEquals('role', 'admin'), true, false, $user);
+ * $isAllowedEditing = when(prop_equals('role', 'admin'), true, false, $user);
  *
  * array_map(
  *   when(
- *     propertyEquals('role', 'admin'),
- *     array_set('can_edit', true),
- *     array_set('can_edit', false)
+ *     property_equals('role', 'admin'),
+ *     prop_set('can_edit', true),
+ *     prop_set('can_edit', false)
  *   ),
  *   $users
  * )
  *
- * @param mixed $condition
- * @param mixed $ifTrue
- * @param mixed $ifFalse
- * @param mixed $subject
+ * @param  mixed $condition
+ * @param  mixed $ifTrue
+ * @param  mixed $ifFalse
+ * @param  mixed $subject
  * @return mixed
  */
 function when($condition, $ifTrue, $ifFalse, $subject = null) {

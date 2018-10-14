@@ -11,13 +11,15 @@ namespace Garp\Functional;
 /**
  * Divide two numbers.
  *
- * @param  int $left
- * @param  int $right
- * @return int
+ * @param  int|float $left
+ * @param  int|float $right
+ * @return int|float
  */
 function divide($left, $right = null) {
-    $divider = function ($right) use ($left) {
-        return $right / $left;
-    };
-    return func_num_args() < 2 ? $divider : $divider($right);
+    return autocurry(
+        function ($left, $right) {
+            return $right / $left;
+        },
+        2
+    )(...func_get_args());
 }

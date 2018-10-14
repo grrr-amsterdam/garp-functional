@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
@@ -13,7 +15,7 @@ namespace Garp\Functional;
  * This method sort of brings this to earlier versions of PHP:
  * instance(new Instance())->doSomething();
  *
- * @param object $obj
+ * @param  object $obj
  * @return object
  */
 function instance($obj) {
