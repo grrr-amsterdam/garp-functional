@@ -106,6 +106,7 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 - [Some](#some)
 - [Sort](#sort) 
 - [SortBy](#sortby) 
+- [SortByMap](#sortbymap) 
 - [Split](#split)
 - [Subtract](#subtract)
 - [Tail](#tail)
@@ -1188,6 +1189,30 @@ f\sort_by('count', $groups);
  * ]
  */
  ```
+
+### SortByMap
+
+Sort a given array by using a reference array:
+
+```php
+$roygbiv = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+$colors = ['blue', 'orange', 'red', 'indigo'];
+f\sort_by_map($roygbiv, $colors); // ['red', 'orange', 'blue', 'indigo']
+```
+
+Works with associative as well as numerically indexed arrays:
+
+```php
+$person = [
+    'dob' => new DateTime('1985-02-11'),
+    'nationality' => 'Nl',
+    'name' => 'Harmen'
+];
+f\sort_by_map(
+    ['name', 'nationality', 'dob'],
+    $person
+); // ['name' => 'Harmen', 'nationality' => 'Nl', 'dob' => new DateTime(...)]
+```
 
 ### Split
 
