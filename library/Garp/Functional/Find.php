@@ -18,8 +18,13 @@ namespace Garp\Functional;
 function find(callable $predicate, iterable $collection = null) {
     return autocurry(
         function ($predicate, $collection) {
-            $filtered = filter($predicate, $collection);
-            return current($filtered) ?: null;
+            return reduce(
+                function ($acc, $item) use ($predicate) {
+                    return $predicate($item) ? reduced($item) : $acc;
+                },
+                null,
+                $collection
+            );
         },
         2
     )(...func_get_args());
