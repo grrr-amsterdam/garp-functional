@@ -18,16 +18,17 @@ namespace Garp\Functional;
  * @return mixed
  */
 function reduce(callable $fn, $default, iterable $collection = null) {
+    $reduce = function ($fn, $acc, $collection) {
+        foreach ($collection as $item) {
+            $acc = $fn($acc, $item);
+            if (is_reduced($acc)) {
+                return $acc->value;
+            }
+        }
+        return $acc;
+    };
     return autocurry(
-        function ($fn, $default, $collection) {
-            if (is_array($collection)) {
-                return array_reduce($collection, $fn, $default);
-            }
-            if (is_iterable($collection)) {
-                return reduce($fn, $default, iterator_to_array($collection));
-            }
-            throw new \InvalidArgumentException('reduce expects argument 3 to be a collection');
-        },
+        $reduce,
         3
     )(...func_get_args());
 }

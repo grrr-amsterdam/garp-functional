@@ -27,6 +27,7 @@
       "Garp\\": "library/"
     },
     "files": [
+      "library/Garp/Functional/_internal/ReducedValue.php",
       "library/Garp/Functional/Add.php",
       "library/Garp/Functional/Always.php",
       "library/Garp/Functional/Autocurry.php",
@@ -60,6 +61,7 @@
       "library/Garp/Functional/Instance.php",
       "library/Garp/Functional/IsAssoc.php",
       "library/Garp/Functional/IsCallableFunction.php",
+      "library/Garp/Functional/IsReduced.php",
       "library/Garp/Functional/Join.php",
       "library/Garp/Functional/Keys.php",
       "library/Garp/Functional/KeysWhere.php",
@@ -88,6 +90,7 @@
       "library/Garp/Functional/Publish.php",
       "library/Garp/Functional/Reduce.php",
       "library/Garp/Functional/ReduceAssoc.php",
+      "library/Garp/Functional/Reduced.php",
       "library/Garp/Functional/Reindex.php",
       "library/Garp/Functional/Reject.php",
       "library/Garp/Functional/RenameKeys.php",

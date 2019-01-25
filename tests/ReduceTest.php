@@ -47,4 +47,48 @@ class ReduceTest extends TestCase {
         );
     }
 
+    public function test_iteration_should_halt_early_when_given_signal() {
+        // Re-implement find
+        $find = function ($predicate, $collection) {
+            return f\reduce(
+                function ($_, $item) use ($predicate) {
+                    if ($predicate($item)) {
+                        return f\reduced($item);
+                    }
+                },
+                null,
+                $collection
+            );
+        };
+        $numbers = [42, 100, 90, 1, -5, 50];
+        $this->assertEquals(
+            1,
+            $find(f\lt(20), $numbers)
+        );
+
+        // Create a logging predicate to prove the other items remain untouched
+        $objects = [['name' => 'Miles'], ['name' => 'John'], ['name' => 'Herbie']];
+        $log = [];
+        $logPredicate = function (&$log, $predicate) {
+            $log = [];
+            return function ($item) use ($predicate, &$log) {
+                $log[] = $item;
+                return $predicate($item);
+            };
+        };
+        $miles = $find($logPredicate($log, f\prop_equals('name', 'Miles')), $objects);
+        $this->assertEquals(['name' => 'Miles'], $miles);
+        $this->assertEquals(
+            [['name' => 'Miles']],
+            $log
+        );
+
+        $john = $find($logPredicate($log, f\prop_equals('name', 'John')), $objects);
+        $this->assertEquals(['name' => 'John'], $john);
+        $this->assertEquals(
+            [['name' => 'Miles'], ['name' => 'John']],
+            $log
+        );
+    }
+
 }
