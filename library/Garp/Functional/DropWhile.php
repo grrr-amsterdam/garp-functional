@@ -23,16 +23,15 @@ function drop_while(callable $predicate, $collection = null) {
             if (!is_array($collection) && !$collection instanceof \Traversable) {
                 throw new \InvalidArgumentException('drop_while expects argument 2 to be a collection');
             }
-            $out = [];
-            $gotSome = false;
-            foreach ($collection as $key => $value) {
-                if (!$gotSome && $predicate($value)) {
-                    continue;
-                }
-                $gotSome = true;
-                $out[] = $value;
-            }
-            return $out;
+            return reduce(
+                function ($collection, $item) use ($predicate) {
+                    return !count($collection) && $predicate($item)
+                        ? $collection
+                        : concat($collection, [$item]);
+                },
+                [],
+                $collection
+            );
         },
         2
     )(...func_get_args());
