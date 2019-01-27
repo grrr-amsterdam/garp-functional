@@ -16,18 +16,25 @@ namespace Garp\Functional;
  * @return array|string
  */
 function take(int $n, $collection = null) {
+    $reduce = reduce(
+        function ($acc, $item) use ($n) {
+            return count($acc) === $n
+                ? reduced($acc)
+                : concat($acc, [$item]);
+        },
+        []
+    );
     return autocurry(
-        function ($n, $collection) {
-            if (is_array($collection)) {
-                return array_slice($collection, 0, $n);
-            }
+        function ($n, $collection) use ($reduce) {
             if (is_string($collection)) {
-                return substr($collection, 0, $n);
+                $collection = str_split($collection);
+                $reduce = compose(join(''), $reduce);
             }
-            if (is_iterable($collection)) {
-                return take($n, iterator_to_array($collection));
+            $collection = is_string($collection) ? str_split($collection) : $collection;
+            if (!is_iterable($collection)) {
+                throw new \InvalidArgumentException('take expects argument 2 to be a collection');
             }
-            throw new \InvalidArgumentException('take expects argument 2 to be a collection');
+            return $reduce($collection);
         },
         2
     )(...func_get_args());

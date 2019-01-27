@@ -23,14 +23,15 @@ function take_while(callable $predicate, $collection = null) {
             if (!is_iterable($collection)) {
                 throw new \InvalidArgumentException('take_while expects argument 2 to be a collection');
             }
-            $out = [];
-            foreach ($collection as $key => $value) {
-                if (!$predicate($value)) {
-                    break;
-                }
-                $out[] = $value;
-            }
-            return $out;
+            return reduce(
+                function ($collection, $item) use ($predicate) {
+                    return $predicate($item)
+                        ? concat($collection, [$item])
+                        : reduced($collection);
+                },
+                [],
+                $collection
+            );
         },
         2
     )(...func_get_args());
