@@ -39,92 +39,92 @@ Sure, that line is cuckoo, but the idea of composing functions without having to
 
 ## Function index
 
-- [Add](#add)
-- [Always](#always)
-- [Autocurry](#autocurry)
-- [Binary](#binary)
-- [Both](#both)
-- [Call](#call)
-- [Compose](#compose) 
-- [Concat](#concat)
-- [ConcatRight](#concatright)
-- [ConcatWith](#concatwith)
-- [Contains](#contains)
-- [Count](#count)
-- [Divide](#divide)
-- [Drop](#drop)
-- [DropWhile](#dropwhile)
-- [Either](#either)
-- [Entries](#entries)
-- [Equals](#equals)
-- [Every](#every) 
-- [Filter](#filter)
-- [Find](#find)
-- [FindIndex](#findindex)
-- [Flatten](#flatten) 
-- [Flip](#flip)
-- [GroupBy](#groupby)
-- [Gt](#gt)
-- [Gte](#gte)
-- [Head](#head)
-- [Id](#id)
-- [IndexBy](#indexby)
-- [Instance](#instance)
-- [IsAssoc](#isassoc)
-- [Join](#join) 
-- [Keys](#keys)
-- [KeysWhere](#keyswhere)
-- [Last](#last)
-- [Lt](#lt)
-- [Lte](#lte)
-- [Map](#map)
-- [Match](#match)
-- [MergeAfter](#mergeafter)
-- [MergeAt](#mergeat)
-- [Modulo](#modulo)
-- [Multiply](#multiply)
-- [None](#none)
-- [Not](#not) 
-- [Omit](#omit)
-- [Once](#once)
-- [Partial](#partial)
-- [PartialRight](#partialright)
-- [Pick](#pick) 
-- [Pipe](#pipe) 
-- [PropEquals](#propequals)
-- [Prop](#prop)
-- [PropIn](#propin)
-- [PropOf](#propof)
-- [Publish](#publish)
-- [Reduce](#reduce) 
-- [ReduceAssoc](#reduceassoc) 
-- [Reindex](#reindex)
-- [Reject](#reject)
-- [RenameKeys](#renamekeys)
-- [Repeat](#repeat)
-- [Replace](#replace)
-- [Some](#some)
-- [Sort](#sort) 
-- [SortBy](#sortby) 
-- [SortByMap](#sortbymap) 
-- [Split](#split)
-- [Subtract](#subtract)
-- [Tail](#tail)
-- [Take](#take)
-- [TakeWhile](#takewhile)
-- [Tap](#tap)
-- [Truthy](#truthy)
-- [Unary](#unary)
-- [Unique](#unique)
-- [Usort](#usort)
-- [When](#when)
-- [Zip](#zip)
+- [add](#add)
+- [always](#always)
+- [autocurry](#autocurry)
+- [binary](#binary)
+- [both](#both)
+- [call](#call)
+- [compose](#compose) 
+- [concat](#concat)
+- [concat_right](#concat_right)
+- [concat_with](#concat_with)
+- [contains](#contains)
+- [count](#count)
+- [divide](#divide)
+- [drop](#drop)
+- [drop_while](#drop_while)
+- [either](#either)
+- [entries](#entries)
+- [equals](#equals)
+- [every](#every) 
+- [filter](#filter)
+- [find](#find)
+- [find_index](#find_index)
+- [flatten](#flatten) 
+- [flip](#flip)
+- [group_by](#group_by)
+- [gt](#gt)
+- [gte](#gte)
+- [head](#head)
+- [id](#id)
+- [index_by](#index_by)
+- [instance](#instance)
+- [is_assoc](#is_assoc)
+- [join](#join) 
+- [keys](#keys)
+- [keys_where](#keys_where)
+- [last](#last)
+- [lt](#lt)
+- [lte](#lte)
+- [map](#map)
+- [match](#match)
+- [merge_after](#merge_after)
+- [merge_at](#merge_at)
+- [modulo](#modulo)
+- [multiply](#multiply)
+- [none](#none)
+- [not](#not) 
+- [omit](#omit)
+- [once](#once)
+- [partial](#partial)
+- [partial_right](#partial_right)
+- [pick](#pick) 
+- [pipe](#pipe) 
+- [prop_equals](#prop_equals)
+- [prop](#prop)
+- [prop_in](#prop_in)
+- [prop_of](#prop_of)
+- [publish](#publish)
+- [reduce](#reduce) 
+- [reduce_assoc](#reduce_assoc) 
+- [reindex](#reindex)
+- [reject](#reject)
+- [rename_keys](#rename_keys)
+- [repeat](#repeat)
+- [replace](#replace)
+- [some](#some)
+- [sort](#sort) 
+- [sort_by](#sort_by) 
+- [sort_by_map](#sort_by_map) 
+- [split](#split)
+- [subtract](#subtract)
+- [tail](#tail)
+- [take](#take)
+- [take_while](#take_while)
+- [tap](#tap)
+- [truthy](#truthy)
+- [unary](#unary)
+- [unique](#unique)
+- [usort](#usort)
+- [when](#when)
+- [zip](#zip)
 
 _Note: code examples assume the library is loaded with `use Garp\Functional as f;`_
 
 _Also note: list functions are generally designed to work with both numerically indexed and associative arrays, iterable objects and strings._
 
-### Add
+### add
 
 Adds two numbers.
 
@@ -133,7 +133,7 @@ f\add(10, 20); // 30
 f\add(10)(20); // 30
 ```
 
-### Always
+### always
 
 Returns a function that always returns the given argument.  
 
@@ -142,7 +142,7 @@ $alwaysMiles = f\always('Miles Davis');
 $alwaysMiles(1, 2, 3); // 'Miles Davis'
 ``` 
 
-### Autocurry
+### autocurry
 
 `autocurry` keeps partially applying a function until you give it enough arguments, after which it will resolve.  
 This is used heavily by `Garp\Functional` internally, but it might be useful to you too.
@@ -160,7 +160,7 @@ $third = $second('c');
 $fourth = $third('d'); // "abcd"
 ```
 
-### Binary
+### binary
 
 Returns a function that accepts just two arguments.
 
@@ -174,7 +174,7 @@ f\binary($countArgs)(1, 2, 3); // 2
 
 See also [Unary](#unary).
 
-### Both
+### both
 
 Returns true if both arguments are truthy.
 
@@ -196,7 +196,7 @@ $isMediumNumber(10); // false
 $isMediumNumber(600); // false
 ```
 
-### Call
+### call
 
 Call a method on an object.
 
@@ -206,7 +206,7 @@ $users = $database->fetchUsers();
 $names = f\map(f\call('getName'), $users); // array of names
 ```
 
-### Compose
+### compose
 
 Compose functions together. Execution order is right to left, as is traditional.
 It mimics a manual approach. e.g. `compose(foo, bar, baz)($args)` equals `foo(bar(baz($args)))`.
@@ -221,7 +221,7 @@ $getInitials('Miles Davis'); // M. D.
 If you start at the right side you can follow along with the path your arguments will travel through 
 the functional pipeline.
 
-### Concat
+### concat
 
 Concatenate two lists. (strings are also lists)
 
@@ -244,7 +244,7 @@ $b = [ 'first_name' => 'John' ];
 f\concat($a, $b); // ['first_name' => 'John', 'last_name' => 'Davis']
 ```
 
-### ConcatRight
+### concat_right
 
 Same as `concat`, but flips the order in which the arguments are concatenated.  
 Especially interesting when dealing with associative arrays: this function lets the left side
@@ -259,7 +259,7 @@ $b = [ 'first_name' => 'John' ];
 f\concat_right($a, $b); // ['first_name' => 'Miles', 'last_name' => 'Davis'] 
 ```
 
-### ConcatWith
+### concat_with
 
 This merges two or more arrays, using the given functions to determine how to merge values together.
 
@@ -275,7 +275,7 @@ $d = ['name' => 'Bar'];
 f\concat_with('Garp\Functional\concat', $c, $d); // ['name' => 'FooBar']
 ```
 
-### Contains
+### contains
 
 Checks for existence of a needle in a haystack. When given an array, it performs `in_array`. 
 On strings, it will use `strpos`. Any object implementing `Traversable` will be checked as if it were an array.
@@ -285,7 +285,7 @@ f\contains('hello', ['hello', 'world']); // true
 f\contains(42, [12, 24, 42]); // true
 ```
 
-### Count
+### count
 
 Counts strings (chars) and arrays:
 
@@ -295,7 +295,7 @@ f\count('foobar'); // 6
 f\count(new ClassWithToStringMethod('foo')); // 3
 ```
 
-### Divide
+### divide
 
 Divides two numbers.
 
@@ -304,7 +304,7 @@ f\divide(2, 10); // 5
 f\divide(5)(20); // 4
 ```
 
-### Drop
+### drop
 
 Drop the first `$n` items of a collection.
 
@@ -313,7 +313,7 @@ f\drop(2, ['foo', 'bar', 'baz']); // ['baz']
 f\drop(6, 'Miles Davis'); // ['D', 'a', 'v', 'i', 's']
 ```
 
-### DropWhile
+### drop_while
 
 Drop items from the front of a collection until the predicate function returns false.  
 Note that the function stops dropping when it finds a falsey result, so you may end up with items in
@@ -331,7 +331,7 @@ $positiveNumbers = f\drop_while(f\lte(0), $numbers);
 
 See also [take](#take) and [take_while](#take_while).
 
-### Either
+### either
 
 Returns the left argument if truthy, otherwise the right argument.  
 Can be used for default values:
@@ -361,7 +361,7 @@ $getBasicUsers = f\filter(
 
 (see also: [both](#both) and [when](#when))
 
-### Entries
+### entries
 
 Inspired by Javascript's `Array.entries` function, this will return a collection of tuples containing key/value pairs from your iterable:
 
@@ -373,7 +373,7 @@ f\entries(['foo' => 123, 'bar' => 456]); // [['foo', 123], ['bar', 456]]
 
 Helpful when you need the keys when, for instance, mapping over a collection.
 
-### Equals
+### equals
 
 Equality check in function form.
 
@@ -383,7 +383,7 @@ f\equals('Hello', 'Hello'); // true
 f\equals('1', 1); // false
 ```
 
-### Every
+### every
 
 Returns true if all items in the list match the predicate function.
 
@@ -393,7 +393,7 @@ f\every('is_int', $numbers); // true
 f\every(f\gt(50), $numbers); // false
 ```
 
-### Filter
+### filter
 
 Curried version of `array_filter`.
 Note that this version of filter reindexes numeric arrays. It's closer to array filtering found in
@@ -411,7 +411,7 @@ $numbers = ['hundred' => 100, 'three' => 3, 'fiftytwo' => 52];
 f\filter(f\gt(50), $numbers); // ['hundred' => 100, 'fiftytwo' => 52]
 ``` 
 
-### Find
+### find
 
 Basically combines `filter` with a `prop(0)` call: it filters a collection and returns the first
 match.
@@ -422,7 +422,7 @@ f\find(f\gt(20), $numbers); // 23
 f\find(f\gt(200), $numbers); // null
 ``` 
 
-### FindIndex
+### find_index
 
 Finds the index of the first item that matches the predicate function.
 
@@ -432,7 +432,7 @@ f\find_index(f\lt(20), $numbers); // 1
 f\find_index(f\gt(50), $numbers); // 5
 ```
 
-### Flatten
+### flatten
 
 Flatten an array of arrays into a single array.
 
@@ -444,7 +444,7 @@ f\flatten($data); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 Note: associative arrays are considered their own little unit and not unpacked further.  
 You can use `array_values` for that.
 
-### Flip
+### flip
 
 Flip the order of the first two arguments of a function.
 
@@ -456,7 +456,7 @@ $concat('Hello', 'world'); // 'Helloworld'
 f\flip($concat)('Hello', 'world'); // 'worldHello'
 ```
 
-### GroupBy
+### group_by
 
 Returns an array from the given collection, keyed by the given index.
 If index is callable, the collection is keyed by the result of
@@ -508,7 +508,7 @@ f\group_by('strlen', $strings);
  */
 ```
 
-### Gt
+### gt
 
 Returns true if the given value is greater than the predicate.
 
@@ -517,7 +517,7 @@ f\gt(10, 100); // true
 f\gt(10, 5); // false
 ```
 
-### Gte
+### gte
 
 Returns true if the given value is greater than or equal to the predicate.
 
@@ -527,7 +527,7 @@ f\gte(10, 10); // true
 f\gte(10, 9); // false
 ```
 
-### Head
+### head
 
 Get the head of a list.
 
@@ -539,7 +539,7 @@ f\head('Miles'); // 'M'
 
 See also [last](#last) and [tail](#tail).
 
-### Id
+### id
 
 Identity function, returns what it's given.   
 Useful in places that expect a callback function but you don't want to mutate anything. For instance
@@ -551,7 +551,7 @@ $spices = ['clove', 'nutmeg', 'allspice', 'cumin'];
 $spices === f\id($spices); // true
 ``` 
 
-### IndexBy
+### index_by
 
 Creates an array where items of the given collection are indexed by passing them through the given index function.
 Note that the _last_ item is preserved, duplicates are purged. If you want to keep all items resulting in the same index, use [GroupBy](#groupby).
@@ -574,7 +574,7 @@ f\index_by('strlen', $strings);
 See also: [GroupBy](#groupby).
 
 
-### Instance
+### instance
 
 Makes the PHP language a little more expressive.
 PHP 5.4 allows chaining of new instances like so;
@@ -595,7 +595,7 @@ Also accepts strings:
 instance('Foo_Bar_Baz'); // new Foo_Bar_Baz()
 ```
 
-### IsAssoc
+### is_assoc
 
 Checks wether an iterable is associative.
 
@@ -608,7 +608,7 @@ is_assoc(['foo' => 'bar', 1, 2, 3]); // true
 
 Note that mixed numeric indexes with associative indexes will be considered an associative array.
 
-### Join
+### join
 
 Join a collection, and add a separator between the items.
 
@@ -617,7 +617,7 @@ $spices = ['nutmeg', 'clove', 'cinnamon'];
 f\join('_', $spices); // 'nutmeg_clove_cinnamon'
 ```
 
-### Keys
+### keys
 
 Returns the keys of a collection. Works with iterable object as well, contrary to the native
 `array_keys`.
@@ -627,7 +627,7 @@ f\keys(['a', 'b', 'c']); // [0, 1, 2]
 f\keys(['foo' => 123, 'bar' => 456]); // ['foo', 'bar]
 ```
 
-### KeysWhere
+### keys_where
 
 Returns the keys of a collection where its values match a given predicate function.
 
@@ -643,7 +643,7 @@ $fruits = [
 f\keys_where(f\prop_equals('color', 'green'), $fruits) // [2, 3]
 ```
 
-### Last
+### last
 
 Returns the last item in a collection.
 
@@ -652,7 +652,7 @@ f\last(['foo', 'bar', 'baz']); // 'baz'
 f\last('Miles Davis'); // 's'
 ```
 
-### Lt
+### lt
 
 Returns true if the given value is less than the predicate.
 
@@ -661,7 +661,7 @@ f\lt(10, 5); // true
 f\lt(10, 100); // false
 ```
 
-### Lte
+### lte
 
 Returns true if the given value is less than or equal to the predicate.
 
@@ -671,7 +671,7 @@ f\lte(10, 10); // true
 f\lte(10, 100); // false
 ```
 
-### Map
+### map
 
 Curried version of `array_map`. 
 
@@ -680,7 +680,7 @@ $names = ['Miles Davis', 'John Coltrane'];
 f\map(f\split(' '), $names); // [['Miles', 'Davis'], ['John', 'Coltrane']]
 ```
 
-### Match
+### match
 
 Returns the matches if the given value matches the regular expression:
 
@@ -690,11 +690,11 @@ f\match('/([a-zA-Z]+) world/', 'Hello world'); // ['Hello world', 'Hello']
 f\filter(f\match('/^\d+$/'), ['123', 'abc', '456']); // ['123', '456']
 ```
 
-### MergeAfter
+### merge_after
 
 Like [merge_at](#mergeat), but will add the given item _after_ the specified index.
 
-### MergeAt
+### merge_at
 
 This is `array_splice` on steroids. For starters it won't mutate the given array, but returns a new results.  
 
@@ -792,7 +792,7 @@ $withThelonious = f\merge_at(
 ```
 
 
-### Multiply
+### multiply
 
 Multiplies two numbers.
 
@@ -801,7 +801,7 @@ f\multiply(2, 10); // 20
 f\multiply(5)(20); // 100
 ```
 
-### Modulo
+### modulo
 
 Modulo of two numbers.
 
@@ -810,7 +810,7 @@ f\modulo(3, 10); // 1
 f\modulo(4)(6); // 2
 ```
 
-### None
+### none
 
 Returns true when none of the items in the list match the predicate function.
 
@@ -820,7 +820,7 @@ f\none('is_string', $numbers); // true
 f\none(f\gt(50), $numbers); // false
 ```
 
-### Not
+### not
 
 Create a new function that negates the outcome of the given function.
 
@@ -830,7 +830,7 @@ $noString('Hello world'); // false
 $noString(123); // true
 ```
 
-### Omit
+### omit
 
 Create a copy of the given array omitting the specified keys.  
 This is the opposite of [pick](#pick).
@@ -840,7 +840,7 @@ $miles = ['first' => 'Miles', 'last' => 'Davis', 'instrument' => 'Trumpet'];
 f\omit(['instrument'], $miles); // ['first' => 'Miles', 'last' => 'Davis']
 ```
 
-### Once
+### once
 
 Impure but very powerful: returns a function that guards the given function from being executed more than once.
 
@@ -854,7 +854,7 @@ $addOneOnce(50); // 11
 
 Subsequent calls will return the result of the first invocation.
 
-### Partial
+### partial
 
 Partially apply a function from the left side.
 
@@ -863,7 +863,7 @@ $splitOnSpace = f\partial('explode', ' ');
 $splitOnSpace('Hello World'); // ['Hello', 'World']
 ```
 
-### PartialRight
+### partial_right
 
 Partially apply a function from the right side.
 
@@ -872,7 +872,7 @@ $isTraversableObject = f\partial_right('is_a', 'Traversable');
 $isTraversableObject([1, 2, 3]); // false
 ```
 
-### Pick
+### pick
 
 Create an array from a subset of properties from the given object.
 
@@ -884,7 +884,7 @@ $musician = ['first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 't
 f\pick(['first_name', 'instrument'], $musician); // ['first_name' => 'Miles', 'instrument' => 'trumpet']
 ```
 
-### Pipe
+### pipe
 
 Compose functions together. Execution order is left to right.
 It's the inverse of [compose](#compose). e.g. `pipe(foo, bar, baz)($args)` equals `baz(bar(foo($args)))`.
@@ -902,7 +902,7 @@ $getInitials('Miles Davis'); // M. D.
 If you start at the right side you can follow along with the path your arguments will travel through 
 the functional pipeline.
 
-### PropEquals
+### prop_equals
 
 Check equality with an object property.
 
@@ -917,7 +917,7 @@ It's curried as usual, making this an excellent predicate function for `filter`.
 $trumpetPlayers = f\filter(f\prop_equals('instrument', 'trumpet'), $musicians);
 ```
 
-### Prop
+### prop
 
 Take a property from a collection.  
 Accepts objects, arrays, even stings.
@@ -938,7 +938,7 @@ f\prop(0, $name); // 'M'
 f\prop(3, $name); // 'e'
 ```
 
-### PropIn
+### prop_in
 
 Inspired by Clojure's [get-in](https://clojuredocs.org/clojure.core/get-in), this function takes a
 bunch of props and returns a value from a nested associative structure matching the given keys.
@@ -950,7 +950,7 @@ following, but safe since it won't blow up on missing properties:
 $post->author->comments[0]->body;
 ```
 
-### PropOf
+### prop_of
 
 Take a property from a collection. This is the same function as [prop](#prop) but with its arguments
 flipped. The use-case is common enough to warrant its own function.
@@ -994,7 +994,7 @@ $data['origin']; // Notice: Undefined index: origin
 $food('origin'); // null
 ```
 
-### Publish
+### publish
 
 This sounds bananas but this function basically publishes any private method.  
 This wraps [Closure::bindTo](http://php.net/manual/en/closure.bindto.php), and exists mostly to be able to pass private methods to `map` and `filter`.
@@ -1025,7 +1025,7 @@ public function filterNumbers(array $collection) {
 
 Note: an alternative in PHP 7.1 would be `Closure::fromCallable()`, which is scoped to the current object automatically.
 
-### Reduce
+### reduce
 
 Curried version of `array_reduce`:
 
@@ -1034,7 +1034,7 @@ $numbers = [20, 43, 15, 12];
 $sum = f\reduce('Garp\Functional\add', 0, $numbers); // 90
 ```
 
-### ReduceAssoc
+### reduce_assoc
 
 Version of `reduce` tailored to associative datastructures. The key will be the third argument to the callback function.
 
@@ -1055,7 +1055,7 @@ $counts = f\reduce_assoc(
 ); // Returns ["foo" => 3, "bar" => 1, "baz" => 0]
 ```
 
-### Reindex
+### reindex
 
 Alias for the native `array_values`.  
 I tend to use `array_values` a lot after `array_filter`, but the name `array_values` does not really
@@ -1069,7 +1069,7 @@ $strings = array_filter('is_string', $data); // [1 => 'abc', 4 => 'def']
 f\reindex($strings); // [0 => 'abc', 1 => 'def'] 
 ``` 
 
-### Reject
+### reject
 
 Opposite of `filter`:
 
@@ -1079,7 +1079,7 @@ f\reject('is_int', $stuff); // ['abc', false, 'def', true]
 f\reject('is_bool', $stuff); // ['abc', 123, 'def', 456]
 ```
 
-### RenameKeys
+### rename_keys
 
 Rename keys in an array:
 
@@ -1106,7 +1106,7 @@ $a = [
 f\rename_keys('strrev', $a); // ['oof' => 123, 'rab' => 456]
 ```
 
-### Repeat
+### repeat
 
 Repeats the given function a fixed number of times, returning an array of the accumulated results.
 
@@ -1114,7 +1114,7 @@ Repeats the given function a fixed number of times, returning an array of the ac
 $fiveRandomIds = f\repeat(5, 'uniqid')();
 ```
 
-### Replace
+### replace
 
 Curried `preg_replace`, basically:
 
@@ -1123,7 +1123,7 @@ f\replace('/(hello)/', 'goodbye', 'hello world'); // 'goodbye world'
 f\map(f\replace('/(\d)/', 'x'), ['123', 'abc', '456', ['90']]); // ['xxx', 'abc', 'xxx', ['90']] 
 ```
 
-### Some
+### some
 
 Returns true if some of the items in the list match the predicate function.
 
@@ -1134,7 +1134,7 @@ f\some(f\gt(50), $numbers); // true
 f\some('is_string', $numbers); // false
 ```
 
-### Sort
+### sort
 
 Sort an array. A pure version of the native `sort`.  
 Does not mutate the original array.
@@ -1145,7 +1145,7 @@ $sortedSpices = f\sort($spices); // ['Cinnamon', 'Clove', 'Nutmeg']
 $spices; // ['Nutmeg', 'Clove', 'Cinnamon']
 ```
 
-### SortBy
+### sort_by
 
 Use the given function to sort a collection of objects.  
 To sort by a certain key, use `f\prop()`:
@@ -1190,7 +1190,7 @@ f\sort_by('count', $groups);
  */
  ```
 
-### SortByMap
+### sort_by_map
 
 Sort a given array by using a reference array:
 
@@ -1214,7 +1214,7 @@ f\sort_by_map(
 ); // ['name' => 'Harmen', 'nationality' => 'Nl', 'dob' => new DateTime(...)]
 ```
 
-### Split
+### split
 
 Split a string into an array.
 
@@ -1223,7 +1223,7 @@ $musician = 'Miles Davis';
 f\split(' ', $musician); // ['Miles', 'Davis']
 ```
 
-### Subtract
+### subtract
 
 Subtracts the left argument from the right argument.
 
@@ -1232,7 +1232,7 @@ f\subtract(10, 30); // 20
 f\subtract(10)(30); // 20
 ```
 
-### Tail
+### tail
 
 Get the tail of a list.
 
@@ -1242,7 +1242,7 @@ f\tail($spices); // ['clove', 'cinnamon']
 f\tail('Miles'); // 'iles'
 ```
 
-### Take
+### take
 
 Take `$n` items of a collection:
 
@@ -1251,7 +1251,7 @@ f\take(2, ['foo', 'bar', 'baz']); // ['foo', 'bar']
 f\take(5, 'Miles Davis'); // ['M', 'i', 'l', 'e', 's']
 ```
 
-### TakeWhile
+### take_while
 
 Perhaps more interesting than `take` is `take_while`. It keeps taking items from the front of a
 collection until the predicate function returns `false` for the given item.  
@@ -1281,7 +1281,7 @@ $janFebEntries = f\take_while(f\compose(f\lte(2), f\prop('month')), $diary);
 
 See also [drop](#drop) and [drop_while](#drop_while).
 
-### Tap
+### tap
 
 `tap` is a higher-order function that's helpful to include side-effects in a chain.  
 It returns a function which calls the given callback but discards its return value and returns the original value.
@@ -1315,7 +1315,7 @@ function log($var) {
 $thing = f\tap('log')('my thing'); // dumps "my thing", and stores its value in $thing
 ``` 
 
-### Truthy
+### truthy
 
 Returns wether the given argument is truthy.
 
@@ -1335,7 +1335,7 @@ $isArray(array()); // true
 $isArray(123); // false
 ```
 
-### Unary
+### unary
 
 Creates a new function that passes only the first argument thru to the given function.
 
@@ -1369,7 +1369,7 @@ $stuff = array('abc', array(), 123, true);
 $hasArray($stuff); // true
 ``` 
 
-### Unique
+### unique
 
 A version of the native `array_unique` which works with multi-dimensional arrays.
 
@@ -1396,7 +1396,7 @@ f\unique($musicians);
  */ 
 ```
 
-### Usort
+### usort
 
 Same as `sort`, but is a version of the native `usort`.
 
@@ -1410,7 +1410,7 @@ f\usort(
 ); // ['clove', 'cumin', 'nutmeg', 'allspice']
 ```
 
-### When
+### when
 
 It's a ternary operator in function form.
 
@@ -1437,7 +1437,7 @@ $givePoints($superCustomer); // ['name' => 'Hank', 'type' => 'superuser', 'point
 
 The fourth argument is passed into all the given functions.
 
-### Zip
+### zip
 
 Creates a new array by pairing up indexes from the supplied arrays.  
 Takes two or more arguments.
