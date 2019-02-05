@@ -36,3 +36,10 @@ That'll do, all functions are available to you.
 
 [Read the docs for a complete
 reference](https://grrr-amsterdam.github.io/garp-functional/)
+
+
+## Thanks
+
+This library is inspired by beautiful languages like [Haskell](https://www.haskell.org/) and [Clojure](https://clojure.org/),  
+as well as the awesome [RamdaJS](https://ramdajs.com/) library.
+
