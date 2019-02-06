@@ -24,7 +24,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Garp\\Functional\\Internal\\": "_internal/"
+      "Garp\\Functional\\Internal\\": "_internal/",
+      "Garp\\Functional\\Types\\": "types/"
     },
     "files": [
       "functions/add.php",
