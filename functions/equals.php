@@ -8,6 +8,8 @@ declare(strict_types=1);
  */
 namespace Garp\Functional;
 
+use Garp\Functional\Types\Setoid;
+
 /**
  * Functional equality check.
  *
@@ -18,7 +20,9 @@ namespace Garp\Functional;
 function equals($comparison, $subject = null) {
     return autocurry(
         function ($comparison, $subject): bool {
-            return $comparison === $subject;
+            return $comparison instanceof Setoid && $subject instanceof Setoid
+                ? $comparison->equals($subject)
+                : $comparison === $subject;
         },
         2
     )(...func_get_args());
