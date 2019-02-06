@@ -15,5 +15,5 @@ namespace Garp\Functional;
  * @return bool
  */
 function is_reduced($value): bool {
-    return $value instanceof ReducedValue;
+    return $value instanceof Internal\ReducedValue;
 }

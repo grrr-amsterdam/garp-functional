@@ -24,10 +24,9 @@
   },
   "autoload": {
     "psr-4": {
-      "Garp\\": "library/"
+      "Garp\\Functional\\Internal\\": "_internal/"
     },
     "files": [
-      "_internal/ReducedValue.php",
       "functions/add.php",
       "functions/always.php",
       "functions/autocurry.php",
