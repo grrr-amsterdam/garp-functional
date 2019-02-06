@@ -554,7 +554,7 @@ $spices === f\id($spices); // true
 ### index_by
 
 Creates an array where items of the given collection are indexed by passing them through the given index function.
-Note that the _last_ item is preserved, duplicates are purged. If you want to keep all items resulting in the same index, use [GroupBy](#groupby).
+Note that the _last_ item is preserved, duplicates are purged. If you want to keep all items resulting in the same index, use [group_by](#group_by).
 
 ```php
 $strings = array('a', 'as', 'asd', 'aa', 'asdf', 'qwer');
@@ -571,7 +571,7 @@ f\index_by('strlen', $strings);
  */
 ```
 
-See also: [GroupBy](#groupby).
+See also: [group_by](#group_by).
 
 
 ### instance
@@ -692,7 +692,7 @@ f\filter(f\match('/^\d+$/'), ['123', 'abc', '456']); // ['123', '456']
 
 ### merge_after
 
-Like [merge_at](#mergeat), but will add the given item _after_ the specified index.
+Like [merge_at](#merge_at), but will add the given item _after_ the specified index.
 
 ### merge_at
 
@@ -992,6 +992,26 @@ indices. The moment you access an undefined index however, our version turns out
 ```php
 $data['origin']; // Notice: Undefined index: origin
 $food('origin'); // null
+```
+
+### prop_set
+
+Returns a new object with the given `$key` set to the given `$value`:
+
+```php
+$data = [
+    'name' => 'spaghetti',
+    'type' => 'pasta',
+];
+
+$data2 = f\prop_set(
+    'cook',
+    'Mario',
+    $data
+);
+
+// $data2: ['name' => 'spaghetti', 'type' => 'pasta', 'cook' => 'Mario']
+// $data remains untouched: ['name' => 'spaghetti', 'type' => 'pasta'] 
 ```
 
 ### publish
