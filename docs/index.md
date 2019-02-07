@@ -389,6 +389,21 @@ f\equals('Hello', 'Hello'); // true
 f\equals('1', 1); // false
 ```
 
+When given two [Setoid](#setoid) types, will map to the `equals()` method:
+
+```php
+class User implements Setoid {
+    public function equals(Setoid $that): bool {
+        return $this->id === $that->id;
+    }
+}
+
+$user1 = new User(1);
+$user2 = new User(1);
+
+f\equals($user1, $user2); // true 
+```
+
 ### every
 
 Returns true if all items in the list match the predicate function.
@@ -1509,13 +1524,13 @@ All types are in the `Garp\Functional\Types` namespace. So the fully qualified n
 
 Encapsulates equality. 
 
-Implement a single function: 
+##### Methods
 
 ```
 public function equals(Setoid $that);
 ```
 
-How to test?
+##### Testing
 
 ```
 use Garp\Functional\Types\Traits\TestsSetoidLaws;
@@ -1524,3 +1539,7 @@ $this->assertObeysSetoidLaws($setoid1, $setoid2, $setoid3);
 ```
 
 Pass it 3 of your Setoid-implementing instances and the Setoid laws will be checked against your class.
+
+##### Works with functions
+
+- [equals](#equals)

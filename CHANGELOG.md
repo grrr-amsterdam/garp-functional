@@ -6,6 +6,7 @@ Note: I'm not mentioning the plethora of functions that I'm adding with every mi
 
 - Bumped PHP dependency to 7.1. The library now declares strict types and uses the iterable type to validate arguments.
 - Moved all functions to the root folder `functions` and renamed their files to reflect the actual function: from camelCase to snake_case. This shouldn't affect you if you use Composer to load files, but on the off-chance you're manually including these files, note that it will break.
+- Not a breaking change, but a significant change nonetheless: slowly but surely typeclasses will be added to the library.
 
 ## 2.0.0
 
