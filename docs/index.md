@@ -2,6 +2,7 @@
 
 - [Philosophy](#philosophy)
 - [Function index](#function-index)
+- [Typeclasses](#typeclasses)
 
 ## Philosophy
 
@@ -10,6 +11,11 @@
 The functions are written to be pure – meaning side-effect free with repeatable output given the same input. We generally don't mutate data, but instead create copies of given data.
 
 All functions are curried and data-last to encourage function composition.
+
+As of version `3.0.0`, typeclasses are being added to the library, inspired by [The Fantasyland Specification](https://github.com/fantasyland/fantasy-land).  
+These typeclasses can be used to implement objects that are usable as input to the utilities in `Garp\Functional`. 
+
+[An index of implemented typeclasses is maintained at the end of this document.](#typeclasses)
 
 ### On data-last
 
@@ -1478,3 +1484,43 @@ f\zip($miles, $john); // [
                       // ]
 ```
 
+## Typeclasses
+
+`Garp\Functional` implements various typeclasses, following [The Fantasyland Specification](https://github.com/fantasyland/fantasy-land).  
+Implementing these takes time, which means this list won't be complete for a while. Pull Requests are very welcome.
+
+A typeclass is an algebraic datatype that adheres to some laws.  
+The specific implementation is up to you, as long as the laws are obeyed, the object can be used with functions in this library, and objects can be composed to form new functionality.
+
+Read the [Fantasyland Specification](https://github.com/fantasyland/fantasy-land) for in-depth details, and [Tom Harding's Fantas, Eel, And Specification](http://www.tomharding.me/2017/03/03/fantas-eel-and-specification/) for concrete implementations (in Javascript) of these types and why they're so incredibly useful.
+
+### Test traits
+
+This library offers only interfaces, very little concrete implementations of the types.  
+You have to implement the classes yourself. How will you know you've implemented them correctly?
+
+`Garp\Functional` offers traits that can be used to test your objects. The list below includes examples of how to use the traits to test whether your objects obey the algebraic laws defined for the given type.
+
+### Full list of implemented types
+
+All types are in the `Garp\Functional\Types` namespace. So the fully qualified name of `Setoid` for instance would be `Garp\Functional\Types\Setoid`.
+
+#### Setoid
+
+Encapsulates equality. 
+
+Implement a single function: 
+
+```
+public function equals(Setoid $that);
+```
+
+How to test?
+
+```
+use Garp\Functional\Types\Traits\TestsSetoidLaws;
+
+$this->assertObeysSetoidLaws($setoid1, $setoid2, $setoid3);
+```
+
+Pass it 3 of your Setoid-implementing instances and the Setoid laws will be checked against your class.

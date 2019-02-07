@@ -23,6 +23,8 @@ Utility library embracing functional programming paradigms.
     string or an array to `prop`, as long as it allows accessing members thru bracket syntax `[]`,
     I'll allow it. Nothing irks me more about PHP than not being able to toss a `Traversable` 
     object into the native `array_map`. 
+- Typeclasses are added, broadening the applicability of the functions. Next to primitives, they will 
+    now work with your objects as well, so long as they implement the right interface.
 
 ## Usage
 
