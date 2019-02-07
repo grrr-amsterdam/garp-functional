@@ -2,6 +2,7 @@
 
 - [Philosophy](#philosophy)
 - [Function index](#function-index)
+- [Typeclasses](#typeclasses)
 
 ## Philosophy
 
@@ -10,6 +11,11 @@
 The functions are written to be pure – meaning side-effect free with repeatable output given the same input. We generally don't mutate data, but instead create copies of given data.
 
 All functions are curried and data-last to encourage function composition.
+
+As of version `3.0.0`, typeclasses are being added to the library, inspired by [The Fantasyland Specification](https://github.com/fantasyland/fantasy-land).  
+These typeclasses can be used to implement objects that are usable as input to the utilities in `Garp\Functional`. 
+
+[An index of implemented typeclasses is maintained at the end of this document.](#typeclasses)
 
 ### On data-last
 
@@ -381,6 +387,21 @@ Equality check in function form.
 f\equals(1, 2); // false
 f\equals('Hello', 'Hello'); // true
 f\equals('1', 1); // false
+```
+
+When given two [Setoid](#setoid) types, will map to the `equals()` method:
+
+```php
+class User implements Setoid {
+    public function equals(Setoid $that): bool {
+        return $this->id === $that->id;
+    }
+}
+
+$user1 = new User(1);
+$user2 = new User(1);
+
+f\equals($user1, $user2); // true 
 ```
 
 ### every
@@ -1486,7 +1507,7 @@ Implementing these takes time, which means this list won't be complete for a whi
 A typeclass is an algebraic datatype that adheres to some laws.  
 The specific implementation is up to you, as long as the laws are obeyed, the object can be used with functions in this library, and objects can be composed to form new functionality.
 
-Read the [Fantasyland Specification](https://github.com/fantasyland/fantasy-land) for in-depth details, and [Tom Harding's Fantas, Eel, And Specification](http://www.tomharding.me/fantasy-land/) for concrete implementations (in Javascript) of these types and why they're so incredibly useful.
+Read [Tom Harding's Fantas, Eel, And Specification](http://www.tomharding.me/fantasy-land/) for concrete implementations (in Javascript) of these types and why they're so incredibly useful.
 
 ### Test traits
 
@@ -1510,6 +1531,8 @@ public function equals(Setoid $that);
 ```
 
 ##### Testing
+
+How to test?
 
 ```
 use Garp\Functional\Types\Traits\TestsSetoidLaws;
