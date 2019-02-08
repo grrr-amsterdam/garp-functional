@@ -27,27 +27,23 @@ trait TestsSetoidLaws {
         }
 
         $test = function ($a, $b, $c) {
-            // Reflexivity
-            $this->assertTrue($a->equals($a));
-            $this->assertTrue($b->equals($b));
-            $this->assertTrue($c->equals($c));
+            $this->assertTrue(
+                $a->equals($a),
+                'Does not satisfy the law of reflexivity'
+            );
 
-            // Symmetry
             $this->assertSame(
                 $a->equals($b),
-                $b->equals($a)
-            );
-            $this->assertSame(
-                $b->equals($c),
-                $c->equals($b)
+                $b->equals($a),
+                'Does not satisfy the law of symmetry'
             );
 
-            // Transitivity
             $aEqualsB = $a->equals($b);
             $bEqualsC = $b->equals($c);
             $aEqualsC = $a->equals($c);
             $this->assertTrue(
-                !($aEqualsB && $bEqualsC) || $aEqualsC
+                !($aEqualsB && $bEqualsC) || $aEqualsC,
+                'Does not satisfy the law of transitivity'
             );
         };
 
