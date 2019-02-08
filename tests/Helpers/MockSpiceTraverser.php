@@ -1,4 +1,6 @@
 <?php
+namespace Garp\Functional\Tests\Helpers;
+
 /**
  * Little mock thing to test f\map() and f\filter()
  *
@@ -6,7 +8,7 @@
  * @author   Harmen Janssen <harmen@grrr.nl>
  * @license  https://github.com/grrr-amsterdam/garp-functional/blob/master/LICENSE.md BSD-3-Clause
  */
-class MockSpiceTraverser implements Iterator, ArrayAccess {
+class MockSpiceTraverser implements \Iterator, \ArrayAccess {
     private $_position = 0;
     private $_spices = array(
         'nutmeg', 'cinnamon', 'clove'

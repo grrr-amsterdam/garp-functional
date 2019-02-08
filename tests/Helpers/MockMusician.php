@@ -1,4 +1,6 @@
 <?php
+namespace Garp\Functional\Tests\Helpers;
+
 /**
  * Little mock object to test call().
  *
