@@ -1,4 +1,5 @@
 <?php
+use Garp\Functional\Tests\Helpers\MockSpiceTraverser;
 use PHPUnit\Framework\TestCase;
 use Garp\Functional as f;
 use Carbon\Carbon;
