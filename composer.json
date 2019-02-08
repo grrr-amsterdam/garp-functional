@@ -116,10 +116,8 @@
     ]
   },
   "autoload-dev": {
-    "files": [
-      "tests/helpers/MockSpiceTraverser.php",
-      "tests/helpers/MockMusician.php",
-      "tests/helpers/CallableObject.php"
-    ]
+    "psr-4": {
+      "Garp\\Functional\\Tests\\": "tests/"
+    }
   }
 }

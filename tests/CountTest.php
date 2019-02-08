@@ -1,4 +1,6 @@
 <?php
+use Garp\Functional\Tests\Helpers\MockSpiceTraverser;
+use Garp\Functional\Tests\Helpers\MockMusician;
 use PHPUnit\Framework\TestCase;
 use Garp\Functional as f;
 

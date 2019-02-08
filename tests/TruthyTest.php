@@ -1,5 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
+use Garp\Functional\Tests\Helpers\CallableObject;
 use Garp\Functional as f;
 
 /**

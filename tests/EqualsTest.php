@@ -1,7 +1,8 @@
 <?php
-use PHPUnit\Framework\TestCase;
-use Garp\Functional as f;
+use Garp\Functional\Tests\Helpers\MockSpiceTraverser;
 use Garp\Functional\Types\Setoid;
+use Garp\Functional as f;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @package  Garp\Functional

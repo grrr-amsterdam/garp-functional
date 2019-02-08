@@ -1,4 +1,7 @@
 <?php
+use Garp\Functional\Tests\Helpers\MockSpiceTraverser;
+use Garp\Functional\Tests\Helpers\CallableObject;
+use Garp\Functional\Tests\Helpers\MockMusician;
 use PHPUnit\Framework\TestCase;
 use Garp\Functional as f;
 
@@ -25,15 +28,15 @@ class IsCallableFunctionTest extends TestCase {
             'It recognizes a closure'
         );
         $this->assertTrue(
-            f\is_callable_function(array($mockMusician, 'getName')),
+            f\is_callable_function([$mockMusician, 'getName']),
             'It recognizes array-style for object methods'
         );
         $this->assertTrue(
-            f\is_callable_function(array('MockSpiceTraverser', 'instance')),
+            f\is_callable_function([MockSpiceTraverser::class, 'instance']),
             'It recognizes array-style for static methods'
         );
         $this->assertTrue(
-            f\is_callable_function('MockSpiceTraverser::instance'),
+            f\is_callable_function(sprintf('%s::instance', MockSpiceTraverser::class)),
             'It recognizes string-style for static methods'
         );
         $this->assertTrue(

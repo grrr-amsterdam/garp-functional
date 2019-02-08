@@ -1,5 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
+use Garp\Functional\Tests\Helpers\MockMusician;
 use Garp\Functional as f;
 
 /**
