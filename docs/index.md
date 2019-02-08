@@ -1481,6 +1481,24 @@ f\unique($musicians);
  */ 
 ```
 
+Works with an array of [Setoids](#setoid):
+
+```php
+class User implements Setoid {
+    public function equals(Setoid $that): bool {
+        return $this->id === $that->id;
+    }
+}
+
+$user1 = new User(1);
+$user2 = new User(2);
+$user3 = new User(1);
+$user4 = new User(2);
+$user5 = new User(3);
+
+f\unique([$user1, $user2, $user3, $user4, $user5]); // [$user1, $user2, $user5]
+```
+
 ### usort
 
 Same as `sort`, but is a version of the native `usort`.
@@ -1589,6 +1607,7 @@ Pass it 3 of your Setoid-implementing instances and the Setoid laws will be chec
 ##### Works with functions
 
 - [equals](#equals)
+- [unique](#unique)
 
 #### Ord
 
@@ -1618,3 +1637,4 @@ Pass it 3 of your Ord-implementing instances and the Ord laws will be checked ag
 - [gt](#gt)
 - [gte](#gte)
 - [equals](#equals)
+- [unique](#unique)
