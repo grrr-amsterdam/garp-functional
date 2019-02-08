@@ -1,5 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
+use Garp\Functional\Tests\Helpers\MockOrd;
 use Garp\Functional as f;
 
 /**
@@ -26,6 +27,18 @@ class GteTest extends TestCase {
         $moreThan5 = f\gte(5);
         $this->assertTrue(is_callable($moreThan5));
         $this->assertTrue($moreThan5(10));
+    }
+
+    public function test_should_allow_ord_instances() {
+        $small = new MockOrd('small');
+        $big = new MockOrd('big');
+        $huge = new MockOrd('huge');
+        $tiny = new MockOrd('tiny');
+
+        $this->assertFalse(f\gte($huge, $small));
+        $this->assertTrue(f\gte($big, $huge));
+        $this->assertTrue(f\gte($big, $big));
+        $this->assertFalse(f\gte($small, $tiny));
     }
 
 }

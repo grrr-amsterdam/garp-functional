@@ -8,6 +8,8 @@ declare(strict_types=1);
  */
 namespace Garp\Functional;
 
+use Garp\Functional\Types\Ord;
+
 /**
  * Checks if $right is greater than $left.
  *
@@ -18,7 +20,9 @@ namespace Garp\Functional;
 function gt($left, $right = null) {
     return autocurry(
         function ($left, $right): bool {
-            return $right > $left;
+            return $left instanceof Ord && $right instanceof Ord
+                ? $left->lte($right) && !$left->equals($right)
+                : $right > $left;
         },
         2
     )(...func_get_args());
