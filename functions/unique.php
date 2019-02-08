@@ -8,6 +8,8 @@ declare(strict_types=1);
  */
 namespace Garp\Functional;
 
+use Garp\Functional\Types\Setoid;
+
 /**
  * Returns an array containing unique entries in the given collection.
  * Works with multi-dimensional arrays, as opposed to native `array_unique`.
@@ -22,7 +24,11 @@ function unique($collection) {
     }
     return reduce(
         function ($out, $item): array {
-            if (!in_array($item, $out, true)) {
+            if ($item instanceof Setoid) {
+                if (is_null(find(equals($item), $out))) {
+                    $out[] = $item;
+                }
+            } elseif (!in_array($item, $out, true)) {
                 $out[] = $item;
             }
             return $out;
