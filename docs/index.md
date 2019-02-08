@@ -1507,7 +1507,7 @@ Implementing these takes time, which means this list won't be complete for a whi
 A typeclass is an algebraic datatype that adheres to some laws.  
 The specific implementation is up to you, as long as the laws are obeyed, the object can be used with functions in this library, and objects can be composed to form new functionality.
 
-Read the [Fantasyland Specification](https://github.com/fantasyland/fantasy-land) for in-depth details, and [Tom Harding's Fantas, Eel, And Specification](http://www.tomharding.me/2017/03/03/fantas-eel-and-specification/) for concrete implementations (in Javascript) of these types and why they're so incredibly useful.
+Read the [Fantasyland Specification](https://github.com/fantasyland/fantasy-land) for in-depth details, and [Tom Harding's Fantas, Eel, And Specification](http://www.tomharding.me/fantasy-land/) for concrete implementations (in Javascript) of these types and why they're so incredibly useful.
 
 ### Test traits
 
