@@ -26,28 +26,38 @@ trait TestsSetoidLaws {
             throw new \InvalidArgumentException('All Setoids should be of the same class');
         }
 
-        // Reflexivity
-        $this->assertTrue($a->equals($a));
-        $this->assertTrue($b->equals($b));
-        $this->assertTrue($c->equals($c));
+        $test = function ($a, $b, $c) {
+            // Reflexivity
+            $this->assertTrue($a->equals($a));
+            $this->assertTrue($b->equals($b));
+            $this->assertTrue($c->equals($c));
 
-        // Symmetry
-        $this->assertSame(
-            $a->equals($b),
-            $b->equals($a)
-        );
-        $this->assertSame(
-            $b->equals($c),
-            $c->equals($b)
-        );
+            // Symmetry
+            $this->assertSame(
+                $a->equals($b),
+                $b->equals($a)
+            );
+            $this->assertSame(
+                $b->equals($c),
+                $c->equals($b)
+            );
 
-        // Transitivity
-        $aEqualsB = $a->equals($b);
-        $bEqualsC = $b->equals($c);
-        $aEqualsC = $a->equals($c);
-        $this->assertTrue(
-            !($aEqualsB && $bEqualsC) || $aEqualsC
-        );
+            // Transitivity
+            $aEqualsB = $a->equals($b);
+            $bEqualsC = $b->equals($c);
+            $aEqualsC = $a->equals($c);
+            $this->assertTrue(
+                !($aEqualsB && $bEqualsC) || $aEqualsC
+            );
+        };
+
+        // Make sure all permutations are tested.
+        $test($a, $b, $c);
+        $test($a, $c, $b);
+        $test($b, $a, $c);
+        $test($b, $c, $a);
+        $test($c, $a, $b);
+        $test($c, $b, $a);
     }
 
 }

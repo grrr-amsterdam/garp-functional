@@ -18,12 +18,7 @@ class TestsSetoidLawsTest extends TestCase {
         $setoidA = $this->_createSetoid('A');
         $setoidB = $this->_createSetoid('B');
         $setoidC = $this->_createSetoid('C');
-        $setoidA2 = $this->_createSetoid('A');
-        $setoidA3 = $this->_createSetoid('A');
-
         $this->assertObeysSetoidLaws($setoidA, $setoidB, $setoidC);
-        $this->assertObeysSetoidLaws($setoidA, $setoidA2, $setoidB);
-        $this->assertObeysSetoidLaws($setoidA, $setoidA2, $setoidA3);
     }
 
     private function _createSetoid(string $value): Setoid {
