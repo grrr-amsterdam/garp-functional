@@ -1,6 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 use Garp\Functional as f;
+use Garp\Functional\Tests\Helpers\MockOrd;
 
 /**
  * @package  Garp\Functional
@@ -26,5 +27,16 @@ class LtTest extends TestCase {
         $this->assertFalse($lessThan5(5.5));
     }
 
-}
+    public function test_should_allow_ord_instances() {
+        $small = new MockOrd('small');
+        $big = new MockOrd('big');
+        $huge = new MockOrd('huge');
+        $tiny = new MockOrd('tiny');
 
+        $this->assertTrue(f\lt($huge, $small));
+        $this->assertFalse(f\lt($big, $huge));
+        $this->assertFalse(f\lt($big, $big));
+        $this->assertTrue(f\lt($small, $tiny));
+    }
+
+}

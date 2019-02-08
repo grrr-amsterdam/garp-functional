@@ -538,6 +538,17 @@ f\gt(10, 100); // true
 f\gt(10, 5); // false
 ```
 
+Works with instances of [Ord](#ord).  
+Imagine a `Size` class that takes arbitrary values that are mapped internally to numbers:
+
+```php
+$large = new Size('large');
+$small = new Size('small');
+
+f\gt($small, $large); // true
+f\gt($small, $small); // false
+```
+
 ### gte
 
 Returns true if the given value is greater than or equal to the predicate.
@@ -547,6 +558,17 @@ f\gte(10, 100); // true
 f\gte(10, 10); // true
 f\gte(10, 9); // false
 ```
+
+Works with instances of [Ord](#ord).  
+Imagine a `Size` class that takes arbitrary values that are mapped internally to numbers:
+
+```php
+$large = new Size('large');
+$small = new Size('small');
+
+f\gte($small, $large); // true
+f\gte($small, $small); // true
+``` 
 
 ### head
 
@@ -682,6 +704,17 @@ f\lt(10, 5); // true
 f\lt(10, 100); // false
 ```
 
+Works with instances of [Ord](#ord).
+Imagine a `Size` class that takes arbitrary values that are mapped internally to numbers:
+
+```php
+$large = new Size('large');
+$small = new Size('small');
+
+f\lt($large, $small); // true
+f\lt($small, $small); // false
+``` 
+
 ### lte
 
 Returns true if the given value is less than or equal to the predicate.
@@ -691,6 +724,17 @@ f\lte(10, 5); // true
 f\lte(10, 10); // true
 f\lte(10, 100); // false
 ```
+
+Works with instances of [Ord](#ord).
+Imagine a `Size` class that takes arbitrary values that are mapped internally to numbers:
+
+```php
+$large = new Size('large');
+$small = new Size('small');
+
+f\lte($large, $small); // true
+f\lte($small, $small); // true
+``` 
 
 ### map
 
@@ -1527,7 +1571,7 @@ Encapsulates equality.
 ##### Methods
 
 ```
-public function equals(Setoid $that);
+public function equals(Setoid $that): bool;
 ```
 
 ##### Testing
@@ -1544,4 +1588,33 @@ Pass it 3 of your Setoid-implementing instances and the Setoid laws will be chec
 
 ##### Works with functions
 
+- [equals](#equals)
+
+#### Ord
+
+Encapsulates order. Given two objects of type `Ord`, you can determine which one is the greater of the two.  
+Extends [Setoid](#setoid).
+
+##### Methods
+
+```
+public function lte(Ord $that): bool;
+```
+
+##### Testing
+
+```
+use Garp\Functional\Types\Traits\TestsOrdLaws;
+
+$this->assertObeysOrdLaws($ord1, $ord2, $ord3);
+```
+
+Pass it 3 of your Ord-implementing instances and the Ord laws will be checked against your class.
+
+##### Works with functions
+
+- [lt](#lt)
+- [lte](#lte)
+- [gt](#gt)
+- [gte](#gte)
 - [equals](#equals)

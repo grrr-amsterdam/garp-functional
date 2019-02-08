@@ -8,17 +8,21 @@ declare(strict_types=1);
  */
 namespace Garp\Functional;
 
+use Garp\Functional\Types\Ord;
+
 /**
  * Checks if $right is less than or equal to $left.
  *
- * @param  int|float $left
- * @param  int|float $right
+ * @param  int|float|Ord $left
+ * @param  int|float|Ord $right
  * @return true
  */
 function lte($left, $right = null) {
     return autocurry(
         function ($left, $right) {
-            return $right <= $left;
+            return $left instanceof Ord && $right instanceof Ord
+                ? $right->lte($left)
+                : $right <= $left;
         },
         2
     )(...func_get_args());
