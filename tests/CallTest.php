@@ -34,7 +34,7 @@ class CallTest extends TestCase {
     }
 
     public function test_should_be_curried() {
-        $getName = f\call('getName', []);
+        $getName = f\call('getName');
         $musicians = array(
             new MockMusician('Miles', 'Davis'),
             new MockMusician('John', 'Coltrane'),
