@@ -1,8 +1,8 @@
 <?php
 namespace Garp\Functional\Tests\Helpers;
 
-use Garp\Functional\Types\Setoid;
-use Garp\Functional\Types\Ord;
+use Garp\Functional\Types\TypeClasses\Setoid;
+use Garp\Functional\Types\TypeClasses\Ord;
 
 /**
  * Mock object implementing Ord.

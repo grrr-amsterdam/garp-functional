@@ -8,6 +8,8 @@ declare(strict_types=1);
  */
 namespace Garp\Functional;
 
+use Garp\Functional\Types\TypeClasses\Semigroup;
+
 /**
  * Concat two things.
  * Works with arrays and strings.
@@ -19,8 +21,12 @@ namespace Garp\Functional;
  * @return mixed
  */
 function concat(...$args) {
-    $concatter = function () {
-        $args = func_get_args();
+    $concatter = function (...$args) {
+        $isASemigroup = partial_right('is_a', Semigroup::class);
+        if (every($isASemigroup, $args)) {
+            return $args[0]->concat($args[1]);
+        }
+
         $toArray = function ($var) {
             return is_array($var) ? $var : [$var];
         };

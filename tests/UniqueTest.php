@@ -1,7 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 use Garp\Functional as f;
-use Garp\Functional\Tests\Helpers\MockSetoid;
+use Garp\Functional\Types\StringM;
 
 /**
  * @package  Garp\Functional
@@ -56,11 +56,11 @@ class UniqueTest extends TestCase {
     }
 
     public function test_should_work_with_setoids() {
-        $john = new MockSetoid('John');
-        $miles = new MockSetoid('Miles');
-        $herbie = new MockSetoid('Herbie');
-        $john2 = new MockSetoid('John');
-        $miles2 = new MockSetoid('Miles');
+        $john = new StringM('John');
+        $miles = new StringM('Miles');
+        $herbie = new StringM('Herbie');
+        $john2 = new StringM('John');
+        $miles2 = new StringM('Miles');
 
         $this->assertEquals(
             [$john, $miles, $herbie],

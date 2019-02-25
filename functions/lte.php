@@ -8,7 +8,7 @@ declare(strict_types=1);
  */
 namespace Garp\Functional;
 
-use Garp\Functional\Types\Ord;
+use Garp\Functional\Types\TypeClasses\Ord;
 
 /**
  * Checks if $right is less than or equal to $left.

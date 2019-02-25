@@ -1,6 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 use Garp\Functional\Tests\Helpers\MockMusician;
+use Garp\Functional\Types\StringM;
 use Garp\Functional as f;
 
 /**
@@ -142,7 +143,15 @@ class ConcatTest extends TestCase {
         f\concat('This', 'will', 'go', new stdClass(), 'wrong');
     }
 
+    public function test_should_allow_semigroups() {
+        $this->assertEquals(
+            new StringM('foobar'),
+            f\concat(new StringM('foo'), new StringM('bar'))
+        );
+    }
+
     public function test_named_constant() {
         $this->assertTrue(is_callable(f\concat));
     }
+
 }

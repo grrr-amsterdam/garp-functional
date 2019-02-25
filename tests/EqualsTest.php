@@ -1,6 +1,6 @@
 <?php
 use Garp\Functional\Tests\Helpers\MockSpiceTraverser;
-use Garp\Functional\Tests\Helpers\MockSetoid;
+use Garp\Functional\Types\StringM;
 use PHPUnit\Framework\TestCase;
 use Garp\Functional as f;
 
@@ -33,9 +33,9 @@ class EqualsTest extends TestCase {
     }
 
     public function test_works_with_setoids() {
-        $setoidA = new MockSetoid('A');
-        $setoidB = new MockSetoid('B');
-        $setoidC = new MockSetoid('A');
+        $setoidA = new StringM('A');
+        $setoidB = new StringM('B');
+        $setoidC = new StringM('A');
 
         $this->assertFalse(f\equals($setoidA, $setoidB));
         $this->assertTrue(f\equals($setoidA, $setoidC));

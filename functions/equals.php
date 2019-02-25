@@ -8,7 +8,7 @@ declare(strict_types=1);
  */
 namespace Garp\Functional;
 
-use Garp\Functional\Types\Setoid;
+use Garp\Functional\Types\TypeClasses\Setoid;
 
 /**
  * Functional equality check.
