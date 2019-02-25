@@ -1,5 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
+use Garp\Functional\Types\StringM;
 use Garp\Functional as f;
 
 /**
@@ -117,6 +118,13 @@ class ConcatRightTest extends TestCase {
      */
     public function test_should_throw_on_invalid_object() {
         f\concat_right('This', 'will', 'go', new stdClass(), 'wrong');
+    }
+
+    public function test_should_allow_semigroups() {
+        $this->assertEquals(
+            new StringM('foobar'),
+            f\concat_right(new StringM('bar'), new StringM('foo'))
+        );
     }
 
     public function test_named_constant() {

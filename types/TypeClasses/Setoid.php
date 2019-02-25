@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Garp\Functional\Types;
+namespace Garp\Functional\Types\TypeClasses;
 
 /**
  * @package  Garp\Functional

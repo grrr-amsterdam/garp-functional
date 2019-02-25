@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Garp\Functional\Types\Traits;
 
-use Garp\Functional\Types\Setoid;
+use Garp\Functional\Types\TypeClasses\Setoid;
 use PHPUnit\Framework\TestCase;
 
 /**

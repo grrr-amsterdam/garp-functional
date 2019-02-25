@@ -52,6 +52,7 @@
       "functions/find_index.php",
       "functions/flatten.php",
       "functions/flip.php",
+      "functions/fold.php",
       "functions/group_by.php",
       "functions/gt.php",
       "functions/gte.php",

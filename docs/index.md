@@ -84,6 +84,7 @@ This works because the constant contains the fully namespaced function name as a
 - [find_index](#find_index)
 - [flatten](#flatten) 
 - [flip](#flip)
+- [fold](#fold)
 - [group_by](#group_by)
 - [gt](#gt)
 - [gte](#gte)
@@ -490,6 +491,25 @@ $concat = function ($a, $b) {
 };
 $concat('Hello', 'world'); // 'Helloworld'
 f\flip($concat)('Hello', 'world'); // 'worldHello'
+```
+
+### fold
+
+Folds a collection of values into a [Monoid](#monoid).  
+
+```php
+f\fold(Sum::class, [42, 100, 89, 5, 11, 100])->value; // 347
+``` 
+
+`Garp\Functional` provides a starter-kit of Monoids to use in your programs, [see the list of types below](#full-list-of-implemented-types).  
+Try to think of Monoids as a way of combining two values, but not necessarily into a collection. They define the _rules_ of concatenation.
+
+`Any` and `All` are good examples of Monoids that specify combining two values _behaviorally_. They both describe boolean logic, OR and AND respectively:
+
+```php
+f\fold(Any::class, [false, false, false, true, false])->value; // true
+
+f\fold(All::class, [false, false, false, true, false])->value; // false
 ```
 
 ### group_by
@@ -1593,9 +1613,9 @@ f\zip($miles, $john); // [
                       // ]
 ```
 
-## Typeclasses
+## Types and Typeclasses
 
-`Garp\Functional` implements various typeclasses, following [The Fantasyland Specification](https://github.com/fantasyland/fantasy-land).  
+`Garp\Functional` implements various typeclasses as interfaces, following [The Fantasyland Specification](https://github.com/fantasyland/fantasy-land).  
 Implementing these takes time, which means this list won't be complete for a while. Pull Requests are very welcome.
 
 A typeclass is an algebraic datatype that adheres to some laws.  
@@ -1608,11 +1628,11 @@ Read [Tom Harding's Fantas, Eel, And Specification](http://www.tomharding.me/fan
 This library offers only interfaces, very little concrete implementations of the types.  
 You have to implement the classes yourself. How will you know you've implemented them correctly?
 
-`Garp\Functional` offers traits that can be used to test your objects. The list below includes examples of how to use the traits to test whether your objects obey the algebraic laws defined for the given type.
+`Garp\Functional` offers traits that can be used to test your objects. The list below includes examples of how to use the traits to test whether your objects obey the algebraic laws defined for the given typeclass.
 
-### Full list of implemented types
+### Full list of implemented TypeClasses
 
-All types are in the `Garp\Functional\Types` namespace. So the fully qualified name of `Setoid` for instance would be `Garp\Functional\Types\Setoid`.
+All typeclasses are in the `Garp\Functional\Types\TypeClasses` namespace, so the fully qualified name of `Setoid` for instance would be `Garp\Functional\Types\TypeClasses\Setoid`.
 
 #### Setoid
 
@@ -1670,3 +1690,137 @@ Pass it 3 of your Ord-implementing instances and the Ord laws will be checked ag
 - [gte](#gte)
 - [equals](#equals)
 - [unique](#unique)
+
+#### Semigroup
+
+Encapsulates concatenation. Arrays and string are obvious examples of Semigroups, but Semigroups can also express behavior, like multiplication, addition, or maximisation.
+`Garp\Functional` actually offers a couple of concrete `Semigroup` implementations, see below.
+
+##### Methods
+
+```
+public function concat(Semigroup $that): Semigroup;
+```
+
+##### Testing
+
+```
+use Garp\Functional\Types\Traits\TestsSemigroupLaws;
+
+$this->assertObeysSemigroupLaws($semigroup1, $semigroup2, $semigroup3);
+```
+
+Pass it 3 of your Semigroup-implementing instances and the Semigroup laws will be checked against your class.
+
+##### Works with functions
+
+- [concat](#concat)
+- [concat_right](#concat_right)
+
+#### Monoid
+
+Extends `Semigroup`, and provides an _identity value_. This allows you fold multiple values into a single value, starting from the identity value.
+
+##### Methods
+
+```
+public static function empty(): Monoid;
+```
+
+##### Testing
+
+```
+use Garp\Functional\Types\Traits\TestsMonoidLaws;
+
+$this->assertObeysMonoidLaws($myMonoid);
+```
+
+Pass it your Monoid-implementing instance, and the trait will check if it obeys the identity laws.
+
+##### Works with functions
+
+- [concat](#concat)
+- [concat_right](#concat_right)
+- [fold](#fold)
+
+
+### Full list of implemented Types
+
+The following is a list of types: utility classes implementing the above typeclasses.  
+Note that generally, they encapsulate _behavior_, which might be different from what you expect from classic OOP paradigms.
+
+For instance, `Any` expresses the `f\some` function as an object.
+
+All types are in the `Garp\Functional\Types` namespace, so the fully qualified name of `Max` is `Garp\Functional\Types\Max`.
+
+#### Max
+
+A *Monoid*, keeping the greater value:
+
+```php
+(new Max(100))->concat(new Max(200))->value; // 200
+(new Max(200))->concat(new Max(100))->value; // 200
+
+f\fold(Max::class, [10, 490, 50, 92])->value; // 490
+```
+
+#### Min
+
+A *Monoid*, keeping the smaller value:
+
+```php
+(new Min(100))->concat(new Min(200))->value; // 100
+(new Min(200))->concat(new Min(100))->value; // 100
+
+f\fold(Min::class, [10, 490, 50, 92])->value; // 10
+```
+
+#### Sum
+
+A *Monoid*, producing the sum of the two values:
+
+```php
+(new Sum(100))->concat(new Sum(200))->value; // 300
+
+f\fold(Sum::class, [10, 90, 200])->value; // 300
+```
+
+#### Product
+
+A *Monoid*, producing the product of the two values:
+
+```php
+(new Product(50))->concat(new Product(5))->value; // 250
+
+f\fold(Product::class, [10, 5, 5])->value; // 250
+```
+
+#### Any
+
+A *Monoid*, encapsulating boolean logic for OR:
+
+```php
+(new Any(true))->concat(new Any(false))->value; // true
+
+f\fold(Any::class, [true, false, false, true])->value; // true
+```
+
+#### All
+
+A *Monoid*, encapsulating boolean logic for AND:
+
+```php
+(new All(false))->concat(new All(true))->value; // false
+
+f\fold(All::class, [true, false, false, true])->value; // false
+```
+
+#### StringM
+
+A *Monoid* implementation of string (unfortunately, `String` is reserved).
+
+```php
+(new StringM('foo'))->concat(new StringM('bar'))->value; // "foobar"
+
+f\fold(StringM::class, ['foo', 'bar', 'baz'])->value; // "foobarbaz"
+```
