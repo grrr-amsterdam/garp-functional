@@ -1061,7 +1061,7 @@ $food('origin'); // null
 
 ### prop_set
 
-Returns a new object with the given `$key` set to the given `$value`:
+Returns a new object with the given `$key` set to the given `$value`. As shown below `prop_set` accepts callables. This means though, that if the input is dynamic, the value should be wrapped in `f\always($value)`, as string values could contain valid php function names and lead to unpredictable behavior.
 
 ```php
 $data = [
@@ -1077,6 +1077,23 @@ $data2 = f\prop_set(
 
 // $data2: ['name' => 'spaghetti', 'type' => 'pasta', 'cook' => 'Mario']
 // $data remains untouched: ['name' => 'spaghetti', 'type' => 'pasta'] 
+```
+
+`prop_set` also accepts callables. The function is passed a single argument: the target object.
+
+```
+$data = [
+    'name' => 'spaghetti',
+    'type' => 'pasta',
+];
+
+$data2 = f\prop_set(
+    'name_length',
+    f\compose('strlen', f\prop('name')),
+    $data
+);
+
+// $data2: ['name' => 'spaghetti', 'type' => 'pasta', 'name_length' => 9]
 ```
 
 ### publish
