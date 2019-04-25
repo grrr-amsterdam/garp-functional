@@ -1,6 +1,7 @@
 # Documentation
 
 - [Philosophy](#philosophy)
+- [Function name constants](#function-name-constants)
 - [Function index](#function-index)
 - [Typeclasses](#typeclasses)
 
@@ -42,6 +43,20 @@ $getInitials('Miles Davis'); // M. D.
 ```
 
 Sure, that line is cuckoo, but the idea of composing functions without having to stop at every step to consider the control flow structures, what the parameters are going to be named, and how to return it is pretty powerful.  
+
+## Function name constants
+
+All functions also publish a constant by the same name. This allows you to pass around the function as if you had a reference to it, as is possible in other languages.  
+For example:
+
+```php
+f\compose(
+    f\flatten,
+    f\entries
+);
+```
+
+This works because the constant contains the fully namespaced function name as a string, and therefore qualifies as a `callable`.
 
 ## Function index
 
@@ -274,11 +289,11 @@ Examples:
 ```php
 $a = ['total' => 100, 'amount' => 4];
 $b = ['total' => 50, 'amount' => 5];
-f\concat_with('Garp\Functional\add', $a, $b); // ['total' => 150, 'amount' => 9]
+f\concat_with(f\add, $a, $b); // ['total' => 150, 'amount' => 9]
 
 $c = ['name' => 'Foo'];
 $d = ['name' => 'Bar'];
-f\concat_with('Garp\Functional\concat', $c, $d); // ['name' => 'FooBar']
+f\concat_with(f\concat, $c, $d); // ['name' => 'FooBar']
 ```
 
 ### contains
@@ -1133,7 +1148,7 @@ Curried version of `array_reduce`:
 
 ```php
 $numbers = [20, 43, 15, 12];
-$sum = f\reduce('Garp\Functional\add', 0, $numbers); // 90
+$sum = f\reduce(f\add, 0, $numbers); // 90
 ```
 
 ### reduce_assoc
