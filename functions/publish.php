@@ -23,3 +23,5 @@ function publish(string $method, $context) {
     };
     return $caller->bindTo($context, $context);
 }
+
+const publish = '\Garp\Functional\publish';

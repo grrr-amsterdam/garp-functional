@@ -21,4 +21,7 @@ class TapTest extends TestCase {
         $this->assertCount(2, $stuff);
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\tap));
+    }
 }

@@ -28,3 +28,5 @@ function prop_set($key, $value = null, $object = null) {
         3
     )(...func_get_args());
 }
+
+const prop_set = '\Garp\Functional\prop_set';

@@ -22,3 +22,5 @@ function truthy($value) {
     }
     return !!$value;
 }
+
+const truthy = '\Garp\Functional\truthy';

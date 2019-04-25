@@ -26,3 +26,5 @@ function filter(callable $predicate, iterable $collection = null) {
         2
     )(...func_get_args());
 }
+
+const filter = '\Garp\Functional\filter';

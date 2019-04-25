@@ -21,4 +21,7 @@ class ModuloTest extends TestCase {
         $this->assertEquals(0, $modulo5(5));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\modulo));
+    }
 }

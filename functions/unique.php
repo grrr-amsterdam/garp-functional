@@ -37,3 +37,5 @@ function unique($collection) {
         $collection
     );
 }
+
+const unique = '\Garp\Functional\unique';

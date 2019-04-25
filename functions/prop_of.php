@@ -25,3 +25,5 @@ function prop_of($collection, $prop = null) {
         2
     )(...func_get_args());
 }
+
+const prop_of = '\Garp\Functional\prop_of';

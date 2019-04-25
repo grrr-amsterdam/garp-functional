@@ -76,4 +76,7 @@ class SortByMapTest extends TestCase {
         $this->assertTrue(is_callable(f\sort_by_map(['foo', 'bar'])));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\sort_by_map));
+    }
 }

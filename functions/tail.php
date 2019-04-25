@@ -26,3 +26,5 @@ function tail($collection) {
         'tail expects argument 1 to be a collection'
     );
 }
+
+const tail = '\Garp\Functional\tail';

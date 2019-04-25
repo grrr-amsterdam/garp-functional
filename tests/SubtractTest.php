@@ -22,4 +22,7 @@ class SubtractTest extends TestCase {
         $this->assertEquals(5, $subtract5(10));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\subtract));
+    }
 }

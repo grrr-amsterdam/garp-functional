@@ -65,4 +65,7 @@ class FindIndexTest extends TestCase {
         );
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\find_index));
+    }
 }

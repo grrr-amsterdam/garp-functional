@@ -27,3 +27,5 @@ function is_callable_function($callable): bool {
     return !is_object($callable) || $callable instanceof \Closure;
 }
 
+
+const is_callable_function = '\Garp\Functional\is_callable_function';

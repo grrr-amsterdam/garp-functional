@@ -27,3 +27,5 @@ function gte($left, $right = null) {
         2
     )(...func_get_args());
 }
+
+const gte = '\Garp\Functional\gte';

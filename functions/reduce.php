@@ -32,3 +32,5 @@ function reduce(callable $fn, $default, iterable $collection = null) {
         3
     )(...func_get_args());
 }
+
+const reduce = '\Garp\Functional\reduce';

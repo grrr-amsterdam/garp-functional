@@ -20,4 +20,7 @@ class PublishTest extends TestCase {
         return $n * $n;
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\publish));
+    }
 }

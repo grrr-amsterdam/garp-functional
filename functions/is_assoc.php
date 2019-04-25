@@ -19,3 +19,5 @@ function is_assoc(iterable $iterable): bool {
     return !empty($iterable)
         && keys($iterable) !== range(0, count($iterable) - 1);
 }
+
+const is_assoc = '\Garp\Functional\is_assoc';

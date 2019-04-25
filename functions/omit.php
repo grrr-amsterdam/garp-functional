@@ -30,3 +30,5 @@ function omit(array $omitted, $collection = null) {
         2
     )(...func_get_args());
 }
+
+const omit = '\Garp\Functional\omit';

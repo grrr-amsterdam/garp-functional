@@ -25,4 +25,7 @@ class EveryTest extends TestCase {
         $this->assertTrue(is_callable($naughtButStrings));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\every));
+    }
 }

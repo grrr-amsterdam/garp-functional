@@ -42,3 +42,5 @@ function rename_keys($transformMap, array $collection = null) {
         2
     )(...func_get_args());
 }
+
+const rename_keys = '\Garp\Functional\rename_keys';

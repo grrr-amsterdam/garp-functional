@@ -23,3 +23,5 @@ function split(string $separator, string $subject = null) {
         2
     )(...func_get_args());
 }
+
+const split = '\Garp\Functional\split';

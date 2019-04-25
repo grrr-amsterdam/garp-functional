@@ -21,4 +21,7 @@ class AddTest extends TestCase {
         $this->assertEquals(10, $add5(5));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\add));
+    }
 }

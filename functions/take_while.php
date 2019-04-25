@@ -36,3 +36,5 @@ function take_while(callable $predicate, $collection = null) {
         2
     )(...func_get_args());
 }
+
+const take_while = '\Garp\Functional\take_while';

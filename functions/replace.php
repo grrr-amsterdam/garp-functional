@@ -29,3 +29,5 @@ function replace(string $regex, $replacement, $subject = null) {
         3
     )(...func_get_args());
 }
+
+const replace = '\Garp\Functional\replace';

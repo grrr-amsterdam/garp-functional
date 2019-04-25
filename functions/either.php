@@ -30,3 +30,5 @@ function either($left, $right) {
     }
     return $left ?: $right;
 }
+
+const either = '\Garp\Functional\either';

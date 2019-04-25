@@ -31,3 +31,5 @@ function autocurry(callable $fn, int $arity): callable {
         }
     );
 }
+
+const autocurry = '\Garp\Functional\autocurry';

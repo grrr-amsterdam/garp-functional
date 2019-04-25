@@ -23,3 +23,5 @@ function divide($left, $right = null) {
         2
     )(...func_get_args());
 }
+
+const divide = '\Garp\Functional\divide';

@@ -20,3 +20,5 @@ function always($it = null): callable {
         return $it;
     };
 }
+
+const always = '\Garp\Functional\always';

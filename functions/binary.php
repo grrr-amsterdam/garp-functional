@@ -19,3 +19,5 @@ function binary(callable $fn): callable {
         return call_user_func($fn, $x, $y);
     };
 }
+
+const binary = '\Garp\Functional\binary';

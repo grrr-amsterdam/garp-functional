@@ -23,3 +23,5 @@ function multiply($left, $right = null) {
         2
     )(...func_get_args());
 }
+
+const multiply = '\Garp\Functional\multiply';

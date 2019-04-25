@@ -26,3 +26,5 @@ function count($subject): int {
         ? \count($subject)
         : mb_strlen(strval($subject));
 }
+
+const count = '\Garp\Functional\count';

@@ -47,3 +47,5 @@ function concat_with(callable $mergeFunction, ...$collections) {
     }
     return call_user_func_array($concatter, $collections);
 }
+
+const concat_with = '\Garp\Functional\concat_with';

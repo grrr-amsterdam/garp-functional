@@ -29,3 +29,5 @@ function partial(callable $fn, ...$args): callable {
         return $fn(...array_merge($args, $remainingArgs));
     };
 }
+
+const partial = '\Garp\Functional\partial';

@@ -119,4 +119,7 @@ class ConcatRightTest extends TestCase {
         f\concat_right('This', 'will', 'go', new stdClass(), 'wrong');
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\concat_right));
+    }
 }

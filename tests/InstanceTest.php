@@ -21,4 +21,7 @@ class InstanceTest extends TestCase {
         $this->assertInstanceOf('stdClass', f\instance('stdClass'));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\instance));
+    }
 }

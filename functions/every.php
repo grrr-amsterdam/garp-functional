@@ -29,3 +29,5 @@ function every(callable $fn, iterable $collection = null) {
         2
     )(...func_get_args());
 }
+
+const every = '\Garp\Functional\every';

@@ -60,4 +60,7 @@ class FlattenTest extends TestCase {
             f\flatten($test)
         );
     }
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\flatten));
+    }
 }

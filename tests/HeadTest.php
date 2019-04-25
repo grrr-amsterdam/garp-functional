@@ -49,4 +49,7 @@ class HeadTest extends TestCase {
         $this->assertNull(f\head(12345));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\head));
+    }
 }

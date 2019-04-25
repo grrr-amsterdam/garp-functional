@@ -33,3 +33,5 @@ function sort_by(callable $fn, array $collection = null) {
         2
     )(...func_get_args());
 }
+
+const sort_by = '\Garp\Functional\sort_by';

@@ -34,3 +34,5 @@ function sort_by_map(array $map, $collection = null) {
         2
     )(...func_get_args());
 }
+
+const sort_by_map = '\Garp\Functional\sort_by_map';

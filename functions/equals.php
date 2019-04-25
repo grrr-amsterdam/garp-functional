@@ -27,3 +27,5 @@ function equals($comparison, $subject = null) {
         2
     )(...func_get_args());
 }
+
+const equals = '\Garp\Functional\equals';

@@ -17,3 +17,5 @@ namespace Garp\Functional;
 function head($collection) {
     return prop(0, $collection);
 }
+
+const head = '\Garp\Functional\head';

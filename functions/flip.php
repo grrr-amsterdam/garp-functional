@@ -35,3 +35,5 @@ function flip(callable $fn): callable {
         );
     };
 }
+
+const flip = '\Garp\Functional\flip';

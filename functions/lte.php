@@ -27,3 +27,5 @@ function lte($left, $right = null) {
         2
     )(...func_get_args());
 }
+
+const lte = '\Garp\Functional\lte';

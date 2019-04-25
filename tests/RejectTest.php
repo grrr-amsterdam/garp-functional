@@ -86,4 +86,7 @@ class RejectTest extends TestCase {
         return strlen($str) <= 5;
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\reject));
+    }
 }

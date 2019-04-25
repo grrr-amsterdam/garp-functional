@@ -27,3 +27,5 @@ function lt($left, $right = null) {
         2
     )(...func_get_args());
 }
+
+const lt = '\Garp\Functional\lt';

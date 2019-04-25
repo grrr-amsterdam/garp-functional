@@ -43,3 +43,5 @@ function when($condition, $ifTrue, $ifFalse, $subject = null) {
     }
     return is_callable_function($ifFalse) ? call_user_func($ifFalse, $subject) : $ifFalse;
 }
+
+const when = '\Garp\Functional\when';

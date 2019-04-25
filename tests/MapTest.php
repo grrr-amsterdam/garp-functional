@@ -59,4 +59,7 @@ class MapTest extends TestCase {
         return substr($str, 0, 3);
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\map));
+    }
 }

@@ -25,3 +25,5 @@ function map(callable $fn, iterable $collection = null) {
         2
     )(...func_get_args());
 }
+
+const map = '\Garp\Functional\map';

@@ -29,3 +29,5 @@ function none($fn, iterable $collection = null) {
         2
     )(...func_get_args());
 }
+
+const none = '\Garp\Functional\none';

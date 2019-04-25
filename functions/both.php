@@ -32,3 +32,5 @@ function both($left, $right) {
     }
     return $left && $right;
 }
+
+const both = '\Garp\Functional\both';

@@ -26,3 +26,5 @@ function once(callable $fn): callable {
         return $result;
     };
 }
+
+const once = '\Garp\Functional\once';

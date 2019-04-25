@@ -55,4 +55,7 @@ class KeysTest extends TestCase {
         f\keys(123);
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\keys));
+    }
 }

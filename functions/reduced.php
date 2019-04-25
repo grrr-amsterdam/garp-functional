@@ -20,3 +20,5 @@ function reduced($value): Internal\ReducedValue {
         ? $value
         : new Internal\ReducedValue($value);
 }
+
+const reduced = '\Garp\Functional\reduced';

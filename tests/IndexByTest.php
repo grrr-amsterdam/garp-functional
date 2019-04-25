@@ -73,4 +73,7 @@ class IndexByTest extends TestCase {
         );
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\index_by));
+    }
 }
