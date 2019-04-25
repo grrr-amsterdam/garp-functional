@@ -2,6 +2,10 @@
 
 Note: I'm not mentioning the plethora of functions that I'm adding with every minor version bump. [Take a look at the full function list](https://github.com/grrr-amsterdam/garp-functional/tree/master/library/Garp/Functional). This changelog will only list breaking changes.
 
+## 3.1.0
+
+- Noticed function `subtract` contained a typo: it was called `substract`. Added deprecation notice to the old one and added a new, correctly spelled, `subtract`.
+
 ## 3.0.0
 
 - Bumped PHP dependency to 7.1. The library now declares strict types and uses the iterable type to validate arguments.
