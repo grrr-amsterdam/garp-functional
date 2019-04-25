@@ -52,4 +52,7 @@ class OnceTest extends TestCase {
     public function setUp() {
         $this->_counter = 0;
     }
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\once));
+    }
 }

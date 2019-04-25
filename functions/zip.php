@@ -30,3 +30,5 @@ function zip(...$arrays) {
         $arrays
     );
 }
+
+const zip = '\Garp\Functional\zip';

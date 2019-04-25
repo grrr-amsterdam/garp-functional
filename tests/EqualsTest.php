@@ -42,4 +42,7 @@ class EqualsTest extends TestCase {
         $this->assertTrue(f\equals($setoidB, $setoidB));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\equals));
+    }
 }

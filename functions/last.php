@@ -24,3 +24,5 @@ function last($collection) {
     $index = count($collection) - 1;
     return prop($index, array_values($collection));
 }
+
+const last = '\Garp\Functional\last';

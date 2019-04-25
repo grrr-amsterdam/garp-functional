@@ -75,4 +75,7 @@ class PickTest extends TestCase {
             $picked
         );
     }
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\pick));
+    }
 }

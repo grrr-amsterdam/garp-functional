@@ -22,3 +22,5 @@ function entries(iterable $collection): array {
         keys($collection)
     );
 }
+
+const entries = '\Garp\Functional\entries';

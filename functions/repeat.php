@@ -37,3 +37,5 @@ function repeat(int $times, callable $fn): callable {
         return $accumulate($args);
     };
 }
+
+const repeat = '\Garp\Functional\repeat';

@@ -39,3 +39,5 @@ function index_by($indexFn, iterable $collection = null) {
         2
     )(...func_get_args());
 }
+
+const index_by = '\Garp\Functional\index_by';

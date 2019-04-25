@@ -13,6 +13,7 @@
     <exclude name="Generic.Commenting.DocComment.MissingShort"/>
     <exclude name="Generic.Commenting.DocComment.NonParamGroup"/>
     <exclude name="Generic.Commenting.DocComment.TagValueIndent"/>
+    <exclude name="Generic.NamingConventions.UpperCaseConstantName.ClassConstantNotUpperCase"/>
     <exclude name="PEAR.Classes.ClassDeclaration.OpenBraceNewLine"/>
     <exclude name="PEAR.Commenting.ClassComment.MissingCategoryTag"/>
     <exclude name="PEAR.Commenting.ClassComment.MissingLicenseTag"/>

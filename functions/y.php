@@ -30,3 +30,5 @@ function Y($F): callable {
     );
 }
 
+
+const y = '\Garp\Functional\y';

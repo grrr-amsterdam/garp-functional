@@ -39,3 +39,5 @@ function take(int $n, $collection = null) {
         2
     )(...func_get_args());
 }
+
+const take = '\Garp\Functional\take';

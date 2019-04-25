@@ -36,3 +36,5 @@ function drop_while(callable $predicate, $collection = null) {
         2
     )(...func_get_args());
 }
+
+const drop_while = '\Garp\Functional\drop_while';

@@ -19,3 +19,5 @@ function unary(callable $fn): callable {
         return call_user_func($fn, $arg);
     };
 }
+
+const unary = '\Garp\Functional\unary';

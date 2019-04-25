@@ -17,3 +17,5 @@ namespace Garp\Functional;
 function is_reduced($value): bool {
     return $value instanceof Internal\ReducedValue;
 }
+
+const is_reduced = '\Garp\Functional\is_reduced';

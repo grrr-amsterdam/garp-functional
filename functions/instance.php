@@ -24,3 +24,5 @@ function instance($obj) {
     }
     return $obj;
 }
+
+const instance = '\Garp\Functional\instance';

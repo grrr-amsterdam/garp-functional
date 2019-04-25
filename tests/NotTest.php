@@ -15,4 +15,7 @@ class NotTest extends TestCase {
         $this->assertFalse($noArray(array(1,2,3)));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\not));
+    }
 }

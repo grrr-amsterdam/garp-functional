@@ -41,4 +41,7 @@ class GteTest extends TestCase {
         $this->assertFalse(f\gte($small, $tiny));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\gte));
+    }
 }

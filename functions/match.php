@@ -29,3 +29,5 @@ function match(string $regex, $subject = null) {
         2
     )(...func_get_args());
 }
+
+const match = '\Garp\Functional\match';

@@ -32,3 +32,5 @@ function drop(int $n, $collection = null) {
         2
     )(...func_get_args());
 }
+
+const drop = '\Garp\Functional\drop';

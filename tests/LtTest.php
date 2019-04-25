@@ -39,4 +39,7 @@ class LtTest extends TestCase {
         $this->assertTrue(f\lt($small, $tiny));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\lt));
+    }
 }

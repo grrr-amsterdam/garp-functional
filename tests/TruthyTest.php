@@ -31,4 +31,7 @@ class TruthyTest extends TestCase {
         $this->assertTrue(f\truthy($obj));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\truthy));
+    }
 }

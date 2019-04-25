@@ -41,3 +41,5 @@ function group_by($indexFn, iterable $collection = null) {
         2
     )(...func_get_args());
 }
+
+const group_by = '\Garp\Functional\group_by';

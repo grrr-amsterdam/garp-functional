@@ -20,3 +20,5 @@ function sort(array $collection): array {
     \sort($copy);
     return $copy;
 }
+
+const sort = '\Garp\Functional\sort';

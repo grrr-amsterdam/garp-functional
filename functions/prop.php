@@ -26,3 +26,5 @@ function prop($key, $collection = null) {
         2
     )(...func_get_args());
 }
+
+const prop = '\Garp\Functional\prop';

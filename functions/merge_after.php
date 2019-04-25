@@ -71,3 +71,5 @@ function merge_after($object, $index, array $target = null) {
         3
     )(...func_get_args());;
 }
+
+const merge_after = '\Garp\Functional\merge_after';

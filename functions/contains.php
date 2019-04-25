@@ -32,3 +32,5 @@ function contains($item, $collection = null) {
         2
     )(...func_get_args());
 }
+
+const contains = '\Garp\Functional\contains';

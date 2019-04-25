@@ -31,3 +31,5 @@ function some(callable $predicate, $collection = null) {
         2
     )(...func_get_args());
 }
+
+const some = '\Garp\Functional\some';

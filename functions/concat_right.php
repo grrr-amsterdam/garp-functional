@@ -29,3 +29,5 @@ function concat_right(...$args) {
         array_reverse($args)
     );
 }
+
+const concat_right = '\Garp\Functional\concat_right';

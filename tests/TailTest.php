@@ -55,4 +55,7 @@ class TailTest extends TestCase {
         f\tail(12345);
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\tail));
+    }
 }

@@ -31,3 +31,5 @@ function reduce_assoc(callable $fn, $default, iterable $collection = null) {
         3
     )(...func_get_args());
 }
+
+const reduce_assoc = '\Garp\Functional\reduce_assoc';

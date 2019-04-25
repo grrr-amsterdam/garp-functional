@@ -29,3 +29,5 @@ function call(string $method, array $args = [], $obj = null) {
     };
     return is_null($obj) ? $caller : $caller($obj);
 }
+
+const call = '\Garp\Functional\call';

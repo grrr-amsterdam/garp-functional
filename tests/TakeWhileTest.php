@@ -66,4 +66,7 @@ class TakeWhileTest extends TestCase {
         );
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\take_while));
+    }
 }

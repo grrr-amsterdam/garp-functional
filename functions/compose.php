@@ -35,3 +35,5 @@ function compose(...$args): callable {
 }
 
 
+
+const compose = '\Garp\Functional\compose';

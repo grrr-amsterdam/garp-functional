@@ -25,4 +25,7 @@ class SplitTest extends TestCase {
         $this->assertTrue(is_callable($splitOnSpace));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\split));
+    }
 }

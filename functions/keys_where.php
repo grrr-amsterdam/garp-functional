@@ -31,3 +31,5 @@ function keys_where(callable $predicate, iterable $collection = null) {
         2
     )(...func_get_args());
 }
+
+const keys_where = '\Garp\Functional\keys_where';

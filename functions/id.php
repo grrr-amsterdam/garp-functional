@@ -22,3 +22,5 @@ function id($it = null) {
         1
     )(...func_get_args());
 }
+
+const id = '\Garp\Functional\id';

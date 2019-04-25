@@ -33,3 +33,5 @@ function partial_right(callable $fn, ...$args): callable {
         return $fn(...array_merge($remainingArgs, $args));
     };
 }
+
+const partial_right = '\Garp\Functional\partial_right';

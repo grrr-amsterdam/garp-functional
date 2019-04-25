@@ -30,3 +30,5 @@ function pick(array $allowed, $collection = null) {
         2
     )(...func_get_args());
 }
+
+const pick = '\Garp\Functional\pick';

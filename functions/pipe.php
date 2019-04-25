@@ -34,3 +34,5 @@ function pipe(...$functions): callable {
 }
 
 
+
+const pipe = '\Garp\Functional\pipe';

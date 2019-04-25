@@ -27,3 +27,5 @@ function flatten(iterable $collection): array {
     }
     return $results;
 }
+
+const flatten = '\Garp\Functional\flatten';

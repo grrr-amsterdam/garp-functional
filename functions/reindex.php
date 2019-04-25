@@ -18,3 +18,5 @@ namespace Garp\Functional;
 function reindex(array $collection): array {
     return array_values($collection);
 }
+
+const reindex = '\Garp\Functional\reindex';

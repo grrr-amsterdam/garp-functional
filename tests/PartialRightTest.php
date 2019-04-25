@@ -34,4 +34,7 @@ class PartialRightTest extends TestCase {
         $this->assertEquals($expected, $helloCopy('John', 'Linda', 'Hi there!'));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\partial_right));
+    }
 }

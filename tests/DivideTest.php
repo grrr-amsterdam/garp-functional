@@ -21,4 +21,7 @@ class DivideTest extends TestCase {
         $this->assertEquals(1, $divide5(5));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\divide));
+    }
 }

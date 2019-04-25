@@ -57,3 +57,5 @@ function concat(...$args) {
     }
     return call_user_func_array($concatter, $args);
 }
+
+const concat = '\Garp\Functional\concat';

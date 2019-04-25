@@ -26,3 +26,5 @@ function usort(callable $fn, array $collection = null) {
         2
     )(...func_get_args());
 }
+
+const usort = '\Garp\Functional\usort';

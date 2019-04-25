@@ -31,3 +31,5 @@ function keys($collection): array {
         __FUNCTION__ . ' expects argument 1 to be a collection'
     );
 }
+
+const keys = '\Garp\Functional\keys';

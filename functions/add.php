@@ -23,3 +23,5 @@ function add($left, $right = null) {
         2
     )(...func_get_args());
 }
+
+const add = '\Garp\Functional\add';

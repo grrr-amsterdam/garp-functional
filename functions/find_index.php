@@ -29,3 +29,5 @@ function find_index(callable $predicate, iterable $collection = null) {
         2
     )(...func_get_args());
 }
+
+const find_index = '\Garp\Functional\find_index';

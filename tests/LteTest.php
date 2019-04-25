@@ -42,4 +42,7 @@ class LteTest extends TestCase {
         $this->assertTrue(f\lte($small, $tiny));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\lte));
+    }
 }

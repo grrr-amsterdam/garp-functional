@@ -32,3 +32,5 @@ function prop_in(array $keys, $collection = null) {
         2
     )(...func_get_args());
 }
+
+const prop_in = '\Garp\Functional\prop_in';

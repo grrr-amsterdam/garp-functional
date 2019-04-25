@@ -21,4 +21,7 @@ class MultiplyTest extends TestCase {
         $this->assertEquals(25, $multiply5(5));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\multiply));
+    }
 }

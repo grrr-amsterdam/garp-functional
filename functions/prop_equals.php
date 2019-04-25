@@ -24,3 +24,5 @@ function prop_equals($prop, $value = null, $obj = null) {
         3
     )(...func_get_args());
 }
+
+const prop_equals = '\Garp\Functional\prop_equals';

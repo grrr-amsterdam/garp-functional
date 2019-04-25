@@ -23,3 +23,5 @@ function modulo($left, $right = null) {
         2
     )(...func_get_args());
 }
+
+const modulo = '\Garp\Functional\modulo';

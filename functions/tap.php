@@ -21,3 +21,5 @@ function tap(callable $fn): callable {
         return $x;
     };
 }
+
+const tap = '\Garp\Functional\tap';

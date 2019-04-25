@@ -27,4 +27,7 @@ class NoneTest extends TestCase {
         $this->assertFalse($noStrings($data));
     }
 
+    public function test_named_constant() {
+        $this->assertTrue(is_callable(f\none));
+    }
 }
