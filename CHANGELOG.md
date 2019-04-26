@@ -2,6 +2,10 @@
 
 Note: I'm not mentioning the plethora of functions that I'm adding with every minor version bump. [Take a look at the full function list](https://github.com/grrr-amsterdam/garp-functional/tree/master/library/Garp/Functional). This changelog will only list breaking changes.
 
+## 3.1.1
+
+- All functions also publish a constant by the same name. This allows you to pass around the function as if you had a reference to it.
+
 ## 3.1.0
 
 - Noticed function `subtract` contained a typo: it was called `substract`. Added deprecation notice to the old one and added a new, correctly spelled, `subtract`.
