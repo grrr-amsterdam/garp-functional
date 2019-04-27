@@ -2,6 +2,10 @@
 
 Note: I'm not mentioning the plethora of functions that I'm adding with every minor version bump. [Take a look at the full function list](https://github.com/grrr-amsterdam/garp-functional/tree/master/library/Garp/Functional). This changelog will only list breaking changes.
 
+## 4.0.0
+
+- Moved TypeClasses to namespace `Garp\Functional\Types\TypeClasses`, to not confuse the terms.
+
 ## 3.1.1
 
 - All functions also publish a constant by the same name. This allows you to pass around the function as if you had a reference to it.
