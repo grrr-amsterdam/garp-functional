@@ -3,7 +3,7 @@
 - [Philosophy](#philosophy)
 - [Function name constants](#function-name-constants)
 - [Function index](#function-index)
-- [Typeclasses](#typeclasses)
+- [Types and Typeclasses](#types-and-typeclasses)
 
 ## Philosophy
 
