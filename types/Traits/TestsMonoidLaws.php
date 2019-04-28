@@ -7,8 +7,8 @@ use Garp\Functional\Types\TypeClasses\Monoid;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Use this trait in a PHPUnit testcase to ensure your Semigroup implementation obeys the
- * Semigroup laws.
+ * Use this trait in a PHPUnit testcase to ensure your Monoid implementation obeys the
+ * Monoid laws.
  *
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
