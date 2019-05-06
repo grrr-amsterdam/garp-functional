@@ -446,6 +446,10 @@ f\filter(f\equals('Miles Davis'), $names); // ['Miles Davis']
 // I will preserve string indexes:
 $numbers = ['hundred' => 100, 'three' => 3, 'fiftytwo' => 52];
 f\filter(f\gt(50), $numbers); // ['hundred' => 100, 'fiftytwo' => 52]
+
+// I will remove falsy values:
+$values = [0, null, false, '', '0'];
+f\filter(f\truthy, $values); // []
 ``` 
 
 ### find
