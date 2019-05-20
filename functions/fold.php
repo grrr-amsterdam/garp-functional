@@ -15,21 +15,27 @@ use Garp\Functional\Types\TypeClasses\Monoid;
  *
  * @param  string $monoidClassName
  * @param  array  $collection
- * @return Monoid
+ * @return mixed
  */
-function fold(string $monoidClassName, $collection = null): Monoid {
+function fold(string $monoidClassName, $collection = null) {
     if (!is_a($monoidClassName, Monoid::class, true)) {
         throw new \InvalidArgumentException(
             sprintf('Class %s does not implement Monoid', $monoidClassName)
         );
     }
-    return reduce(
-        function (Monoid $acc, $curr) use ($monoidClassName) {
-            return concat($acc, new $monoidClassName($curr));
-        },
-        call_user_func("{$monoidClassName}::empty"),
-        $collection
-    );
+    $fold = function ($monoidClassName, $collection) {
+        return reduce(
+            function (Monoid $acc, $curr) use ($monoidClassName): Monoid {
+                return concat($acc, new $monoidClassName($curr));
+            },
+            call_user_func("{$monoidClassName}::empty"),
+            $collection
+        );
+    };
+    return autocurry(
+        $fold,
+        2
+    )(...func_get_args());
 }
 
 const fold = '\Garp\Functional\fold';

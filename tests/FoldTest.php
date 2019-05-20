@@ -40,4 +40,10 @@ class FoldTest extends TestCase {
         $this->assertTrue(is_callable(f\fold));
     }
 
+    public function test_should_be_curried() {
+        $max = f\fold(Max::class);
+        $this->assertTrue(is_callable($max));
+        $this->assertEquals(new Max(10), $max([10, 2, 7, 1]));
+    }
+
 }
