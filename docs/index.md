@@ -117,6 +117,7 @@ This works because the constant contains the fully namespaced function name as a
 - [prop](#prop)
 - [prop_in](#prop_in)
 - [prop_of](#prop_of)
+- [prop_set](#prop_set)
 - [publish](#publish)
 - [reduce](#reduce) 
 - [reduce_assoc](#reduce_assoc) 
@@ -895,6 +896,14 @@ $withThelonious = f\merge_at(
 // ];
 ```
 
+### modulo
+
+Modulo of two numbers.
+
+```php
+f\modulo(3, 10); // 1
+f\modulo(4)(6); // 2
+```
 
 ### multiply
 
@@ -903,15 +912,6 @@ Multiplies two numbers.
 ```php
 f\multiply(2, 10); // 20
 f\multiply(5)(20); // 100
-```
-
-### modulo
-
-Modulo of two numbers.
-
-```php
-f\modulo(3, 10); // 1
-f\modulo(4)(6); // 2
 ```
 
 ### none
