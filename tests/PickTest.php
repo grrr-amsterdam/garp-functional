@@ -35,6 +35,24 @@ class PickTest extends TestCase {
         );
     }
 
+    public function test_should_work_with_combined_arrays() {
+        $data = array(
+            0 => 'something',
+            'first' => 'another',
+            'second' => 'it continues',
+            'third' => 'test passed'
+        );
+        $fixture = array(
+            'first' => 'another',
+            'third' => 'test passed'
+        );
+
+        $this->assertEquals(
+            $fixture,
+            f\pick(array('first', 'third'), $data)
+        );
+    }
+
     public function test_should_be_curried() {
         $getFullName = f\pick(array('first_name', 'last_name'));
         $data = array(

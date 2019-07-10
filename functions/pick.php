@@ -19,7 +19,7 @@ function pick(array $allowed, $collection = null) {
     return autocurry(
         function ($allowed, $collection): array {
             $keys = filter(
-                partial_right('in_array', $allowed),
+                partial_right('in_array', $allowed, true),
                 keys($collection)
             );
             return array_combine(
