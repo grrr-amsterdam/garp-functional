@@ -14,7 +14,7 @@ namespace Garp\Functional;
  *
  * @param  callable $predicate
  * @param  array|string $collection
- * @return array
+ * @return array|callable
  */
 function drop_while(callable $predicate, $collection = null) {
     return autocurry(

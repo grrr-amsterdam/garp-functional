@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  int $n
  * @param  array|string $collection
- * @return array|string
+ * @return array|string|callable
  */
 function take(int $n, $collection = null) {
     $reduce = reduce(

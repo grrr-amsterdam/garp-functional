@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  callable $predicate
  * @param  array    $collection
- * @return bool
+ * @return bool|callable
  */
 function some(callable $predicate, $collection = null) {
     return autocurry(

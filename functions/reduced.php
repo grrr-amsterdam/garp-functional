@@ -13,7 +13,7 @@ namespace Garp\Functional;
  * This signals a short-circuit to the `reduce` function.
  *
  * @param  mixed $value
- * @return Garp\Functional\Internal\ReducedValue
+ * @return Internal\ReducedValue
  */
 function reduced($value): Internal\ReducedValue {
     return is_reduced($value)

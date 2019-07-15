@@ -15,7 +15,7 @@ use Garp\Functional\Types\TypeClasses\Monoid;
  *
  * @param  string $monoidClassName
  * @param  array  $collection
- * @return mixed
+ * @return Monoid|callable
  */
 function fold(string $monoidClassName, $collection = null) {
     if (!is_a($monoidClassName, Monoid::class, true)) {

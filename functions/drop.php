@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  int $n
  * @param  array|string $collection
- * @return array|string
+ * @return array|string|callable
  */
 function drop(int $n, $collection = null) {
     return autocurry(

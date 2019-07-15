@@ -13,8 +13,8 @@ namespace Garp\Functional;
  * Accepts more than arrays.
  *
  * @param  callable $predicate
- * @param  mixed    $collection
- * @return mixed
+ * @param  iterable    $collection
+ * @return iterable|callable
  */
 function filter(callable $predicate, iterable $collection = null) {
     return autocurry(

@@ -18,7 +18,7 @@ use Garp\Functional\Types\TypeClasses\Semigroup;
  * returned.
  *
  * @param  mixed ...$args
- * @return mixed
+ * @return array|string|callable
  */
 function concat(...$args) {
     $concatter = function (...$args) {

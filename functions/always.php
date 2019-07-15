@@ -13,7 +13,7 @@ namespace Garp\Functional;
  * Also known as `const`, or the `K` combinator.
  *
  * @param  mixed $it
- * @return mixed
+ * @return callable
  */
 function always($it = null): callable {
     return function () use ($it) {

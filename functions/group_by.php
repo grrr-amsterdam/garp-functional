@@ -17,7 +17,7 @@ namespace Garp\Functional;
  *
  * @param  callable|string $indexFn
  * @param  iterable array $collection
- * @return int
+ * @return int|callable
  */
 function group_by($indexFn, iterable $collection = null) {
     return autocurry(

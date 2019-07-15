@@ -14,7 +14,7 @@ namespace Garp\Functional;
  *
  * @param  callable $fn
  * @param  iterable $collection
- * @return mixed
+ * @return iterable|callable
  */
 function map(callable $fn, iterable $collection = null) {
     return autocurry(

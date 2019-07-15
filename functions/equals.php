@@ -15,7 +15,7 @@ use Garp\Functional\Types\TypeClasses\Setoid;
  *
  * @param  mixed $comparison
  * @param  mixed $subject
- * @return bool
+ * @return bool|callable
  */
 function equals($comparison, $subject = null) {
     return autocurry(

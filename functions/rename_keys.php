@@ -12,8 +12,8 @@ namespace Garp\Functional;
  * Rename keys in an array.
  *
  * @param  mixed $transformMap
- * @param  mixed $collection
- * @return array
+ * @param  array $collection
+ * @return array|callable
  */
 function rename_keys($transformMap, array $collection = null) {
     return autocurry(

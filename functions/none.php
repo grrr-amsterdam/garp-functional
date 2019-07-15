@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  callable $fn
  * @param  iterable $collection
- * @return bool
+ * @return bool|callable
  */
 function none($fn, iterable $collection = null) {
     return autocurry(

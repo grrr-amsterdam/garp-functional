@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  array           $omitted
  * @param  iterable|object $collection
- * @return array
+ * @return array|callable
  */
 function omit(array $omitted, $collection = null) {
     return autocurry(
