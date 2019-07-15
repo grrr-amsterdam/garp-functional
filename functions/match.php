@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  string $regex
  * @param  mixed  $subject
- * @return bool|array FALSE if no match is made, but an array of matches otherwise
+ * @return bool|array|callable FALSE if no match is made, but an array of matches otherwise
  */
 function match(string $regex, $subject = null) {
     return autocurry(

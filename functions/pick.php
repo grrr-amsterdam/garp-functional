@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  array $allowed
  * @param  array $collection
- * @return array
+ * @return array|callable
  */
 function pick(array $allowed, $collection = null) {
     return autocurry(

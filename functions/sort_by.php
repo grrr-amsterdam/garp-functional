@@ -16,7 +16,7 @@ namespace Garp\Functional;
  *
  * @param  callable $fn
  * @param  array $collection
- * @return int
+ * @return int|callable
  */
 function sort_by(callable $fn, array $collection = null) {
     return autocurry(

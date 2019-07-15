@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  int|float $left
  * @param  int|float $right
- * @return int|float
+ * @return int|float|callable
  */
 function divide($left, $right = null) {
     return autocurry(

@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  mixed                    $item
  * @param  string|array|Traversable $collection
- * @return bool
+ * @return bool|callable
  */
 function contains($item, $collection = null) {
     return autocurry(

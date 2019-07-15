@@ -14,7 +14,7 @@ namespace Garp\Functional;
  * @param  string $prop
  * @param  mixed $value
  * @param  mixed $obj
- * @return bool
+ * @return bool|callable
  */
 function prop_equals($prop, $value = null, $obj = null) {
     return autocurry(

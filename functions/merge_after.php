@@ -11,12 +11,12 @@ namespace Garp\Functional;
 /**
  * Splice something into an array, _after_ the given index.
  *
- * @param  mixed $object The thing to splice into the array.
- * @param  mixed $index  Either the actual index (numeric or associative) or a predicate function.
- *                       In case of a function the first item in $target the function returns true
- *                       for will determine the index.
- * @param  array $target The receiver of the spliced-in object.
- * @return array         A new array.
+ * @param  mixed $object  The thing to splice into the array.
+ * @param  mixed $index   Either the actual index (numeric or associative) or a predicate function.
+ *                        In case of a function the first item in $target the function returns true
+ *                        for will determine the index.
+ * @param  array $target  The receiver of the spliced-in object.
+ * @return array|callable A new array.
  */
 function merge_after($object, $index, array $target = null) {
     return autocurry(

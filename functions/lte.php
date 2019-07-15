@@ -15,7 +15,7 @@ use Garp\Functional\Types\TypeClasses\Ord;
  *
  * @param  int|float|Ord $left
  * @param  int|float|Ord $right
- * @return true
+ * @return bool|callable
  */
 function lte($left, $right = null) {
     return autocurry(

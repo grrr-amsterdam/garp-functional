@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  callable $fn
  * @param  array $collection
- * @return array
+ * @return array|callable
  */
 function usort(callable $fn, array $collection = null) {
     return autocurry(
