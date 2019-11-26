@@ -224,9 +224,17 @@ $isMediumNumber(600); // false
 Call a method on an object.
 
 ```php
-// Image an array of active records, containing a `getName` method.
+// Imagine an array of active records, containing a `getName` method.
 $users = $database->fetchUsers();
 $names = f\map(f\call('getName'), $users); // array of names
+```
+
+`Call` can also accept an array of arguments.
+
+```php
+// Imagine an array of active records, containing a `getDateOfBirth` method that accept a format string
+$users = $database->fetchUsers();
+$datesOfBirth = f\map(f\call('getDateOfBirth', ['Y-m-d']), $users);
 ```
 
 ### compose
