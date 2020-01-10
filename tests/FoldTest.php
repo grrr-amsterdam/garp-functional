@@ -29,10 +29,8 @@ class FoldTest extends TestCase {
         );
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function test_should_throw_on_non_monoid() {
+        $this->expectException(InvalidArgumentException::class);
         f\fold(TestCase::class, ['foo', 'bar', 'baz']);
     }
 

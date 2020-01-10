@@ -98,11 +98,11 @@ class RenameKeysTest extends TestCase {
 
     /**
      * @dataProvider invalidArgumentProvider
-     * @expectedException InvalidArgumentException
      * @param mixed $arg
      * @return void
      */
     public function test_should_throw_on_invalid_arguments($arg) {
+        $this->expectException(InvalidArgumentException::class);
         f\rename_keys($arg, []);
     }
 

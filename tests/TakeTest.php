@@ -45,10 +45,8 @@ class TakeTest extends TestCase {
         );
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function test_should_throw_on_invalid_arguments() {
+        $this->expectException(InvalidArgumentException::class);
         f\take(4, new stdClass());
     }
 

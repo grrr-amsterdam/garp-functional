@@ -60,10 +60,8 @@ class IndexByTest extends TestCase {
         $this->assertEquals($fixture, $indexByInstrument($musicians));
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function test_should_throw_when_index_is_unusable() {
+        $this->expectException(InvalidArgumentException::class);
         $users = array(
             array('name' => 'Alice', 'is_admin' => false),
             array('name' => 'Bob', 'is_admin' => true)

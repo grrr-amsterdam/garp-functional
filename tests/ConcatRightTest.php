@@ -106,17 +106,13 @@ class ConcatRightTest extends TestCase {
         );
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function test_should_throw_on_boolean_arguments() {
+        $this->expectException(InvalidArgumentException::class);
         f\concat_right(true, false);
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function test_should_throw_on_invalid_object() {
+        $this->expectException(InvalidArgumentException::class);
         f\concat_right('This', 'will', 'go', new stdClass(), 'wrong');
     }
 

@@ -129,17 +129,13 @@ class ConcatTest extends TestCase {
         $this->assertEquals(['test', null], $actual);
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function test_should_throw_on_boolean_arguments() {
+        $this->expectException(InvalidArgumentException::class);
         f\concat(1, true);
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function test_should_throw_on_invalid_object() {
+        $this->expectException(InvalidArgumentException::class);
         f\concat('This', 'will', 'go', new stdClass(), 'wrong');
     }
 

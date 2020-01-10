@@ -61,10 +61,8 @@ class CountTest extends TestCase {
         );
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function test_should_throw_exception_for_invalid_objects() {
+        $this->expectException(InvalidArgumentException::class);
         $this->assertEquals(
             0,
             f\count(new stdClass())
