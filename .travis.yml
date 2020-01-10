@@ -1,11 +1,22 @@
 language: php
-php:
-- '7.1'
+
+jobs:
+  allow_failures:
+    - php: nightly
+  include:
+    - php: 7.1
+    - php: 7.2
+    - php: 7.3
+    - php: 7.4
+    - php: nightly
+
+before_script:
+  - composer update --no-interaction --no-suggest
+
 script:
-- "./vendor/bin/phpunit"
-- "./vendor/bin/phpcs ."
-before_install:
-- composer install
+  - "./vendor/bin/phpunit"
+  - "./vendor/bin/phpcs ."
+
 notifications:
   email: false
   slack:
