@@ -48,10 +48,8 @@ class TailTest extends TestCase {
         );
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function test_should_throw_exception_on_unusable_input() {
+        $this->expectException(InvalidArgumentException::class);
         f\tail(12345);
     }
 

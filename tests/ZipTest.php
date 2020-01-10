@@ -9,10 +9,8 @@ use Garp\Functional as f;
  */
 class ZipTest extends TestCase {
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function test_should_throw_on_invalid_arguments() {
+        $this->expectException(InvalidArgumentException::class);
         f\zip([], [], 'abc');
     }
 

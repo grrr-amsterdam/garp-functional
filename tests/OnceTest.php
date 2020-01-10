@@ -49,7 +49,7 @@ class OnceTest extends TestCase {
         $this->_counter += $num;
     }
 
-    public function setUp() {
+    public function setUp(): void {
         $this->_counter = 0;
     }
     public function test_named_constant() {

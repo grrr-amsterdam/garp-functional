@@ -18,11 +18,9 @@ class ConcatWithTest extends TestCase {
         $this->assertTrue(is_callable($concatFooWithAdd));
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage concat_with expects arguments 2 and up to be arrays.
-     */
     public function test_should_throw_on_non_array_arguments() {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('concat_with expects arguments 2 and up to be arrays.');
         f\concat_with('array_merge', 999, 'foo');
     }
 

@@ -52,12 +52,12 @@ class ContainsTest extends TestCase {
     }
 
     /**
-     * @dataProvider invalidCollections
-     * @expectedException \InvalidArgumentException
-     *
      * @param  mixed $invalidCollection
+     *
+     * @dataProvider invalidCollections
      */
     public function test_will_throw_on_invalid_collection($invalidCollection) {
+        $this->expectException(InvalidArgumentException::class);
         f\contains('x', $invalidCollection);
     }
 
