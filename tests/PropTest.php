@@ -107,7 +107,7 @@ class PropTest extends TestCase {
             array(null, 'foo', $obj),
             array('12345', 'bar', $obj),
             array(2012, 'year', $carbonInstance),
-            array(248, 'dayOfYear', $carbonInstance),
+            array(249, 'dayOfYear', $carbonInstance),
             array(null, 'bla', $arrayAccessObj)
         );
     }
