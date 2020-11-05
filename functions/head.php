@@ -15,7 +15,9 @@ namespace Garp\Functional;
  * @return mixed
  */
 function head($collection) {
-    return prop(0, $collection);
+    return is_array($collection)
+        ? array_shift($collection)
+        : prop(0, $collection);
 }
 
 const head = '\Garp\Functional\head';
