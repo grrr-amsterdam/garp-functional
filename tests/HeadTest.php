@@ -52,4 +52,17 @@ class HeadTest extends TestCase {
     public function test_named_constant() {
         $this->assertTrue(is_callable(f\head));
     }
+
+    public function test_should_grab_head_of_assoc_arrays() {
+        $spices = [
+          'cauliflower' => 'nutmeg',
+          'stew' => 'clove',
+          'cake' => 'cinnamon'
+        ];
+
+        $this->assertEquals(
+            'nutmeg',
+            f\head($spices)
+        );
+    }
 }
