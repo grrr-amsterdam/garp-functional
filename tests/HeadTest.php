@@ -64,5 +64,15 @@ class HeadTest extends TestCase {
             'nutmeg',
             f\head($spices)
         );
+
+        // The old array stays the same
+        $this->assertEquals(
+            [
+              'cauliflower' => 'nutmeg',
+              'stew' => 'clove',
+              'cake' => 'cinnamon'
+            ],
+            $spices
+        );
     }
 }
