@@ -2,6 +2,10 @@
 
 Note: I'm not mentioning the plethora of functions that I'm adding with every minor version bump. [Take a look at the full function list](https://github.com/grrr-amsterdam/garp-functional/tree/master/library/Garp/Functional). This changelog will only list breaking changes.
 
+## 5.0.0
+
+- Alas! `match` is a reserved keyword in PHP8, so our `match` function had to be renamed to the more verbose `match_regex`. This is a breaking change: make sure to update your references to this function!
+
 ## 4.0.0
 
 - Moved TypeClasses to namespace `Garp\Functional\Types\TypeClasses`, to not confuse the terms.
