@@ -6,6 +6,13 @@ Utility library embracing functional programming paradigms.
 
 [Documentation](https://grrr-amsterdam.github.io/garp-functional/)
 
+## Developed with ❤️ by [GRRR](https://grrr.nl)
+
+- GRRR is a [B Corp](https://grrr.nl/en/b-corp/)
+- GRRR has a [tech blog](https://grrr.tech/)
+- GRRR is [hiring](https://grrr.nl/en/jobs/)
+- [@GRRRTech](https://twitter.com/grrrtech) tweets
+
 ## Philosophy
 
 `Garp\Functional` is a practical functional library that strives to embrace functional paradigms.
