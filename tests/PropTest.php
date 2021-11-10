@@ -102,12 +102,9 @@ class PropTest extends TestCase {
             }
         };
 
-        $carbonInstance = Carbon::parse('2012-9-5 23:26:11.123789');
         return array(
             array(null, 'foo', $obj),
             array('12345', 'bar', $obj),
-            array(2012, 'year', $carbonInstance),
-            array(249, 'dayOfYear', $carbonInstance),
             array(null, 'bla', $arrayAccessObj)
         );
     }
