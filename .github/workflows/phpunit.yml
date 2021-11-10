@@ -4,7 +4,7 @@ on: push
 
 jobs:
   phpunit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     continue-on-error: ${{ matrix.php == 'nightly' }}
 
     strategy:
@@ -38,11 +38,11 @@ jobs:
       - name: Install PHPUnit 7
         id: phpunit-7
         if: ${{ matrix.php == '7.1' || matrix.php == '7.2' }}
-        run: composer require phpunit/phpunit:^7
+        run: composer require phpunit/phpunit:^7 --no-interaction --no-update
 
       - name: Install PHPUnit 9
         if: ${{ steps.phpunit-7.outcome == 'skipped' }}
-        run: composer require phpunit/phpunit:^9.5 --dev --no-interaction --no-update
+        run: composer require phpunit/phpunit:^9.5 --no-interaction --no-update
 
       - run: composer update ${{ matrix.stability }} --prefer-dist --no-interaction
 
