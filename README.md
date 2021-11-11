@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/grrr-amsterdam/garp-functional.svg?branch=master)](https://travis-ci.com/grrr-amsterdam/garp-functional)
+[![PHPUnit](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpunit.yml/badge.svg)](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpunit.yml) [![PHPCS](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpcs.yml/badge.svg)](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpcs.yml)
 
 # Garp Functional
 
