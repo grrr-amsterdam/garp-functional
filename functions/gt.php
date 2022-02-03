@@ -13,8 +13,8 @@ use Garp\Functional\Types\TypeClasses\Ord;
 /**
  * Checks if $right is greater than $left.
  *
- * @param  int|float $left
- * @param  int|float $right
+ * @param  int|float|Ord $left
+ * @param  int|float|Ord $right
  * @return bool|callable
  */
 function gt($left, $right = null) {
