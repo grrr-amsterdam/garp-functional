@@ -13,9 +13,10 @@ use Garp\Functional\Types\TypeClasses\Monoid;
 /**
  * Fold a collection of items into a Monoid.
  *
- * @param  string $monoidClassName
+ * @template T of Monoid
+ * @param  class-string<T> $monoidClassName
  * @param  array  $collection
- * @return Monoid|callable
+ * @return T|callable
  */
 function fold(string $monoidClassName, $collection = null) {
     if (!is_a($monoidClassName, Monoid::class, true)) {

@@ -18,7 +18,7 @@ use Garp\Functional\Types\TypeClasses\Semigroup;
  * returned.
  *
  * @param  mixed ...$args
- * @return array|string|callable
+ * @return Semigroup|array|string|callable
  */
 function concat(...$args) {
     $concatter = function (...$args) {
@@ -31,9 +31,9 @@ function concat(...$args) {
             return is_array($var) ? $var : [$var];
         };
         if (some(unary('is_array'), $args)) {
-            return call_user_func_array(
+            return call_user_func(
                 'array_merge',
-                map($toArray, $args)
+                ...map($toArray, $args)
             );
         }
         $isStringable = unary(
