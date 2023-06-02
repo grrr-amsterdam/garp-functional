@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class PropEqualsTest extends TestCase {
 
-    public function test_should_determine_equality() {
+    public function test_should_determine_equality(): void {
         $miles = array(
             'first_name' => 'Miles',
             'last_name' => 'Davis',
@@ -26,7 +26,7 @@ class PropEqualsTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_objects() {
+    public function test_should_work_with_objects(): void {
         $obj = new stdClass();
         $obj->first_name = 'Miles';
         $obj->last_name = 'Davis';
@@ -38,13 +38,13 @@ class PropEqualsTest extends TestCase {
         );
     }
 
-    public function test_should_not_blow_up_on_missing_prop() {
+    public function test_should_not_blow_up_on_missing_prop(): void {
         $this->assertFalse(
             f\prop_equals('fruit', 'banana', array())
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $playsTrumpet = f\prop_equals('instrument', 'trumpet');
         $musicians = array(
             array('first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'),
@@ -58,7 +58,7 @@ class PropEqualsTest extends TestCase {
         );
     }
 
-    public function test_should_be_thrice_curried() {
+    public function test_should_be_thrice_curried(): void {
         $musicians = array(
             array('first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'),
             array('first_name' => 'John', 'last_name' => 'Coltrane', 'instrument' => 'saxophone'),

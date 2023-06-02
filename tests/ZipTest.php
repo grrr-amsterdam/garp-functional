@@ -9,12 +9,12 @@ use Garp\Functional as f;
  */
 class ZipTest extends TestCase {
 
-    public function test_should_throw_on_invalid_arguments() {
+    public function test_should_throw_on_invalid_arguments(): void {
         $this->expectException(InvalidArgumentException::class);
         f\zip([], [], 'abc');
     }
 
-    public function test_it_should_zip_a_bunch_of_arrays_together() {
+    public function test_it_should_zip_a_bunch_of_arrays_together(): void {
         $first = array('Miles', 'John', 'Herbie');
         $last = array('Davis', 'Coltrane', 'Hancock');
         $this->assertSame(
@@ -23,7 +23,7 @@ class ZipTest extends TestCase {
         );
     }
 
-    public function test_it_should_accept_variadic_arguments() {
+    public function test_it_should_accept_variadic_arguments(): void {
         $first = array('Miles', 'John', 'Herbie');
         $second = array('Davis', 'Coltrane', 'Hancock');
         $last = array('Trumpet', 'Saxophone', 'Piano');
@@ -37,7 +37,7 @@ class ZipTest extends TestCase {
         );
     }
 
-    public function test_it_should_null_missing_values() {
+    public function test_it_should_null_missing_values(): void {
         $first = array('Miles', 'John', 'Herbie');
         $last = array('Davis');
         $this->assertSame(
@@ -46,7 +46,7 @@ class ZipTest extends TestCase {
         );
     }
 
-    public function test_it_should_work_with_assoc_arrays() {
+    public function test_it_should_work_with_assoc_arrays(): void {
         $first = array('red' => '#FF0000', 'green' => '#00FF00');
         $last = array('red' => '#FF4136', 'green' => '#2ECC40');
         $this->assertSame(
@@ -58,7 +58,7 @@ class ZipTest extends TestCase {
         );
     }
 
-    public function test_it_should_null_missing_assoc_values() {
+    public function test_it_should_null_missing_assoc_values(): void {
         $first = array('red' => '#FF0000', 'green' => '#00FF00');
         $last = array('red' => '#FF4136', 'green' => '#2ECC40', 'blue' => '#0000FF');
         $this->assertSame(
@@ -71,7 +71,7 @@ class ZipTest extends TestCase {
         );
     }
 
-    public function test_it_should_work_with_iterable_objects() {
+    public function test_it_should_work_with_iterable_objects(): void {
         $first = new ArrayIterator(array(1, 2, 3));
         $second = array(4, 5, 6);
         $this->assertSame(
@@ -80,7 +80,7 @@ class ZipTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\zip));
     }
 }

@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class IdTest extends TestCase {
 
-    public function test_should_return_its_argument() {
+    public function test_should_return_its_argument(): void {
         $this->assertEquals('Miles Davis', f\id('Miles Davis'));
         $this->assertEquals(123, f\id(123));
         $this->assertEquals(true, f\id(true));
@@ -22,7 +22,7 @@ class IdTest extends TestCase {
         $this->assertEquals($miles, f\id($miles));
     }
 
-    public function test_it_should_be_curried() {
+    public function test_it_should_be_curried(): void {
         $this->assertTrue(is_callable(f\id()));
         $this->assertEquals(
             'Banana!',
@@ -30,7 +30,7 @@ class IdTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\id));
     }
 }

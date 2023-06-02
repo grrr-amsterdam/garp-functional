@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class UnaryTest extends TestCase {
 
-    public function test_should_make_function_unary() {
+    public function test_should_make_function_unary(): void {
         /**
          * Explanation with this example: is_array blows up when given more than one argument.
          * some(), however, passes the index as well as the item to the callback function.

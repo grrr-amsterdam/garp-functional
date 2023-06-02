@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class PropInTest extends TestCase {
 
-    public function test_should_get_nested_props_from_assoc() {
+    public function test_should_get_nested_props_from_assoc(): void {
         $miles = array(
             'first_name' => 'Miles',
             'last_name' => 'Davis',
@@ -33,7 +33,7 @@ class PropInTest extends TestCase {
         );
     }
 
-    public function test_should_get_nested_props_from_object() {
+    public function test_should_get_nested_props_from_object(): void {
         $foo = new stdClass();
         $foo->bar = new stdClass();
         $foo->bar->baz = array('X', 'Y', 'Z');
@@ -46,7 +46,7 @@ class PropInTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $getAuthorName = f\prop_in(array('author', 'name', 'first'));
         $this->assertTrue(is_callable($getAuthorName));
 
@@ -66,7 +66,7 @@ class PropInTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\prop_in));
     }
 }

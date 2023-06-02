@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class ComposeTest extends TestCase {
 
-    public function test_should_compose_functions() {
+    public function test_should_compose_functions(): void {
         $revAndUpper = f\compose('strrev', 'strtoupper');
         $this->assertEquals('GEMTUN', $revAndUpper('nutmeg'));
 
@@ -20,7 +20,7 @@ class ComposeTest extends TestCase {
         );
     }
 
-    public function test_should_allow_n_arguments() {
+    public function test_should_allow_n_arguments(): void {
         $splitMapAndJoin = f\compose(f\join('_'), f\map('strrev'), f\split(' '));
         $miles = 'Miles Davis';
         $this->assertEquals(
@@ -37,7 +37,7 @@ class ComposeTest extends TestCase {
         );
     }
 
-    public function test_what_happens_without_arguments() {
+    public function test_what_happens_without_arguments(): void {
         $emptyCompose = f\compose();
         $this->assertEquals(
             'whaddayaknow',
@@ -45,7 +45,7 @@ class ComposeTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\compose));
     }
 }

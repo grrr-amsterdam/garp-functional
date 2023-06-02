@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class PipeTest extends TestCase {
 
-    public function test_should_pipe_functions() {
+    public function test_should_pipe_functions(): void {
         $revAndUpper = f\pipe('strtoupper', 'strrev');
         $this->assertEquals('GEMTUN', $revAndUpper('nutmeg'));
 
@@ -20,7 +20,7 @@ class PipeTest extends TestCase {
         );
     }
 
-    public function test_should_allow_n_arguments() {
+    public function test_should_allow_n_arguments(): void {
         $splitMapAndJoin = f\pipe(f\split(' '), f\map('strrev'), f\join('_'));
         $miles = 'Miles Davis';
         $this->assertEquals(
@@ -37,7 +37,7 @@ class PipeTest extends TestCase {
         );
     }
 
-    public function test_what_happens_without_arguments() {
+    public function test_what_happens_without_arguments(): void {
         $emptyPipe = f\pipe();
         $this->assertEquals(
             'whaddayaknow',
@@ -45,7 +45,7 @@ class PipeTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\pipe));
     }
 }

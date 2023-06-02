@@ -16,7 +16,7 @@ class SumTest extends TestCase {
     use TestsSemigroupLaws;
     use TestsMonoidLaws;
 
-    public function test_semigroup_laws() {
+    public function test_semigroup_laws(): void {
         $this->assertObeysSemigroupLaws(
             new Sum(540),
             new Sum(19),
@@ -24,13 +24,13 @@ class SumTest extends TestCase {
         );
     }
 
-    public function test_monoid_laws() {
+    public function test_monoid_laws(): void {
         $this->assertObeysMonoidLaws(
             new Sum(4390)
         );
     }
 
-    public function test_summation() {
+    public function test_summation(): void {
         $sums = $this->_sumProvider();
         $this->assertTrue(
             f\every(
@@ -44,6 +44,9 @@ class SumTest extends TestCase {
         );
     }
 
+    /**
+     * @return array<int, array<int, int>>
+     */
     private function _sumProvider(): array {
         return f\reduce(
             function ($out, $n) {

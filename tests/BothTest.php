@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class BothTest extends TestCase {
 
-    public function test_both() {
+    public function test_both(): void {
         $this->assertTrue(
             f\both(12345, '12345')
         );
@@ -28,7 +28,7 @@ class BothTest extends TestCase {
         );
     }
 
-    public function test_both_should_accept_functions() {
+    public function test_both_should_accept_functions(): void {
         $isMediumNumber = f\both(f\gt(50), f\lt(200));
         $this->assertTrue(is_callable($isMediumNumber));
         $this->assertTrue(
@@ -45,7 +45,7 @@ class BothTest extends TestCase {
         );
     }
 
-    public function test_both_should_evaluate_right_function_lazily() {
+    public function test_both_should_evaluate_right_function_lazily(): void {
         $called = false;
         $changer = function () use (&$called) {
             $called = true;
@@ -58,14 +58,14 @@ class BothTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_callable_objects() {
+    public function test_should_work_with_callable_objects(): void {
         $obj = new CallableObject(24);
 
         $both = f\both($obj, true);
         $this->assertTrue($both);
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\both));
     }
 }

@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class SortByTest extends TestCase {
 
-    public function test_should_sort_arrays() {
+    public function test_should_sort_arrays(): void {
         $musicians = array(
             array('first_name' => 'Louis', 'last_name' => 'Armstrong', 'instrument' => 'trumpet'),
             array('first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'),
@@ -37,7 +37,7 @@ class SortByTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $sortByName = f\sort_by(f\prop('first_name'));
         $this->assertTrue(is_callable($sortByName));
         $musicians = array(
@@ -61,7 +61,7 @@ class SortByTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\sort_by));
     }
 }

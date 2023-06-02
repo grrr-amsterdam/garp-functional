@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class AlwaysTest extends TestCase {
 
-    public function test_should_return_a_constant_function() {
+    public function test_should_return_a_constant_function(): void {
         $constMiles = f\always('Miles Davis');
         $this->assertEquals(
             'Miles Davis',
@@ -21,7 +21,7 @@ class AlwaysTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\always));
     }
 }

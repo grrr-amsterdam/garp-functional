@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class ReindexTest extends TestCase {
 
-    public function test_should_reindex_array() {
+    public function test_should_reindex_array(): void {
         $spices = array('clove', 'nutmeg', 'allspice', 'cumin');
         $this->assertEquals(
             $spices,
@@ -23,7 +23,7 @@ class ReindexTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\reindex));
     }
 }

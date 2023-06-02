@@ -16,13 +16,16 @@ use PHPUnit\Framework\TestCase;
  */
 trait TestsMonoidLaws {
 
-    public function assertObeysMonoidLaws(Monoid $m) {
+    public function assertObeysMonoidLaws(Monoid $m): void {
         if (!$this instanceof TestCase) {
             throw new \RunTimeException(
                 __TRAIT__ . ' should be used in the context of a PHPUnit TestCase'
             );
         }
 
+        /**
+         * @var callable $empty
+         */
         $empty = get_class($m) . '::empty';
         $this->assertEquals(
             $m,

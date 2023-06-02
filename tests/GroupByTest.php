@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class GroupByTest extends TestCase {
 
-    public function test_should_group_by_index() {
+    public function test_should_group_by_index(): void {
         $musicians = array(
             array('name' => 'Miles Davis', 'instrument' => 'trumpet'),
             array('name' => 'John Coltrane', 'instrument' => 'saxophone'),
@@ -36,7 +36,7 @@ class GroupByTest extends TestCase {
         );
     }
 
-    public function test_should_group_using_function() {
+    public function test_should_group_using_function(): void {
         $strings = array('a', 'as', 'asd', 'aa', 'asdf', 'qwer');
         $fixture = array(
             1 => array('a'),
@@ -50,7 +50,7 @@ class GroupByTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $groupByInstrument = f\group_by('instrument');
         $this->assertTrue(is_callable($groupByInstrument));
         $musicians = array(
@@ -76,7 +76,7 @@ class GroupByTest extends TestCase {
         $this->assertEquals($fixture, $groupByInstrument($musicians));
     }
 
-    public function test_should_throw_when_index_is_unusable() {
+    public function test_should_throw_when_index_is_unusable(): void {
         $this->expectException(InvalidArgumentException::class);
         $users = array(
             array('name' => 'Alice', 'is_admin' => false),
@@ -87,7 +87,7 @@ class GroupByTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\group_by));
     }
 }

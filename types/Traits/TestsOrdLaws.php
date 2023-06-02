@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
  */
 trait TestsOrdLaws {
 
-    public function assertObeysOrdLaws(Ord $a, Ord $b, Ord $c) {
+    public function assertObeysOrdLaws(Ord $a, Ord $b, Ord $c): void {
         if (!$this instanceof TestCase) {
             throw new \RunTimeException(
                 __TRAIT__ . ' should be used in the context of a PHPUnit TestCase'

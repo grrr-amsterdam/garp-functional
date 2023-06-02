@@ -10,7 +10,7 @@ use Garp\Functional\Types\{Max, Min};
  */
 class FoldTest extends TestCase {
 
-    public function test_should_fold_into_monoid() {
+    public function test_should_fold_into_monoid(): void {
         $this->assertEquals(
             new Max(100),
             f\fold(Max::class, [10, 2, 100, 30, 58])
@@ -22,23 +22,23 @@ class FoldTest extends TestCase {
         );
     }
 
-    public function test_should_return_identity_value_for_empty_list() {
+    public function test_should_return_identity_value_for_empty_list(): void {
         $this->assertEquals(
             Max::empty(),
             f\fold(Max::class, [])
         );
     }
 
-    public function test_should_throw_on_non_monoid() {
+    public function test_should_throw_on_non_monoid(): void {
         $this->expectException(InvalidArgumentException::class);
         f\fold(TestCase::class, ['foo', 'bar', 'baz']);
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\fold));
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $max = f\fold(Max::class);
         $this->assertTrue(is_callable($max));
         $this->assertEquals(new Max(10), $max([10, 2, 7, 1]));

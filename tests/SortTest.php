@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class SortTest extends TestCase {
 
-    public function test_should_sort_array() {
+    public function test_should_sort_array(): void {
         $spices = array('nutmeg', 'allspice', 'clove', 'cumin');
         $this->assertEquals(
             array('allspice', 'clove', 'cumin', 'nutmeg'),

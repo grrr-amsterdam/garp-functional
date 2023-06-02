@@ -15,18 +15,18 @@ class MaxTest extends TestCase {
     use TestsSemigroupLaws;
     use TestsMonoidLaws;
 
-    public function test_semigroup_laws() {
+    public function test_semigroup_laws(): void {
         $large = new Max(100);
         $medium = new Max(50);
         $small = new Max(25);
         $this->assertObeysSemigroupLaws($large, $medium, $small);
     }
 
-    public function test_monoid_laws() {
+    public function test_monoid_laws(): void {
         $this->assertObeysMonoidLaws(new Max(100));
     }
 
-    public function test_keeps_the_max_value() {
+    public function test_keeps_the_max_value(): void {
         $large = new Max(100);
         $medium = new Max(50);
         $small = new Max(25);

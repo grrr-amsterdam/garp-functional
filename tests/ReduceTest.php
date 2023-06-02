@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class ReduceTest extends TestCase {
 
-    public function test_should_reduce_array() {
+    public function test_should_reduce_array(): void {
         $numbers = array(100, 23, 1, -2, 59);
         $reduced = f\reduce(
             function ($acc, $cur) {
@@ -26,7 +26,7 @@ class ReduceTest extends TestCase {
         );
     }
 
-    public function test_should_reduce_iterable_object() {
+    public function test_should_reduce_iterable_object(): void {
         $mockSpiceTraver = new MockSpiceTraverser();
         $reduced = f\reduce(
             f\concat(),
@@ -39,7 +39,7 @@ class ReduceTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $reducer = f\reduce(f\concat(), '');
         $this->assertTrue(is_callable($reducer));
         $this->assertEquals(
@@ -48,7 +48,7 @@ class ReduceTest extends TestCase {
         );
     }
 
-    public function test_iteration_should_halt_early_when_given_signal() {
+    public function test_iteration_should_halt_early_when_given_signal(): void {
         // Re-implement find
         $find = function ($predicate, $collection) {
             return f\reduce(
@@ -92,7 +92,7 @@ class ReduceTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\reduce));
     }
 }

@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class TakeWhileTest extends TestCase {
 
-    public function test_should_take_from_array() {
+    public function test_should_take_from_array(): void {
         $diary = array(
             array('month' => 1, 'day' => 1, 'entry' => 'Lorem ipsum'),
             array('month' => 1, 'day' => 14, 'entry' => 'Lorem ipsum'),
@@ -36,7 +36,7 @@ class TakeWhileTest extends TestCase {
         );
     }
 
-    public function test_should_take_from_iterable_object() {
+    public function test_should_take_from_iterable_object(): void {
         $spiceTraverser = new MockSpiceTraverser();
         $this->assertEquals(
             array('nutmeg', 'cinnamon', 'clove'),
@@ -44,7 +44,7 @@ class TakeWhileTest extends TestCase {
         );
     }
 
-    public function test_should_take_from_string() {
+    public function test_should_take_from_string(): void {
         $isVowel = f\partial_right('in_array', array('a', 'e', 'o', 'i', 'u', 'y'));
         $gibberish = 'aeuibejkwe';
         $this->assertEquals(
@@ -53,7 +53,7 @@ class TakeWhileTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $takeFirstBigNumbers = f\take_while(f\gt(100));
         $this->assertTrue(is_callable($takeFirstBigNumbers));
         $this->assertEquals(
@@ -66,7 +66,7 @@ class TakeWhileTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\take_while));
     }
 }

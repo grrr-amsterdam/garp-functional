@@ -11,7 +11,7 @@ use Garp\Functional as f;
  */
 class EqualsTest extends TestCase {
 
-    public function test_should_determine_equality() {
+    public function test_should_determine_equality(): void {
         $this->assertTrue(f\equals('123', '123'));
         $this->assertTrue(f\equals(true, true));
         $spices = ['clove', 'nutmeg', 'allspice', 'cumin'];
@@ -22,7 +22,7 @@ class EqualsTest extends TestCase {
         $this->assertFalse(f\equals(new MockSpiceTraverser, new MockSpiceTraverser));
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $isCumin = f\equals('cumin');
         $this->assertTrue(is_callable($isCumin));
         $spices = ['clove', 'nutmeg', 'allspice', 'cumin'];
@@ -32,7 +32,7 @@ class EqualsTest extends TestCase {
         );
     }
 
-    public function test_works_with_setoids() {
+    public function test_works_with_setoids(): void {
         $setoidA = new StringM('A');
         $setoidB = new StringM('B');
         $setoidC = new StringM('A');
@@ -42,7 +42,7 @@ class EqualsTest extends TestCase {
         $this->assertTrue(f\equals($setoidB, $setoidB));
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\equals));
     }
 }

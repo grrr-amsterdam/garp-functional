@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class FindIndexTest extends TestCase {
 
-    public function test_should_find_from_numeric_array() {
+    public function test_should_find_from_numeric_array(): void {
         $spices = array('nutmeg', 'clove', 'cinnamon');
         $this->assertEquals(
             1,
@@ -24,7 +24,7 @@ class FindIndexTest extends TestCase {
         );
     }
 
-    public function test_should_find_from_assoc_array() {
+    public function test_should_find_from_assoc_array(): void {
         $colors = array(
             'red' => '#FF0000',
             'green' => '#00FF00',
@@ -40,7 +40,7 @@ class FindIndexTest extends TestCase {
         );
     }
 
-    public function test_should_find_from_iterable_object() {
+    public function test_should_find_from_iterable_object(): void {
         $spiceTraverser = new MockSpiceTraverser();
         $this->assertEquals(
             2,
@@ -51,7 +51,7 @@ class FindIndexTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $findSaxPlayer = f\find_index(f\prop_equals('instrument', 'saxophone'));
         $this->assertTrue(is_callable($findSaxPlayer));
         $musicians = array(
@@ -65,7 +65,7 @@ class FindIndexTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\find_index));
     }
 }

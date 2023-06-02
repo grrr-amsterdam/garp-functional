@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class TailTest extends TestCase {
 
-    public function test_should_grab_tail_of_arrays() {
+    public function test_should_grab_tail_of_arrays(): void {
         $spices = array('nutmeg', 'clove', 'cinnamon');
         $this->assertEquals(
             array('clove', 'cinnamon'),
@@ -18,7 +18,7 @@ class TailTest extends TestCase {
         );
     }
 
-    public function test_should_grab_tail_of_strings() {
+    public function test_should_grab_tail_of_strings(): void {
         $miles = 'Miles';
         $this->assertEquals(
             'iles',
@@ -26,7 +26,7 @@ class TailTest extends TestCase {
         );
     }
 
-    public function test_should_grab_tail_from_traversable() {
+    public function test_should_grab_tail_from_traversable(): void {
         $spiceIterator = new MockSpiceTraverser();
         $this->assertEquals(
             array('cinnamon', 'clove'),
@@ -34,26 +34,26 @@ class TailTest extends TestCase {
         );
     }
 
-    public function test_should_get_empty_array_from_empty_collection() {
+    public function test_should_get_empty_array_from_empty_collection(): void {
         $this->assertEquals(
             array(),
             f\tail(array())
         );
     }
 
-    public function test_should_get_empty_string_from_empty_string() {
+    public function test_should_get_empty_string_from_empty_string(): void {
         $this->assertEquals(
             '',
             f\tail('')
         );
     }
 
-    public function test_should_throw_exception_on_unusable_input() {
+    public function test_should_throw_exception_on_unusable_input(): void {
         $this->expectException(InvalidArgumentException::class);
         f\tail(12345);
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\tail));
     }
 }

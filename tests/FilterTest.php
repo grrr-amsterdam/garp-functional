@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class FilterTest extends TestCase {
 
-    public function test_should_filter_array() {
+    public function test_should_filter_array(): void {
         $data = array(123, 'abc', 456, true, array());
 
         // Native PHP function.
@@ -40,7 +40,7 @@ class FilterTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $getAllStrings = f\filter('is_string');
         $data = array(123, 'abc', 456, true, array());
         $this->assertTrue(is_callable($getAllStrings));
@@ -50,7 +50,7 @@ class FilterTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_iterable_objects() {
+    public function test_should_work_with_iterable_objects(): void {
         $traversable = new MockSpiceTraverser();
         $this->assertEquals(
             array(0 => 'clove'),
@@ -58,7 +58,7 @@ class FilterTest extends TestCase {
         );
     }
 
-    public function test_should_keep_string_indexes() {
+    public function test_should_keep_string_indexes(): void {
         $muppets = array(
             'Kermit' => array('type' => 'frog', 'color' => 'green'),
             'Miss Piggy' => array('type' => 'pig', 'color' => 'pink'),
@@ -75,7 +75,7 @@ class FilterTest extends TestCase {
         );
     }
 
-    public function test_should_reindex_numeric_indexes() {
+    public function test_should_reindex_numeric_indexes(): void {
         $numbers = array(1000, 30.50, 490, 555);
         $bigNumbers = f\filter(f\gt(500), $numbers);
         $this->assertEquals(
@@ -84,11 +84,11 @@ class FilterTest extends TestCase {
         );
     }
 
-    public function isSmallString($str) {
+    public function isSmallString($str): bool {
         return strlen($str) <= 5;
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\filter));
     }
 }

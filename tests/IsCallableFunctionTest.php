@@ -12,7 +12,7 @@ use Garp\Functional as f;
  */
 class IsCallableFunctionTest extends TestCase {
 
-    public function test_should_recognize_callable_functions() {
+    public function test_should_recognize_callable_functions(): void {
         $mockMusician = new MockMusician('Miles', 'Davis');
         $multiply = function ($n) {
             return $n * $n;
@@ -49,7 +49,7 @@ class IsCallableFunctionTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\is_callable_function));
     }
 }

@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class GtTest extends TestCase {
 
-    public function test_should_check_if_n_is_greater() {
+    public function test_should_check_if_n_is_greater(): void {
         $this->assertTrue(
             f\gt(10, 20)
         );
@@ -20,13 +20,13 @@ class GtTest extends TestCase {
         $this->assertFalse(f\gt(100, 50));
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $moreThan5 = f\gt(5);
         $this->assertTrue(is_callable($moreThan5));
         $this->assertTrue($moreThan5(10));
     }
 
-    public function test_should_allow_ord_instances() {
+    public function test_should_allow_ord_instances(): void {
         $small = new MockOrd('small');
         $big = new MockOrd('big');
         $huge = new MockOrd('huge');
@@ -39,7 +39,7 @@ class GtTest extends TestCase {
         $this->assertFalse(f\gt($small, $tiny));
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\gt));
     }
 }

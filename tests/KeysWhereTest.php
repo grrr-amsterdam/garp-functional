@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class KeysWhereTest extends TestCase {
 
-    public function test_should_find_keys_from_array() {
+    public function test_should_find_keys_from_array(): void {
         $fruits = array(
             array('name' => 'apple', 'color' => 'red'),
             array('name' => 'banana', 'color' => 'yellow'),
@@ -29,7 +29,7 @@ class KeysWhereTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\keys_where));
     }
 }

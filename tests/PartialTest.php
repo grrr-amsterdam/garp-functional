@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class PartialTest extends TestCase {
 
-    public function test_should_produce_partially_applied_function() {
+    public function test_should_produce_partially_applied_function(): void {
         $this->assertTrue(
             is_callable(f\partial('explode', '_'))
         );
@@ -34,7 +34,7 @@ class PartialTest extends TestCase {
         $this->assertEquals($expected, $helloCopy('John', 'Hank', 'Hi there!'));
     }
 
-    public function test_should_be_able_to_curry_native_functions() {
+    public function test_should_be_able_to_curry_native_functions(): void {
         $musicians = array('Miles Davis', 'John Coltrane', 'Herbie Hancock');
         $fixture = array(
             array('Miles', 'Davis'), array('John', 'Coltrane'), array('Herbie', 'Hancock')
@@ -46,7 +46,7 @@ class PartialTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\partial));
     }
 }

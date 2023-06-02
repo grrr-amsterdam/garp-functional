@@ -10,13 +10,13 @@ use Garp\Functional as f;
  */
 class PropOfTest extends TestCase {
 
-    public function test_should_read_from_indexed() {
+    public function test_should_read_from_indexed(): void {
         $spices = array('nutmeg', 'cinnamon', 'clove');
         $this->assertEquals('nutmeg', f\prop_of($spices, 0));
         $this->assertEquals('clove', f\prop_of($spices, 2));
     }
 
-    public function test_should_read_from_assoc() {
+    public function test_should_read_from_assoc(): void {
         $colors = array(
             'red' => '#FF0000',
             'green' => '#00FF00',
@@ -26,12 +26,12 @@ class PropOfTest extends TestCase {
         $this->assertNull(f\prop_of($colors, 'yellow'));
     }
 
-    public function test_should_read_from_string() {
+    public function test_should_read_from_string(): void {
         $this->assertEquals('n', f\prop_of('cinnamon', 2));
         $this->assertNull(f\prop_of('nutmeg', 20));
     }
 
-    public function test_should_read_from_object() {
+    public function test_should_read_from_object(): void {
         $obj = new stdClass();
         $obj->answer = 42;
 
@@ -39,7 +39,7 @@ class PropOfTest extends TestCase {
         $this->assertNull(f\prop_of($obj, 'question'));
     }
 
-    public function test_should_read_from_traversable() {
+    public function test_should_read_from_traversable(): void {
         $spiceIterator = new MockSpiceTraverser();
         $this->assertEquals(
             'nutmeg',
@@ -47,7 +47,7 @@ class PropOfTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $this->assertTrue(is_callable(f\prop_of('foo')));
         $colors = array(
             'red' => '#FF0000',
@@ -61,7 +61,7 @@ class PropOfTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\prop_of));
     }
 }

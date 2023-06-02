@@ -10,7 +10,7 @@ use Garp\Functional\Types\StringM;
  */
 class UniqueTest extends TestCase {
 
-    public function test_should_work_with_simple_arrays() {
+    public function test_should_work_with_simple_arrays(): void {
         $this->assertEquals(
             array('a', 'b', 'c'),
             f\unique(array('a', 'b', 'b', 'c', 'a'))
@@ -21,7 +21,7 @@ class UniqueTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_multidimensional_arrays() {
+    public function test_should_work_with_multidimensional_arrays(): void {
         $musicians = array(
             array('first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'),
             array('first_name' => 'Miles', 'last_name' => 'Davis', 'instrument' => 'trumpet'),
@@ -48,14 +48,14 @@ class UniqueTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_strings() {
+    public function test_should_work_with_strings(): void {
         $this->assertEquals(
             array('a', 'r', 'd', 'v', 'k'),
             f\unique('aardvark')
         );
     }
 
-    public function test_should_work_with_setoids() {
+    public function test_should_work_with_setoids(): void {
         $john = new StringM('John');
         $miles = new StringM('Miles');
         $herbie = new StringM('Herbie');
@@ -74,7 +74,7 @@ class UniqueTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\unique));
     }
 }

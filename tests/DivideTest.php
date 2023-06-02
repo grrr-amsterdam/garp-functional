@@ -9,19 +9,19 @@ use Garp\Functional as f;
  */
 class DivideTest extends TestCase {
 
-    public function test_should_divide_numbers() {
+    public function test_should_divide_numbers(): void {
         $this->assertEquals(1, f\divide(5, 5));
         $this->assertEquals(5, f\divide(2, 10));
         $this->assertEquals(4, f\divide(5, 20));
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $divide5 = f\divide(5);
         $this->assertTrue(is_callable($divide5));
         $this->assertEquals(1, $divide5(5));
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\divide));
     }
 }

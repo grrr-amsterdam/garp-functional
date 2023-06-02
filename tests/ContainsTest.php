@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class ContainsTest extends TestCase {
 
-    public function test_should_return_string_match_when_given_strings() {
+    public function test_should_return_string_match_when_given_strings(): void {
         $this->assertTrue(
             f\contains('hello', 'hello world')
         );
@@ -22,7 +22,7 @@ class ContainsTest extends TestCase {
         );
     }
 
-    public function test_should_use_in_array_when_given_array() {
+    public function test_should_use_in_array_when_given_array(): void {
         $this->assertTrue(
             f\contains('hello', array('hello', 'world'))
         );
@@ -41,7 +41,7 @@ class ContainsTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_traversables() {
+    public function test_should_work_with_traversables(): void {
         $spiceTraverser = new MockSpiceTraverser();
         $this->assertTrue(
             f\contains('cinnamon', $spiceTraverser)
@@ -56,18 +56,18 @@ class ContainsTest extends TestCase {
      *
      * @dataProvider invalidCollections
      */
-    public function test_will_throw_on_invalid_collection($invalidCollection) {
+    public function test_will_throw_on_invalid_collection($invalidCollection): void {
         $this->expectException(InvalidArgumentException::class);
         f\contains('x', $invalidCollection);
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $containsHello = f\contains('hello');
         $this->assertTrue(is_callable($containsHello));
         $this->assertTrue($containsHello(array('hello', 'world')));
     }
 
-    public function invalidCollections() {
+    public function invalidCollections(): array {
         return array(
             array(100),
             array(new stdClass()),
@@ -76,7 +76,7 @@ class ContainsTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\contains));
     }
 }

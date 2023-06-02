@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class FlipTest extends TestCase {
 
-    public function test_should_flip_arguments() {
+    public function test_should_flip_arguments(): void {
         $this->assertEquals(
             array('Miles', 'Davis'),
             call_user_func(f\flip('explode'), 'Miles Davis', ' ')

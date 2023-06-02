@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class IndexByTest extends TestCase {
 
-    public function test_should_index_by_index() {
+    public function test_should_index_by_index(): void {
         $musicians = array(
             array('name' => 'Miles Davis', 'instrument' => 'trumpet'),
             array('name' => 'John Coltrane', 'instrument' => 'saxophone'),
@@ -28,7 +28,7 @@ class IndexByTest extends TestCase {
         );
     }
 
-    public function test_should_index_using_function() {
+    public function test_should_index_using_function(): void {
         $strings = array('a', 'as', 'asd', 'aa', 'asdf', 'qwer');
         $fixture = array(
             1 => 'a',
@@ -42,7 +42,7 @@ class IndexByTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $indexByInstrument = f\index_by('instrument');
         $this->assertTrue(is_callable($indexByInstrument));
         $musicians = array(
@@ -60,7 +60,7 @@ class IndexByTest extends TestCase {
         $this->assertEquals($fixture, $indexByInstrument($musicians));
     }
 
-    public function test_should_throw_when_index_is_unusable() {
+    public function test_should_throw_when_index_is_unusable(): void {
         $this->expectException(InvalidArgumentException::class);
         $users = array(
             array('name' => 'Alice', 'is_admin' => false),
@@ -71,7 +71,7 @@ class IndexByTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\index_by));
     }
 }

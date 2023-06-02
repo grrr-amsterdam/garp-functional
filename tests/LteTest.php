@@ -10,7 +10,7 @@ use Garp\Functional\Tests\Helpers\MockOrd;
  */
 class LteTest extends TestCase {
 
-    public function test_should_check_if_n_is_less_or_equal() {
+    public function test_should_check_if_n_is_less_or_equal(): void {
         $this->assertTrue(
             f\lte(20, 10)
         );
@@ -23,14 +23,14 @@ class LteTest extends TestCase {
         $this->assertFalse(f\lte(50, 100));
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $lessThan5 = f\lte(5);
         $this->assertTrue(is_callable($lessThan5));
         $this->assertTrue($lessThan5(3));
         $this->assertFalse($lessThan5(5.5));
     }
 
-    public function test_should_allow_ord_instances() {
+    public function test_should_allow_ord_instances(): void {
         $small = new MockOrd('small');
         $big = new MockOrd('big');
         $huge = new MockOrd('huge');
@@ -42,7 +42,7 @@ class LteTest extends TestCase {
         $this->assertTrue(f\lte($small, $tiny));
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\lte));
     }
 }

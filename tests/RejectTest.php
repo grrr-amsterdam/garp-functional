@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class RejectTest extends TestCase {
 
-    public function test_should_reject_array() {
+    public function test_should_reject_array(): void {
         $data = [123, 'abc', 456, true, []];
 
         // Native PHP function.
@@ -40,7 +40,7 @@ class RejectTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $rejectAllStrings = f\reject('is_string');
         $data = [123, 'abc', 456, true, []];
         $this->assertTrue(is_callable($rejectAllStrings));
@@ -50,7 +50,7 @@ class RejectTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_iterable_objects() {
+    public function test_should_work_with_iterable_objects(): void {
         $traversable = new MockSpiceTraverser();
         $this->assertEquals(
             [0 => 'nutmeg', 1 => 'cinnamon'],
@@ -58,7 +58,7 @@ class RejectTest extends TestCase {
         );
     }
 
-    public function test_should_keep_string_indexes() {
+    public function test_should_keep_string_indexes(): void {
         $muppets = [
             'Kermit' => ['type' => 'frog', 'color' => 'green'],
             'Miss Piggy' => ['type' => 'pig', 'color' => 'pink'],
@@ -73,7 +73,7 @@ class RejectTest extends TestCase {
         );
     }
 
-    public function test_should_reindex_numeric_indexes() {
+    public function test_should_reindex_numeric_indexes(): void {
         $numbers = [1000, 30.50, 490, 555];
         $bigNumbers = f\reject(f\gt(500), $numbers);
         $this->assertEquals(
@@ -82,11 +82,11 @@ class RejectTest extends TestCase {
         );
     }
 
-    public function isSmallString($str) {
+    public function isSmallString(string $str): bool {
         return strlen($str) <= 5;
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\reject));
     }
 }

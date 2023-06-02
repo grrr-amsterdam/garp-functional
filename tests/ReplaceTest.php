@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class ReplaceTest extends TestCase {
 
-    public function test_should_replace_strings() {
+    public function test_should_replace_strings(): void {
         $this->assertEquals(
             'goodbye world',
             f\replace('/(hello)/', 'goodbye', 'hello world')
@@ -21,7 +21,7 @@ class ReplaceTest extends TestCase {
         );
     }
 
-    public function test_should_return_unusable_objects() {
+    public function test_should_return_unusable_objects(): void {
         $stdClass = new stdClass();
         $this->assertEquals(
             $stdClass,
@@ -39,7 +39,7 @@ class ReplaceTest extends TestCase {
         );
     }
 
-    public function test_should_match_objects_that_support_tostring() {
+    public function test_should_match_objects_that_support_tostring(): void {
         $musician = new MockMusician('Miles', 'Davis');
         $this->assertEquals(
             'Miles Smiles',
@@ -47,7 +47,7 @@ class ReplaceTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $replaceNum = f\replace('/(\d)/', 'x');
         $this->assertTrue(is_callable($replaceNum));
         $data = array(123, 'abc', array('90'), 456);
@@ -57,7 +57,7 @@ class ReplaceTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\replace));
     }
 }

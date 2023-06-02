@@ -11,12 +11,12 @@ use Carbon\Carbon;
  */
 class PropTest extends TestCase {
 
-    public function test_should_read_from_indexed() {
+    public function test_should_read_from_indexed(): void {
         $spices = array('nutmeg', 'cinnamon', 'clove');
         $this->assertEquals('nutmeg', f\prop(0, $spices));
     }
 
-    public function test_should_read_from_assoc() {
+    public function test_should_read_from_assoc(): void {
         $colors = array(
             'red' => '#FF0000',
             'green' => '#00FF00',
@@ -26,12 +26,12 @@ class PropTest extends TestCase {
         $this->assertNull(f\prop('yellow', $colors));
     }
 
-    public function test_should_read_from_string() {
+    public function test_should_read_from_string(): void {
         $this->assertEquals('n', f\prop(2, 'cinnamon'));
         $this->assertNull(f\prop(20, 'nutmeg'));
     }
 
-    public function test_should_read_from_object() {
+    public function test_should_read_from_object(): void {
         $obj = new stdClass();
         $obj->answer = 42;
 
@@ -39,7 +39,7 @@ class PropTest extends TestCase {
         $this->assertNull(f\prop('question', $obj));
     }
 
-    public function test_should_read_from_traversable() {
+    public function test_should_read_from_traversable(): void {
         $spiceIterator = new MockSpiceTraverser();
         $this->assertEquals(
             'nutmeg',
@@ -47,7 +47,7 @@ class PropTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $this->assertTrue(is_callable(f\prop('foo')));
         $getRed = f\prop('red');
         $colors = array(
@@ -75,7 +75,7 @@ class PropTest extends TestCase {
         );
     }
 
-    public function magicDataProvider() {
+    public function magicDataProvider(): array {
         $obj = new class {
             protected $_data = [
                 'bar' => '12345'
@@ -109,7 +109,7 @@ class PropTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\prop));
     }
 }

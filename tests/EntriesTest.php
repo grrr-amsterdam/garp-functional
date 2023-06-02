@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class EntriesTest extends TestCase {
 
-    public function test_should_work_with_numeric_indexed_array() {
+    public function test_should_work_with_numeric_indexed_array(): void {
         $this->assertEquals(
             [[0, 'foo'], [1, 'bar'], [2, 'baz']],
             f\entries(['foo', 'bar', 'baz'])
@@ -24,7 +24,7 @@ class EntriesTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_assoc_arrays() {
+    public function test_should_work_with_assoc_arrays(): void {
         $this->assertEquals(
             [['foo', 123], ['bar', 456]],
             f\entries(['foo' => 123, 'bar' => 456])
@@ -35,7 +35,7 @@ class EntriesTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_iterable_objects() {
+    public function test_should_work_with_iterable_objects(): void {
         $fruits = [
             'apple',
             'orange',
@@ -50,7 +50,7 @@ class EntriesTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\entries));
     }
 }

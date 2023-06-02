@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class TruthyTest extends TestCase {
 
-    public function test_truthy() {
+    public function test_truthy(): void {
         $this->assertTrue(f\truthy('1234'));
         $this->assertTrue(f\truthy(true));
         $this->assertFalse(f\truthy('0'));
@@ -19,19 +19,19 @@ class TruthyTest extends TestCase {
         $this->assertFalse(f\truthy(array()));
     }
 
-    public function test_truthy_should_accept_functions() {
+    public function test_truthy_should_accept_functions(): void {
         $isArray = f\truthy('is_array');
         $this->assertTrue(is_callable($isArray));
         $this->assertTrue($isArray(array()));
         $this->assertFalse($isArray(123));
     }
 
-    public function test_should_work_with_callable_objects() {
+    public function test_should_work_with_callable_objects(): void {
         $obj = new CallableObject(24);
         $this->assertTrue(f\truthy($obj));
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\truthy));
     }
 }

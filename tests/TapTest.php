@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class TapTest extends TestCase {
 
-    public function test_should_tap() {
+    public function test_should_tap(): void {
         $stuff = array();
         $addToStuff = function () use (&$stuff) {
             $stuff[] = uniqid();
@@ -21,7 +21,7 @@ class TapTest extends TestCase {
         $this->assertCount(2, $stuff);
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\tap));
     }
 }

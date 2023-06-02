@@ -11,7 +11,7 @@ use Garp\Functional as f;
  */
 class ConcatTest extends TestCase {
 
-    public function test_should_concat_arrays() {
+    public function test_should_concat_arrays(): void {
         $a = array(1, 2, 3);
         $b = array(4, 5, 6);
         $this->assertEquals(
@@ -20,7 +20,7 @@ class ConcatTest extends TestCase {
         );
     }
 
-    public function test_should_concat_assoc_arrays() {
+    public function test_should_concat_assoc_arrays(): void {
         $a = array(
             'first_name' => 'Miles',
             'last_name' => 'Davis'
@@ -34,7 +34,7 @@ class ConcatTest extends TestCase {
         );
     }
 
-    public function test_right_overrides_left() {
+    public function test_right_overrides_left(): void {
         $a = array(
             'first_name' => 'Miles',
             'last_name' => 'Davis'
@@ -48,7 +48,7 @@ class ConcatTest extends TestCase {
         );
     }
 
-    public function test_should_concat_strings() {
+    public function test_should_concat_strings(): void {
         $this->assertEquals(
             'MilesDavis',
             f\concat('Miles', 'Davis')
@@ -59,7 +59,7 @@ class ConcatTest extends TestCase {
         );
     }
 
-    public function test_should_concat_strings_to_arrays_if_either_argument_is_array() {
+    public function test_should_concat_strings_to_arrays_if_either_argument_is_array(): void {
         $this->assertEquals(
             array('Miles', 'Davis'),
             f\concat('Miles', array('Davis'))
@@ -70,7 +70,7 @@ class ConcatTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_stringable_objects() {
+    public function test_should_work_with_stringable_objects(): void {
         $miles = new MockMusician('Miles', 'Davis');
         $john = new MockMusician('John', 'Coltrane');
         $this->assertEquals(
@@ -79,7 +79,7 @@ class ConcatTest extends TestCase {
         );
     }
 
-    public function test_should_cast_numbers_to_strings() {
+    public function test_should_cast_numbers_to_strings(): void {
         $this->assertEquals(
             '42509',
             f\concat(
@@ -92,7 +92,7 @@ class ConcatTest extends TestCase {
         );
     }
 
-    public function test_should_be_variadic() {
+    public function test_should_be_variadic(): void {
         $this->assertEquals(
             range(1, 9),
             f\concat(
@@ -103,7 +103,7 @@ class ConcatTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $concatMiles = f\concat('Miles');
         $this->assertTrue(is_callable($concatMiles));
 
@@ -114,7 +114,7 @@ class ConcatTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried_down_to_no_arguments() {
+    public function test_should_be_curried_down_to_no_arguments(): void {
         $concatAnything = f\concat();
         $this->assertTrue(is_callable($concatAnything));
         $this->assertEquals(
@@ -123,30 +123,30 @@ class ConcatTest extends TestCase {
         );
     }
 
-    public function test_should_concat_null() {
+    public function test_should_concat_null(): void {
         $actual = f\concat(['test'], null);
 
         $this->assertEquals(['test', null], $actual);
     }
 
-    public function test_should_throw_on_boolean_arguments() {
+    public function test_should_throw_on_boolean_arguments(): void {
         $this->expectException(InvalidArgumentException::class);
         f\concat(1, true);
     }
 
-    public function test_should_throw_on_invalid_object() {
+    public function test_should_throw_on_invalid_object(): void {
         $this->expectException(InvalidArgumentException::class);
         f\concat('This', 'will', 'go', new stdClass(), 'wrong');
     }
 
-    public function test_should_allow_semigroups() {
+    public function test_should_allow_semigroups(): void {
         $this->assertEquals(
             new StringM('foobar'),
             f\concat(new StringM('foo'), new StringM('bar'))
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\concat));
     }
 

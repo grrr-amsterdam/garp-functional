@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class RenameKeysTest extends TestCase {
 
-    public function test_should_rename_keys() {
+    public function test_should_rename_keys(): void {
         $a = array(
             'foo' => 123,
             'bar' => 456
@@ -33,7 +33,7 @@ class RenameKeysTest extends TestCase {
         );
     }
 
-    public function test_should_ignore_unknown_keys() {
+    public function test_should_ignore_unknown_keys(): void {
         $a = array(
             'foo' => 123,
             'bar' => 456
@@ -47,7 +47,7 @@ class RenameKeysTest extends TestCase {
         );
     }
 
-    public function test_should_leave_omitted_keys() {
+    public function test_should_leave_omitted_keys(): void {
         $a = array(
             'foo' => 123,
             'bar' => 456
@@ -61,7 +61,7 @@ class RenameKeysTest extends TestCase {
         );
     }
 
-    public function test_should_accept_function_as_transformer() {
+    public function test_should_accept_function_as_transformer(): void {
         $a = array(1, 2, 3);
         $this->assertSame(
             array(1 => 1, 2 => 2, 3 => 3),
@@ -78,7 +78,7 @@ class RenameKeysTest extends TestCase {
         );
     }
 
-    public function test_callable_should_not_be_executed_in_collection() {
+    public function test_callable_should_not_be_executed_in_collection(): void {
         $actual = f\rename_keys(
             array(0 => 'new_key'),
             array('Garp\Functional\rename_keys')
@@ -87,7 +87,7 @@ class RenameKeysTest extends TestCase {
         $this->assertEquals(array('new_key' => 'Garp\Functional\rename_keys'), $actual);
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $renamer = f\rename_keys(array('foo' => 'bar'));
         $this->assertTrue(is_callable($renamer));
         $this->assertSame(
@@ -101,12 +101,12 @@ class RenameKeysTest extends TestCase {
      * @param mixed $arg
      * @return void
      */
-    public function test_should_throw_on_invalid_arguments($arg) {
+    public function test_should_throw_on_invalid_arguments($arg): void {
         $this->expectException(InvalidArgumentException::class);
         f\rename_keys($arg, []);
     }
 
-    public function invalidArgumentProvider() {
+    public function invalidArgumentProvider(): array {
         return array(
             array(new stdClass),
             array(true),
@@ -114,7 +114,7 @@ class RenameKeysTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\rename_keys));
     }
 }
