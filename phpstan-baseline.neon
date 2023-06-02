@@ -1,0 +1,3416 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Garp\\\\Functional\\\\Internal\\\\ReducedValue\\:\\:__construct\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: _internal/ReducedValue.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Internal\\\\ReducedValue\\:\\:\\$value has no type specified\\.$#"
+			count: 1
+			path: _internal/ReducedValue.php
+
+		-
+			message: "#^PHPDoc tag @return with type mixed is not subtype of native type callable\\.$#"
+			count: 1
+			path: functions/autocurry.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function call_user_func_array expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 2
+			path: functions/both.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\call\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/call.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function call_user_func_array expects callable\\(\\)\\: mixed, array\\{mixed, string\\} given\\.$#"
+			count: 1
+			path: functions/call.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\concat\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/concat.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\concat\\(\\) should return array\\|\\(callable\\(\\)\\: mixed\\)\\|Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Semigroup\\|string but returns mixed\\.$#"
+			count: 2
+			path: functions/concat.php
+
+		-
+			message: "#^Only iterables can be unpacked, \\(callable\\)\\|iterable given in argument \\#2\\.$#"
+			count: 1
+			path: functions/concat.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\unary expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: functions/concat.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\concat_with\\(\\) has parameter \\$collections with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/concat_with.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\concat_with\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/concat_with.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\concat_with\\(\\) should return array but returns mixed\\.$#"
+			count: 2
+			path: functions/concat_with.php
+
+		-
+			message: "#^Anonymous function should return bool but returns bool\\|\\(callable\\)\\.$#"
+			count: 1
+			path: functions/contains.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\contains\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/contains.php
+
+		-
+			message: "#^Parameter \\$collection of function Garp\\\\Functional\\\\contains\\(\\) has invalid type Garp\\\\Functional\\\\Traversable\\.$#"
+			count: 1
+			path: functions/contains.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function strval expects bool\\|float\\|int\\|resource\\|string\\|null, mixed given\\.$#"
+			count: 1
+			path: functions/count.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\drop\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/drop.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\drop\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/drop.php
+
+		-
+			message: "#^Anonymous function should return array but returns mixed\\.$#"
+			count: 1
+			path: functions/drop_while.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\drop_while\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/drop_while.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\drop_while\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/drop_while.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function call_user_func_array expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 2
+			path: functions/either.php
+
+		-
+			message: "#^Cannot access offset mixed on iterable\\.$#"
+			count: 1
+			path: functions/entries.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\entries\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/entries.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\entries\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/entries.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\entries\\(\\) should return array but returns \\(callable\\)\\|iterable\\.$#"
+			count: 1
+			path: functions/entries.php
+
+		-
+			message: "#^PHPDoc tag @param for parameter \\$collection with type Garp\\\\Functional\\\\traversable is not subtype of native type iterable\\.$#"
+			count: 1
+			path: functions/entries.php
+
+		-
+			message: "#^Parameter \\$collection of function Garp\\\\Functional\\\\entries\\(\\) has invalid type Garp\\\\Functional\\\\traversable\\.$#"
+			count: 1
+			path: functions/entries.php
+
+		-
+			message: "#^Anonymous function should return bool but returns mixed\\.$#"
+			count: 1
+			path: functions/every.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\every\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/every.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\filter\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/filter.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\filter\\(\\) return type has no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/filter.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\find\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/find.php
+
+		-
+			message: "#^PHPDoc tag @param for parameter \\$collection with type mixed is not subtype of native type iterable\\|null\\.$#"
+			count: 1
+			path: functions/find.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\find_index\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/find_index.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(iterable mixed \\$collection\\)\\: Unexpected token \"mixed\", expected variable at offset 119$#"
+			count: 1
+			path: functions/find_index.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\flatten\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/flatten.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\flatten\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/flatten.php
+
+		-
+			message: "#^Parameter \\#2 \\$args of function call_user_func_array expects array\\<int\\|string, mixed\\>, array\\|\\(callable\\)\\|Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Semigroup\\|string given\\.$#"
+			count: 1
+			path: functions/flip.php
+
+		-
+			message: "#^Anonymous function should return Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Monoid but returns array\\|\\(callable\\)\\|Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Semigroup\\|string\\.$#"
+			count: 1
+			path: functions/fold.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\fold\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/fold.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function call_user_func expects callable\\(\\)\\: mixed, non\\-falsy\\-string given\\.$#"
+			count: 1
+			path: functions/fold.php
+
+		-
+			message: "#^Anonymous function should return array but returns mixed\\.$#"
+			count: 1
+			path: functions/group_by.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\group_by\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/group_by.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(iterable array \\$collection\\)\\: Unexpected token \"array\", expected variable at offset 312$#"
+			count: 1
+			path: functions/group_by.php
+
+		-
+			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
+			count: 1
+			path: functions/group_by.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\head\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/head.php
+
+		-
+			message: "#^Anonymous function should return array but returns mixed\\.$#"
+			count: 1
+			path: functions/index_by.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\index_by\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/index_by.php
+
+		-
+			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
+			count: 1
+			path: functions/index_by.php
+
+		-
+			message: "#^Call to function is_string\\(\\) with object will always evaluate to false\\.$#"
+			count: 1
+			path: functions/instance.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\is_assoc\\(\\) has parameter \\$iterable with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/is_assoc.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\keys\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/keys.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\keys_where\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/keys_where.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\keys_where\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/keys_where.php
+
+		-
+			message: "#^PHPDoc tag @param for parameter \\$collection with type mixed is not subtype of native type iterable\\|null\\.$#"
+			count: 1
+			path: functions/keys_where.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of function array_values expects array, mixed given\\.$#"
+			count: 1
+			path: functions/last.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\map\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/map.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\map\\(\\) return type has no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/map.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\match_regex\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/match_regex.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\merge_after\\(\\) has parameter \\$target with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/merge_after.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\merge_after\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/merge_after.php
+
+		-
+			message: "#^Parameter \\#2 \\$offset of function array_slice expects int, float\\|int given\\.$#"
+			count: 1
+			path: functions/merge_after.php
+
+		-
+			message: "#^Parameter \\#3 \\$length of function array_slice expects int\\|null, float\\|int given\\.$#"
+			count: 1
+			path: functions/merge_after.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\merge_at\\(\\) has parameter \\$target with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/merge_at.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\merge_at\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/merge_at.php
+
+		-
+			message: "#^Parameter \\#2 \\$offset of function array_slice expects int, float\\|int given\\.$#"
+			count: 1
+			path: functions/merge_at.php
+
+		-
+			message: "#^Parameter \\#3 \\$length of function array_slice expects int\\|null, float\\|int given\\.$#"
+			count: 1
+			path: functions/merge_at.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\none\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/none.php
+
+		-
+			message: "#^Anonymous function should return array but returns mixed\\.$#"
+			count: 1
+			path: functions/omit.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\omit\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/omit.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\omit\\(\\) has parameter \\$omitted with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/omit.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\omit\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/omit.php
+
+		-
+			message: "#^Parameter \\#3 \\$collection of function Garp\\\\Functional\\\\reduce expects iterable\\|null, \\(callable\\)\\|iterable given\\.$#"
+			count: 1
+			path: functions/omit.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\pick\\(\\) has parameter \\$allowed with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/pick.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\pick\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/pick.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\pick\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/pick.php
+
+		-
+			message: "#^Parameter \\#1 \\$keys of function array_combine expects array\\<int\\|string\\>, \\(callable\\)\\|iterable given\\.$#"
+			count: 1
+			path: functions/pick.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\map expects iterable\\|null, \\(callable\\)\\|iterable given\\.$#"
+			count: 1
+			path: functions/pick.php
+
+		-
+			message: "#^Parameter \\#2 \\$values of function array_combine expects array, \\(callable\\)\\|iterable given\\.$#"
+			count: 1
+			path: functions/pick.php
+
+		-
+			message: "#^Anonymous function has an unused use \\$collection\\.$#"
+			count: 1
+			path: functions/prop_in.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\prop_in\\(\\) has parameter \\$keys with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/prop_in.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\publish\\(\\) has invalid return type Garp\\\\Functional\\\\Closure\\.$#"
+			count: 1
+			path: functions/publish.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\publish\\(\\) should return Garp\\\\Functional\\\\Closure but returns Closure\\.$#"
+			count: 1
+			path: functions/publish.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function call_user_func_array expects callable\\(\\)\\: mixed, array\\{mixed, string\\} given\\.$#"
+			count: 1
+			path: functions/publish.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 1
+			path: functions/publish.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\reduce\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/reduce.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\reduce_assoc\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/reduce_assoc.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\reduced\\(\\) should return Garp\\\\Functional\\\\Internal\\\\ReducedValue but returns mixed\\.$#"
+			count: 1
+			path: functions/reduced.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\reindex\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/reindex.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\reindex\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/reindex.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\reject\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/reject.php
+
+		-
+			message: "#^PHPDoc tag @param for parameter \\$collection with type mixed is not subtype of native type iterable\\|null\\.$#"
+			count: 1
+			path: functions/reject.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\rename_keys\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/rename_keys.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\rename_keys\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/rename_keys.php
+
+		-
+			message: "#^Anonymous function should return bool but returns mixed\\.$#"
+			count: 1
+			path: functions/some.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\some\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/some.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\sort\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/sort.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\sort\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/sort.php
+
+		-
+			message: "#^Anonymous function should return array but returns array\\|\\(callable\\)\\.$#"
+			count: 1
+			path: functions/sort_by.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\sort_by\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/sort_by.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\sort_by_map\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/sort_by_map.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\sort_by_map\\(\\) has parameter \\$map with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/sort_by_map.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\sort_by_map\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/sort_by_map.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\split\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/split.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\take\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/take.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\take\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/take.php
+
+		-
+			message: "#^Parameter \\#1 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, \\(callable\\(\\)\\: mixed\\)\\|string given\\.$#"
+			count: 1
+			path: functions/take.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: functions/take.php
+
+		-
+			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
+			count: 1
+			path: functions/take.php
+
+		-
+			message: "#^Anonymous function should return array but returns mixed\\.$#"
+			count: 1
+			path: functions/take_while.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\take_while\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/take_while.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\take_while\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/take_while.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function call_user_func_array expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: functions/truthy.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\unique\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: functions/unique.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\unique\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/unique.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\unique\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: functions/unique.php
+
+		-
+			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\find expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 1
+			path: functions/unique.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\usort\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/usort.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\usort\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/usort.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function call_user_func expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 3
+			path: functions/when.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\zip\\(\\) has parameter \\$arrays with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/zip.php
+
+		-
+			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\flatten expects iterable, \\(callable\\)\\|iterable given\\.$#"
+			count: 1
+			path: functions/zip.php
+
+		-
+			message: "#^Method AddTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/AddTest.php
+
+		-
+			message: "#^Method AddTest\\:\\:test_should_add_numbers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/AddTest.php
+
+		-
+			message: "#^Method AddTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/AddTest.php
+
+		-
+			message: "#^Method AlwaysTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/AlwaysTest.php
+
+		-
+			message: "#^Method AlwaysTest\\:\\:test_should_return_a_constant_function\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/AlwaysTest.php
+
+		-
+			message: "#^Function Garp\\\\Functional\\\\autocurry invoked with 3 parameters, 2 required\\.$#"
+			count: 1
+			path: tests/AutocurryTest.php
+
+		-
+			message: "#^Method AutocurryTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/AutocurryTest.php
+
+		-
+			message: "#^Method AutocurryTest\\:\\:test_should_keep_on_curryin\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/AutocurryTest.php
+
+		-
+			message: "#^Closure invoked with 3 parameters, 0 required\\.$#"
+			count: 1
+			path: tests/BinaryTest.php
+
+		-
+			message: "#^Method BinaryTest\\:\\:test_should_make_function_binary\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/BinaryTest.php
+
+		-
+			message: "#^Method BothTest\\:\\:test_both\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/BothTest.php
+
+		-
+			message: "#^Method BothTest\\:\\:test_both_should_accept_functions\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/BothTest.php
+
+		-
+			message: "#^Method BothTest\\:\\:test_both_should_evaluate_right_function_lazily\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/BothTest.php
+
+		-
+			message: "#^Method BothTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/BothTest.php
+
+		-
+			message: "#^Method BothTest\\:\\:test_should_work_with_callable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/BothTest.php
+
+		-
+			message: "#^Trying to invoke bool\\|\\(callable\\(\\)\\: mixed\\) but it might not be a callable\\.$#"
+			count: 1
+			path: tests/BothTest.php
+
+		-
+			message: "#^Method CallTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CallTest.php
+
+		-
+			message: "#^Method CallTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CallTest.php
+
+		-
+			message: "#^Method CallTest\\:\\:test_should_call_methods\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CallTest.php
+
+		-
+			message: "#^Method CallTest\\:\\:test_should_pass_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CallTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockMusician\\)\\: mixed\\)\\|null, mixed given\\.$#"
+			count: 1
+			path: tests/CallTest.php
+
+		-
+			message: "#^Method ComposeTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ComposeTest.php
+
+		-
+			message: "#^Method ComposeTest\\:\\:test_should_allow_n_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ComposeTest.php
+
+		-
+			message: "#^Method ComposeTest\\:\\:test_should_compose_functions\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ComposeTest.php
+
+		-
+			message: "#^Method ComposeTest\\:\\:test_what_happens_without_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ComposeTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\map expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/ComposeTest.php
+
+		-
+			message: "#^Parameter \\#1 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, \\(callable\\(\\)\\: mixed\\)\\|iterable given\\.$#"
+			count: 1
+			path: tests/ComposeTest.php
+
+		-
+			message: "#^Parameter \\#1 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, \\(callable\\(\\)\\: mixed\\)\\|string given\\.$#"
+			count: 2
+			path: tests/ComposeTest.php
+
+		-
+			message: "#^Parameter \\#1 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/ComposeTest.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, \\(callable\\(\\)\\: mixed\\)\\|iterable given\\.$#"
+			count: 2
+			path: tests/ComposeTest.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/ComposeTest.php
+
+		-
+			message: "#^Parameter \\#3 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, array\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 2
+			path: tests/ComposeTest.php
+
+		-
+			message: "#^Method ConcatRightTest\\:\\:test_left_overrides_right\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Method ConcatRightTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Method ConcatRightTest\\:\\:test_should_allow_semigroups\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Method ConcatRightTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Method ConcatRightTest\\:\\:test_should_be_variadic\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Method ConcatRightTest\\:\\:test_should_cast_numbers_to_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Method ConcatRightTest\\:\\:test_should_concat_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Method ConcatRightTest\\:\\:test_should_concat_assoc_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Method ConcatRightTest\\:\\:test_should_concat_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Method ConcatRightTest\\:\\:test_should_concat_strings_to_arrays_if_either_argument_is_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Method ConcatRightTest\\:\\:test_should_throw_on_boolean_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Method ConcatRightTest\\:\\:test_should_throw_on_invalid_object\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
+			count: 1
+			path: tests/ConcatRightTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_right_overrides_left\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_allow_semigroups\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_be_curried_down_to_no_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_be_variadic\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_cast_numbers_to_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_concat_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_concat_assoc_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_concat_null\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_concat_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_concat_strings_to_arrays_if_either_argument_is_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_throw_on_boolean_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_throw_on_invalid_object\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatTest\\:\\:test_should_work_with_stringable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatTest.php
+
+		-
+			message: "#^Method ConcatWithTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatWithTest.php
+
+		-
+			message: "#^Method ConcatWithTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatWithTest.php
+
+		-
+			message: "#^Method ConcatWithTest\\:\\:test_should_be_variadic\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatWithTest.php
+
+		-
+			message: "#^Method ConcatWithTest\\:\\:test_should_merge_with_add_function\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatWithTest.php
+
+		-
+			message: "#^Method ConcatWithTest\\:\\:test_should_throw_on_non_array_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ConcatWithTest.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$collections of function Garp\\\\Functional\\\\concat_with expects array, int given\\.$#"
+			count: 1
+			path: tests/ConcatWithTest.php
+
+		-
+			message: "#^Parameter \\#3 \\.\\.\\.\\$collections of function Garp\\\\Functional\\\\concat_with expects array, string given\\.$#"
+			count: 1
+			path: tests/ConcatWithTest.php
+
+		-
+			message: "#^Method ContainsTest\\:\\:invalidCollections\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ContainsTest.php
+
+		-
+			message: "#^Method ContainsTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ContainsTest.php
+
+		-
+			message: "#^Method ContainsTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ContainsTest.php
+
+		-
+			message: "#^Method ContainsTest\\:\\:test_should_return_string_match_when_given_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ContainsTest.php
+
+		-
+			message: "#^Method ContainsTest\\:\\:test_should_use_in_array_when_given_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ContainsTest.php
+
+		-
+			message: "#^Method ContainsTest\\:\\:test_should_work_with_traversables\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ContainsTest.php
+
+		-
+			message: "#^Method ContainsTest\\:\\:test_will_throw_on_invalid_collection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ContainsTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\contains expects array\\|Garp\\\\Functional\\\\Traversable\\|string\\|null, Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser given\\.$#"
+			count: 2
+			path: tests/ContainsTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\contains expects array\\|Garp\\\\Functional\\\\Traversable\\|string\\|null, mixed given\\.$#"
+			count: 1
+			path: tests/ContainsTest.php
+
+		-
+			message: "#^Method CountTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CountTest.php
+
+		-
+			message: "#^Method CountTest\\:\\:test_should_count_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CountTest.php
+
+		-
+			message: "#^Method CountTest\\:\\:test_should_count_stringable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CountTest.php
+
+		-
+			message: "#^Method CountTest\\:\\:test_should_count_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CountTest.php
+
+		-
+			message: "#^Method CountTest\\:\\:test_should_count_traversables\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CountTest.php
+
+		-
+			message: "#^Method CountTest\\:\\:test_should_throw_exception_for_invalid_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/CountTest.php
+
+		-
+			message: "#^Method DivideTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DivideTest.php
+
+		-
+			message: "#^Method DivideTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DivideTest.php
+
+		-
+			message: "#^Method DivideTest\\:\\:test_should_divide_numbers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DivideTest.php
+
+		-
+			message: "#^Method DropTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DropTest.php
+
+		-
+			message: "#^Method DropTest\\:\\:test_no_problem_if_n_is_more_than_length_of_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DropTest.php
+
+		-
+			message: "#^Method DropTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DropTest.php
+
+		-
+			message: "#^Method DropTest\\:\\:test_should_take_from_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DropTest.php
+
+		-
+			message: "#^Method DropTest\\:\\:test_should_take_from_string\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DropTest.php
+
+		-
+			message: "#^Method DropTest\\:\\:test_should_throw_on_invalid_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DropTest.php
+
+		-
+			message: "#^Method DropTest\\:\\:test_should_work_with_iterable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DropTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\drop expects array\\|string\\|null, ArrayIterator\\<int, string\\> given\\.$#"
+			count: 1
+			path: tests/DropTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\drop expects array\\|string\\|null, stdClass given\\.$#"
+			count: 1
+			path: tests/DropTest.php
+
+		-
+			message: "#^Method DropWhileTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DropWhileTest.php
+
+		-
+			message: "#^Method DropWhileTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DropWhileTest.php
+
+		-
+			message: "#^Method DropWhileTest\\:\\:test_should_drop_from_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DropWhileTest.php
+
+		-
+			message: "#^Method DropWhileTest\\:\\:test_should_drop_from_iterable_object\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DropWhileTest.php
+
+		-
+			message: "#^Method DropWhileTest\\:\\:test_should_drop_from_string\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/DropWhileTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\not expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 1
+			path: tests/DropWhileTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\drop_while expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 3
+			path: tests/DropWhileTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$prop of function Garp\\\\Functional\\\\prop_equals expects string, int given\\.$#"
+			count: 1
+			path: tests/DropWhileTest.php
+
+		-
+			message: "#^Parameter \\#1 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 1
+			path: tests/DropWhileTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\drop_while expects array\\|string\\|null, ArrayIterator\\<int, string\\> given\\.$#"
+			count: 1
+			path: tests/DropWhileTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\drop_while expects array\\|string\\|null, Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser given\\.$#"
+			count: 1
+			path: tests/DropWhileTest.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/DropWhileTest.php
+
+		-
+			message: "#^Method EitherTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EitherTest.php
+
+		-
+			message: "#^Method EitherTest\\:\\:test_returns_new_function_when_given_at_least_one_function\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EitherTest.php
+
+		-
+			message: "#^Method EitherTest\\:\\:test_should_not_call_right_function_when_left_is_truthy\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EitherTest.php
+
+		-
+			message: "#^Method EitherTest\\:\\:test_should_return_first_thruty_value\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EitherTest.php
+
+		-
+			message: "#^Method EitherTest\\:\\:test_should_work_with_callable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EitherTest.php
+
+		-
+			message: "#^Method EitherTest\\:\\:test_works_elegantly_with_prop\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EitherTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\not expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/EitherTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\filter expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/EitherTest.php
+
+		-
+			message: "#^Trying to invoke \\(callable\\(\\)\\: mixed\\)\\|iterable but it might not be a callable\\.$#"
+			count: 1
+			path: tests/EitherTest.php
+
+		-
+			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
+			count: 1
+			path: tests/EitherTest.php
+
+		-
+			message: "#^Method EntriesTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EntriesTest.php
+
+		-
+			message: "#^Method EntriesTest\\:\\:test_should_work_with_assoc_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EntriesTest.php
+
+		-
+			message: "#^Method EntriesTest\\:\\:test_should_work_with_iterable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EntriesTest.php
+
+		-
+			message: "#^Method EntriesTest\\:\\:test_should_work_with_numeric_indexed_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EntriesTest.php
+
+		-
+			message: "#^Method EqualsTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EqualsTest.php
+
+		-
+			message: "#^Method EqualsTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EqualsTest.php
+
+		-
+			message: "#^Method EqualsTest\\:\\:test_should_determine_equality\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EqualsTest.php
+
+		-
+			message: "#^Method EqualsTest\\:\\:test_works_with_setoids\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EqualsTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\reindex expects array, \\(callable\\)\\|iterable given\\.$#"
+			count: 1
+			path: tests/EqualsTest.php
+
+		-
+			message: "#^Method EveryTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EveryTest.php
+
+		-
+			message: "#^Method EveryTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EveryTest.php
+
+		-
+			message: "#^Method EveryTest\\:\\:test_should_return_false_for_one_mismatch\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EveryTest.php
+
+		-
+			message: "#^Method EveryTest\\:\\:test_should_return_true_if_all_match\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/EveryTest.php
+
+		-
+			message: "#^Method FilterTest\\:\\:isSmallString\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FilterTest.php
+
+		-
+			message: "#^Method FilterTest\\:\\:isSmallString\\(\\) has parameter \\$str with no type specified\\.$#"
+			count: 1
+			path: tests/FilterTest.php
+
+		-
+			message: "#^Method FilterTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FilterTest.php
+
+		-
+			message: "#^Method FilterTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FilterTest.php
+
+		-
+			message: "#^Method FilterTest\\:\\:test_should_filter_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FilterTest.php
+
+		-
+			message: "#^Method FilterTest\\:\\:test_should_keep_string_indexes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FilterTest.php
+
+		-
+			message: "#^Method FilterTest\\:\\:test_should_reindex_numeric_indexes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FilterTest.php
+
+		-
+			message: "#^Method FilterTest\\:\\:test_should_work_with_iterable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FilterTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of function array_keys expects array, \\(callable\\)\\|iterable given\\.$#"
+			count: 1
+			path: tests/FilterTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\filter expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 1
+			path: tests/FilterTest.php
+
+		-
+			message: "#^Method FindIndexTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FindIndexTest.php
+
+		-
+			message: "#^Method FindIndexTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FindIndexTest.php
+
+		-
+			message: "#^Method FindIndexTest\\:\\:test_should_find_from_assoc_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FindIndexTest.php
+
+		-
+			message: "#^Method FindIndexTest\\:\\:test_should_find_from_iterable_object\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FindIndexTest.php
+
+		-
+			message: "#^Method FindIndexTest\\:\\:test_should_find_from_numeric_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FindIndexTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\find_index expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 6
+			path: tests/FindIndexTest.php
+
+		-
+			message: "#^Method FindTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FindTest.php
+
+		-
+			message: "#^Method FindTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FindTest.php
+
+		-
+			message: "#^Method FindTest\\:\\:test_should_find_from_assoc_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FindTest.php
+
+		-
+			message: "#^Method FindTest\\:\\:test_should_find_from_iterable_object\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FindTest.php
+
+		-
+			message: "#^Method FindTest\\:\\:test_should_find_from_numeric_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FindTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\find expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 4
+			path: tests/FindTest.php
+
+		-
+			message: "#^Method FlattenTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FlattenTest.php
+
+		-
+			message: "#^Method FlattenTest\\:\\:test_should_flatten_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FlattenTest.php
+
+		-
+			message: "#^Method FlattenTest\\:\\:test_should_flatten_iterable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FlattenTest.php
+
+		-
+			message: "#^Method FlattenTest\\:\\:test_should_leave_associative_arrays_intact\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FlattenTest.php
+
+		-
+			message: "#^Method FlipTest\\:\\:test_should_flip_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FlipTest.php
+
+		-
+			message: "#^Method FoldTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FoldTest.php
+
+		-
+			message: "#^Method FoldTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FoldTest.php
+
+		-
+			message: "#^Method FoldTest\\:\\:test_should_fold_into_monoid\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FoldTest.php
+
+		-
+			message: "#^Method FoldTest\\:\\:test_should_return_identity_value_for_empty_list\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FoldTest.php
+
+		-
+			message: "#^Method FoldTest\\:\\:test_should_throw_on_non_monoid\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/FoldTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$monoidClassName of function Garp\\\\Functional\\\\fold expects class\\-string\\<Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Monoid\\>, string given\\.$#"
+			count: 1
+			path: tests/FoldTest.php
+
+		-
+			message: "#^Unable to resolve the template type T in call to function Garp\\\\Functional\\\\fold$#"
+			count: 1
+			path: tests/FoldTest.php
+
+		-
+			message: "#^Method GroupByTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GroupByTest.php
+
+		-
+			message: "#^Method GroupByTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GroupByTest.php
+
+		-
+			message: "#^Method GroupByTest\\:\\:test_should_group_by_index\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GroupByTest.php
+
+		-
+			message: "#^Method GroupByTest\\:\\:test_should_group_using_function\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GroupByTest.php
+
+		-
+			message: "#^Method GroupByTest\\:\\:test_should_throw_when_index_is_unusable\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GroupByTest.php
+
+		-
+			message: "#^Method GtTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GtTest.php
+
+		-
+			message: "#^Method GtTest\\:\\:test_should_allow_ord_instances\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GtTest.php
+
+		-
+			message: "#^Method GtTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GtTest.php
+
+		-
+			message: "#^Method GtTest\\:\\:test_should_check_if_n_is_greater\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GtTest.php
+
+		-
+			message: "#^Method GteTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GteTest.php
+
+		-
+			message: "#^Method GteTest\\:\\:test_should_allow_ord_instances\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GteTest.php
+
+		-
+			message: "#^Method GteTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GteTest.php
+
+		-
+			message: "#^Method GteTest\\:\\:test_should_check_if_n_is_greater\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/GteTest.php
+
+		-
+			message: "#^Method HeadTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadTest.php
+
+		-
+			message: "#^Method HeadTest\\:\\:test_should_get_empty_string_from_empty_string\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadTest.php
+
+		-
+			message: "#^Method HeadTest\\:\\:test_should_get_null_from_empty_collection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadTest.php
+
+		-
+			message: "#^Method HeadTest\\:\\:test_should_get_null_on_unusable_input\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadTest.php
+
+		-
+			message: "#^Method HeadTest\\:\\:test_should_grab_head_from_traversable\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadTest.php
+
+		-
+			message: "#^Method HeadTest\\:\\:test_should_grab_head_of_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadTest.php
+
+		-
+			message: "#^Method HeadTest\\:\\:test_should_grab_head_of_assoc_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadTest.php
+
+		-
+			message: "#^Method HeadTest\\:\\:test_should_grab_head_of_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/HeadTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\head expects iterable\\|string, int given\\.$#"
+			count: 1
+			path: tests/HeadTest.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Tests\\\\Helpers\\\\CallableObject\\:\\:\\$_num has no type specified\\.$#"
+			count: 1
+			path: tests/Helpers/CallableObject.php
+
+		-
+			message: "#^Method Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockMusician\\:\\:__construct\\(\\) has parameter \\$first with no type specified\\.$#"
+			count: 1
+			path: tests/Helpers/MockMusician.php
+
+		-
+			message: "#^Method Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockMusician\\:\\:__construct\\(\\) has parameter \\$last with no type specified\\.$#"
+			count: 1
+			path: tests/Helpers/MockMusician.php
+
+		-
+			message: "#^Method Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockMusician\\:\\:getName\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/Helpers/MockMusician.php
+
+		-
+			message: "#^Method Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockMusician\\:\\:setName\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/Helpers/MockMusician.php
+
+		-
+			message: "#^Method Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockMusician\\:\\:setName\\(\\) has parameter \\$first with no type specified\\.$#"
+			count: 1
+			path: tests/Helpers/MockMusician.php
+
+		-
+			message: "#^Method Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockMusician\\:\\:setName\\(\\) has parameter \\$last with no type specified\\.$#"
+			count: 1
+			path: tests/Helpers/MockMusician.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockMusician\\:\\:\\$_first has no type specified\\.$#"
+			count: 1
+			path: tests/Helpers/MockMusician.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockMusician\\:\\:\\$_last has no type specified\\.$#"
+			count: 1
+			path: tests/Helpers/MockMusician.php
+
+		-
+			message: "#^Access to an undefined property Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Ord\\:\\:\\$value\\.$#"
+			count: 1
+			path: tests/Helpers/MockOrd.php
+
+		-
+			message: "#^Access to an undefined property Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Setoid\\:\\:\\$value\\.$#"
+			count: 1
+			path: tests/Helpers/MockOrd.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockOrd\\:\\:\\$value has no type specified\\.$#"
+			count: 1
+			path: tests/Helpers/MockOrd.php
+
+		-
+			message: "#^Class Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser implements generic interface ArrayAccess but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: tests/Helpers/MockSpiceTraverser.php
+
+		-
+			message: "#^Class Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser implements generic interface Iterator but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: tests/Helpers/MockSpiceTraverser.php
+
+		-
+			message: "#^Method Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser\\:\\:instance\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/Helpers/MockSpiceTraverser.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser\\:\\:\\$_position has no type specified\\.$#"
+			count: 1
+			path: tests/Helpers/MockSpiceTraverser.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser\\:\\:\\$_spices has no type specified\\.$#"
+			count: 1
+			path: tests/Helpers/MockSpiceTraverser.php
+
+		-
+			message: "#^Unsafe usage of new static\\(\\)\\.$#"
+			count: 1
+			path: tests/Helpers/MockSpiceTraverser.php
+
+		-
+			message: "#^Method IdTest\\:\\:test_it_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/IdTest.php
+
+		-
+			message: "#^Method IdTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/IdTest.php
+
+		-
+			message: "#^Method IdTest\\:\\:test_should_return_its_argument\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/IdTest.php
+
+		-
+			message: "#^Method IndexByTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/IndexByTest.php
+
+		-
+			message: "#^Method IndexByTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/IndexByTest.php
+
+		-
+			message: "#^Method IndexByTest\\:\\:test_should_index_by_index\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/IndexByTest.php
+
+		-
+			message: "#^Method IndexByTest\\:\\:test_should_index_using_function\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/IndexByTest.php
+
+		-
+			message: "#^Method IndexByTest\\:\\:test_should_throw_when_index_is_unusable\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/IndexByTest.php
+
+		-
+			message: "#^Method InstanceTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/InstanceTest.php
+
+		-
+			message: "#^Method InstanceTest\\:\\:test_should_create_instance_from_string\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/InstanceTest.php
+
+		-
+			message: "#^Method InstanceTest\\:\\:test_should_return_instance\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/InstanceTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$obj of function Garp\\\\Functional\\\\instance expects object, string given\\.$#"
+			count: 1
+			path: tests/InstanceTest.php
+
+		-
+			message: "#^Method IsAssocTest\\:\\:arrayProvider\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/IsAssocTest.php
+
+		-
+			message: "#^Method IsAssocTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/IsAssocTest.php
+
+		-
+			message: "#^Method IsAssocTest\\:\\:test_should_recognize_associative_arrays\\(\\) has parameter \\$input with no value type specified in iterable type iterable\\.$#"
+			count: 1
+			path: tests/IsAssocTest.php
+
+		-
+			message: "#^Method IsCallableFunctionTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/IsCallableFunctionTest.php
+
+		-
+			message: "#^Method IsCallableFunctionTest\\:\\:test_should_recognize_callable_functions\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/IsCallableFunctionTest.php
+
+		-
+			message: "#^Method JoinTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/JoinTest.php
+
+		-
+			message: "#^Method JoinTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/JoinTest.php
+
+		-
+			message: "#^Method JoinTest\\:\\:test_should_join_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/JoinTest.php
+
+		-
+			message: "#^Method JoinTest\\:\\:test_should_join_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/JoinTest.php
+
+		-
+			message: "#^Method KeysTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/KeysTest.php
+
+		-
+			message: "#^Method KeysTest\\:\\:test_should_get_keys_of_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/KeysTest.php
+
+		-
+			message: "#^Method KeysTest\\:\\:test_should_throw_on_invalid_argument\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/KeysTest.php
+
+		-
+			message: "#^Method KeysTest\\:\\:test_should_work_with_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/KeysTest.php
+
+		-
+			message: "#^Method KeysTest\\:\\:test_should_work_with_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/KeysTest.php
+
+		-
+			message: "#^Method KeysWhereTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/KeysWhereTest.php
+
+		-
+			message: "#^Method KeysWhereTest\\:\\:test_should_find_keys_from_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/KeysWhereTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\keys_where expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 2
+			path: tests/KeysWhereTest.php
+
+		-
+			message: "#^Method LastTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LastTest.php
+
+		-
+			message: "#^Method LastTest\\:\\:test_should_get_last_char_in_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LastTest.php
+
+		-
+			message: "#^Method LastTest\\:\\:test_should_get_last_item_in_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LastTest.php
+
+		-
+			message: "#^Method LastTest\\:\\:test_should_get_last_item_in_assoc_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LastTest.php
+
+		-
+			message: "#^Method LastTest\\:\\:test_should_get_last_item_in_iterable\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LastTest.php
+
+		-
+			message: "#^Method LtTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LtTest.php
+
+		-
+			message: "#^Method LtTest\\:\\:test_should_allow_ord_instances\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LtTest.php
+
+		-
+			message: "#^Method LtTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LtTest.php
+
+		-
+			message: "#^Method LtTest\\:\\:test_should_check_if_n_is_less\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LtTest.php
+
+		-
+			message: "#^Method LteTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LteTest.php
+
+		-
+			message: "#^Method LteTest\\:\\:test_should_allow_ord_instances\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LteTest.php
+
+		-
+			message: "#^Method LteTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LteTest.php
+
+		-
+			message: "#^Method LteTest\\:\\:test_should_check_if_n_is_less_or_equal\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/LteTest.php
+
+		-
+			message: "#^Method MapTest\\:\\:getSubstr\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MapTest.php
+
+		-
+			message: "#^Method MapTest\\:\\:getSubstr\\(\\) has parameter \\$str with no type specified\\.$#"
+			count: 1
+			path: tests/MapTest.php
+
+		-
+			message: "#^Method MapTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MapTest.php
+
+		-
+			message: "#^Method MapTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MapTest.php
+
+		-
+			message: "#^Method MapTest\\:\\:test_should_map_function_over_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MapTest.php
+
+		-
+			message: "#^Method MapTest\\:\\:test_should_work_with_iterable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MapTest.php
+
+		-
+			message: "#^Method MatchTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MatchTest.php
+
+		-
+			message: "#^Method MatchTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MatchTest.php
+
+		-
+			message: "#^Method MatchTest\\:\\:test_should_match_objects_that_support_tostring\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MatchTest.php
+
+		-
+			message: "#^Method MatchTest\\:\\:test_should_match_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MatchTest.php
+
+		-
+			message: "#^Method MatchTest\\:\\:test_should_not_throw_on_object_or_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MatchTest.php
+
+		-
+			message: "#^Method MatchTest\\:\\:test_should_return_matches\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MatchTest.php
+
+		-
+			message: "#^Method MatchTest\\:\\:test_usage_with_filter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MatchTest.php
+
+		-
+			message: "#^Method MergeAfterTest\\:\\:if_object_is_already_in_target_then_just_move_the_object_in_the_target\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAfterTest.php
+
+		-
+			message: "#^Method MergeAfterTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAfterTest.php
+
+		-
+			message: "#^Method MergeAfterTest\\:\\:test_should_accept_predicate_function_as_index\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAfterTest.php
+
+		-
+			message: "#^Method MergeAfterTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAfterTest.php
+
+		-
+			message: "#^Method MergeAfterTest\\:\\:test_should_merge_associative_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAfterTest.php
+
+		-
+			message: "#^Method MergeAfterTest\\:\\:test_should_merge_into_numerically_indexed_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAfterTest.php
+
+		-
+			message: "#^Method MergeAfterTest\\:\\:test_should_merge_numeric_index_in_associative_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAfterTest.php
+
+		-
+			message: "#^Method MergeAfterTest\\:\\:test_should_merge_regular_array_into_associative_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAfterTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\unary expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 1
+			path: tests/MergeAfterTest.php
+
+		-
+			message: "#^Method MergeAtTest\\:\\:if_object_is_already_in_target_then_just_move_the_object_in_the_target\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAtTest.php
+
+		-
+			message: "#^Method MergeAtTest\\:\\:test_should_accept_predicate_function_as_index\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAtTest.php
+
+		-
+			message: "#^Method MergeAtTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAtTest.php
+
+		-
+			message: "#^Method MergeAtTest\\:\\:test_should_merge_associative_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAtTest.php
+
+		-
+			message: "#^Method MergeAtTest\\:\\:test_should_merge_into_numerically_indexed_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAtTest.php
+
+		-
+			message: "#^Method MergeAtTest\\:\\:test_should_merge_numeric_index_in_associative_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAtTest.php
+
+		-
+			message: "#^Method MergeAtTest\\:\\:test_should_merge_regular_array_into_associative_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MergeAtTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\unary expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 1
+			path: tests/MergeAtTest.php
+
+		-
+			message: "#^Method ModuloTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ModuloTest.php
+
+		-
+			message: "#^Method ModuloTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ModuloTest.php
+
+		-
+			message: "#^Method ModuloTest\\:\\:test_should_modulo_numbers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ModuloTest.php
+
+		-
+			message: "#^Method MultiplyTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MultiplyTest.php
+
+		-
+			message: "#^Method MultiplyTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MultiplyTest.php
+
+		-
+			message: "#^Method MultiplyTest\\:\\:test_should_multiply_numbers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/MultiplyTest.php
+
+		-
+			message: "#^Method NoneTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NoneTest.php
+
+		-
+			message: "#^Method NoneTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NoneTest.php
+
+		-
+			message: "#^Method NoneTest\\:\\:test_should_return_false_for_one_match\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NoneTest.php
+
+		-
+			message: "#^Method NoneTest\\:\\:test_should_return_true_if_none_match\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NoneTest.php
+
+		-
+			message: "#^Method NotTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NotTest.php
+
+		-
+			message: "#^Method NotTest\\:\\:test_should_negate_function\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/NotTest.php
+
+		-
+			message: "#^Method OmitTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OmitTest.php
+
+		-
+			message: "#^Method OmitTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OmitTest.php
+
+		-
+			message: "#^Method OmitTest\\:\\:test_should_omit_from_assoc_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OmitTest.php
+
+		-
+			message: "#^Method OmitTest\\:\\:test_should_pick_from_numeric_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OmitTest.php
+
+		-
+			message: "#^Method OmitTest\\:\\:test_should_work_with_iterable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OmitTest.php
+
+		-
+			message: "#^Method OnceTest\\:\\:addToCounter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OnceTest.php
+
+		-
+			message: "#^Method OnceTest\\:\\:addToCounter\\(\\) has parameter \\$num with no type specified\\.$#"
+			count: 1
+			path: tests/OnceTest.php
+
+		-
+			message: "#^Method OnceTest\\:\\:incrementCounter\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OnceTest.php
+
+		-
+			message: "#^Method OnceTest\\:\\:test_it_passes_arguments_correctly\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OnceTest.php
+
+		-
+			message: "#^Method OnceTest\\:\\:test_it_returns_the_return_value_of_the_first_call\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OnceTest.php
+
+		-
+			message: "#^Method OnceTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OnceTest.php
+
+		-
+			message: "#^Method OnceTest\\:\\:test_should_execute_but_once\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/OnceTest.php
+
+		-
+			message: "#^Property OnceTest\\:\\:\\$_counter has no type specified\\.$#"
+			count: 1
+			path: tests/OnceTest.php
+
+		-
+			message: "#^Method PartialRightTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PartialRightTest.php
+
+		-
+			message: "#^Method PartialRightTest\\:\\:test_should_produce_partially_applied_function\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PartialRightTest.php
+
+		-
+			message: "#^Method PartialTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PartialTest.php
+
+		-
+			message: "#^Method PartialTest\\:\\:test_should_be_able_to_curry_native_functions\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PartialTest.php
+
+		-
+			message: "#^Method PartialTest\\:\\:test_should_produce_partially_applied_function\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PartialTest.php
+
+		-
+			message: "#^Method PickTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PickTest.php
+
+		-
+			message: "#^Method PickTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PickTest.php
+
+		-
+			message: "#^Method PickTest\\:\\:test_should_pick_from_assoc_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PickTest.php
+
+		-
+			message: "#^Method PickTest\\:\\:test_should_pick_from_numeric_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PickTest.php
+
+		-
+			message: "#^Method PickTest\\:\\:test_should_work_with_combined_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PickTest.php
+
+		-
+			message: "#^Method PickTest\\:\\:test_should_work_with_iterable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PickTest.php
+
+		-
+			message: "#^Method PickTest\\:\\:test_superfluous_keys_should_not_be_added_to_the_object\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PickTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\pick expects array\\|null, stdClass given\\.$#"
+			count: 1
+			path: tests/PickTest.php
+
+		-
+			message: "#^Method PipeTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PipeTest.php
+
+		-
+			message: "#^Method PipeTest\\:\\:test_should_allow_n_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PipeTest.php
+
+		-
+			message: "#^Method PipeTest\\:\\:test_should_pipe_functions\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PipeTest.php
+
+		-
+			message: "#^Method PipeTest\\:\\:test_what_happens_without_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PipeTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\map expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/PipeTest.php
+
+		-
+			message: "#^Parameter \\#1 \\.\\.\\.\\$functions of function Garp\\\\Functional\\\\pipe expects callable\\(\\)\\: mixed, array\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 2
+			path: tests/PipeTest.php
+
+		-
+			message: "#^Parameter \\#1 \\.\\.\\.\\$functions of function Garp\\\\Functional\\\\pipe expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/PipeTest.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$functions of function Garp\\\\Functional\\\\pipe expects callable\\(\\)\\: mixed, \\(callable\\(\\)\\: mixed\\)\\|iterable given\\.$#"
+			count: 3
+			path: tests/PipeTest.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$functions of function Garp\\\\Functional\\\\pipe expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/PipeTest.php
+
+		-
+			message: "#^Parameter \\#3 \\.\\.\\.\\$functions of function Garp\\\\Functional\\\\pipe expects callable\\(\\)\\: mixed, \\(callable\\(\\)\\: mixed\\)\\|string given\\.$#"
+			count: 2
+			path: tests/PipeTest.php
+
+		-
+			message: "#^Method PropEqualsTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropEqualsTest.php
+
+		-
+			message: "#^Method PropEqualsTest\\:\\:test_should_be_thrice_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropEqualsTest.php
+
+		-
+			message: "#^Method PropEqualsTest\\:\\:test_should_determine_equality\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropEqualsTest.php
+
+		-
+			message: "#^Method PropEqualsTest\\:\\:test_should_not_blow_up_on_missing_prop\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropEqualsTest.php
+
+		-
+			message: "#^Method PropEqualsTest\\:\\:test_should_work_with_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropEqualsTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\reindex expects array, \\(callable\\)\\|iterable given\\.$#"
+			count: 1
+			path: tests/PropEqualsTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\map expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/PropEqualsTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\filter expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/PropEqualsTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\map expects iterable\\|null, \\(callable\\)\\|iterable given\\.$#"
+			count: 1
+			path: tests/PropEqualsTest.php
+
+		-
+			message: "#^Method PropInTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropInTest.php
+
+		-
+			message: "#^Method PropInTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropInTest.php
+
+		-
+			message: "#^Method PropInTest\\:\\:test_should_get_nested_props_from_assoc\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropInTest.php
+
+		-
+			message: "#^Method PropInTest\\:\\:test_should_get_nested_props_from_object\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropInTest.php
+
+		-
+			message: "#^Method PropOfTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropOfTest.php
+
+		-
+			message: "#^Method PropOfTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropOfTest.php
+
+		-
+			message: "#^Method PropOfTest\\:\\:test_should_read_from_assoc\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropOfTest.php
+
+		-
+			message: "#^Method PropOfTest\\:\\:test_should_read_from_indexed\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropOfTest.php
+
+		-
+			message: "#^Method PropOfTest\\:\\:test_should_read_from_object\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropOfTest.php
+
+		-
+			message: "#^Method PropOfTest\\:\\:test_should_read_from_string\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropOfTest.php
+
+		-
+			message: "#^Method PropOfTest\\:\\:test_should_read_from_traversable\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropOfTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$prop of function Garp\\\\Functional\\\\prop_of expects string\\|null, int given\\.$#"
+			count: 5
+			path: tests/PropOfTest.php
+
+		-
+			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
+			count: 1
+			path: tests/PropOfTest.php
+
+		-
+			message: "#^Method PropSetTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropSetTest.php
+
+		-
+			message: "#^Method PropSetTest\\:\\:test_should_accept_a_function_as_2nd_parameter_which_gets_applied_to_the_3rd\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropSetTest.php
+
+		-
+			message: "#^Method PropSetTest\\:\\:test_should_be_thrice_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropSetTest.php
+
+		-
+			message: "#^Method PropSetTest\\:\\:test_should_make_a_copy\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropSetTest.php
+
+		-
+			message: "#^Method PropSetTest\\:\\:test_should_set_property\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropSetTest.php
+
+		-
+			message: "#^Method PropSetTest\\:\\:test_should_work_with_callable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropSetTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\map expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/PropSetTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function strtolower expects string, array\\|\\(callable\\)\\|Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Semigroup\\|string given\\.$#"
+			count: 1
+			path: tests/PropSetTest.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/PropSetTest.php
+
+		-
+			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
+			count: 1
+			path: tests/PropSetTest.php
+
+		-
+			message: "#^Method PropTest\\:\\:magicDataProvider\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Method PropTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Method PropTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Method PropTest\\:\\:test_should_read_from_assoc\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Method PropTest\\:\\:test_should_read_from_indexed\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Method PropTest\\:\\:test_should_read_from_object\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Method PropTest\\:\\:test_should_read_from_string\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Method PropTest\\:\\:test_should_read_from_traversable\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Method class@anonymous/tests/PropTest\\.php\\:79\\:\\:__get\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Method class@anonymous/tests/PropTest\\.php\\:79\\:\\:__get\\(\\) has parameter \\$prop with no type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Method class@anonymous/tests/PropTest\\.php\\:79\\:\\:__isset\\(\\) has parameter \\$prop with no type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Property class@anonymous/tests/PropTest\\.php\\:79\\:\\:\\$_data has no type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Property class@anonymous/tests/PropTest\\.php\\:91\\:\\:\\$_data has no type specified\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
+			count: 1
+			path: tests/PropTest.php
+
+		-
+			message: "#^Method PublishTest\\:\\:_square\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PublishTest.php
+
+		-
+			message: "#^Method PublishTest\\:\\:_square\\(\\) has parameter \\$n with no type specified\\.$#"
+			count: 1
+			path: tests/PublishTest.php
+
+		-
+			message: "#^Method PublishTest\\:\\:_square\\(\\) is unused\\.$#"
+			count: 1
+			path: tests/PublishTest.php
+
+		-
+			message: "#^Method PublishTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PublishTest.php
+
+		-
+			message: "#^Method PublishTest\\:\\:test_should_publish_private_methods\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/PublishTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\map expects callable\\(\\)\\: mixed, Garp\\\\Functional\\\\Closure given\\.$#"
+			count: 1
+			path: tests/PublishTest.php
+
+		-
+			message: "#^Method ReduceAssocTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReduceAssocTest.php
+
+		-
+			message: "#^Method ReduceAssocTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReduceAssocTest.php
+
+		-
+			message: "#^Method ReduceAssocTest\\:\\:test_should_reduce_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReduceAssocTest.php
+
+		-
+			message: "#^Method ReduceAssocTest\\:\\:test_should_reduce_iterable_object\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReduceAssocTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\reduce_assoc expects callable\\(\\)\\: mixed, array\\|\\(callable\\(\\)\\: mixed\\)\\|Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Semigroup\\|string given\\.$#"
+			count: 1
+			path: tests/ReduceAssocTest.php
+
+		-
+			message: "#^Method ReduceTest\\:\\:test_iteration_should_halt_early_when_given_signal\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReduceTest.php
+
+		-
+			message: "#^Method ReduceTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReduceTest.php
+
+		-
+			message: "#^Method ReduceTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReduceTest.php
+
+		-
+			message: "#^Method ReduceTest\\:\\:test_should_reduce_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReduceTest.php
+
+		-
+			message: "#^Method ReduceTest\\:\\:test_should_reduce_iterable_object\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReduceTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\reduce expects callable\\(\\)\\: mixed, array\\|\\(callable\\(\\)\\: mixed\\)\\|Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Semigroup\\|string given\\.$#"
+			count: 2
+			path: tests/ReduceTest.php
+
+		-
+			message: "#^Method ReindexTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReindexTest.php
+
+		-
+			message: "#^Method ReindexTest\\:\\:test_should_reindex_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReindexTest.php
+
+		-
+			message: "#^Method RejectTest\\:\\:isSmallString\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RejectTest.php
+
+		-
+			message: "#^Method RejectTest\\:\\:isSmallString\\(\\) has parameter \\$str with no type specified\\.$#"
+			count: 1
+			path: tests/RejectTest.php
+
+		-
+			message: "#^Method RejectTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RejectTest.php
+
+		-
+			message: "#^Method RejectTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RejectTest.php
+
+		-
+			message: "#^Method RejectTest\\:\\:test_should_keep_string_indexes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RejectTest.php
+
+		-
+			message: "#^Method RejectTest\\:\\:test_should_reindex_numeric_indexes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RejectTest.php
+
+		-
+			message: "#^Method RejectTest\\:\\:test_should_reject_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RejectTest.php
+
+		-
+			message: "#^Method RejectTest\\:\\:test_should_work_with_iterable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RejectTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of function array_keys expects array, mixed given\\.$#"
+			count: 1
+			path: tests/RejectTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\reject expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 2
+			path: tests/RejectTest.php
+
+		-
+			message: "#^Method RenameKeysTest\\:\\:invalidArgumentProvider\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RenameKeysTest.php
+
+		-
+			message: "#^Method RenameKeysTest\\:\\:test_callable_should_not_be_executed_in_collection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RenameKeysTest.php
+
+		-
+			message: "#^Method RenameKeysTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RenameKeysTest.php
+
+		-
+			message: "#^Method RenameKeysTest\\:\\:test_should_accept_function_as_transformer\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RenameKeysTest.php
+
+		-
+			message: "#^Method RenameKeysTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RenameKeysTest.php
+
+		-
+			message: "#^Method RenameKeysTest\\:\\:test_should_ignore_unknown_keys\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RenameKeysTest.php
+
+		-
+			message: "#^Method RenameKeysTest\\:\\:test_should_leave_omitted_keys\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RenameKeysTest.php
+
+		-
+			message: "#^Method RenameKeysTest\\:\\:test_should_rename_keys\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RenameKeysTest.php
+
+		-
+			message: "#^Method RepeatTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RepeatTest.php
+
+		-
+			message: "#^Method RepeatTest\\:\\:test_should_repeat_callable\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/RepeatTest.php
+
+		-
+			message: "#^Method ReplaceTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReplaceTest.php
+
+		-
+			message: "#^Method ReplaceTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReplaceTest.php
+
+		-
+			message: "#^Method ReplaceTest\\:\\:test_should_match_objects_that_support_tostring\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReplaceTest.php
+
+		-
+			message: "#^Method ReplaceTest\\:\\:test_should_replace_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReplaceTest.php
+
+		-
+			message: "#^Method ReplaceTest\\:\\:test_should_return_unusable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ReplaceTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\reindex expects array, \\(callable\\)\\|iterable given\\.$#"
+			count: 1
+			path: tests/ReplaceTest.php
+
+		-
+			message: "#^Method SomeTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SomeTest.php
+
+		-
+			message: "#^Method SomeTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SomeTest.php
+
+		-
+			message: "#^Method SomeTest\\:\\:test_should_give_true_if_callback_returns_true_at_least_once\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SomeTest.php
+
+		-
+			message: "#^Trying to invoke bool\\|\\(callable\\(\\)\\: mixed\\) but it might not be a callable\\.$#"
+			count: 1
+			path: tests/SomeTest.php
+
+		-
+			message: "#^Method SortByMapTest\\:\\:test_missing_keys_should_be_placed_at_the_end\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SortByMapTest.php
+
+		-
+			message: "#^Method SortByMapTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SortByMapTest.php
+
+		-
+			message: "#^Method SortByMapTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SortByMapTest.php
+
+		-
+			message: "#^Method SortByMapTest\\:\\:test_should_not_care_about_unknown_keys\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SortByMapTest.php
+
+		-
+			message: "#^Method SortByMapTest\\:\\:test_should_sort_associative_array_by_map\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SortByMapTest.php
+
+		-
+			message: "#^Method SortByMapTest\\:\\:test_should_sort_numeric_array_by_map\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SortByMapTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of function array_keys expects array, array\\|\\(callable\\) given\\.$#"
+			count: 4
+			path: tests/SortByMapTest.php
+
+		-
+			message: "#^Method SortByTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SortByTest.php
+
+		-
+			message: "#^Method SortByTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SortByTest.php
+
+		-
+			message: "#^Method SortByTest\\:\\:test_should_sort_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SortByTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\sort_by expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 2
+			path: tests/SortByTest.php
+
+		-
+			message: "#^Method SortTest\\:\\:test_should_sort_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SortTest.php
+
+		-
+			message: "#^Method SplitTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SplitTest.php
+
+		-
+			message: "#^Method SplitTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SplitTest.php
+
+		-
+			message: "#^Method SplitTest\\:\\:test_should_split_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SplitTest.php
+
+		-
+			message: "#^Method SubtractTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SubtractTest.php
+
+		-
+			message: "#^Method SubtractTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SubtractTest.php
+
+		-
+			message: "#^Method SubtractTest\\:\\:test_should_subtract_numbers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/SubtractTest.php
+
+		-
+			message: "#^Method TailTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TailTest.php
+
+		-
+			message: "#^Method TailTest\\:\\:test_should_get_empty_array_from_empty_collection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TailTest.php
+
+		-
+			message: "#^Method TailTest\\:\\:test_should_get_empty_string_from_empty_string\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TailTest.php
+
+		-
+			message: "#^Method TailTest\\:\\:test_should_grab_tail_from_traversable\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TailTest.php
+
+		-
+			message: "#^Method TailTest\\:\\:test_should_grab_tail_of_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TailTest.php
+
+		-
+			message: "#^Method TailTest\\:\\:test_should_grab_tail_of_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TailTest.php
+
+		-
+			message: "#^Method TailTest\\:\\:test_should_throw_exception_on_unusable_input\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TailTest.php
+
+		-
+			message: "#^Method TakeTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TakeTest.php
+
+		-
+			message: "#^Method TakeTest\\:\\:test_no_problem_if_n_is_more_than_length_of_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TakeTest.php
+
+		-
+			message: "#^Method TakeTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TakeTest.php
+
+		-
+			message: "#^Method TakeTest\\:\\:test_should_take_from_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TakeTest.php
+
+		-
+			message: "#^Method TakeTest\\:\\:test_should_take_from_string\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TakeTest.php
+
+		-
+			message: "#^Method TakeTest\\:\\:test_should_throw_on_invalid_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TakeTest.php
+
+		-
+			message: "#^Method TakeTest\\:\\:test_should_work_with_iterable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TakeTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\take expects array\\|string\\|null, ArrayIterator\\<int, string\\> given\\.$#"
+			count: 1
+			path: tests/TakeTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\take expects array\\|string\\|null, stdClass given\\.$#"
+			count: 1
+			path: tests/TakeTest.php
+
+		-
+			message: "#^Method TakeWhileTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TakeWhileTest.php
+
+		-
+			message: "#^Method TakeWhileTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TakeWhileTest.php
+
+		-
+			message: "#^Method TakeWhileTest\\:\\:test_should_take_from_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TakeWhileTest.php
+
+		-
+			message: "#^Method TakeWhileTest\\:\\:test_should_take_from_iterable_object\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TakeWhileTest.php
+
+		-
+			message: "#^Method TakeWhileTest\\:\\:test_should_take_from_string\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TakeWhileTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\not expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 1
+			path: tests/TakeWhileTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\take_while expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 1
+			path: tests/TakeWhileTest.php
+
+		-
+			message: "#^Parameter \\#1 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			count: 1
+			path: tests/TakeWhileTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\take_while expects array\\|null, Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser given\\.$#"
+			count: 1
+			path: tests/TakeWhileTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\take_while expects array\\|null, string given\\.$#"
+			count: 1
+			path: tests/TakeWhileTest.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			count: 1
+			path: tests/TakeWhileTest.php
+
+		-
+			message: "#^Method TapTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TapTest.php
+
+		-
+			message: "#^Method TapTest\\:\\:test_should_tap\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TapTest.php
+
+		-
+			message: "#^Method TruthyTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TruthyTest.php
+
+		-
+			message: "#^Method TruthyTest\\:\\:test_should_work_with_callable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TruthyTest.php
+
+		-
+			message: "#^Method TruthyTest\\:\\:test_truthy\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TruthyTest.php
+
+		-
+			message: "#^Method TruthyTest\\:\\:test_truthy_should_accept_functions\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/TruthyTest.php
+
+		-
+			message: "#^Closure invoked with 3 parameters, 0 required\\.$#"
+			count: 1
+			path: tests/UnaryTest.php
+
+		-
+			message: "#^Method UnaryTest\\:\\:test_should_make_function_unary\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UnaryTest.php
+
+		-
+			message: "#^Trying to invoke bool\\|\\(callable\\(\\)\\: mixed\\) but it might not be a callable\\.$#"
+			count: 1
+			path: tests/UnaryTest.php
+
+		-
+			message: "#^Method UniqueTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UniqueTest.php
+
+		-
+			message: "#^Method UniqueTest\\:\\:test_should_work_with_multidimensional_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UniqueTest.php
+
+		-
+			message: "#^Method UniqueTest\\:\\:test_should_work_with_setoids\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UniqueTest.php
+
+		-
+			message: "#^Method UniqueTest\\:\\:test_should_work_with_simple_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UniqueTest.php
+
+		-
+			message: "#^Method UniqueTest\\:\\:test_should_work_with_strings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UniqueTest.php
+
+		-
+			message: "#^Method UsortTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UsortTest.php
+
+		-
+			message: "#^Method UsortTest\\:\\:test_should_be_curried\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UsortTest.php
+
+		-
+			message: "#^Method UsortTest\\:\\:test_should_sort_array\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/UsortTest.php
+
+		-
+			message: "#^Method WhenTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/WhenTest.php
+
+		-
+			message: "#^Method WhenTest\\:\\:test_should_accept_functions_for_more_interesting_results\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/WhenTest.php
+
+		-
+			message: "#^Method WhenTest\\:\\:test_should_be_simple_ternary_when_given_scalar_values\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/WhenTest.php
+
+		-
+			message: "#^Method WhenTest\\:\\:test_should_work_splendidly_with_array_map\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/WhenTest.php
+
+		-
+			message: "#^Method WhenTest\\:\\:test_should_work_with_callable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/WhenTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(array\\{id\\: 1, name\\: 'Joe', type\\: 'user'\\}\\|array\\{id\\: 2, name\\: 'Hank', type\\: 'admin'\\}\\|array\\{id\\: 3, name\\: 'Alice', type\\: 'user'\\}\\)\\: mixed\\)\\|null, mixed given\\.$#"
+			count: 1
+			path: tests/WhenTest.php
+
+		-
+			message: "#^Method ZipTest\\:\\:test_it_should_accept_variadic_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ZipTest.php
+
+		-
+			message: "#^Method ZipTest\\:\\:test_it_should_null_missing_assoc_values\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ZipTest.php
+
+		-
+			message: "#^Method ZipTest\\:\\:test_it_should_null_missing_values\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ZipTest.php
+
+		-
+			message: "#^Method ZipTest\\:\\:test_it_should_work_with_assoc_arrays\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ZipTest.php
+
+		-
+			message: "#^Method ZipTest\\:\\:test_it_should_work_with_iterable_objects\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ZipTest.php
+
+		-
+			message: "#^Method ZipTest\\:\\:test_it_should_zip_a_bunch_of_arrays_together\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ZipTest.php
+
+		-
+			message: "#^Method ZipTest\\:\\:test_named_constant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ZipTest.php
+
+		-
+			message: "#^Method ZipTest\\:\\:test_should_throw_on_invalid_arguments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/ZipTest.php
+
+		-
+			message: "#^Method AllTest\\:\\:assertObeysMonoidLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/AllTest.php
+
+		-
+			message: "#^Method AllTest\\:\\:assertObeysSemigroupLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/AllTest.php
+
+		-
+			message: "#^Method AllTest\\:\\:test_encapsulates_boolean_or\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/AllTest.php
+
+		-
+			message: "#^Method AllTest\\:\\:test_monoid_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/AllTest.php
+
+		-
+			message: "#^Method AllTest\\:\\:test_semigroup_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/AllTest.php
+
+		-
+			message: "#^Trying to invoke non\\-falsy\\-string but it might not be a callable\\.$#"
+			count: 2
+			path: tests/types/AllTest.php
+
+		-
+			message: "#^Method AnyTest\\:\\:assertObeysMonoidLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/AnyTest.php
+
+		-
+			message: "#^Method AnyTest\\:\\:assertObeysSemigroupLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/AnyTest.php
+
+		-
+			message: "#^Method AnyTest\\:\\:test_encapsulates_boolean_or\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/AnyTest.php
+
+		-
+			message: "#^Method AnyTest\\:\\:test_monoid_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/AnyTest.php
+
+		-
+			message: "#^Method AnyTest\\:\\:test_semigroup_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/AnyTest.php
+
+		-
+			message: "#^Trying to invoke non\\-falsy\\-string but it might not be a callable\\.$#"
+			count: 2
+			path: tests/types/AnyTest.php
+
+		-
+			message: "#^Method MaxTest\\:\\:assertObeysMonoidLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/MaxTest.php
+
+		-
+			message: "#^Method MaxTest\\:\\:assertObeysSemigroupLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/MaxTest.php
+
+		-
+			message: "#^Method MaxTest\\:\\:test_keeps_the_max_value\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/MaxTest.php
+
+		-
+			message: "#^Method MaxTest\\:\\:test_monoid_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/MaxTest.php
+
+		-
+			message: "#^Method MaxTest\\:\\:test_semigroup_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/MaxTest.php
+
+		-
+			message: "#^Trying to invoke non\\-falsy\\-string but it might not be a callable\\.$#"
+			count: 2
+			path: tests/types/MaxTest.php
+
+		-
+			message: "#^Method MinTest\\:\\:assertObeysMonoidLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/MinTest.php
+
+		-
+			message: "#^Method MinTest\\:\\:assertObeysSemigroupLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/MinTest.php
+
+		-
+			message: "#^Method MinTest\\:\\:test_keeps_the_min_value\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/MinTest.php
+
+		-
+			message: "#^Method MinTest\\:\\:test_monoid_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/MinTest.php
+
+		-
+			message: "#^Method MinTest\\:\\:test_semigroup_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/MinTest.php
+
+		-
+			message: "#^Trying to invoke non\\-falsy\\-string but it might not be a callable\\.$#"
+			count: 2
+			path: tests/types/MinTest.php
+
+		-
+			message: "#^Method ProductTest\\:\\:_productProvider\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/types/ProductTest.php
+
+		-
+			message: "#^Method ProductTest\\:\\:assertObeysMonoidLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/ProductTest.php
+
+		-
+			message: "#^Method ProductTest\\:\\:assertObeysSemigroupLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/ProductTest.php
+
+		-
+			message: "#^Method ProductTest\\:\\:test_monoid_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/ProductTest.php
+
+		-
+			message: "#^Method ProductTest\\:\\:test_multiplication\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/ProductTest.php
+
+		-
+			message: "#^Method ProductTest\\:\\:test_semigroup_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/ProductTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$that of method Garp\\\\Functional\\\\Types\\\\Product\\:\\:equals\\(\\) expects Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Setoid, Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Semigroup given\\.$#"
+			count: 1
+			path: tests/types/ProductTest.php
+
+		-
+			message: "#^Trying to invoke non\\-falsy\\-string but it might not be a callable\\.$#"
+			count: 2
+			path: tests/types/ProductTest.php
+
+		-
+			message: "#^Cannot access property \\$value on \\(callable\\)\\|Garp\\\\Functional\\\\Types\\\\StringM\\.$#"
+			count: 1
+			path: tests/types/StringMTest.php
+
+		-
+			message: "#^Method StringMTest\\:\\:assertObeysMonoidLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/StringMTest.php
+
+		-
+			message: "#^Method StringMTest\\:\\:assertObeysSemigroupLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/StringMTest.php
+
+		-
+			message: "#^Method StringMTest\\:\\:test_folds_to_string\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/StringMTest.php
+
+		-
+			message: "#^Method StringMTest\\:\\:test_monoid_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/StringMTest.php
+
+		-
+			message: "#^Method StringMTest\\:\\:test_semigroup_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/StringMTest.php
+
+		-
+			message: "#^Trying to invoke non\\-falsy\\-string but it might not be a callable\\.$#"
+			count: 2
+			path: tests/types/StringMTest.php
+
+		-
+			message: "#^Method SumTest\\:\\:_sumProvider\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/types/SumTest.php
+
+		-
+			message: "#^Method SumTest\\:\\:_sumProvider\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: tests/types/SumTest.php
+
+		-
+			message: "#^Method SumTest\\:\\:assertObeysMonoidLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/SumTest.php
+
+		-
+			message: "#^Method SumTest\\:\\:assertObeysSemigroupLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/SumTest.php
+
+		-
+			message: "#^Method SumTest\\:\\:test_monoid_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/SumTest.php
+
+		-
+			message: "#^Method SumTest\\:\\:test_semigroup_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/SumTest.php
+
+		-
+			message: "#^Method SumTest\\:\\:test_summation\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/SumTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$that of method Garp\\\\Functional\\\\Types\\\\Sum\\:\\:equals\\(\\) expects Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Setoid, Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Semigroup given\\.$#"
+			count: 1
+			path: tests/types/SumTest.php
+
+		-
+			message: "#^Trying to invoke non\\-falsy\\-string but it might not be a callable\\.$#"
+			count: 2
+			path: tests/types/SumTest.php
+
+		-
+			message: "#^Method TestsOrdLawsTest\\:\\:assertObeysOrdLaws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/traits/TestsOrdLawsTest.php
+
+		-
+			message: "#^Method TestsOrdLawsTest\\:\\:test_ord_laws\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: tests/types/traits/TestsOrdLawsTest.php
+
+		-
+			message: "#^Access to an undefined property Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Setoid\\:\\:\\$value\\.$#"
+			count: 1
+			path: types/All.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Types\\\\All\\:\\:\\$value has no type specified\\.$#"
+			count: 1
+			path: types/All.php
+
+		-
+			message: "#^Access to an undefined property Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Setoid\\:\\:\\$value\\.$#"
+			count: 1
+			path: types/Any.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Types\\\\Any\\:\\:\\$value has no type specified\\.$#"
+			count: 1
+			path: types/Any.php
+
+		-
+			message: "#^Access to an undefined property Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Setoid\\:\\:\\$value\\.$#"
+			count: 1
+			path: types/Max.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Types\\\\Max\\:\\:\\$value has no type specified\\.$#"
+			count: 1
+			path: types/Max.php
+
+		-
+			message: "#^Access to an undefined property Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Setoid\\:\\:\\$value\\.$#"
+			count: 1
+			path: types/Min.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Types\\\\Min\\:\\:\\$value has no type specified\\.$#"
+			count: 1
+			path: types/Min.php
+
+		-
+			message: "#^Access to an undefined property Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Setoid\\:\\:\\$value\\.$#"
+			count: 1
+			path: types/Product.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Types\\\\Product\\:\\:\\$value has no type specified\\.$#"
+			count: 1
+			path: types/Product.php
+
+		-
+			message: "#^Access to an undefined property Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Ord\\:\\:\\$value\\.$#"
+			count: 1
+			path: types/StringM.php
+
+		-
+			message: "#^Access to an undefined property Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Setoid\\:\\:\\$value\\.$#"
+			count: 1
+			path: types/StringM.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Types\\\\StringM\\:\\:\\$value has no type specified\\.$#"
+			count: 1
+			path: types/StringM.php
+
+		-
+			message: "#^Access to an undefined property Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Setoid\\:\\:\\$value\\.$#"
+			count: 1
+			path: types/Sum.php
+
+		-
+			message: "#^Property Garp\\\\Functional\\\\Types\\\\Sum\\:\\:\\$value has no type specified\\.$#"
+			count: 1
+			path: types/Sum.php
