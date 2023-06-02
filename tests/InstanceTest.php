@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class InstanceTest extends TestCase {
 
-    public function test_should_return_instance() {
+    public function test_should_return_instance(): void {
         $instance = new stdClass();
         $this->assertEquals(
             $instance,
@@ -17,11 +17,11 @@ class InstanceTest extends TestCase {
         );
     }
 
-    public function test_should_create_instance_from_string() {
+    public function test_should_create_instance_from_string(): void {
         $this->assertInstanceOf('stdClass', f\instance('stdClass'));
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\instance));
     }
 }

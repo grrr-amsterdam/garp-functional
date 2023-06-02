@@ -10,21 +10,21 @@ use Garp\Functional as f;
  */
 class WhenTest extends TestCase {
 
-    public function test_should_be_simple_ternary_when_given_scalar_values() {
+    public function test_should_be_simple_ternary_when_given_scalar_values(): void {
         $this->assertEquals(
             'cinnamon',
             f\when(true, 'cinnamon', 'nutmeg')
         );
     }
 
-    public function test_should_accept_functions_for_more_interesting_results() {
+    public function test_should_accept_functions_for_more_interesting_results(): void {
         $this->assertEquals(
             'CINNAMON',
             f\when('is_string', 'strtoupper', 'f\id', 'cinnamon')
         );
     }
 
-    public function test_should_work_splendidly_with_array_map() {
+    public function test_should_work_splendidly_with_array_map(): void {
         $users = array(
             array('id' => 1, 'name' => 'Joe', 'type' => 'user'),
             array('id' => 2, 'name' => 'Hank', 'type' => 'admin'),
@@ -46,7 +46,7 @@ class WhenTest extends TestCase {
         $this->assertEquals($expected, $mapped);
     }
 
-    public function test_should_work_with_callable_objects() {
+    public function test_should_work_with_callable_objects(): void {
         $obj1 = new CallableObject(12);
         $obj2 = new CallableObject(24);
 
@@ -60,7 +60,7 @@ class WhenTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\when));
     }
 }

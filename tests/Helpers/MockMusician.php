@@ -9,7 +9,14 @@ namespace Garp\Functional\Tests\Helpers;
  * @license  https://github.com/grrr-amsterdam/garp-functional/blob/master/LICENSE.md BSD-3-Clause
  */
 class MockMusician {
+    /**
+     * @var string
+     */
     private $_first;
+
+    /**
+     * @var string
+     */
     private $_last;
 
     public function __construct($first, $last) {
@@ -17,11 +24,11 @@ class MockMusician {
         $this->_last = $last;
     }
 
-    public function getName() {
+    public function getName(): string {
         return $this->_first . ' ' . $this->_last;
     }
 
-    public function setName($first, $last) {
+    public function setName($first, $last): void {
         $this->_first = $first;
         $this->_last = $last;
     }

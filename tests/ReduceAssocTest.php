@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class ReduceAssocTest extends TestCase {
 
-    public function test_should_reduce_array() {
+    public function test_should_reduce_array(): void {
         $assoc = array(
             'foo' => [1, 2, 3],
             'bar' => [4],
@@ -52,7 +52,7 @@ class ReduceAssocTest extends TestCase {
         );
     }
 
-    public function test_should_reduce_iterable_object() {
+    public function test_should_reduce_iterable_object(): void {
         $mockSpiceTraver = new MockSpiceTraverser();
         $reduced = f\reduce_assoc(
             function ($acc, $cur, $key) {
@@ -67,7 +67,7 @@ class ReduceAssocTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $reducer = f\reduce_assoc(f\concat(), '');
         $this->assertTrue(is_callable($reducer));
         $this->assertEquals(
@@ -76,7 +76,7 @@ class ReduceAssocTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\reduce_assoc));
     }
 }

@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class EitherTest extends TestCase {
 
-    public function test_should_return_first_thruty_value() {
+    public function test_should_return_first_thruty_value(): void {
         $this->assertEquals(
             'nutmeg',
             f\either('nutmeg', 'cinnamon')
@@ -25,7 +25,7 @@ class EitherTest extends TestCase {
         );
     }
 
-    public function test_works_elegantly_with_prop() {
+    public function test_works_elegantly_with_prop(): void {
         $miles = array(
             'first_name' => 'Miles',
             'last_name' => 'Davis'
@@ -36,7 +36,7 @@ class EitherTest extends TestCase {
         );
     }
 
-    public function test_returns_new_function_when_given_at_least_one_function() {
+    public function test_returns_new_function_when_given_at_least_one_function(): void {
         $users = array(
             array('name' => 'Hank', 'role' => 'admin'),
             array('name' => 'Julia', 'role' => 'basic'),
@@ -58,7 +58,7 @@ class EitherTest extends TestCase {
         );
     }
 
-    public function test_should_not_call_right_function_when_left_is_truthy() {
+    public function test_should_not_call_right_function_when_left_is_truthy(): void {
         $called = false;
         $changer = function () use (&$called) {
             $called = true;
@@ -68,7 +68,7 @@ class EitherTest extends TestCase {
         $this->assertFalse($called);
     }
 
-    public function test_should_work_with_callable_objects() {
+    public function test_should_work_with_callable_objects(): void {
         $obj = new CallableObject(24);
 
         $either = f\either($obj, null);
@@ -77,7 +77,7 @@ class EitherTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\either));
     }
 }

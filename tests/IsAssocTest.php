@@ -48,7 +48,7 @@ class IsAssocTest extends TestCase {
         ];
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\is_assoc));
     }
 }

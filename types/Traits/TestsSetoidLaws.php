@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
  */
 trait TestsSetoidLaws {
 
-    public function assertObeysSetoidLaws(Setoid $a, Setoid $b, Setoid $c) {
+    public function assertObeysSetoidLaws(Setoid $a, Setoid $b, Setoid $c): void {
         if (!$this instanceof TestCase) {
             throw new \RunTimeException(
                 __TRAIT__ . ' should be used in the context of a PHPUnit TestCase'

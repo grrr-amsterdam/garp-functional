@@ -13,6 +13,9 @@ use Garp\Functional\Types\TypeClasses\{Semigroup, Setoid, Monoid};
  */
 final class Max implements Semigroup, Setoid, Monoid {
 
+    /**
+     * @var float
+     */
     public $value;
 
     public static function empty(): Monoid {

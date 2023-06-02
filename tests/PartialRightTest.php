@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class PartialRightTest extends TestCase {
 
-    public function test_should_produce_partially_applied_function() {
+    public function test_should_produce_partially_applied_function(): void {
         $this->assertTrue(
             is_callable(f\partial_right('explode', 'foo_bar'))
         );
@@ -34,7 +34,7 @@ class PartialRightTest extends TestCase {
         $this->assertEquals($expected, $helloCopy('John', 'Linda', 'Hi there!'));
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\partial_right));
     }
 }

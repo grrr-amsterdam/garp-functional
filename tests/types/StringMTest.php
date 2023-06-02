@@ -16,7 +16,7 @@ class StringMTest extends TestCase {
     use TestsSemigroupLaws;
     use TestsMonoidLaws;
 
-    public function test_semigroup_laws() {
+    public function test_semigroup_laws(): void {
         $this->assertObeysSemigroupLaws(
             new StringM('foo'),
             new StringM('bar'),
@@ -24,11 +24,11 @@ class StringMTest extends TestCase {
         );
     }
 
-    public function test_monoid_laws() {
+    public function test_monoid_laws(): void {
         $this->assertObeysMonoidLaws(new StringM('foo'));
     }
 
-    public function test_folds_to_string() {
+    public function test_folds_to_string(): void {
         $this->assertEquals(
             new StringM('foobarbaz'),
             f\fold(StringM::class, ['foo', 'bar', 'baz'])

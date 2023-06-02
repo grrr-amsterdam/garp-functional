@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class SplitTest extends TestCase {
 
-    public function test_should_split_strings() {
+    public function test_should_split_strings(): void {
         $this->assertEquals(
             array('Miles', 'Davis'),
             f\split(' ', 'Miles Davis')
@@ -20,12 +20,12 @@ class SplitTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $splitOnSpace = f\split(' ');
         $this->assertTrue(is_callable($splitOnSpace));
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\split));
     }
 }

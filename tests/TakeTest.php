@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class TakeTest extends TestCase {
 
-    public function test_should_take_from_array() {
+    public function test_should_take_from_array(): void {
         $spices = array('Nutmeg', 'Cumin', 'Clove', 'Cinnamon');
         $this->assertEquals(
             array('Nutmeg', 'Cumin'),
@@ -21,7 +21,7 @@ class TakeTest extends TestCase {
         );
     }
 
-    public function test_no_problem_if_n_is_more_than_length_of_array() {
+    public function test_no_problem_if_n_is_more_than_length_of_array(): void {
         $spices = array('Nutmeg', 'Cumin', 'Clove', 'Cinnamon');
         $this->assertEquals(
             array('Nutmeg', 'Cumin', 'Clove', 'Cinnamon'),
@@ -29,7 +29,7 @@ class TakeTest extends TestCase {
         );
     }
 
-    public function test_should_take_from_string() {
+    public function test_should_take_from_string(): void {
         $spice = 'Nutmeg';
         $this->assertEquals(
             'Nut',
@@ -37,7 +37,7 @@ class TakeTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_iterable_objects() {
+    public function test_should_work_with_iterable_objects(): void {
         $spices = new ArrayIterator(array('Nutmeg', 'Cumin', 'Clove', 'Cinnamon'));
         $this->assertEquals(
             array('Nutmeg', 'Cumin'),
@@ -45,12 +45,12 @@ class TakeTest extends TestCase {
         );
     }
 
-    public function test_should_throw_on_invalid_arguments() {
+    public function test_should_throw_on_invalid_arguments(): void {
         $this->expectException(InvalidArgumentException::class);
         f\take(4, new stdClass());
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $take5 = f\take(5);
         $this->assertTrue(is_callable($take5));
         $takeFive = array(
@@ -65,7 +65,7 @@ class TakeTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\take));
     }
 }

@@ -13,6 +13,9 @@ use Garp\Functional\Types\TypeClasses\{Semigroup, Setoid, Monoid};
  */
 final class All implements Semigroup, Setoid, Monoid {
 
+    /**
+     * @var bool
+     */
     public $value;
 
     public static function empty(): Monoid {

@@ -9,18 +9,18 @@ use Garp\Functional as f;
  */
 class PublishTest extends TestCase {
 
-    public function test_should_publish_private_methods() {
+    public function test_should_publish_private_methods(): void {
         $this->assertSame(
             [9, 25, 36],
             f\map(f\publish('_square', $this), [3, 5, 6])
         );
     }
 
-    private function _square($n) {
+    private function _square(int $n): int {
         return $n * $n;
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\publish));
     }
 }

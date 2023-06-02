@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class MapTest extends TestCase {
 
-    public function test_should_map_function_over_array() {
+    public function test_should_map_function_over_array(): void {
         $spices = array('nutmeg', 'cinnamon', 'clove');
 
         // Native PHP function.
@@ -37,7 +37,7 @@ class MapTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $mapToUpper = f\map('strtoupper');
         $spices = array('nutmeg', 'cinnamon', 'clove');
         $this->assertTrue(is_callable($mapToUpper));
@@ -47,7 +47,7 @@ class MapTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_iterable_objects() {
+    public function test_should_work_with_iterable_objects(): void {
         $traversable = new MockSpiceTraverser();
         $this->assertEquals(
             array('NUTMEG', 'CINNAMON', 'CLOVE'),
@@ -55,11 +55,15 @@ class MapTest extends TestCase {
         );
     }
 
+    /**
+     * @param $str
+     * @return false|string
+     */
     public function getSubstr($str) {
         return substr($str, 0, 3);
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\map));
     }
 }

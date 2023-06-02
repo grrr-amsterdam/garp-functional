@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class RepeatTest extends TestCase {
 
-    public function test_should_repeat_callable() {
+    public function test_should_repeat_callable(): void {
         $toUpperZeroTimes = f\repeat(0, 'strtoupper');
         $this->assertTrue(is_callable($toUpperZeroTimes));
         $this->assertEmpty($toUpperZeroTimes(), 'Repeating zero times yields empty array');
@@ -29,7 +29,7 @@ class RepeatTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\repeat));
     }
 }

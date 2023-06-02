@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
  */
 trait TestsSemigroupLaws {
 
-    public function assertObeysSemigroupLaws(Semigroup $a, Semigroup $b, Semigroup $c) {
+    public function assertObeysSemigroupLaws(Semigroup $a, Semigroup $b, Semigroup $c): void {
         if (!$this instanceof TestCase) {
             throw new \RunTimeException(
                 __TRAIT__ . ' should be used in the context of a PHPUnit TestCase'

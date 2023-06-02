@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class ConcatWithTest extends TestCase {
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $concatWithAdd = f\concat_with('Garp\Functional\add');
         $this->assertTrue(is_callable($concatWithAdd));
 
@@ -18,13 +18,13 @@ class ConcatWithTest extends TestCase {
         $this->assertTrue(is_callable($concatFooWithAdd));
     }
 
-    public function test_should_throw_on_non_array_arguments() {
+    public function test_should_throw_on_non_array_arguments(): void {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('concat_with expects arguments 2 and up to be arrays.');
         f\concat_with('array_merge', 999, 'foo');
     }
 
-    public function test_should_merge_with_add_function() {
+    public function test_should_merge_with_add_function(): void {
         $a = ['total' => 100, 'amount' => 4];
         $b = ['total' => 50, 'amount' => 5];
         $this->assertEquals(
@@ -43,7 +43,7 @@ class ConcatWithTest extends TestCase {
         );
     }
 
-    public function test_should_be_variadic() {
+    public function test_should_be_variadic(): void {
         $a = ['total' => 100, 'amount' => 4];
         $b = ['total' => 50, 'amount' => 5];
         $c = ['total' => 20, 'amount' => 1];
@@ -56,7 +56,7 @@ class ConcatWithTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\concat_with));
     }
 }

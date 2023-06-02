@@ -9,13 +9,13 @@ use Garp\Functional as f;
  */
 class NotTest extends TestCase {
 
-    public function test_should_negate_function() {
+    public function test_should_negate_function(): void {
         $noArray = f\not('is_array');
         $this->assertTrue($noArray(123));
         $this->assertFalse($noArray(array(1,2,3)));
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\not));
     }
 }

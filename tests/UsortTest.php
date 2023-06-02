@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class UsortTest extends TestCase {
 
-    public function test_should_sort_array() {
+    public function test_should_sort_array(): void {
         $spices = array('clove', 'nutmeg', 'allspice', 'cumin');
         $this->assertEquals(
             array('clove', 'cumin', 'nutmeg', 'allspice'),
@@ -27,7 +27,7 @@ class UsortTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $sortByStrlen = function ($a, $b) {
             return strlen($a) - strlen($b);
         };
@@ -39,7 +39,7 @@ class UsortTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\usort));
     }
 }

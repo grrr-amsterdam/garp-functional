@@ -16,7 +16,7 @@ class AllTest extends TestCase {
     use TestsSemigroupLaws;
     use TestsMonoidLaws;
 
-    public function test_semigroup_laws() {
+    public function test_semigroup_laws(): void {
         $this->assertObeysSemigroupLaws(
             new All(true),
             new All(true),
@@ -24,11 +24,11 @@ class AllTest extends TestCase {
         );
     }
 
-    public function test_monoid_laws() {
+    public function test_monoid_laws(): void {
         $this->assertObeysMonoidLaws(new All(true));
     }
 
-    public function test_encapsulates_boolean_or() {
+    public function test_encapsulates_boolean_or(): void {
         $this->assertEquals(
             new All(false),
             f\fold(All::class, [false, false, false, true])

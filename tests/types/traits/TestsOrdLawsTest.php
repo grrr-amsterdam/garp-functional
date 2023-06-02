@@ -14,7 +14,7 @@ class TestsOrdLawsTest extends TestCase {
 
     use TestsOrdLaws;
 
-    public function test_ord_laws() {
+    public function test_ord_laws(): void {
         $tiny = new MockOrd('tiny');
         $big = new MockOrd('big');
         $large = new MockOrd('huge');

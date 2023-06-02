@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class JoinTest extends TestCase {
 
-    public function test_should_join_arrays() {
+    public function test_should_join_arrays(): void {
         $spices = array('clove', 'nutmeg', 'allspice', 'cumin');
         $this->assertEquals(
             'clove,nutmeg,allspice,cumin',
@@ -22,7 +22,7 @@ class JoinTest extends TestCase {
         );
     }
 
-    public function test_should_join_strings() {
+    public function test_should_join_strings(): void {
         $miles = 'MILES';
         $this->assertEquals(
             'M⭐️I⭐️L⭐️E⭐️S',
@@ -30,7 +30,7 @@ class JoinTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $joinWithSpace = f\join(' ');
         $this->assertTrue(is_callable($joinWithSpace));
         $this->assertEquals(
@@ -39,7 +39,7 @@ class JoinTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\join));
     }
 }

@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class MergeAfterTest extends TestCase {
 
-    public function test_should_merge_into_numerically_indexed_arrays() {
+    public function test_should_merge_into_numerically_indexed_arrays(): void {
         $spices = array('nutmeg', 'clove', 'chile');
         $spices2 = f\merge_after('cinnamon', 2, $spices);
         $this->assertSame(
@@ -47,7 +47,7 @@ class MergeAfterTest extends TestCase {
         );
     }
 
-    public function test_should_merge_associative_arrays() {
+    public function test_should_merge_associative_arrays(): void {
         $stuff = array(
             'foo' => 123,
             'bar' => 456,
@@ -92,7 +92,7 @@ class MergeAfterTest extends TestCase {
         );
     }
 
-    public function test_should_merge_numeric_index_in_associative_array() {
+    public function test_should_merge_numeric_index_in_associative_array(): void {
         $stuff = array(
             'foo' => 123,
             'bar' => 456,
@@ -118,7 +118,7 @@ class MergeAfterTest extends TestCase {
         );
     }
 
-    public function test_should_merge_regular_array_into_associative_array() {
+    public function test_should_merge_regular_array_into_associative_array(): void {
         $stuff = array(
             'foo' => 123,
             'bar' => 456,
@@ -135,7 +135,7 @@ class MergeAfterTest extends TestCase {
         );
     }
 
-    public function test_should_accept_predicate_function_as_index() {
+    public function test_should_accept_predicate_function_as_index(): void {
         $jazz = array(
             'Miles' => array(
                 'name' => 'Miles Davis',
@@ -227,7 +227,7 @@ class MergeAfterTest extends TestCase {
     }
 
     /** @test */
-    public function if_object_is_already_in_target_then_just_move_the_object_in_the_target() {
+    public function if_object_is_already_in_target_then_just_move_the_object_in_the_target(): void {
         $target = array(
             'jazz' => 'Miles',
             'pop' => 'Michael',
@@ -247,7 +247,7 @@ class MergeAfterTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $merger = f\merge_after('Miles', 1);
         $this->assertTrue(is_callable($merger));
 
@@ -257,7 +257,7 @@ class MergeAfterTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\merge_after));
     }
 }

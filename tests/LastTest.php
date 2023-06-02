@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class LastTest extends TestCase {
 
-    public function test_should_get_last_item_in_array() {
+    public function test_should_get_last_item_in_array(): void {
         $this->assertEquals(
             'baz',
             f\last(array('foo', 'bar', 'baz'))
@@ -22,14 +22,14 @@ class LastTest extends TestCase {
         $this->assertNull(f\last(array()));
     }
 
-    public function test_should_get_last_item_in_assoc_array() {
+    public function test_should_get_last_item_in_assoc_array(): void {
         $this->assertEquals(
             'baz',
             f\last(array('a' => 'foo', 'b' => 'bar', 'c' => 'baz'))
         );
     }
 
-    public function test_should_get_last_char_in_strings() {
+    public function test_should_get_last_char_in_strings(): void {
         $this->assertEquals(
             'S',
             f\last('MILES')
@@ -40,7 +40,7 @@ class LastTest extends TestCase {
         );
     }
 
-    public function test_should_get_last_item_in_iterable() {
+    public function test_should_get_last_item_in_iterable(): void {
         $spiceTraverser = new MockSpiceTraverser();
         $this->assertEquals(
             'clove',
@@ -48,7 +48,7 @@ class LastTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\last));
     }
 }

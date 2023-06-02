@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class AutocurryTest extends TestCase {
 
-    public function test_should_keep_on_curryin() {
+    public function test_should_keep_on_curryin(): void {
         $foo = function ($a, $b, $c, $d) {
             return $a . $b . $c . $d;
         };
@@ -29,7 +29,7 @@ class AutocurryTest extends TestCase {
 
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\autocurry));
     }
 }

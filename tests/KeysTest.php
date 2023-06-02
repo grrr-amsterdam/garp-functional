@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class KeysTest extends TestCase {
 
-    public function test_should_get_keys_of_array() {
+    public function test_should_get_keys_of_array(): void {
         $this->assertEquals(
             array(0, 1, 2, 3),
             f\keys(array('Clove', 'Nutmeg', 'Cinnamon', 'Cumin'))
@@ -22,7 +22,7 @@ class KeysTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_objects() {
+    public function test_should_work_with_objects(): void {
         $this->assertEquals(
             array(0, 1, 2),
             f\keys(new ArrayIterator(array('foo', 'bar', 'baz')))
@@ -41,19 +41,19 @@ class KeysTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_strings() {
+    public function test_should_work_with_strings(): void {
         $this->assertEquals(
             array(0, 1, 2),
             f\keys('foo')
         );
     }
 
-    public function test_should_throw_on_invalid_argument() {
+    public function test_should_throw_on_invalid_argument(): void {
         $this->expectException(InvalidArgumentException::class);
         f\keys(123);
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\keys));
     }
 }

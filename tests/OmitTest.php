@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class OmitTest extends TestCase {
 
-    public function test_should_omit_from_assoc_array() {
+    public function test_should_omit_from_assoc_array(): void {
         $data = array(
             'first_name' => 'Miles',
             'last_name' => 'Davis',
@@ -27,7 +27,7 @@ class OmitTest extends TestCase {
         );
     }
 
-    public function test_should_pick_from_numeric_array() {
+    public function test_should_pick_from_numeric_array(): void {
         $spices = array('nutmeg', 'clove', 'cinnamon');
         $this->assertEquals(
             array(1 => 'clove', 2 => 'cinnamon'),
@@ -39,7 +39,7 @@ class OmitTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $getFullName = f\omit(array('instrument', 'country'));
         $data = array(
             'first_name' => 'Miles',
@@ -54,7 +54,7 @@ class OmitTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_iterable_objects() {
+    public function test_should_work_with_iterable_objects(): void {
         $musician = new stdClass;
         $musician->first_name = 'Miles';
         $musician->last_name = 'Davis';
@@ -66,7 +66,7 @@ class OmitTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\omit));
     }
 }

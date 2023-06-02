@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class CallTest extends TestCase {
 
-    public function test_should_call_methods() {
+    public function test_should_call_methods(): void {
         $miles = new MockMusician('Miles', 'Davis');
         $this->assertEquals(
             'Miles Davis',
@@ -24,7 +24,7 @@ class CallTest extends TestCase {
         );
     }
 
-    public function test_should_pass_arguments() {
+    public function test_should_pass_arguments(): void {
         $miles = new MockMusician('Miles', 'Davis');
         f\call('setName', array('John', 'Coltrane'), $miles);
         $this->assertEquals(
@@ -33,7 +33,7 @@ class CallTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $getName = f\call('getName');
         $musicians = array(
             new MockMusician('Miles', 'Davis'),
@@ -46,7 +46,7 @@ class CallTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\call));
     }
 }

@@ -10,7 +10,7 @@ use Garp\Functional\Tests\Helpers\MockOrd;
  */
 class LtTest extends TestCase {
 
-    public function test_should_check_if_n_is_less() {
+    public function test_should_check_if_n_is_less(): void {
         $this->assertTrue(
             f\lt(20, 10)
         );
@@ -20,14 +20,14 @@ class LtTest extends TestCase {
         $this->assertFalse(f\lt(50, 100));
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $lessThan5 = f\lt(5);
         $this->assertTrue(is_callable($lessThan5));
         $this->assertTrue($lessThan5(3));
         $this->assertFalse($lessThan5(5.5));
     }
 
-    public function test_should_allow_ord_instances() {
+    public function test_should_allow_ord_instances(): void {
         $small = new MockOrd('small');
         $big = new MockOrd('big');
         $huge = new MockOrd('huge');
@@ -39,7 +39,7 @@ class LtTest extends TestCase {
         $this->assertTrue(f\lt($small, $tiny));
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\lt));
     }
 }

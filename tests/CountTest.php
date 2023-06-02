@@ -11,7 +11,7 @@ use Garp\Functional as f;
  */
 class CountTest extends TestCase {
 
-    public function test_should_count_arrays() {
+    public function test_should_count_arrays(): void {
         $this->assertEquals(
             3,
             f\count(array('a', 'b', 'c'))
@@ -32,13 +32,13 @@ class CountTest extends TestCase {
         );
     }
 
-    public function test_should_count_traversables() {
+    public function test_should_count_traversables(): void {
         $this->assertEquals(
             3, f\count(new MockSpiceTraverser())
         );
     }
 
-    public function test_should_count_strings() {
+    public function test_should_count_strings(): void {
         $this->assertEquals(
             3,
             f\count('foo')
@@ -53,7 +53,7 @@ class CountTest extends TestCase {
         );
     }
 
-    public function test_should_count_stringable_objects() {
+    public function test_should_count_stringable_objects(): void {
         $miles = new MockMusician('Miles', 'Davis');
         $this->assertEquals(
             11,
@@ -61,7 +61,7 @@ class CountTest extends TestCase {
         );
     }
 
-    public function test_should_throw_exception_for_invalid_objects() {
+    public function test_should_throw_exception_for_invalid_objects(): void {
         $this->expectException(InvalidArgumentException::class);
         $this->assertEquals(
             0,
@@ -69,7 +69,7 @@ class CountTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\count));
     }
 }

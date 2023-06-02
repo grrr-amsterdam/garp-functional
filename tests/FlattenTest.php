@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class FlattenTest extends TestCase {
 
-    public function test_should_flatten_arrays() {
+    public function test_should_flatten_arrays(): void {
         $test = [
             1, 2, 3,
             [4, 5, 6],
@@ -27,7 +27,7 @@ class FlattenTest extends TestCase {
         );
     }
 
-    public function test_should_flatten_iterable_objects() {
+    public function test_should_flatten_iterable_objects(): void {
         $test = [
             new MockSpiceTraverser,
             1, 2, 3,
@@ -44,7 +44,7 @@ class FlattenTest extends TestCase {
         );
     }
 
-    public function test_should_leave_associative_arrays_intact() {
+    public function test_should_leave_associative_arrays_intact(): void {
         $test = [
             [['id' => 1, 'name' => 'Hank'], ['id' => 2, 'name' => 'Linda']],
             [['id' => 3, 'name' => 'Jones']]
@@ -60,7 +60,7 @@ class FlattenTest extends TestCase {
             f\flatten($test)
         );
     }
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\flatten));
     }
 }

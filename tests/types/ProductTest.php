@@ -16,7 +16,7 @@ class ProductTest extends TestCase {
     use TestsSemigroupLaws;
     use TestsMonoidLaws;
 
-    public function test_semigroup_laws() {
+    public function test_semigroup_laws(): void {
         $this->assertObeysSemigroupLaws(
             new Product(540),
             new Product(19),
@@ -24,11 +24,11 @@ class ProductTest extends TestCase {
         );
     }
 
-    public function test_monoid_laws() {
+    public function test_monoid_laws(): void {
         $this->assertObeysMonoidLaws(new Product(42));
     }
 
-    public function test_multiplication() {
+    public function test_multiplication(): void {
         $sums = $this->_productProvider();
         $this->assertTrue(
             f\every(

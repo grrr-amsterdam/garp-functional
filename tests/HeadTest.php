@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class HeadTest extends TestCase {
 
-    public function test_should_grab_head_of_arrays() {
+    public function test_should_grab_head_of_arrays(): void {
         $spices = array('nutmeg', 'clove', 'cinnamon');
         $this->assertEquals(
             'nutmeg',
@@ -18,7 +18,7 @@ class HeadTest extends TestCase {
         );
     }
 
-    public function test_should_grab_head_of_strings() {
+    public function test_should_grab_head_of_strings(): void {
         $miles = 'Miles';
         $this->assertEquals(
             'M',
@@ -26,7 +26,7 @@ class HeadTest extends TestCase {
         );
     }
 
-    public function test_should_grab_head_from_traversable() {
+    public function test_should_grab_head_from_traversable(): void {
         $spiceIterator = new MockSpiceTraverser();
         $this->assertEquals(
             'nutmeg',
@@ -34,26 +34,26 @@ class HeadTest extends TestCase {
         );
     }
 
-    public function test_should_get_null_from_empty_collection() {
+    public function test_should_get_null_from_empty_collection(): void {
         $this->assertNull(f\head(array()));
     }
 
-    public function test_should_get_empty_string_from_empty_string() {
+    public function test_should_get_empty_string_from_empty_string(): void {
         $this->assertEquals(
             '',
             f\head('')
         );
     }
 
-    public function test_should_get_null_on_unusable_input() {
+    public function test_should_get_null_on_unusable_input(): void {
         $this->assertNull(f\head(12345));
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\head));
     }
 
-    public function test_should_grab_head_of_assoc_arrays() {
+    public function test_should_grab_head_of_assoc_arrays(): void {
         $spices = [
           'cauliflower' => 'nutmeg',
           'stew' => 'clove',

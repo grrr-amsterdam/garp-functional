@@ -9,12 +9,20 @@ namespace Garp\Functional\Tests\Helpers;
  * @license  https://github.com/grrr-amsterdam/garp-functional/blob/master/LICENSE.md BSD-3-Clause
  */
 class MockSpiceTraverser implements \Iterator, \ArrayAccess {
-    private $_position = 0;
+
+    /**
+     * @var int
+     */
+    private $_position;
+
+    /**
+     * @var array<int, string>
+     */
     private $_spices = array(
         'nutmeg', 'cinnamon', 'clove'
     );
 
-    public static function instance() {
+    public static function instance(): self {
         return new static;
     }
 

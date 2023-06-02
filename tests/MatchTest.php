@@ -1,4 +1,4 @@
-<?php 
+<?php
 use PHPUnit\Framework\TestCase;
 use Garp\Functional\Tests\Helpers\MockMusician;
 use Garp\Functional as f;
@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class MatchTest extends TestCase {
 
-    public function test_should_match_strings() {
+    public function test_should_match_strings(): void {
         $this->assertEquals(
             array('12345'),
             f\match_regex('/^\d+$/', '12345')
@@ -20,7 +20,7 @@ class MatchTest extends TestCase {
         );
     }
 
-    public function test_should_return_matches() {
+    public function test_should_return_matches(): void {
         $this->assertEquals(
             array('Hello world', 'Hello'),
             f\match_regex('/([a-zA-Z]+) world/', 'Hello world')
@@ -31,7 +31,7 @@ class MatchTest extends TestCase {
         );
     }
 
-    public function test_should_not_throw_on_object_or_array() {
+    public function test_should_not_throw_on_object_or_array(): void {
         $this->assertFalse(
             f\match_regex('/^(.*)$/', new stdClass())
         );
@@ -43,7 +43,7 @@ class MatchTest extends TestCase {
         );
     }
 
-    public function test_should_match_objects_that_support_tostring() {
+    public function test_should_match_objects_that_support_tostring(): void {
         $musician = new MockMusician('Miles', 'Davis');
         $this->assertTrue(
             !!f\match_regex('/Miles Davis/', $musician)
@@ -53,7 +53,7 @@ class MatchTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $isNumeric = f\match_regex('/^\d+$/');
         $this->assertTrue(is_callable($isNumeric));
         $data = array(123, 'abc', array('90'), 456);
@@ -63,7 +63,7 @@ class MatchTest extends TestCase {
         );
     }
 
-    public function test_usage_with_filter() {
+    public function test_usage_with_filter(): void {
         $isNumeric = f\match_regex('/^\d+$/');
         $this->assertTrue(is_callable($isNumeric));
         $this->assertEquals(
@@ -72,7 +72,7 @@ class MatchTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\match_regex));
     }
 }

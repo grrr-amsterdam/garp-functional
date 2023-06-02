@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class SortByMapTest extends TestCase {
 
-    public function test_should_sort_associative_array_by_map() {
+    public function test_should_sort_associative_array_by_map(): void {
         $person = [
             'dob' => new DateTime('1985-02-11'),
             'nationality' => 'Nl',
@@ -25,7 +25,7 @@ class SortByMapTest extends TestCase {
         );
     }
 
-    public function test_should_sort_numeric_array_by_map() {
+    public function test_should_sort_numeric_array_by_map(): void {
         $colors = ['yellow', 'orange', 'violet', 'blue', 'green', 'red', 'indigo'];
         $roygbiv = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
         $this->assertSame(
@@ -34,7 +34,7 @@ class SortByMapTest extends TestCase {
         );
     }
 
-    public function test_missing_keys_should_be_placed_at_the_end() {
+    public function test_missing_keys_should_be_placed_at_the_end(): void {
         $person = [
             'dob' => new DateTime('1985-02-11'),
             'nationality' => 'Nl',
@@ -53,7 +53,7 @@ class SortByMapTest extends TestCase {
         );
     }
 
-    public function test_should_not_care_about_unknown_keys() {
+    public function test_should_not_care_about_unknown_keys(): void {
         $person = [
             'dob' => new DateTime('1985-02-11'),
             'nationality' => 'Nl',
@@ -72,11 +72,11 @@ class SortByMapTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $this->assertTrue(is_callable(f\sort_by_map(['foo', 'bar'])));
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\sort_by_map));
     }
 }

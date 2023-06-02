@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class PropSetTest extends TestCase {
 
-    public function test_should_set_property() {
+    public function test_should_set_property(): void {
         $musician = array('first_name' => 'Miles', 'last_name' => 'Davis');
         $this->assertEquals(
             array('first_name' => 'John', 'last_name' => 'Davis'),
@@ -18,7 +18,7 @@ class PropSetTest extends TestCase {
         );
     }
 
-    public function test_should_make_a_copy() {
+    public function test_should_make_a_copy(): void {
         $miles = array('first_name' => 'Miles', 'last_name' => 'Davis');
         $john = f\prop_set('first_name', 'John', $miles);
         $this->assertEquals(
@@ -31,7 +31,7 @@ class PropSetTest extends TestCase {
         );
     }
 
-    public function test_should_be_thrice_curried() {
+    public function test_should_be_thrice_curried(): void {
         $miles = array('first_name' => 'Miles', 'last_name' => 'Davis');
         $setFirstName = f\prop_set('first_name');
         $this->assertTrue(is_callable($setFirstName));
@@ -47,7 +47,7 @@ class PropSetTest extends TestCase {
         );
     }
 
-    public function test_should_accept_a_function_as_2nd_parameter_which_gets_applied_to_the_3rd() {
+    public function test_should_accept_a_function_as_2nd_parameter_which_gets_applied_to_the_3rd(): void {
         $obj = array(
             'first_name' => 'John',
             'last_name' => 'Coltrane'
@@ -88,7 +88,7 @@ class PropSetTest extends TestCase {
 
     }
 
-    public function test_should_work_with_callable_objects() {
+    public function test_should_work_with_callable_objects(): void {
         $obj = new CallableObject(24);
         $this->assertEquals(
             array('object' => $obj),
@@ -96,7 +96,7 @@ class PropSetTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\prop_set));
     }
 }

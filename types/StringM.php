@@ -13,6 +13,9 @@ use Garp\Functional\Types\TypeClasses\{Ord, Semigroup, Setoid, Monoid};
  */
 final class StringM implements Ord, Semigroup, Monoid {
 
+    /**
+     * @var string
+     */
     public $value;
 
     public static function empty(): Monoid {

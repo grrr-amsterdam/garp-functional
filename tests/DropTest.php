@@ -9,7 +9,7 @@ use Garp\Functional as f;
  */
 class DropTest extends TestCase {
 
-    public function test_should_take_from_array() {
+    public function test_should_take_from_array(): void {
         $spices = array('Nutmeg', 'Cumin', 'Clove', 'Cinnamon');
         $this->assertEquals(
             array('Clove', 'Cinnamon'),
@@ -17,7 +17,7 @@ class DropTest extends TestCase {
         );
     }
 
-    public function test_no_problem_if_n_is_more_than_length_of_array() {
+    public function test_no_problem_if_n_is_more_than_length_of_array(): void {
         $spices = array('Nutmeg', 'Cumin', 'Clove', 'Cinnamon');
         $this->assertEquals(
             array(),
@@ -25,7 +25,7 @@ class DropTest extends TestCase {
         );
     }
 
-    public function test_should_take_from_string() {
+    public function test_should_take_from_string(): void {
         $spice = 'Nutmeg';
         $this->assertEquals(
             'meg',
@@ -33,7 +33,7 @@ class DropTest extends TestCase {
         );
     }
 
-    public function test_should_work_with_iterable_objects() {
+    public function test_should_work_with_iterable_objects(): void {
         $spices = new ArrayIterator(array('Nutmeg', 'Cumin', 'Clove', 'Cinnamon'));
         $this->assertEquals(
             array('Clove', 'Cinnamon'),
@@ -41,12 +41,12 @@ class DropTest extends TestCase {
         );
     }
 
-    public function test_should_throw_on_invalid_arguments() {
+    public function test_should_throw_on_invalid_arguments(): void {
         $this->expectException(InvalidArgumentException::class);
         f\drop(4, new stdClass());
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $drop5 = f\drop(5);
         $this->assertTrue(is_callable($drop5));
         $takeFive = array(
@@ -63,7 +63,7 @@ class DropTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\drop));
     }
 }

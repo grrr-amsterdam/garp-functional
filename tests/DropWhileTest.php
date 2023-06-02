@@ -10,7 +10,7 @@ use Garp\Functional as f;
  */
 class DropWhileTest extends TestCase {
 
-    public function test_should_drop_from_array() {
+    public function test_should_drop_from_array(): void {
         $diary = array(
             array('month' => 1, 'day' => 1, 'entry' => 'Lorem ipsum'),
             array('month' => 1, 'day' => 14, 'entry' => 'Lorem ipsum'),
@@ -49,7 +49,7 @@ class DropWhileTest extends TestCase {
         );
     }
 
-    public function test_should_drop_from_iterable_object() {
+    public function test_should_drop_from_iterable_object(): void {
         $spiceTraverser = new MockSpiceTraverser();
         $this->assertEquals(
             array(),
@@ -64,7 +64,7 @@ class DropWhileTest extends TestCase {
         );
     }
 
-    public function test_should_drop_from_string() {
+    public function test_should_drop_from_string(): void {
         $isVowel = f\partial_right('in_array', array('a', 'e', 'o', 'i', 'u', 'y'));
         $gibberish = 'aeuibejkwe';
         $this->assertEquals(
@@ -73,7 +73,7 @@ class DropWhileTest extends TestCase {
         );
     }
 
-    public function test_should_be_curried() {
+    public function test_should_be_curried(): void {
         $dropFirstBigNumbers = f\drop_while(f\gt(100));
         $this->assertTrue(is_callable($dropFirstBigNumbers));
         $this->assertEquals(
@@ -86,7 +86,7 @@ class DropWhileTest extends TestCase {
         );
     }
 
-    public function test_named_constant() {
+    public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\drop_while));
     }
 }
