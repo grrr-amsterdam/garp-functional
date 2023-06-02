@@ -15,11 +15,12 @@
         }
     ],
     "require": {
-        "php": ">=7.1.0"
+        "php": ">=7.2.0"
     },
     "scripts": {
-        "test": "vendor/bin/phpunit tests/",
-        "phpcs": "vendor/bin/phpcs --standard=phpcs.xml --extensions=php --colors --ignore=vendor ."
+        "phpcs": "vendor/bin/phpcs --standard=phpcs.xml --extensions=php --colors --ignore=vendor .",
+        "static-analysis": "vendor/bin/phpstan",
+        "test": "vendor/bin/phpunit tests/"
     },
     "autoload": {
         "psr-4": {
