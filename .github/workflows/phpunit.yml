@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        php: [7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2]
+        php: [7.2, 7.3, 7.4, 8.0, 8.1, 8.2]
         stability: [--prefer-lowest, --prefer-stable]
         include:
           - php: nightly
@@ -39,7 +39,7 @@ jobs:
 
       - name: Install PHPUnit 7
         id: phpunit-7
-        if: ${{ matrix.php == '7.1' || matrix.php == '7.2' }}
+        if: ${{ matrix.php == '7.2' }}
         run: composer require phpunit/phpunit:^7 --no-interaction --no-update
 
       - name: Install PHPUnit 9
