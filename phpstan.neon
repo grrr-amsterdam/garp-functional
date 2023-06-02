@@ -1,0 +1,10 @@
+includes:
+	- phpstan-baseline.neon
+
+parameters:
+    level: 9
+    paths:
+        - _internal
+        - functions
+        - tests
+        - types
