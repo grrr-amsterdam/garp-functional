@@ -90,15 +90,17 @@ class PropTest extends TestCase {
 
         $arrayAccessObj = new class implements ArrayAccess {
             protected $_data = [];
-            public function offsetExists($offset) {
+            public function offsetExists($offset): bool
+            {
                 return isset($this->_data[$offset]);
             }
+            #[\ReturnTypeWillChange]
             public function offsetGet($offset) {
                 throw new Exception('Don\'t call get when offset is not set');
             }
-            public function offsetSet($offset, $value) {
+            public function offsetSet($offset, $value): void {
             }
-            public function offsetUnset($offset) {
+            public function offsetUnset($offset): void {
             }
         };
 

@@ -226,6 +226,11 @@ parameters:
 			path: functions/group_by.php
 
 		-
+			message: "#^Function Garp\\\\Functional\\\\group_by\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: functions/group_by.php
+
+		-
 			message: "#^PHPDoc tag @param has invalid value \\(iterable array \\$collection\\)\\: Unexpected token \"array\", expected variable at offset 312$#"
 			count: 1
 			path: functions/group_by.php
@@ -529,6 +534,11 @@ parameters:
 			message: "#^Function Garp\\\\Functional\\\\split\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/split.php
+
+		-
+			message: "#^Call to function is_string\\(\\) with mixed will always evaluate to false\\.$#"
+			count: 1
+			path: functions/take.php
 
 		-
 			message: "#^Function Garp\\\\Functional\\\\take\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
@@ -861,11 +871,6 @@ parameters:
 			path: tests/Helpers/MockSpiceTraverser.php
 
 		-
-			message: "#^Class Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser implements generic interface Iterator but does not specify its types\\: TKey, TValue$#"
-			count: 1
-			path: tests/Helpers/MockSpiceTraverser.php
-
-		-
 			message: "#^Property Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser\\:\\:\\$_spices \\(array\\<int, string\\>\\) does not accept array\\<int, mixed\\>\\.$#"
 			count: 1
 			path: tests/Helpers/MockSpiceTraverser.php
@@ -1077,11 +1082,6 @@ parameters:
 
 		-
 			message: "#^Method RenameKeysTest\\:\\:invalidArgumentProvider\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/RenameKeysTest.php
-
-		-
-			message: "#^Method RenameKeysTest\\:\\:test_should_throw_on_invalid_arguments\\(\\) has parameter \\$arg with no type specified\\.$#"
 			count: 1
 			path: tests/RenameKeysTest.php
 
