@@ -7,6 +7,8 @@ namespace Garp\Functional\Tests\Helpers;
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
  * @license  https://github.com/grrr-amsterdam/garp-functional/blob/master/LICENSE.md BSD-3-Clause
+ *
+ * @implements \Iterator<int, string>
  */
 class MockSpiceTraverser implements \Iterator, \ArrayAccess {
 
@@ -30,39 +32,42 @@ class MockSpiceTraverser implements \Iterator, \ArrayAccess {
         $this->_position = 0;
     }
 
-    function rewind() {
+    function rewind(): void {
         $this->_position = 0;
     }
 
-    function current() {
+    function current(): string {
         return $this->_spices[$this->_position];
     }
 
-    function key() {
+    function key(): int
+    {
         return $this->_position;
     }
 
-    function next() {
+    function next(): void {
         ++$this->_position;
     }
 
-    function valid() {
+    function valid(): bool
+    {
         return isset($this->_spices[$this->_position]);
     }
 
-    function offsetExists($offset) {
+    function offsetExists($offset): bool
+    {
         return isset($this->_spices[$offset]);
     }
 
-    function offsetGet($offset) {
+    function offsetGet($offset): ?string {
         return isset($this->_spices[$offset]) ? $this->_spices[$offset] : null;
     }
 
-    function offsetUnset($offset) {
+    function offsetUnset($offset): void {
         unset($this->_spices[$offset]);
     }
 
-    function offsetSet($offset, $value) {
+    function offsetSet($offset, $value): void {
         if (is_null($offset)) {
             $this->_spices[] = $value;
         } else {
