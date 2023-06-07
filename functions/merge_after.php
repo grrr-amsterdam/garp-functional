@@ -16,7 +16,7 @@ namespace Garp\Functional;
  *                        In case of a function the first item in $target the function returns true
  *                        for will determine the index.
  * @param  array $target  The receiver of the spliced-in object.
- * @return array|callable A new array.
+ * @return ($target is null ? callable : array) A new array.
  */
 function merge_after($object, $index, array $target = null) {
     return autocurry(

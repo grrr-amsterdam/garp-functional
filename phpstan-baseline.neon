@@ -41,11 +41,6 @@ parameters:
 			path: functions/concat.php
 
 		-
-			message: "#^Only iterables can be unpacked, \\(callable\\)\\|iterable given in argument \\#2\\.$#"
-			count: 1
-			path: functions/concat.php
-
-		-
 			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\unary expects callable\\(\\)\\: mixed, mixed given\\.$#"
 			count: 1
 			path: functions/concat.php
@@ -64,11 +59,6 @@ parameters:
 			message: "#^Function Garp\\\\Functional\\\\concat_with\\(\\) should return array but returns mixed\\.$#"
 			count: 2
 			path: functions/concat_with.php
-
-		-
-			message: "#^Anonymous function should return bool but returns bool\\|\\(callable\\)\\.$#"
-			count: 1
-			path: functions/contains.php
 
 		-
 			message: "#^Function Garp\\\\Functional\\\\contains\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
@@ -131,7 +121,7 @@ parameters:
 			path: functions/entries.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\entries\\(\\) should return array but returns \\(callable\\)\\|iterable\\.$#"
+			message: "#^Function Garp\\\\Functional\\\\entries\\(\\) should return array but returns iterable\\.$#"
 			count: 1
 			path: functions/entries.php
 
@@ -236,11 +226,6 @@ parameters:
 			path: functions/group_by.php
 
 		-
-			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
-			count: 1
-			path: functions/group_by.php
-
-		-
 			message: "#^Function Garp\\\\Functional\\\\head\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
 			count: 1
 			path: functions/head.php
@@ -252,11 +237,6 @@ parameters:
 
 		-
 			message: "#^Function Garp\\\\Functional\\\\index_by\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/index_by.php
-
-		-
-			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
 			count: 1
 			path: functions/index_by.php
 
@@ -376,11 +356,6 @@ parameters:
 			path: functions/omit.php
 
 		-
-			message: "#^Parameter \\#3 \\$collection of function Garp\\\\Functional\\\\reduce expects iterable\\|null, \\(callable\\)\\|iterable given\\.$#"
-			count: 1
-			path: functions/omit.php
-
-		-
 			message: "#^Function Garp\\\\Functional\\\\pick\\(\\) has parameter \\$allowed with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/pick.php
@@ -396,17 +371,12 @@ parameters:
 			path: functions/pick.php
 
 		-
-			message: "#^Parameter \\#1 \\$keys of function array_combine expects array\\<int\\|string\\>, \\(callable\\)\\|iterable given\\.$#"
+			message: "#^Parameter \\#1 \\$keys of function array_combine expects array\\<int\\|string\\>, iterable given\\.$#"
 			count: 1
 			path: functions/pick.php
 
 		-
-			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\map expects iterable\\|null, \\(callable\\)\\|iterable given\\.$#"
-			count: 1
-			path: functions/pick.php
-
-		-
-			message: "#^Parameter \\#2 \\$values of function array_combine expects array, \\(callable\\)\\|iterable given\\.$#"
+			message: "#^Parameter \\#2 \\$values of function array_combine expects array, iterable given\\.$#"
 			count: 1
 			path: functions/pick.php
 
@@ -506,11 +476,6 @@ parameters:
 			path: functions/sort.php
 
 		-
-			message: "#^Anonymous function should return array but returns array\\|\\(callable\\)\\.$#"
-			count: 1
-			path: functions/sort_by.php
-
-		-
 			message: "#^Function Garp\\\\Functional\\\\sort_by\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/sort_by.php
@@ -551,21 +516,6 @@ parameters:
 			path: functions/take.php
 
 		-
-			message: "#^Parameter \\#1 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, \\(callable\\(\\)\\: mixed\\)\\|string given\\.$#"
-			count: 1
-			path: functions/take.php
-
-		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, mixed given\\.$#"
-			count: 1
-			path: functions/take.php
-
-		-
-			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
-			count: 1
-			path: functions/take.php
-
-		-
 			message: "#^Anonymous function should return array but returns mixed\\.$#"
 			count: 1
 			path: functions/take_while.php
@@ -601,11 +551,6 @@ parameters:
 			path: functions/unique.php
 
 		-
-			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\find expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 1
-			path: functions/unique.php
-
-		-
 			message: "#^Function Garp\\\\Functional\\\\usort\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/usort.php
@@ -626,11 +571,6 @@ parameters:
 			path: functions/zip.php
 
 		-
-			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\flatten expects iterable, \\(callable\\)\\|iterable given\\.$#"
-			count: 1
-			path: functions/zip.php
-
-		-
 			message: "#^Function Garp\\\\Functional\\\\autocurry invoked with 3 parameters, 2 required\\.$#"
 			count: 1
 			path: tests/AutocurryTest.php
@@ -646,43 +586,8 @@ parameters:
 			path: tests/BothTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockMusician\\)\\: mixed\\)\\|null, mixed given\\.$#"
-			count: 1
-			path: tests/CallTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\map expects callable\\(\\)\\: mixed, mixed given\\.$#"
-			count: 1
-			path: tests/ComposeTest.php
-
-		-
-			message: "#^Parameter \\#1 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, \\(callable\\(\\)\\: mixed\\)\\|iterable given\\.$#"
-			count: 1
-			path: tests/ComposeTest.php
-
-		-
-			message: "#^Parameter \\#1 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, \\(callable\\(\\)\\: mixed\\)\\|string given\\.$#"
-			count: 2
-			path: tests/ComposeTest.php
-
-		-
 			message: "#^Parameter \\#1 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, mixed given\\.$#"
 			count: 1
-			path: tests/ComposeTest.php
-
-		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, \\(callable\\(\\)\\: mixed\\)\\|iterable given\\.$#"
-			count: 2
-			path: tests/ComposeTest.php
-
-		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, mixed given\\.$#"
-			count: 1
-			path: tests/ComposeTest.php
-
-		-
-			message: "#^Parameter \\#3 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, array\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 2
 			path: tests/ComposeTest.php
 
 		-
@@ -732,16 +637,11 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\drop_while expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 3
-			path: tests/DropWhileTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$prop of function Garp\\\\Functional\\\\prop_equals expects string, int given\\.$#"
 			count: 1
 			path: tests/DropWhileTest.php
 
 		-
-			message: "#^Parameter \\#1 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$prop of function Garp\\\\Functional\\\\prop_equals expects string, int given\\.$#"
 			count: 1
 			path: tests/DropWhileTest.php
 
@@ -756,22 +656,7 @@ parameters:
 			path: tests/DropWhileTest.php
 
 		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, mixed given\\.$#"
-			count: 1
-			path: tests/DropWhileTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\not expects callable\\(\\)\\: mixed, mixed given\\.$#"
-			count: 1
-			path: tests/EitherTest.php
-
-		-
 			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\filter expects callable\\(\\)\\: mixed, mixed given\\.$#"
-			count: 1
-			path: tests/EitherTest.php
-
-		-
-			message: "#^Trying to invoke \\(callable\\(\\)\\: mixed\\)\\|iterable but it might not be a callable\\.$#"
 			count: 1
 			path: tests/EitherTest.php
 
@@ -781,7 +666,7 @@ parameters:
 			path: tests/EitherTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\reindex expects array, \\(callable\\)\\|iterable given\\.$#"
+			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\reindex expects array, iterable given\\.$#"
 			count: 1
 			path: tests/EqualsTest.php
 
@@ -791,23 +676,18 @@ parameters:
 			path: tests/FilterTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$array of function array_keys expects array, \\(callable\\)\\|iterable given\\.$#"
-			count: 1
-			path: tests/FilterTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\filter expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$array of function array_keys expects array, iterable given\\.$#"
 			count: 1
 			path: tests/FilterTest.php
 
 		-
 			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\find_index expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 6
+			count: 1
 			path: tests/FindIndexTest.php
 
 		-
 			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\find expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 4
+			count: 1
 			path: tests/FindTest.php
 
 		-
@@ -936,42 +816,12 @@ parameters:
 			path: tests/PickTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\map expects callable\\(\\)\\: mixed, mixed given\\.$#"
-			count: 1
-			path: tests/PipeTest.php
-
-		-
-			message: "#^Parameter \\#1 \\.\\.\\.\\$functions of function Garp\\\\Functional\\\\pipe expects callable\\(\\)\\: mixed, array\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 2
-			path: tests/PipeTest.php
-
-		-
-			message: "#^Parameter \\#1 \\.\\.\\.\\$functions of function Garp\\\\Functional\\\\pipe expects callable\\(\\)\\: mixed, mixed given\\.$#"
-			count: 1
-			path: tests/PipeTest.php
-
-		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$functions of function Garp\\\\Functional\\\\pipe expects callable\\(\\)\\: mixed, \\(callable\\(\\)\\: mixed\\)\\|iterable given\\.$#"
-			count: 3
-			path: tests/PipeTest.php
-
-		-
 			message: "#^Parameter \\#2 \\.\\.\\.\\$functions of function Garp\\\\Functional\\\\pipe expects callable\\(\\)\\: mixed, mixed given\\.$#"
 			count: 1
 			path: tests/PipeTest.php
 
 		-
-			message: "#^Parameter \\#3 \\.\\.\\.\\$functions of function Garp\\\\Functional\\\\pipe expects callable\\(\\)\\: mixed, \\(callable\\(\\)\\: mixed\\)\\|string given\\.$#"
-			count: 2
-			path: tests/PipeTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\reindex expects array, \\(callable\\)\\|iterable given\\.$#"
-			count: 1
-			path: tests/PropEqualsTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\map expects callable\\(\\)\\: mixed, mixed given\\.$#"
+			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\reindex expects array, iterable given\\.$#"
 			count: 1
 			path: tests/PropEqualsTest.php
 
@@ -981,18 +831,8 @@ parameters:
 			path: tests/PropEqualsTest.php
 
 		-
-			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\map expects iterable\\|null, \\(callable\\)\\|iterable given\\.$#"
-			count: 1
-			path: tests/PropEqualsTest.php
-
-		-
 			message: "#^Parameter \\#2 \\$prop of function Garp\\\\Functional\\\\prop_of expects string\\|null, int given\\.$#"
 			count: 5
-			path: tests/PropOfTest.php
-
-		-
-			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
-			count: 1
 			path: tests/PropOfTest.php
 
 		-
@@ -1002,11 +842,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$string of function strtolower expects string, array\\|\\(callable\\)\\|Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Semigroup\\|string given\\.$#"
-			count: 1
-			path: tests/PropSetTest.php
-
-		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, mixed given\\.$#"
 			count: 1
 			path: tests/PropSetTest.php
 
@@ -1046,11 +881,6 @@ parameters:
 			path: tests/PropTest.php
 
 		-
-			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
-			count: 1
-			path: tests/PropTest.php
-
-		-
 			message: "#^Method PublishTest\\:\\:_square\\(\\) is unused\\.$#"
 			count: 1
 			path: tests/PublishTest.php
@@ -1077,7 +907,7 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\reject expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 2
+			count: 1
 			path: tests/RejectTest.php
 
 		-
@@ -1086,24 +916,9 @@ parameters:
 			path: tests/RenameKeysTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\reindex expects array, \\(callable\\)\\|iterable given\\.$#"
+			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\reindex expects array, iterable given\\.$#"
 			count: 1
 			path: tests/ReplaceTest.php
-
-		-
-			message: "#^Trying to invoke bool\\|\\(callable\\(\\)\\: mixed\\) but it might not be a callable\\.$#"
-			count: 1
-			path: tests/SomeTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$array of function array_keys expects array, array\\|\\(callable\\) given\\.$#"
-			count: 4
-			path: tests/SortByMapTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\sort_by expects callable\\(\\)\\: mixed, mixed given\\.$#"
-			count: 2
-			path: tests/SortByTest.php
 
 		-
 			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\take expects array\\|string\\|null, ArrayIterator\\<int, string\\> given\\.$#"
@@ -1121,16 +936,6 @@ parameters:
 			path: tests/TakeWhileTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\take_while expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 1
-			path: tests/TakeWhileTest.php
-
-		-
-			message: "#^Parameter \\#1 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 1
-			path: tests/TakeWhileTest.php
-
-		-
 			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\take_while expects array\\|null, Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser given\\.$#"
 			count: 1
 			path: tests/TakeWhileTest.php
@@ -1141,17 +946,7 @@ parameters:
 			path: tests/TakeWhileTest.php
 
 		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function Garp\\\\Functional\\\\compose expects callable\\(\\)\\: mixed, mixed given\\.$#"
-			count: 1
-			path: tests/TakeWhileTest.php
-
-		-
 			message: "#^Closure invoked with 3 parameters, 0 required\\.$#"
-			count: 1
-			path: tests/UnaryTest.php
-
-		-
-			message: "#^Trying to invoke bool\\|\\(callable\\(\\)\\: mixed\\) but it might not be a callable\\.$#"
 			count: 1
 			path: tests/UnaryTest.php
 
@@ -1169,11 +964,6 @@ parameters:
 			message: "#^Parameter \\#1 \\$that of method Garp\\\\Functional\\\\Types\\\\Product\\:\\:equals\\(\\) expects Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Setoid, Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Semigroup given\\.$#"
 			count: 1
 			path: tests/types/ProductTest.php
-
-		-
-			message: "#^Cannot access property \\$value on \\(callable\\)\\|Garp\\\\Functional\\\\Types\\\\StringM\\.$#"
-			count: 1
-			path: tests/types/StringMTest.php
 
 		-
 			message: "#^Method SumTest\\:\\:_sumProvider\\(\\) should return array\\<int, array\\<int, int\\>\\> but returns mixed\\.$#"

@@ -21,7 +21,7 @@ namespace Garp\Functional;
  * @param  string $method
  * @param  array  $args
  * @param  object $obj
- * @return mixed
+ * @return ($obj is null ? callable : mixed)
  */
 function call(string $method, array $args = [], $obj = null) {
     $caller = function ($obj) use ($method, $args) {

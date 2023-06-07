@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  string|int $key        The requested key
  * @param  mixed      $collection The collection to search in
- * @return mixed
+ * @return ($collection is null ? callable : mixed)
  */
 function prop($key, $collection = null) {
     return autocurry(

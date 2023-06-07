@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  mixed $transformMap
  * @param  array $collection
- * @return array|callable
+ * @return ($collection is null ? callable : array)
  */
 function rename_keys($transformMap, array $collection = null) {
     return autocurry(

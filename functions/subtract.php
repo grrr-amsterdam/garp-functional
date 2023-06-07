@@ -14,7 +14,7 @@ namespace Garp\Functional;
  *
  * @param  int|float $left
  * @param  int|float $right
- * @return int|float|callable
+ * @return ($right is null ? callable : int|float)
  */
 function subtract($left, $right = null) {
     return autocurry(

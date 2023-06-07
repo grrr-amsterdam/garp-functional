@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  array    $map
  * @param  iterable $collection
- * @return array|callable
+ * @return ($collection is null ? callable : array)
  */
 function sort_by_map(array $map, $collection = null) {
     return autocurry(

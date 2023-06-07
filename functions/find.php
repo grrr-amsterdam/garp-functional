@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  callable $predicate
  * @param  mixed $collection
- * @return mixed
+ * @return ($collection is null ? callable : mixed)
  */
 function find(callable $predicate, iterable $collection = null) {
     return autocurry(
