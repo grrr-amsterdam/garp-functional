@@ -100,7 +100,7 @@ This works because the constant contains the fully namespaced function name as a
 - [lt](#lt)
 - [lte](#lte)
 - [map](#map)
-- [match](#match)
+- [match_regex](#match_regex)
 - [merge_after](#merge_after)
 - [merge_at](#merge_at)
 - [modulo](#modulo)
@@ -793,14 +793,14 @@ $names = ['Miles Davis', 'John Coltrane'];
 f\map(f\split(' '), $names); // [['Miles', 'Davis'], ['John', 'Coltrane']]
 ```
 
-### match
+### match_regex
 
 Returns the matches if the given value matches the regular expression:
 
 ```php
-f\match('/^\d+$/', '12345'); // ['12345']
-f\match('/([a-zA-Z]+) world/', 'Hello world'); // ['Hello world', 'Hello']
-f\filter(f\match('/^\d+$/'), ['123', 'abc', '456']); // ['123', '456']
+f\match_regex('/^\d+$/', '12345'); // ['12345']
+f\match_regex('/([a-zA-Z]+) world/', 'Hello world'); // ['Hello world', 'Hello']
+f\filter(f\match_regex('/^\d+$/'), ['123', 'abc', '456']); // ['123', '456']
 ```
 
 ### merge_after
