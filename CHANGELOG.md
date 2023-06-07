@@ -2,7 +2,7 @@
 
 Note: I'm not mentioning the plethora of functions that I'm adding with every minor version bump. [Take a look at the full function list](https://github.com/grrr-amsterdam/garp-functional/tree/master/library/Garp/Functional). This changelog will only list breaking changes.
 
-## `main`
+## 6.0.0
 
 - Dropped support for PHP 7.1
 - Test compatibility with PHP 8.1 and 8.2
