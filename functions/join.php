@@ -14,7 +14,7 @@ namespace Garp\Functional;
  *
  * @param  string $separator
  * @param  mixed $list
- * @return string|callable
+ * @return ($list is null ? callable : string)
  */
 function join(string $separator, $list = null) {
     return autocurry(

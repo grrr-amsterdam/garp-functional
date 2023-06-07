@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  callable $predicate
  * @param  mixed $collection
- * @return array
+ * @return ($collection is null ? callable : array)
  */
 function keys_where(callable $predicate, iterable $collection = null) {
     return autocurry(

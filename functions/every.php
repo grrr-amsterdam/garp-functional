@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  callable $fn
  * @param  array    $collection
- * @return bool|callable
+ * @return ($collection is null ? callable : bool)
  */
 function every(callable $fn, iterable $collection = null) {
     return autocurry(

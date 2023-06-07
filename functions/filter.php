@@ -14,7 +14,7 @@ namespace Garp\Functional;
  *
  * @param  callable $predicate
  * @param  iterable    $collection
- * @return iterable|callable
+ * @return ($collection is null ? callable : iterable)
  */
 function filter(callable $predicate, iterable $collection = null) {
     return autocurry(

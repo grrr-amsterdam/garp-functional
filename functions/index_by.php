@@ -14,7 +14,7 @@ namespace Garp\Functional;
  *
  * @param  callable|string $indexFn
  * @param  array $collection
- * @return int|callable
+ * @return ($collection is null ? callable : int)
  * @see group_by
  */
 function index_by($indexFn, iterable $collection = null) {

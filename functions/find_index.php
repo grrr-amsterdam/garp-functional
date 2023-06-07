@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  callable $predicate
  * @param  iterable mixed $collection
- * @return mixed
+ * @return ($collection is null ? callable : mixed)
  */
 function find_index(callable $predicate, iterable $collection = null) {
     return autocurry(

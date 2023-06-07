@@ -14,7 +14,7 @@ namespace Garp\Functional;
  * @param  string $regex
  * @param  string $replacement
  * @param  mixed  $subject
- * @return mixed The replaced string, or the subject if unusable
+ * @return ($subject is null ? callable : mixed) The replaced string, or the subject if unusable
  */
 function replace(string $regex, $replacement, $subject = null) {
     return autocurry(

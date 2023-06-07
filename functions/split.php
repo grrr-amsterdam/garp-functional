@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  string $separator
  * @param  string $subject
- * @return array|callable
+ * @return ($subject is null ? callable : array)
  */
 function split(string $separator, string $subject = null) {
     return autocurry(

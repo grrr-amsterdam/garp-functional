@@ -13,7 +13,7 @@ namespace Garp\Functional;
  *
  * @param  array  $keys       The keys representing a nested structure from left to right
  * @param  mixed  $collection The collection to search in
- * @return mixed
+ * @return ($collection is null ? callable : mixed)
  */
 function prop_in(array $keys, $collection = null) {
     return autocurry(
