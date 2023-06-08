@@ -1,4 +1,4 @@
-[![PHPUnit](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpunit.yml/badge.svg)](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpunit.yml) [![PHPCS](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpcs.yml/badge.svg)](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpcs.yml)
+[![PHPUnit](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpunit.yml/badge.svg)](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpunit.yml) [![PHPCS](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpcs.yml/badge.svg)](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpcs.yml) [![PHPStan](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpstan.yml/badge.svg)](https://github.com/grrr-amsterdam/garp-functional/actions/workflows/phpstan.yml)
 
 # Garp Functional
 
