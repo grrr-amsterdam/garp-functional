@@ -2,6 +2,10 @@
 
 Note: I'm not mentioning the plethora of functions that I'm adding with every minor version bump. [Take a look at the full function list](https://github.com/grrr-amsterdam/garp-functional/tree/master/library/Garp/Functional). This changelog will only list breaking changes.
 
+## 6.1.0
+
+- Add conditional return types in PHPDoc
+
 ## 6.0.0
 
 - Dropped support for PHP 7.1
