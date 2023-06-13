@@ -13,13 +13,13 @@ namespace Garp\Functional;
  * Accepts more than arrays.
  *
  * @param  callable $fn
- * @param  iterable $collection
- * @return ($collection is null ? callable : iterable)
+ * @param  iterable<mixed,mixed> $collection
+ * @return ($collection is null ? callable : array)
  */
 function map(callable $fn, iterable $collection = null) {
     return autocurry(
-        function ($fn, $collection): iterable {
-            $collection = is_array($collection) ? $collection : iterator_to_array($collection);
+        function ($fn, $collection): array {
+            $collection = $collection instanceof \Traversable ? iterator_to_array($collection) : $collection;
             return array_map($fn, $collection);
         },
         2

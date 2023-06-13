@@ -11,10 +11,10 @@ namespace Garp\Functional;
 /**
  * Functional equality check.
  *
- * @param  string $prop
+ * @param  int|string $prop
  * @param  mixed $value
  * @param  mixed $obj
- * @return bool|callable
+ * @return ($obj is null ? callable : bool)
  */
 function prop_equals($prop, $value = null, $obj = null) {
     return autocurry(

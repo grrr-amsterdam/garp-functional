@@ -15,8 +15,9 @@ namespace Garp\Functional;
  * This method sort of brings this to earlier versions of PHP:
  * instance(new Instance())->doSomething();
  *
- * @param  object $obj
- * @return object
+ * @template T of object
+ * @param  T|class-string<T> $obj
+ * @return T
  */
 function instance($obj) {
     if (is_string($obj)) {

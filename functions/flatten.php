@@ -11,7 +11,7 @@ namespace Garp\Functional;
 /**
  * Flatten an array of arrays.
  *
- * @param  iterable $collection
+ * @param  iterable<mixed,mixed> $collection
  * @return array
  */
 function flatten(iterable $collection): array {

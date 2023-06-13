@@ -12,7 +12,7 @@ namespace Garp\Functional;
  * Returns true if the value coerces to true.
  *
  * @param  mixed $value
- * @return bool|callable
+ * @return ($value is callable-string ? callable : bool)
  */
 function truthy($value) {
     if (is_callable_function($value)) {

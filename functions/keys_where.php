@@ -12,8 +12,8 @@ namespace Garp\Functional;
  * Returns the keys of a list, matching the given predicate.
  *
  * @param  callable $predicate
- * @param  mixed $collection
- * @return ($collection is null ? callable : array)
+ * @param  iterable<mixed,mixed> $collection
+ * @return ($collection is null ? callable : array<int,mixed>)
  */
 function keys_where(callable $predicate, iterable $collection = null) {
     return autocurry(

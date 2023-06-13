@@ -11,7 +11,7 @@ namespace Garp\Functional;
 /**
  * Return the last item in a collection.
  *
- * @param  mixed $collection
+ * @param  iterable<mixed,mixed>|object|string $collection
  * @return mixed
  */
 function last($collection) {

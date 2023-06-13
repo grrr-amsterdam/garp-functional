@@ -16,7 +16,7 @@ namespace Garp\Functional;
  * Inspired by Clojure's group-by function.
  *
  * @param  callable|string $indexFn
- * @param  iterable array $collection
+ * @param  iterable<mixed,mixed> $collection
  * @return ($collection is null ? callable : array)
  */
 function group_by($indexFn, iterable $collection = null) {

@@ -12,7 +12,7 @@ namespace Garp\Functional;
  * Safely read an array index. (or any object that supports array-like property reading)
  *
  * @param  string|int $key        The requested key
- * @param  mixed      $collection The collection to search in
+ * @param  iterable<mixed,mixed>|object|string      $collection The collection to search in
  * @return ($collection is null ? callable : mixed)
  */
 function prop($key, $collection = null) {

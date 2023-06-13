@@ -13,11 +13,11 @@ namespace Garp\Functional;
  * This is the same function as `prop` but with flipped arguments. The use-case is common enough to
  * move this into its own function.
  *
- * @param  mixed  $collection The collection to search in
- * @param  string $prop       The requested key
- * @return ($prop is null ? callable : mixed)
+ * @param  iterable<mixed,mixed>|object|string  $collection The collection to search in
+ * @param  int|string $key       The requested key
+ * @return ($key is null ? callable : mixed)
  */
-function prop_of($collection, $prop = null) {
+function prop_of($collection, $key = null) {
     return autocurry(
         function ($collection, $prop) {
             return prop($prop, $collection);

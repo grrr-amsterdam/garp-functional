@@ -13,7 +13,7 @@ namespace Garp\Functional;
  * Stop dropping at the first falsey value.
  *
  * @param  callable $predicate
- * @param  array|string $collection
+ * @param  iterable<mixed, mixed>|string $collection
  * @return ($collection is null ? callable : array)
  */
 function drop_while(callable $predicate, $collection = null) {

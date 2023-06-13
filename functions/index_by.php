@@ -13,7 +13,7 @@ namespace Garp\Functional;
  * indexed by the given $indexFn.
  *
  * @param  callable|string $indexFn
- * @param  array $collection
+ * @param  array<mixed,mixed> $collection
  * @return ($collection is null ? callable : int)
  * @see group_by
  */

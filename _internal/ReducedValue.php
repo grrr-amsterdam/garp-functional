@@ -9,11 +9,19 @@ namespace Garp\Functional\Internal;
  * @package  Garp\Functional
  * @author   Harmen Janssen <harmen@grrr.nl>
  * @license  https://github.com/grrr-amsterdam/garp-functional/blob/master/LICENSE.md BSD-3-Clause
+ *
+ * @template T
  */
 final class ReducedValue {
 
+    /**
+     * @var T
+     */
     public $value;
 
+    /**
+     * @param T $value
+     */
     public function __construct($value) {
         $this->value = $value;
     }

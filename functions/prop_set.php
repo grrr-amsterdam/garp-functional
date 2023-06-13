@@ -15,7 +15,7 @@ namespace Garp\Functional;
  * @param  string|int $key
  * @param  mixed      $value
  * @param  mixed      $object
- * @return mixed
+ * @return ($object is null ? callable : mixed)
  */
 function prop_set($key, $value = null, $object = null) {
     return autocurry(

@@ -11,8 +11,8 @@ namespace Garp\Functional;
 /**
  * Returns the keys of a list. Accepts arrays as well as iterable objects and strings.
  *
- * @param  mixed $collection
- * @return array
+ * @param  iterable<mixed,mixed>|object|string $collection
+ * @return array<int,mixed>
  */
 function keys($collection): array {
     if (is_array($collection)) {

@@ -11,7 +11,7 @@ namespace Garp\Functional;
 /**
  * Rename keys in an array.
  *
- * @param  mixed $transformMap
+ * @param  array<mixed,mixed>|callable $transformMap
  * @param  array $collection
  * @return ($collection is null ? callable : array)
  */

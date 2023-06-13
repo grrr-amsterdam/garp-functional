@@ -12,7 +12,7 @@ namespace Garp\Functional;
  * Filter a collection and get the index of the first match.
  *
  * @param  callable $predicate
- * @param  iterable mixed $collection
+ * @param  iterable<mixed,mixed> $collection
  * @return ($collection is null ? callable : mixed)
  */
 function find_index(callable $predicate, iterable $collection = null) {

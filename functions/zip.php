@@ -11,10 +11,10 @@ namespace Garp\Functional;
 /**
  * Returns an array containing elements from the given arrays.
  *
- * @param  array ...$arrays At least two arrays are required, but more is allowed
- * @return mixed
+ * @param  array<mixed,mixed> ...$arrays At least two arrays are required, but more is allowed
+ * @return array<mixed,mixed>
  */
-function zip(...$arrays) {
+function zip(...$arrays): array {
     if (!every('is_iterable', $arrays)) {
         throw new \InvalidArgumentException(__FUNCTION__ . ' requires all arguments to be arrays');
     }

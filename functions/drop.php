@@ -12,7 +12,7 @@ namespace Garp\Functional;
  * Drop the first $n items of a collection.
  *
  * @param  int $n
- * @param  array|string $collection
+ * @param  iterable<mixed, mixed>|string $collection
  * @return ($collection is null ? callable : array|string)
  */
 function drop(int $n, $collection = null) {
