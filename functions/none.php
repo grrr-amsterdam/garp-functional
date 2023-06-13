@@ -12,7 +12,7 @@ namespace Garp\Functional;
  * Returns true if $callback returns false for every item in the collection.
  *
  * @param  callable $fn
- * @param  iterable $collection
+ * @param  iterable<mixed,mixed> $collection
  * @return ($collection is null ? callable : bool)
  */
 function none($fn, iterable $collection = null) {

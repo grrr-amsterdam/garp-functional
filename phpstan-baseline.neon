@@ -1,21 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method Garp\\\\Functional\\\\Internal\\\\ReducedValue\\:\\:__construct\\(\\) has parameter \\$value with no type specified\\.$#"
-			count: 1
-			path: _internal/ReducedValue.php
-
-		-
-			message: "#^Property Garp\\\\Functional\\\\Internal\\\\ReducedValue\\:\\:\\$value has no type specified\\.$#"
-			count: 1
-			path: _internal/ReducedValue.php
-
-		-
-			message: "#^PHPDoc tag @return with type mixed is not subtype of native type callable\\.$#"
-			count: 1
-			path: functions/autocurry.php
-
-		-
 			message: "#^Parameter \\#1 \\$callback of function call_user_func_array expects callable\\(\\)\\: mixed, mixed given\\.$#"
 			count: 2
 			path: functions/both.php
@@ -61,24 +46,14 @@ parameters:
 			path: functions/concat_with.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\contains\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: functions/contains.php
-
-		-
-			message: "#^Parameter \\$collection of function Garp\\\\Functional\\\\contains\\(\\) has invalid type Garp\\\\Functional\\\\Traversable\\.$#"
-			count: 1
-			path: functions/contains.php
-
-		-
-			message: "#^Parameter \\#1 \\$value of function strval expects bool\\|float\\|int\\|resource\\|string\\|null, mixed given\\.$#"
+			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, array\\|\\(iterable&object\\) given\\.$#"
 			count: 1
 			path: functions/count.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\drop\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
+			message: "#^Parameter \\#1 \\$value of function strval expects bool\\|float\\|int\\|resource\\|string\\|null, object\\|string given\\.$#"
 			count: 1
-			path: functions/drop.php
+			path: functions/count.php
 
 		-
 			message: "#^Function Garp\\\\Functional\\\\drop\\(\\) return type has no value type specified in iterable type array\\.$#"
@@ -87,11 +62,6 @@ parameters:
 
 		-
 			message: "#^Anonymous function should return array but returns mixed\\.$#"
-			count: 1
-			path: functions/drop_while.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\drop_while\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/drop_while.php
 
@@ -106,32 +76,7 @@ parameters:
 			path: functions/either.php
 
 		-
-			message: "#^Cannot access offset mixed on iterable\\.$#"
-			count: 1
-			path: functions/entries.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\entries\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/entries.php
-
-		-
 			message: "#^Function Garp\\\\Functional\\\\entries\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: functions/entries.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\entries\\(\\) should return array but returns iterable\\.$#"
-			count: 1
-			path: functions/entries.php
-
-		-
-			message: "#^PHPDoc tag @param for parameter \\$collection with type Garp\\\\Functional\\\\traversable is not subtype of native type iterable\\.$#"
-			count: 1
-			path: functions/entries.php
-
-		-
-			message: "#^Parameter \\$collection of function Garp\\\\Functional\\\\entries\\(\\) has invalid type Garp\\\\Functional\\\\traversable\\.$#"
 			count: 1
 			path: functions/entries.php
 
@@ -144,41 +89,6 @@ parameters:
 			message: "#^Function Garp\\\\Functional\\\\every\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
 			count: 1
 			path: functions/every.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\filter\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/filter.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\filter\\(\\) return type has no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/filter.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\find\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/find.php
-
-		-
-			message: "#^PHPDoc tag @param for parameter \\$collection with type mixed is not subtype of native type iterable\\|null\\.$#"
-			count: 1
-			path: functions/find.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\find_index\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/find_index.php
-
-		-
-			message: "#^PHPDoc tag @param has invalid value \\(iterable mixed \\$collection\\)\\: Unexpected token \"mixed\", expected variable at offset 119$#"
-			count: 1
-			path: functions/find_index.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\flatten\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/flatten.php
 
 		-
 			message: "#^Function Garp\\\\Functional\\\\flatten\\(\\) return type has no value type specified in iterable type array\\.$#"
@@ -211,24 +121,9 @@ parameters:
 			path: functions/group_by.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\group_by\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/group_by.php
-
-		-
 			message: "#^Function Garp\\\\Functional\\\\group_by\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/group_by.php
-
-		-
-			message: "#^PHPDoc tag @param has invalid value \\(iterable array \\$collection\\)\\: Unexpected token \"array\", expected variable at offset 312$#"
-			count: 1
-			path: functions/group_by.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\head\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/head.php
 
 		-
 			message: "#^Anonymous function should return array but returns mixed\\.$#"
@@ -236,52 +131,17 @@ parameters:
 			path: functions/index_by.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\index_by\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/index_by.php
-
-		-
-			message: "#^Call to function is_string\\(\\) with object will always evaluate to false\\.$#"
-			count: 1
-			path: functions/instance.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\is_assoc\\(\\) has parameter \\$iterable with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/is_assoc.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\keys\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
 			path: functions/keys.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\keys_where\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/keys_where.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\keys_where\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: functions/keys_where.php
-
-		-
-			message: "#^PHPDoc tag @param for parameter \\$collection with type mixed is not subtype of native type iterable\\|null\\.$#"
-			count: 1
-			path: functions/keys_where.php
-
-		-
-			message: "#^Parameter \\#1 \\$array of function array_values expects array, mixed given\\.$#"
+			message: "#^Parameter \\#1 \\$array of function array_values expects array, array\\|object given\\.$#"
 			count: 1
 			path: functions/last.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\map\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/map.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\map\\(\\) return type has no value type specified in iterable type iterable\\.$#"
+			message: "#^Function Garp\\\\Functional\\\\map\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/map.php
 
@@ -289,11 +149,6 @@ parameters:
 			message: "#^Function Garp\\\\Functional\\\\match_regex\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/match_regex.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\merge_after\\(\\) has parameter \\$target with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: functions/merge_after.php
 
 		-
 			message: "#^Function Garp\\\\Functional\\\\merge_after\\(\\) return type has no value type specified in iterable type array\\.$#"
@@ -311,11 +166,6 @@ parameters:
 			path: functions/merge_after.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\merge_at\\(\\) has parameter \\$target with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: functions/merge_at.php
-
-		-
 			message: "#^Function Garp\\\\Functional\\\\merge_at\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/merge_at.php
@@ -331,17 +181,7 @@ parameters:
 			path: functions/merge_at.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\none\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/none.php
-
-		-
 			message: "#^Anonymous function should return array but returns mixed\\.$#"
-			count: 1
-			path: functions/omit.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\omit\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
 			count: 1
 			path: functions/omit.php
 
@@ -371,12 +211,7 @@ parameters:
 			path: functions/pick.php
 
 		-
-			message: "#^Parameter \\#1 \\$keys of function array_combine expects array\\<int\\|string\\>, iterable given\\.$#"
-			count: 1
-			path: functions/pick.php
-
-		-
-			message: "#^Parameter \\#2 \\$values of function array_combine expects array, iterable given\\.$#"
+			message: "#^Parameter \\#1 \\$keys of function array_combine expects array\\<int\\|string\\>, array\\<int\\|string, mixed\\> given\\.$#"
 			count: 1
 			path: functions/pick.php
 
@@ -409,31 +244,6 @@ parameters:
 			message: "#^Undefined variable\\: \\$this$#"
 			count: 1
 			path: functions/publish.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\reduce\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/reduce.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\reduce_assoc\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/reduce_assoc.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\reduced\\(\\) should return Garp\\\\Functional\\\\Internal\\\\ReducedValue but returns mixed\\.$#"
-			count: 1
-			path: functions/reduced.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\reindex\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: functions/reindex.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\reindex\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: functions/reindex.php
 
 		-
 			message: "#^Function Garp\\\\Functional\\\\reject\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
@@ -481,11 +291,6 @@ parameters:
 			path: functions/sort_by.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\sort_by_map\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/sort_by_map.php
-
-		-
 			message: "#^Function Garp\\\\Functional\\\\sort_by_map\\(\\) has parameter \\$map with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/sort_by_map.php
@@ -501,27 +306,7 @@ parameters:
 			path: functions/split.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\take\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: functions/take.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\take\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: functions/take.php
-
-		-
 			message: "#^Anonymous function should return array but returns mixed\\.$#"
-			count: 1
-			path: functions/take_while.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\take_while\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: functions/take_while.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\take_while\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/take_while.php
 
@@ -529,11 +314,6 @@ parameters:
 			message: "#^Parameter \\#1 \\$callback of function call_user_func_array expects callable\\(\\)\\: mixed, mixed given\\.$#"
 			count: 1
 			path: functions/truthy.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\unique\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/unique.php
 
 		-
 			message: "#^Function Garp\\\\Functional\\\\unique\\(\\) return type has no value type specified in iterable type array\\.$#"
@@ -546,11 +326,6 @@ parameters:
 			path: functions/unique.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\usort\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: functions/usort.php
-
-		-
 			message: "#^Function Garp\\\\Functional\\\\usort\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/usort.php
@@ -561,14 +336,9 @@ parameters:
 			path: functions/when.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\zip\\(\\) has parameter \\$arrays with no value type specified in iterable type array\\.$#"
+			message: "#^Function Garp\\\\Functional\\\\zip\\(\\) should return array\\<int\\|string, mixed\\> but returns mixed\\.$#"
 			count: 1
 			path: functions/zip.php
-
-		-
-			message: "#^Function Garp\\\\Functional\\\\autocurry invoked with 3 parameters, 2 required\\.$#"
-			count: 1
-			path: tests/AutocurryTest.php
 
 		-
 			message: "#^Closure invoked with 3 parameters, 0 required\\.$#"
@@ -606,49 +376,14 @@ parameters:
 			path: tests/ContainsTest.php
 
 		-
-			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\contains expects array\\|Garp\\\\Functional\\\\Traversable\\|string\\|null, Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser given\\.$#"
-			count: 2
-			path: tests/ContainsTest.php
-
-		-
-			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\contains expects array\\|Garp\\\\Functional\\\\Traversable\\|string\\|null, mixed given\\.$#"
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\contains expects iterable\\|string\\|null, mixed given\\.$#"
 			count: 1
 			path: tests/ContainsTest.php
 
 		-
-			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\drop expects array\\|string\\|null, ArrayIterator\\<int, string\\> given\\.$#"
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\drop expects iterable\\|string\\|null, stdClass given\\.$#"
 			count: 1
 			path: tests/DropTest.php
-
-		-
-			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\drop expects array\\|string\\|null, stdClass given\\.$#"
-			count: 1
-			path: tests/DropTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\not expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 1
-			path: tests/DropWhileTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\drop_while expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 1
-			path: tests/DropWhileTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$prop of function Garp\\\\Functional\\\\prop_equals expects string, int given\\.$#"
-			count: 1
-			path: tests/DropWhileTest.php
-
-		-
-			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\drop_while expects array\\|string\\|null, ArrayIterator\\<int, string\\> given\\.$#"
-			count: 1
-			path: tests/DropWhileTest.php
-
-		-
-			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\drop_while expects array\\|string\\|null, Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser given\\.$#"
-			count: 1
-			path: tests/DropWhileTest.php
 
 		-
 			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\filter expects callable\\(\\)\\: mixed, mixed given\\.$#"
@@ -661,29 +396,9 @@ parameters:
 			path: tests/EitherTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\reindex expects array, iterable given\\.$#"
-			count: 1
-			path: tests/EqualsTest.php
-
-		-
 			message: "#^Method FilterTest\\:\\:isSmallString\\(\\) has parameter \\$str with no type specified\\.$#"
 			count: 1
 			path: tests/FilterTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$array of function array_keys expects array, iterable given\\.$#"
-			count: 1
-			path: tests/FilterTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\find_index expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 1
-			path: tests/FindIndexTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\find expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 1
-			path: tests/FindTest.php
 
 		-
 			message: "#^Parameter \\#1 \\$monoidClassName of function Garp\\\\Functional\\\\fold expects class\\-string\\<Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Monoid\\>, string given\\.$#"
@@ -761,11 +476,6 @@ parameters:
 			path: tests/Helpers/MockSpiceTraverser.php
 
 		-
-			message: "#^Parameter \\#1 \\$obj of function Garp\\\\Functional\\\\instance expects object, string given\\.$#"
-			count: 1
-			path: tests/InstanceTest.php
-
-		-
 			message: "#^Method IsAssocTest\\:\\:arrayProvider\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/IsAssocTest.php
@@ -776,24 +486,14 @@ parameters:
 			path: tests/IsAssocTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\keys_where expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 2
-			path: tests/KeysWhereTest.php
+			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\keys expects iterable\\|object\\|string, int given\\.$#"
+			count: 1
+			path: tests/KeysTest.php
 
 		-
 			message: "#^Method MapTest\\:\\:getSubstr\\(\\) has parameter \\$str with no type specified\\.$#"
 			count: 1
 			path: tests/MapTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\unary expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 1
-			path: tests/MergeAfterTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\unary expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 1
-			path: tests/MergeAtTest.php
 
 		-
 			message: "#^Method OnceTest\\:\\:addToCounter\\(\\) has parameter \\$num with no type specified\\.$#"
@@ -816,32 +516,12 @@ parameters:
 			path: tests/PipeTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\reindex expects array, iterable given\\.$#"
-			count: 1
-			path: tests/PropEqualsTest.php
-
-		-
 			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\filter expects callable\\(\\)\\: mixed, mixed given\\.$#"
 			count: 1
 			path: tests/PropEqualsTest.php
 
 		-
-			message: "#^Parameter \\#2 \\$prop of function Garp\\\\Functional\\\\prop_of expects string\\|null, int given\\.$#"
-			count: 5
-			path: tests/PropOfTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\map expects callable\\(\\)\\: mixed, mixed given\\.$#"
-			count: 1
-			path: tests/PropSetTest.php
-
-		-
 			message: "#^Parameter \\#1 \\$string of function strtolower expects string, array\\|\\(callable\\)\\|Garp\\\\Functional\\\\Types\\\\TypeClasses\\\\Semigroup\\|string given\\.$#"
-			count: 1
-			path: tests/PropSetTest.php
-
-		-
-			message: "#^Trying to invoke mixed but it's not a callable\\.$#"
 			count: 1
 			path: tests/PropSetTest.php
 
@@ -901,44 +581,24 @@ parameters:
 			path: tests/RejectTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$predicate of function Garp\\\\Functional\\\\reject expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 1
-			path: tests/RejectTest.php
-
-		-
 			message: "#^Method RenameKeysTest\\:\\:invalidArgumentProvider\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/RenameKeysTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$collection of function Garp\\\\Functional\\\\reindex expects array, iterable given\\.$#"
+			message: "#^Parameter \\#1 \\$transformMap of function Garp\\\\Functional\\\\rename_keys expects array\\<int\\|string, mixed\\>\\|\\(callable\\(\\)\\: mixed\\), mixed given\\.$#"
 			count: 1
-			path: tests/ReplaceTest.php
+			path: tests/RenameKeysTest.php
 
 		-
-			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\take expects array\\|string\\|null, ArrayIterator\\<int, string\\> given\\.$#"
+			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\take expects iterable\\|string\\|null, stdClass given\\.$#"
 			count: 1
 			path: tests/TakeTest.php
 
 		-
-			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\take expects array\\|string\\|null, stdClass given\\.$#"
+			message: "#^Unable to resolve the template type T in call to function Garp\\\\Functional\\\\take$#"
 			count: 1
 			path: tests/TakeTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$fn of function Garp\\\\Functional\\\\not expects callable\\(\\)\\: mixed, bool\\|\\(callable\\(\\)\\: mixed\\) given\\.$#"
-			count: 1
-			path: tests/TakeWhileTest.php
-
-		-
-			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\take_while expects array\\|null, Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser given\\.$#"
-			count: 1
-			path: tests/TakeWhileTest.php
-
-		-
-			message: "#^Parameter \\#2 \\$collection of function Garp\\\\Functional\\\\take_while expects array\\|null, string given\\.$#"
-			count: 1
-			path: tests/TakeWhileTest.php
 
 		-
 			message: "#^Closure invoked with 3 parameters, 0 required\\.$#"

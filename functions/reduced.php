@@ -12,11 +12,12 @@ namespace Garp\Functional;
  * Declares a value as being "reduced".
  * This signals a short-circuit to the `reduce` function.
  *
- * @param  mixed $value
- * @return Internal\ReducedValue
+ * @template T
+ * @param  T $value
+ * @return Internal\ReducedValue<T>
  */
 function reduced($value): Internal\ReducedValue {
-    return is_reduced($value)
+    return $value instanceof Internal\ReducedValue
         ? $value
         : new Internal\ReducedValue($value);
 }

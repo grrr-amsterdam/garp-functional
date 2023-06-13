@@ -18,7 +18,7 @@ namespace Garp\Functional;
  *
  * Takes n function arguments.
  *
- * @param  callable[] ...$args
+ * @param  callable|callable-string ...$args
  * @return callable
  */
 function compose(...$args): callable {

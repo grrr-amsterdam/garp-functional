@@ -14,7 +14,7 @@ class AutocurryTest extends TestCase {
             return $a . $b . $c . $d;
         };
 
-        $curried = f\autocurry($foo, 4, []);
+        $curried = f\autocurry($foo, 4);
         $this->assertTrue(is_callable($curried));
         $this->assertTrue(is_callable($curried('a')));
         $this->assertTrue(is_callable($curried('a', 'b')));

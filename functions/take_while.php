@@ -12,9 +12,10 @@ namespace Garp\Functional;
  * Take items from a collection while the predicate function returns true.
  * Stop retrieval at the first falsey value.
  *
+ * @template T of iterable<mixed,mixed>|string
  * @param  callable $predicate
- * @param  array $collection
- * @return ($collection is null ? callable : array)
+ * @param  T $collection
+ * @return ($collection is null ? callable : T)
  */
 function take_while(callable $predicate, $collection = null) {
     return autocurry(

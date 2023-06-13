@@ -14,7 +14,7 @@ use Garp\Functional\Types\TypeClasses\Setoid;
  * Returns an array containing unique entries in the given collection.
  * Works with multi-dimensional arrays, as opposed to native `array_unique`.
  *
- * @param  iterable|string $collection
+ * @param  iterable<mixed,mixed>|string $collection
  * @return array
  */
 function unique($collection) {

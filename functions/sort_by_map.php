@@ -12,7 +12,7 @@ namespace Garp\Functional;
  * Sort an array by a given reference array.
  *
  * @param  array    $map
- * @param  iterable $collection
+ * @param  iterable<mixed,mixed> $collection
  * @return ($collection is null ? callable : array)
  */
 function sort_by_map(array $map, $collection = null) {

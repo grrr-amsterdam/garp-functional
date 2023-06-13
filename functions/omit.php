@@ -12,7 +12,7 @@ namespace Garp\Functional;
  * Create a copy of the array that does not contain the specified keys.
  *
  * @param  array           $omitted
- * @param  iterable|object $collection
+ * @param  iterable<mixed,mixed>|object $collection
  * @return ($collection is null ? callable : array)
  */
 function omit(array $omitted, $collection = null) {

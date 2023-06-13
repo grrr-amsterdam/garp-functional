@@ -13,7 +13,7 @@ namespace Garp\Functional;
  * Works with arrays and strings.
  *
  * @param  string $separator
- * @param  mixed $list
+ * @param  array<mixed,mixed>|string $list
  * @return ($list is null ? callable : string)
  */
 function join(string $separator, $list = null) {

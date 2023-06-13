@@ -12,7 +12,7 @@ namespace Garp\Functional;
  * Filter a collection and get the first element.
  *
  * @param  callable $predicate
- * @param  mixed $collection
+ * @param  iterable<mixed, mixed> $collection
  * @return ($collection is null ? callable : mixed)
  */
 function find(callable $predicate, iterable $collection = null) {

@@ -15,7 +15,7 @@ namespace Garp\Functional;
  * @param  callable $F
  * @return callable
  */
-function Y($F): callable {
+function Y(callable $F): callable {
     $y = function (callable $f) {
         return $f($f);
     };

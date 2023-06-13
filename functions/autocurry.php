@@ -18,7 +18,7 @@ namespace Garp\Functional;
  * @param  int      $arity The required arity for the given function.
  *                         Alas, PHP cannot inspect this automatically without the Reflection API,
  *                         so it has to be a required argument.
- * @return mixed
+ * @return callable
  */
 function autocurry(callable $fn, int $arity): callable {
     return Y(

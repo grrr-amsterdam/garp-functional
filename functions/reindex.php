@@ -12,8 +12,8 @@ namespace Garp\Functional;
  * Alias for array_values.
  * Provides a more semantic alias for this type of work.
  *
- * @param  array $collection
- * @return array
+ * @param  array<mixed,mixed> $collection
+ * @return array<int,mixed>
  */
 function reindex(array $collection): array {
     return array_values($collection);

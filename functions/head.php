@@ -11,7 +11,7 @@ namespace Garp\Functional;
 /**
  * Grab the first item of a list
  *
- * @param  iterable|string $collection The collection to search in
+ * @param  iterable<mixed,mixed>|string $collection The collection to search in
  * @return mixed
  */
 function head($collection) {

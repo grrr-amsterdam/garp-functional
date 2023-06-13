@@ -12,7 +12,7 @@ namespace Garp\Functional;
  * Returns the given argument.
  *
  * @param  mixed $it
- * @return mixed
+ * @return ($it is null ? callable : mixed)
  */
 function id($it = null) {
     return autocurry(

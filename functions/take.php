@@ -11,9 +11,10 @@ namespace Garp\Functional;
 /**
  * Take $n items of a collection.
  *
+ * @template T of iterable<mixed,mixed>|string
  * @param  int $n
- * @param  array|string $collection
- * @return ($collection is null ? callable : array|string)
+ * @param  T $collection
+ * @return ($collection is null ? callable : T)
  */
 function take(int $n, $collection = null) {
     $reduce = reduce(

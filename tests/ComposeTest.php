@@ -45,6 +45,15 @@ class ComposeTest extends TestCase {
         );
     }
 
+    public function test_callable_array(): void {
+        $myObject = new class {
+            public function myMethod(): string {
+                return 'foo';
+            }
+        };
+        $this->assertEquals('foo', f\compose([$myObject, 'myMethod'])('test'));
+    }
+
     public function test_named_constant(): void {
         $this->assertTrue(is_callable(f\compose));
     }

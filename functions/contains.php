@@ -9,10 +9,10 @@ declare(strict_types=1);
 namespace Garp\Functional;
 
 /**
- * Check wether an item exists in an array or string.
+ * Check whether an item exists in an array or string.
  *
  * @param  mixed                    $item
- * @param  string|array|Traversable $collection
+ * @param  iterable<mixed, mixed>|string $collection
  * @return ($collection is null ? callable : bool)
  */
 function contains($item, $collection = null) {
@@ -21,11 +21,9 @@ function contains($item, $collection = null) {
             if (is_string($collection)) {
                 return strpos($collection, strval($item)) !== false;
             }
+            $collection = $collection instanceof \Traversable ? iterator_to_array($collection) : $collection;
             if (is_array($collection)) {
                 return in_array($item, $collection);
-            }
-            if ($collection instanceof \Traversable) {
-                return contains($item, iterator_to_array($collection));
             }
             throw new \InvalidArgumentException('contains expects argument 2 to be a collection');
         },
