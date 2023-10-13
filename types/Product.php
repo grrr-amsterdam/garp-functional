@@ -19,7 +19,7 @@ final class Product implements Semigroup, Setoid, Monoid {
     public $value;
 
     public static function empty(): Monoid {
-        return new static(1);
+        return new self(1);
     }
 
     public function __construct(float $value) {
@@ -34,7 +34,7 @@ final class Product implements Semigroup, Setoid, Monoid {
         if (!$that instanceof self) {
             throw new \LogicException('Semigroup cannot concatenate two distinct types.');
         }
-        return new Product($this->value * $that->value);
+        return new self($this->value * $that->value);
     }
 
 }

@@ -19,7 +19,7 @@ final class Min implements Semigroup, Setoid, Monoid {
     public $value;
 
     public static function empty(): Monoid {
-        return new static(PHP_INT_MAX);
+        return new self(PHP_INT_MAX);
     }
 
     public function __construct(float $value) {

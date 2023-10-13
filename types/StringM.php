@@ -19,7 +19,7 @@ final class StringM implements Ord, Semigroup, Monoid {
     public $value;
 
     public static function empty(): Monoid {
-        return new static('');
+        return new self('');
     }
 
     public function __construct(string $value) {
