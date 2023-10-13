@@ -19,7 +19,7 @@ final class All implements Semigroup, Setoid, Monoid {
     public $value;
 
     public static function empty(): Monoid {
-        return new static(true);
+        return new self(true);
     }
 
     public function __construct(bool $value) {

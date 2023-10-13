@@ -19,7 +19,7 @@ final class Sum implements Semigroup, Setoid, Monoid {
     public $value;
 
     public static function empty(): Monoid {
-        return new static(0);
+        return new self(0);
     }
 
     public function __construct(float $value) {
@@ -34,7 +34,7 @@ final class Sum implements Semigroup, Setoid, Monoid {
         if (!$that instanceof self) {
             throw new \LogicException('Semigroup cannot concatenate two distinct types.');
         }
-        return new Sum($this->value + $that->value);
+        return new self($this->value + $that->value);
     }
 
 }
