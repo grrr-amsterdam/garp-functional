@@ -30,12 +30,6 @@ final class Max implements Semigroup, Setoid, Monoid {
         return $that->value === $this->value;
     }
 
-    /**
-     * Concatenate two semigroups.
-     *
-     * @param  Semigroup $that
-     * @return Semigroup
-     */
     public function concat(Semigroup $that): Semigroup {
         if (!$that instanceof self) {
             throw new \LogicException('Semigroup cannot concatenate two distinct types.');
