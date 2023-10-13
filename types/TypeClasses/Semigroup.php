@@ -11,12 +11,6 @@ namespace Garp\Functional\Types\TypeClasses;
  */
 interface Semigroup {
 
-    /**
-     * Concatenate two semigroups.
-     *
-     * @param  Semigroup $that
-     * @return Semigroup
-     */
     public function concat(Semigroup $that): Semigroup;
 
 }
