@@ -30,7 +30,6 @@ function take(int $n, $collection = null) {
                 $collection = str_split($collection);
                 $reduce = compose(join(''), $reduce);
             }
-            $collection = is_string($collection) ? str_split($collection) : $collection;
             if (!is_iterable($collection)) {
                 throw new \InvalidArgumentException('take expects argument 2 to be a collection');
             }
