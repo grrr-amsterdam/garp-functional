@@ -501,11 +501,6 @@ parameters:
 			path: functions/split.php
 
 		-
-			message: "#^Call to function is_string\\(\\) with mixed will always evaluate to false\\.$#"
-			count: 1
-			path: functions/take.php
-
-		-
 			message: "#^Function Garp\\\\Functional\\\\take\\(\\) has parameter \\$collection with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/take.php
