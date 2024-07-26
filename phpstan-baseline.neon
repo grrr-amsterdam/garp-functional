@@ -86,11 +86,6 @@ parameters:
 			path: functions/every.php
 
 		-
-			message: "#^Function Garp\\\\Functional\\\\every\\(\\) has parameter \\$collection with no value type specified in iterable type iterable\\.$#"
-			count: 1
-			path: functions/every.php
-
-		-
 			message: "#^Function Garp\\\\Functional\\\\flatten\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: functions/flatten.php

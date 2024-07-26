@@ -12,7 +12,7 @@ namespace Garp\Functional;
  * Returns true if $callback returns true for every item in the collection.
  *
  * @param  callable $fn
- * @param  array    $collection
+ * @param  array<mixed, mixed> $collection
  * @return ($collection is null ? callable : bool)
  */
 function every(callable $fn, iterable $collection = null) {
