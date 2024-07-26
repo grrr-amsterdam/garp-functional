@@ -6,16 +6,16 @@ on:
 
 jobs:
   phpunit:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.php == 'nightly' }}
 
     strategy:
       matrix:
-        php: [7.2, 7.3, 7.4, 8.0, 8.1, 8.2, nightly]
+        php: [7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3, nightly]
         stability: [--prefer-lowest, --prefer-stable]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -27,7 +27,7 @@ jobs:
         run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
