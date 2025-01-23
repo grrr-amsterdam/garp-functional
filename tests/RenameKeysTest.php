@@ -106,7 +106,7 @@ class RenameKeysTest extends TestCase {
         f\rename_keys($arg, []);
     }
 
-    public function invalidArgumentProvider(): array {
+    public static function invalidArgumentProvider(): array {
         return array(
             array(new stdClass),
             array(true),

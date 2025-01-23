@@ -2,7 +2,6 @@
 use Garp\Functional\Tests\Helpers\MockSpiceTraverser;
 use PHPUnit\Framework\TestCase;
 use Garp\Functional as f;
-use Carbon\Carbon;
 
 /**
  * @package  Garp\Functional
@@ -75,7 +74,7 @@ class PropTest extends TestCase {
         );
     }
 
-    public function magicDataProvider(): array {
+    public static function magicDataProvider(): array {
         $obj = new class {
             protected $_data = [
                 'bar' => '12345'
