@@ -15,10 +15,10 @@ namespace Garp\Functional;
  * @param  mixed $index   Either the actual index (numeric or associative) or a predicate function.
  *                        In case of a function the first item in $target the function returns true
  *                        for will determine the index.
- * @param  array<mixed,mixed> $target  The receiver of the spliced-in object.
+ * @param  array<mixed,mixed>|null $target  The receiver of the spliced-in object.
  * @return ($target is null ? callable : array) A new array.
  */
-function merge_at($object, $index, array $target = null) {
+function merge_at($object, $index, ?array $target = null) {
     return autocurry(
         function ($object, $index, $target) {
             $targetIsAssoc = is_assoc($target);

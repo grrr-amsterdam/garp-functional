@@ -16,7 +16,7 @@ namespace Garp\Functional;
  * @param  mixed    $collection
  * @return ($collection is null ? callable : mixed)
  */
-function reject(callable $predicate, iterable $collection = null) {
+function reject(callable $predicate, ?iterable $collection = null) {
     return autocurry(
         function ($predicate, $collection) {
             return filter(not($predicate), $collection);

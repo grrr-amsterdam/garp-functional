@@ -12,10 +12,10 @@ namespace Garp\Functional;
  * Rename keys in an array.
  *
  * @param  array<mixed,mixed>|callable $transformMap
- * @param  array $collection
+ * @param  array|null $collection
  * @return ($collection is null ? callable : array)
  */
-function rename_keys($transformMap, array $collection = null) {
+function rename_keys($transformMap, ?array $collection = null) {
     return autocurry(
         function ($transformMap, $collection) {
             if (!is_callable($transformMap) && !is_array($transformMap)) {

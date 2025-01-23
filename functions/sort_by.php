@@ -15,10 +15,10 @@ namespace Garp\Functional;
  * Inspired by Clojure's `sort-by`
  *
  * @param  callable $fn
- * @param  array $collection
+ * @param  array|null $collection
  * @return ($collection is null ? callable : int)
  */
-function sort_by(callable $fn, array $collection = null) {
+function sort_by(callable $fn, ?array $collection = null) {
     return autocurry(
         function (callable $fn, array $collection): array {
             return usort(

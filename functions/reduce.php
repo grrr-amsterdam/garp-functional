@@ -14,10 +14,10 @@ namespace Garp\Functional;
  *
  * @param  callable $fn Reduction function
  * @param  mixed    $default
- * @param  iterable<mixed,mixed> $collection
+ * @param  iterable<mixed,mixed>|null $collection
  * @return ($collection is null ? callable : mixed)
  */
-function reduce(callable $fn, $default, iterable $collection = null) {
+function reduce(callable $fn, $default, ?iterable $collection = null) {
     $reduce = function ($fn, $acc, $collection) {
         foreach ($collection as $item) {
             $acc = $fn($acc, $item);

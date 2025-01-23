@@ -456,12 +456,12 @@ parameters:
 			path: tests/Helpers/MockSpiceTraverser.php
 
 		-
-			message: "#^Property Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser\\:\\:\\$_spices \\(array\\<int, string\\>\\) does not accept array\\<int, mixed\\>\\.$#"
+			message: "#^Property Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser\\:\\:\\$_spices \\(array\\<int, string\\>\\) does not accept array\\.$#"
 			count: 1
 			path: tests/Helpers/MockSpiceTraverser.php
 
 		-
-			message: "#^Property Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser\\:\\:\\$_spices \\(array\\<int, string\\>\\) does not accept array\\<int\\|string, mixed\\>\\.$#"
+			message: "#^Property Garp\\\\Functional\\\\Tests\\\\Helpers\\\\MockSpiceTraverser\\:\\:\\$_spices \\(array\\<int, string\\>\\) does not accept array\\<int, mixed\\>\\.$#"
 			count: 1
 			path: tests/Helpers/MockSpiceTraverser.php
 

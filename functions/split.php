@@ -12,10 +12,10 @@ namespace Garp\Functional;
  * Split a string.
  *
  * @param  string $separator
- * @param  string $subject
+ * @param  string|null $subject
  * @return ($subject is null ? callable : array)
  */
-function split(string $separator, string $subject = null) {
+function split(string $separator, ?string $subject = null) {
     return autocurry(
         function ($separator, $subject): array {
             return explode($separator, $subject);
