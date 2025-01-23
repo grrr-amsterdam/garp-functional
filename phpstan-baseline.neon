@@ -526,27 +526,27 @@ parameters:
 			path: tests/PropTest.php
 
 		-
-			message: "#^Method class@anonymous/tests/PropTest\\.php\\:79\\:\\:__get\\(\\) has no return type specified\\.$#"
+			message: "#^Method class@anonymous/tests/PropTest\\.php\\:78\\:\\:__get\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: tests/PropTest.php
 
 		-
-			message: "#^Method class@anonymous/tests/PropTest\\.php\\:79\\:\\:__get\\(\\) has parameter \\$prop with no type specified\\.$#"
+			message: "#^Method class@anonymous/tests/PropTest\\.php\\:78\\:\\:__get\\(\\) has parameter \\$prop with no type specified\\.$#"
 			count: 1
 			path: tests/PropTest.php
 
 		-
-			message: "#^Method class@anonymous/tests/PropTest\\.php\\:79\\:\\:__isset\\(\\) has parameter \\$prop with no type specified\\.$#"
+			message: "#^Method class@anonymous/tests/PropTest\\.php\\:78\\:\\:__isset\\(\\) has parameter \\$prop with no type specified\\.$#"
 			count: 1
 			path: tests/PropTest.php
 
 		-
-			message: "#^Property class@anonymous/tests/PropTest\\.php\\:79\\:\\:\\$_data has no type specified\\.$#"
+			message: "#^Property class@anonymous/tests/PropTest\\.php\\:78\\:\\:\\$_data has no type specified\\.$#"
 			count: 1
 			path: tests/PropTest.php
 
 		-
-			message: "#^Property class@anonymous/tests/PropTest\\.php\\:91\\:\\:\\$_data has no type specified\\.$#"
+			message: "#^Property class@anonymous/tests/PropTest\\.php\\:90\\:\\:\\$_data has no type specified\\.$#"
 			count: 1
 			path: tests/PropTest.php
 

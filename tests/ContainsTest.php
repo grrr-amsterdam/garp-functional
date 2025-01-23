@@ -67,7 +67,7 @@ class ContainsTest extends TestCase {
         $this->assertTrue($containsHello(array('hello', 'world')));
     }
 
-    public function invalidCollections(): array {
+    public static function invalidCollections(): array {
         return array(
             array(100),
             array(new stdClass()),

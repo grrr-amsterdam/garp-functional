@@ -19,7 +19,7 @@ class IsAssocTest extends TestCase {
         $this->assertSame($result, f\is_assoc($input));
     }
 
-    public function arrayProvider(): array {
+    public static function arrayProvider(): array {
         return [
             [
                 [1, 2, 3],
