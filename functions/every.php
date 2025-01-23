@@ -12,10 +12,10 @@ namespace Garp\Functional;
  * Returns true if $callback returns true for every item in the collection.
  *
  * @param  callable $fn
- * @param  array<mixed, mixed> $collection
+ * @param  array<mixed, mixed>|null $collection
  * @return ($collection is null ? callable : bool)
  */
-function every(callable $fn, iterable $collection = null) {
+function every(callable $fn, ?iterable $collection = null) {
     return autocurry(
         function ($fn, $collection): bool {
             return reduce(

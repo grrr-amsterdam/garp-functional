@@ -13,11 +13,11 @@ namespace Garp\Functional;
  * indexed by the given $indexFn.
  *
  * @param  callable|string $indexFn
- * @param  array<mixed,mixed> $collection
+ * @param  array<mixed,mixed>|null $collection
  * @return ($collection is null ? callable : int)
  * @see group_by
  */
-function index_by($indexFn, iterable $collection = null) {
+function index_by($indexFn, ?iterable $collection = null) {
     return autocurry(
         function ($indexFn, $collection): array {
             $indexFn = !is_callable($indexFn) ? prop($indexFn) : $indexFn;

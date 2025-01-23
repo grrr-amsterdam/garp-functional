@@ -14,10 +14,10 @@ namespace Garp\Functional;
  *
  * @param  callable $fn         Reducation function
  * @param  mixed    $default
- * @param  array<mixed,mixed>    $collection
+ * @param  array<mixed,mixed>|null    $collection
  * @return ($collection is null ? callable : mixed)
  */
-function reduce_assoc(callable $fn, $default, iterable $collection = null) {
+function reduce_assoc(callable $fn, $default, ?iterable $collection = null) {
     return autocurry(
         function ($fn, $default, $collection) {
             return reduce(

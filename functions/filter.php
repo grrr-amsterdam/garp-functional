@@ -13,10 +13,10 @@ namespace Garp\Functional;
  * Accepts more than arrays.
  *
  * @param  callable $predicate
- * @param  iterable<mixed,mixed>    $collection
+ * @param  iterable<mixed,mixed>|null    $collection
  * @return ($collection is null ? callable : array<mixed,mixed>)
  */
-function filter(callable $predicate, iterable $collection = null) {
+function filter(callable $predicate, ?iterable $collection = null) {
     return autocurry(
         function ($predicate, $collection): iterable {
             $collection = is_array($collection) ? $collection : iterator_to_array($collection);

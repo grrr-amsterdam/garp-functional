@@ -12,10 +12,10 @@ namespace Garp\Functional;
  * Pure sort function. Returns a sorted copy.
  *
  * @param  callable $fn
- * @param  array<mixed,mixed> $collection
+ * @param  array<mixed,mixed>|null $collection
  * @return ($collection is null ? callable : array)
  */
-function usort(callable $fn, array $collection = null) {
+function usort(callable $fn, ?array $collection = null) {
     return autocurry(
         function ($fn, array $collection): array {
             // make a copy of the array as to not disturb the original
